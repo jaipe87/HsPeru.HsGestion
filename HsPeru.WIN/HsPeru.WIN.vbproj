@@ -1,0 +1,692 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0EBD57FF-CC16-4C9C-9149-DEFE338298FA}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>Sub Main</StartupObject>
+    <RootNamespace>HsPeru.WIN</RootNamespace>
+    <AssemblyName>HsPeru.WIN</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsFormsWithCustomSubMain</MyType>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>HsPeru.WIN.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>HsPeru.WIN.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\Hs.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="HsPeru.Controles, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\HsPeru.Controles.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics4.Shared.v15.1, Version=15.1.20151.2230, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Infragistics4.Win.DataVisualization.Shared.v15.1, Version=15.1.20151.2230, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Infragistics4.Win.DataVisualization.UltraDataChart.v15.1, Version=15.1.20151.2230, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.Misc.v15.1, Version=15.1.20151.2230, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.Portable.Core.v15.1, Version=15.1.20151.2230, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Infragistics4.Win.UltraWinGrid.v15.1, Version=15.1.20151.2230, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.UltraWinTabbedMdi.v15.1, Version=15.1.20151.2230, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.UltraWinTabControl.v15.1, Version=15.1.20151.2230, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.v15.1, Version=15.1.20151.2230, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="UIAutomationTypes" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="1.BaseDatos\Conexion.vb" />
+    <Compile Include="2.Entity\CATEGORIA.vb" />
+    <Compile Include="2.Entity\CIA.vb" />
+    <Compile Include="2.Entity\CLIPRO.vb" />
+    <Compile Include="2.Entity\CLIPROCORREO.vb" />
+    <Compile Include="2.Entity\CLIPROFAMILIA.vb" />
+    <Compile Include="2.Entity\CLIPROPERSONAL.vb" />
+    <Compile Include="2.Entity\CLIPROSUCURSAL.vb" />
+    <Compile Include="2.Entity\DATRETORNO.vb" />
+    <Compile Include="2.Entity\GRUPOCLIENTE.vb" />
+    <Compile Include="2.Entity\MARCA.vb" />
+    <Compile Include="2.Entity\SUBCATEGORIA.vb" />
+    <Compile Include="2.Entity\TABART.vb" />
+    <Compile Include="2.Entity\TABART_SUCURSAL.vb" />
+    <Compile Include="2.Entity\TABART_UBICACION.vb" />
+    <Compile Include="2.Entity\TABCARGO.vb" />
+    <Compile Include="2.Entity\TABFAC.vb" />
+    <Compile Include="2.Entity\TABMON.vb" />
+    <Compile Include="2.Entity\TABPAG_CPE.vb" />
+    <Compile Include="2.Entity\TABSER.vb" />
+    <Compile Include="2.Entity\TABSUC.vb" />
+    <Compile Include="2.Entity\TG_TABDOC.vb" />
+    <Compile Include="2.Entity\TG_TIPDOC.vb" />
+    <Compile Include="2.Entity\TG_TIPREG.vb" />
+    <Compile Include="2.Entity\TIPCAM.vb" />
+    <Compile Include="2.Entity\UBIGEO.vb" />
+    <Compile Include="2.Entity\UNIDAD.vb" />
+    <Compile Include="2.Entity\USUARIO.vb" />
+    <Compile Include="2.Entity\VENDEDOR.vb" />
+    <Compile Include="3.AccesoDatos\DAL_CLIPRO.vb" />
+    <Compile Include="3.AccesoDatos\DAL_COMBOS.vb" />
+    <Compile Include="3.AccesoDatos\DAL_TABART.vb" />
+    <Compile Include="3.AccesoDatos\DAL_TABFAC.vb" />
+    <Compile Include="3.AccesoDatos\DAL_TABSUC.vb" />
+    <Compile Include="3.AccesoDatos\DAL_TIPCAM.vb" />
+    <Compile Include="3.AccesoDatos\DAL_CIA.vb" />
+    <Compile Include="3.AccesoDatos\DAL_USUARIO.vb" />
+    <Compile Include="3.AccesoDatos\DAL_VENDEDOR.vb" />
+    <Compile Include="4.Helpers\Control\DateTimeCell.vb" />
+    <Compile Include="4.Helpers\Control\DateTimeEditingControl.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="4.Helpers\Control\DateTimeGridColumn.vb" />
+    <Compile Include="4.Helpers\Control\TextEnteroCell.vb" />
+    <Compile Include="4.Helpers\Control\TextEnteroEditingControl.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="4.Helpers\Control\TextEnteroGridColumn.vb" />
+    <Compile Include="4.Helpers\Control\TextFloatCell.vb" />
+    <Compile Include="4.Helpers\Control\TextFloatEditingControl.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="4.Helpers\Control\TextFloatGridColumn.vb" />
+    <Compile Include="4.Helpers\Control\TextPersonalCell.vb" />
+    <Compile Include="4.Helpers\Control\TextPersonalEditingControl.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="4.Helpers\Control\TextPersonalGridColumn.vb" />
+    <Compile Include="4.Helpers\Control\HsDataGridViewCellNow.Designer.vb">
+      <DependentUpon>HsDataGridViewCellNow.vb</DependentUpon>
+    </Compile>
+    <Compile Include="4.Helpers\Control\HsDataGridViewCellNow.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="4.Helpers\sisEnum.vb" />
+    <Compile Include="6.Gui\FrmAdicPerCliPro.designer.vb">
+      <DependentUpon>FrmAdicPerCliPro.vb</DependentUpon>
+    </Compile>
+    <Compile Include="6.Gui\FrmAdicPerCliPro.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="6.Gui\FrmAdicSucCliPro.designer.vb">
+      <DependentUpon>FrmAdicSucCliPro.vb</DependentUpon>
+    </Compile>
+    <Compile Include="6.Gui\FrmAdicSucCliPro.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="6.Gui\FrmBsqArticulo.Designer.vb">
+      <DependentUpon>FrmBsqArticulo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="6.Gui\FrmBsqArticulo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="6.Gui\FrmConsultaCliPro.Designer.vb">
+      <DependentUpon>FrmConsultaCliPro.vb</DependentUpon>
+    </Compile>
+    <Compile Include="6.Gui\FrmConsultaCliPro.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="6.Gui\FrmConsultaDocAlmacen.Designer.vb">
+      <DependentUpon>FrmConsultaDocAlmacen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="6.Gui\FrmConsultaDocAlmacen.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="6.Gui\FrmConsultaIngreso.Designer.vb">
+      <DependentUpon>FrmConsultaIngreso.vb</DependentUpon>
+    </Compile>
+    <Compile Include="6.Gui\FrmConsultaIngreso.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="6.Gui\FrmConsultaKardex.Designer.vb">
+      <DependentUpon>FrmConsultaKardex.vb</DependentUpon>
+    </Compile>
+    <Compile Include="6.Gui\FrmConsultaKardex.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="6.Gui\FrmConsultaReciboCajaChica.Designer.vb">
+      <DependentUpon>FrmConsultaReciboCajaChica.vb</DependentUpon>
+    </Compile>
+    <Compile Include="6.Gui\FrmConsultaReciboCajaChica.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="6.Gui\FrmConsultaReniec.Designer.vb">
+      <DependentUpon>FrmConsultaReniec.vb</DependentUpon>
+    </Compile>
+    <Compile Include="6.Gui\FrmConsultaReniec.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="6.Gui\FrmConsultaSeries.Designer.vb">
+      <DependentUpon>FrmConsultaSeries.vb</DependentUpon>
+    </Compile>
+    <Compile Include="6.Gui\FrmConsultaSeries.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="6.Gui\FrmConsultaTranslado.Designer.vb">
+      <DependentUpon>FrmConsultaTranslado.vb</DependentUpon>
+    </Compile>
+    <Compile Include="6.Gui\FrmConsultaTranslado.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="6.Gui\FrmLoginPWD.Designer.vb">
+      <DependentUpon>FrmLoginPWD.vb</DependentUpon>
+    </Compile>
+    <Compile Include="6.Gui\FrmLoginPWD.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="6.Gui\FrmManteCerrarMes.Designer.vb">
+      <DependentUpon>FrmManteCerrarMes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="6.Gui\FrmManteCerrarMes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="6.Gui\FrmManteFactura.Designer.vb">
+      <DependentUpon>FrmManteFactura.vb</DependentUpon>
+    </Compile>
+    <Compile Include="6.Gui\FrmManteFactura.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="6.Gui\FrmManteGuiaRemision.Designer.vb">
+      <DependentUpon>FrmManteGuiaRemision.vb</DependentUpon>
+    </Compile>
+    <Compile Include="6.Gui\FrmManteGuiaRemision.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="6.Gui\FrmManteIngreso.Designer.vb">
+      <DependentUpon>FrmManteIngreso.vb</DependentUpon>
+    </Compile>
+    <Compile Include="6.Gui\FrmManteIngreso.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="6.Gui\FrmManteNCDes.Designer.vb">
+      <DependentUpon>FrmManteNCDes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="6.Gui\FrmManteNCDes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="6.Gui\FrmManteNCDev.Designer.vb">
+      <DependentUpon>FrmManteNCDev.vb</DependentUpon>
+    </Compile>
+    <Compile Include="6.Gui\FrmManteNCDev.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="6.Gui\FrmManteND.Designer.vb">
+      <DependentUpon>FrmManteND.vb</DependentUpon>
+    </Compile>
+    <Compile Include="6.Gui\FrmManteND.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="6.Gui\FrmManteOrdenEnsamble.Designer.vb">
+      <DependentUpon>FrmManteOrdenEnsamble.vb</DependentUpon>
+    </Compile>
+    <Compile Include="6.Gui\FrmManteOrdenEnsamble.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="6.Gui\FrmManteOrdenSalida.Designer.vb">
+      <DependentUpon>FrmManteOrdenSalida.vb</DependentUpon>
+    </Compile>
+    <Compile Include="6.Gui\FrmManteOrdenSalida.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="6.Gui\FrmManteProforma.Designer.vb">
+      <DependentUpon>FrmManteProforma.vb</DependentUpon>
+    </Compile>
+    <Compile Include="6.Gui\FrmManteProforma.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="6.Gui\FrmManteRegStock.Designer.vb">
+      <DependentUpon>FrmManteRegStock.vb</DependentUpon>
+    </Compile>
+    <Compile Include="6.Gui\FrmManteRegStock.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="6.Gui\FrmPreciosUnidad.Designer.vb">
+      <DependentUpon>FrmPreciosUnidad.vb</DependentUpon>
+    </Compile>
+    <Compile Include="6.Gui\FrmPreciosUnidad.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="6.Gui\FrmRepoConsistenciaI.Designer.vb">
+      <DependentUpon>FrmRepoConsistenciaI.vb</DependentUpon>
+    </Compile>
+    <Compile Include="6.Gui\FrmRepoConsistenciaI.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="6.Gui\FrmTabAdicFamCliPro.Designer.vb">
+      <DependentUpon>FrmTabAdicFamCliPro.vb</DependentUpon>
+    </Compile>
+    <Compile Include="6.Gui\FrmTabAdicFamCliPro.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="6.Gui\FrmTabArticulos.designer.vb">
+      <DependentUpon>FrmTabArticulos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="6.Gui\FrmTabArticulos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="6.Gui\FrmTabBanco.Designer.vb">
+      <DependentUpon>FrmTabBanco.vb</DependentUpon>
+    </Compile>
+    <Compile Include="6.Gui\FrmTabBanco.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="6.Gui\FrmTabCargoUsu.Designer.vb">
+      <DependentUpon>FrmTabCargoUsu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="6.Gui\FrmTabCargoUsu.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="6.Gui\FrmTabCatArt.Designer.vb">
+      <DependentUpon>FrmTabCatArt.vb</DependentUpon>
+    </Compile>
+    <Compile Include="6.Gui\FrmTabCatArt.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="6.Gui\FrmTabCliPro.Designer.vb">
+      <DependentUpon>FrmTabCliPro.vb</DependentUpon>
+    </Compile>
+    <Compile Include="6.Gui\FrmTabCliPro.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="6.Gui\FrmTabGrupoUsu.Designer.vb">
+      <DependentUpon>FrmTabGrupoUsu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="6.Gui\FrmTabGrupoUsu.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="6.Gui\FrmTabMarcas.Designer.vb">
+      <DependentUpon>FrmTabMarcas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="6.Gui\FrmTabMarcas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="6.Gui\FrmTabPorcIVG.Designer.vb">
+      <DependentUpon>FrmTabPorcIVG.vb</DependentUpon>
+    </Compile>
+    <Compile Include="6.Gui\FrmTabPorcIVG.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="6.Gui\FrmTabSubCatArticulos.Designer.vb">
+      <DependentUpon>FrmTabSubCatArticulos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="6.Gui\FrmTabSubCatArticulos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="6.Gui\FrmTabTarjetas.Designer.vb">
+      <DependentUpon>FrmTabTarjetas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="6.Gui\FrmTabTarjetas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="6.Gui\FrmTabTipCambios.Designer.vb">
+      <DependentUpon>FrmTabTipCambios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="6.Gui\FrmTabTipCambios.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="6.Gui\FrmTabTransportistas.Designer.vb">
+      <DependentUpon>FrmTabTransportistas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="6.Gui\FrmTabTransportistas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="6.Gui\FrmTabUsuario.Designer.vb">
+      <DependentUpon>FrmTabUsuario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="6.Gui\FrmTabUsuario.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="6.Gui\FrmTabVendedor.designer.vb">
+      <DependentUpon>FrmTabVendedor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="6.Gui\FrmTabVendedor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="4.Helpers\sisConstantes.vb" />
+    <Compile Include="4.Helpers\sisFunciones.vb" />
+    <Compile Include="4.Helpers\sisVariables.vb" />
+    <Compile Include="FrmLogin.Designer.vb">
+      <DependentUpon>FrmLogin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLogin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MDIPrincipal.Designer.vb">
+      <DependentUpon>MDIPrincipal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MDIPrincipal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Program.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="6.Gui\FrmAdicPerCliPro.resx">
+      <DependentUpon>FrmAdicPerCliPro.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="6.Gui\FrmAdicSucCliPro.resx">
+      <DependentUpon>FrmAdicSucCliPro.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="6.Gui\FrmBsqArticulo.resx">
+      <DependentUpon>FrmBsqArticulo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="6.Gui\FrmConsultaCliPro.resx">
+      <DependentUpon>FrmConsultaCliPro.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="6.Gui\FrmConsultaDocAlmacen.resx">
+      <DependentUpon>FrmConsultaDocAlmacen.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="6.Gui\FrmConsultaIngreso.resx">
+      <DependentUpon>FrmConsultaIngreso.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="6.Gui\FrmConsultaKardex.resx">
+      <DependentUpon>FrmConsultaKardex.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="6.Gui\FrmConsultaReciboCajaChica.resx">
+      <DependentUpon>FrmConsultaReciboCajaChica.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="6.Gui\FrmConsultaReniec.resx">
+      <DependentUpon>FrmConsultaReniec.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="6.Gui\FrmConsultaSeries.resx">
+      <DependentUpon>FrmConsultaSeries.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="6.Gui\FrmConsultaTranslado.resx">
+      <DependentUpon>FrmConsultaTranslado.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="6.Gui\FrmLoginPWD.resx">
+      <DependentUpon>FrmLoginPWD.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="6.Gui\FrmManteCerrarMes.resx">
+      <DependentUpon>FrmManteCerrarMes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="6.Gui\FrmManteFactura.resx">
+      <DependentUpon>FrmManteFactura.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="6.Gui\FrmManteGuiaRemision.resx">
+      <DependentUpon>FrmManteGuiaRemision.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="6.Gui\FrmManteIngreso.resx">
+      <DependentUpon>FrmManteIngreso.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="6.Gui\FrmManteNCDes.resx">
+      <DependentUpon>FrmManteNCDes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="6.Gui\FrmManteNCDev.resx">
+      <DependentUpon>FrmManteNCDev.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="6.Gui\FrmManteND.resx">
+      <DependentUpon>FrmManteND.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="6.Gui\FrmManteOrdenEnsamble.resx">
+      <DependentUpon>FrmManteOrdenEnsamble.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="6.Gui\FrmManteOrdenSalida.resx">
+      <DependentUpon>FrmManteOrdenSalida.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="6.Gui\FrmManteProforma.resx">
+      <DependentUpon>FrmManteProforma.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="6.Gui\FrmManteRegStock.resx">
+      <DependentUpon>FrmManteRegStock.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="6.Gui\FrmPreciosUnidad.resx">
+      <DependentUpon>FrmPreciosUnidad.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="6.Gui\FrmRepoConsistenciaI.resx">
+      <DependentUpon>FrmRepoConsistenciaI.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="6.Gui\FrmTabAdicFamCliPro.resx">
+      <DependentUpon>FrmTabAdicFamCliPro.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="6.Gui\FrmTabArticulos.resx">
+      <DependentUpon>FrmTabArticulos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="6.Gui\FrmTabBanco.resx">
+      <DependentUpon>FrmTabBanco.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="6.Gui\FrmTabCargoUsu.resx">
+      <DependentUpon>FrmTabCargoUsu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="6.Gui\FrmTabCatArt.resx">
+      <DependentUpon>FrmTabCatArt.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="6.Gui\FrmTabCliPro.resx">
+      <DependentUpon>FrmTabCliPro.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="6.Gui\FrmTabGrupoUsu.resx">
+      <DependentUpon>FrmTabGrupoUsu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="6.Gui\FrmTabMarcas.resx">
+      <DependentUpon>FrmTabMarcas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="6.Gui\FrmTabPorcIVG.resx">
+      <DependentUpon>FrmTabPorcIVG.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="6.Gui\FrmTabSubCatArticulos.resx">
+      <DependentUpon>FrmTabSubCatArticulos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="6.Gui\FrmTabTarjetas.resx">
+      <DependentUpon>FrmTabTarjetas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="6.Gui\FrmTabTipCambios.resx">
+      <DependentUpon>FrmTabTipCambios.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="6.Gui\FrmTabTransportistas.resx">
+      <DependentUpon>FrmTabTransportistas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="6.Gui\FrmTabUsuario.resx">
+      <DependentUpon>FrmTabUsuario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="6.Gui\FrmTabVendedor.resx">
+      <DependentUpon>FrmTabVendedor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLogin.resx">
+      <DependentUpon>FrmLogin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MDIPrincipal.resx">
+      <DependentUpon>MDIPrincipal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\app.manifest" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hs.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\document_page_previous.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\document_todo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\door_in.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\export_excel1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\font_red_delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\layout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zoom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\accept.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bullet_arrow_left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bullet_arrow_left_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bullet_arrow_right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bullet_arrow_right_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bullet_blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bullet_green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bullet_orange.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bullet_red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bullet_yellow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cross.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\disk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\document_inspect.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cerrar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maximizar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\restaurar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="5.Reportes\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\Logo\1.jpg" />
+    <None Include="Resources\reniec.png" />
+    <None Include="Resources\sunat.png" />
+    <None Include="Resources\reniec1.png" />
+    <None Include="Resources\page_white_add.png" />
+    <None Include="Resources\page_white_edit.png" />
+    <None Include="Resources\page_white_delete.png" />
+    <None Include="Resources\page.png" />
+    <None Include="Resources\image_add.png" />
+    <None Include="Resources\email_delete.png" />
+    <None Include="Resources\email_add.png" />
+    <None Include="Resources\newspaper_delete.png" />
+    <None Include="Resources\newspaper_go.png" />
+    <None Include="Resources\newspaper_add.png" />
+    <None Include="Resources\reniec.ico" />
+    <None Include="Resources\user_edit.png" />
+    <None Include="Resources\user_add.png" />
+    <None Include="Resources\information.png" />
+    <None Include="Resources\page_edit.png" />
+    <None Include="Resources\page_add.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
