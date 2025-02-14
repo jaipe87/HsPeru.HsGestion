@@ -15,5 +15,6 @@
     Public Const SUC_PRINCIPAL As Integer = 1
     Public Const CANTID_DEFAULT As Double = 1
     Public Const NN As String = "###,##0.00"
+    Public Const UBIGEO_LIMA As String = "150101"
 
 End Module

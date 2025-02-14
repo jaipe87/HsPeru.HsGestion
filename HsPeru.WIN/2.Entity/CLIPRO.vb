@@ -42,6 +42,17 @@
     Public Property ESTADO As String
     Public Property TRAZSOC As String
 
+    Public Property SUNAT_TIPO As String
+    Public Property SUNAT_ESTADO As String
+    Public Property SUNAT_CONDICION As String
+    Public Property SUNAT_FECINSCRIPCION As String
+    Public Property SUNAT_FECBAJA As String
+
+    Public Property SUNAT_PROFESION As String
+    Public Property SUNAT_UBIGEO As String
+
+
+
     Sub New()
         LISTACORREO = New List(Of CLIPROCORREO)
         LISTAPERSONAL = New List(Of CLIPROPERSONAL)

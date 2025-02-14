@@ -49,6 +49,7 @@ Partial Class FrmConsultaReniec
         '
         'Panel1
         '
+        Me.Panel1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
         Me.Panel1.Controls.Add(Me.btnCancelar)
         Me.Panel1.Controls.Add(Me.btnGuardar)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom
@@ -83,6 +84,7 @@ Partial Class FrmConsultaReniec
         '
         'Panel2
         '
+        Me.Panel2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
         Me.Panel2.Controls.Add(Me.btnConsultar)
         Me.Panel2.Controls.Add(Me.txtCorreo)
         Me.Panel2.Controls.Add(Me.Label15)
@@ -145,7 +147,6 @@ Partial Class FrmConsultaReniec
         Me.txtCelular.Name = "txtCelular"
         Me.txtCelular.Size = New System.Drawing.Size(131, 20)
         Me.txtCelular.TabIndex = 7
-        Me.txtCelular.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label13
         '
@@ -166,7 +167,6 @@ Partial Class FrmConsultaReniec
         Me.txtTelefonos.Name = "txtTelefonos"
         Me.txtTelefonos.Size = New System.Drawing.Size(131, 20)
         Me.txtTelefonos.TabIndex = 6
-        Me.txtTelefonos.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'label25
         '

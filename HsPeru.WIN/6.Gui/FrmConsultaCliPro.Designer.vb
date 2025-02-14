@@ -29,7 +29,6 @@ Partial Class FrmConsultaCliPro
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.btnReniec = New System.Windows.Forms.Button()
-        Me.btnBuscar = New System.Windows.Forms.Button()
         Me.rbdDentroRazsoc = New System.Windows.Forms.RadioButton()
         Me.rbdInicioRazon = New System.Windows.Forms.RadioButton()
         Me.btnSunat = New System.Windows.Forms.Button()
@@ -45,11 +44,12 @@ Partial Class FrmConsultaCliPro
         Me.coDirecc = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colEstado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.lblTotreg = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.btnBuscar = New System.Windows.Forms.Button()
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.btnModificar = New System.Windows.Forms.Button()
         Me.btnNuevo = New System.Windows.Forms.Button()
-        Me.lblTotreg = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.DgCliente, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -68,7 +68,7 @@ Partial Class FrmConsultaCliPro
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(759, 62)
+        Me.Panel1.Size = New System.Drawing.Size(758, 62)
         Me.Panel1.TabIndex = 0
         '
         'btnReniec
@@ -81,18 +81,6 @@ Partial Class FrmConsultaCliPro
         Me.btnReniec.Text = "Reniec"
         Me.btnReniec.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnReniec.UseVisualStyleBackColor = True
-        '
-        'btnBuscar
-        '
-        Me.btnBuscar.Image = Global.HsPeru.WIN.My.Resources.Resources.zoom
-        Me.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnBuscar.Location = New System.Drawing.Point(542, 9)
-        Me.btnBuscar.Name = "btnBuscar"
-        Me.btnBuscar.Size = New System.Drawing.Size(69, 41)
-        Me.btnBuscar.TabIndex = 1
-        Me.btnBuscar.Text = "Buscar"
-        Me.btnBuscar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btnBuscar.UseVisualStyleBackColor = True
         '
         'rbdDentroRazsoc
         '
@@ -143,7 +131,7 @@ Partial Class FrmConsultaCliPro
         Me.txtCriterio.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtCriterio.Location = New System.Drawing.Point(79, 30)
         Me.txtCriterio.Name = "txtCriterio"
-        Me.txtCriterio.Size = New System.Drawing.Size(457, 20)
+        Me.txtCriterio.Size = New System.Drawing.Size(456, 20)
         Me.txtCriterio.TabIndex = 0
         '
         'Panel2
@@ -152,7 +140,7 @@ Partial Class FrmConsultaCliPro
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel2.Location = New System.Drawing.Point(0, 62)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(759, 324)
+        Me.Panel2.Size = New System.Drawing.Size(758, 324)
         Me.Panel2.TabIndex = 1
         '
         'DgCliente
@@ -191,7 +179,7 @@ Partial Class FrmConsultaCliPro
         Me.DgCliente.RowHeadersWidth = 10
         Me.DgCliente.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
         Me.DgCliente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DgCliente.Size = New System.Drawing.Size(759, 324)
+        Me.DgCliente.Size = New System.Drawing.Size(758, 324)
         Me.DgCliente.TabIndex = 0
         '
         'colTipReg
@@ -266,8 +254,44 @@ Partial Class FrmConsultaCliPro
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel3.Location = New System.Drawing.Point(0, 386)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(759, 52)
+        Me.Panel3.Size = New System.Drawing.Size(758, 52)
         Me.Panel3.TabIndex = 2
+        '
+        'lblTotreg
+        '
+        Me.lblTotreg.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblTotreg.AutoSize = True
+        Me.lblTotreg.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.lblTotreg.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTotreg.Location = New System.Drawing.Point(701, 16)
+        Me.lblTotreg.MinimumSize = New System.Drawing.Size(45, 18)
+        Me.lblTotreg.Name = "lblTotreg"
+        Me.lblTotreg.Size = New System.Drawing.Size(45, 18)
+        Me.lblTotreg.TabIndex = 10
+        Me.lblTotreg.Text = "0"
+        Me.lblTotreg.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'Label2
+        '
+        Me.Label2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(645, 18)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(51, 13)
+        Me.Label2.TabIndex = 9
+        Me.Label2.Text = "N° Reg. :"
+        '
+        'btnBuscar
+        '
+        Me.btnBuscar.Image = Global.HsPeru.WIN.My.Resources.Resources.zoom
+        Me.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btnBuscar.Location = New System.Drawing.Point(542, 9)
+        Me.btnBuscar.Name = "btnBuscar"
+        Me.btnBuscar.Size = New System.Drawing.Size(69, 41)
+        Me.btnBuscar.TabIndex = 1
+        Me.btnBuscar.Text = "Buscar"
+        Me.btnBuscar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnBuscar.UseVisualStyleBackColor = True
         '
         'btnSalir
         '
@@ -305,36 +329,12 @@ Partial Class FrmConsultaCliPro
         Me.btnNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnNuevo.UseVisualStyleBackColor = True
         '
-        'lblTotreg
-        '
-        Me.lblTotreg.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lblTotreg.AutoSize = True
-        Me.lblTotreg.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.lblTotreg.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTotreg.Location = New System.Drawing.Point(702, 16)
-        Me.lblTotreg.MinimumSize = New System.Drawing.Size(45, 18)
-        Me.lblTotreg.Name = "lblTotreg"
-        Me.lblTotreg.Size = New System.Drawing.Size(45, 18)
-        Me.lblTotreg.TabIndex = 10
-        Me.lblTotreg.Text = "0"
-        Me.lblTotreg.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
-        'Label2
-        '
-        Me.Label2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(646, 18)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(51, 13)
-        Me.Label2.TabIndex = 9
-        Me.Label2.Text = "N° Reg. :"
-        '
         'FrmConsultaCliPro
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
-        Me.ClientSize = New System.Drawing.Size(759, 438)
+        Me.ClientSize = New System.Drawing.Size(758, 438)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Panel3)

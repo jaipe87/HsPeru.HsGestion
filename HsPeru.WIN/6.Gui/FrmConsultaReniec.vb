@@ -6,6 +6,15 @@ Imports System.Web
 
 Public Class FrmConsultaReniec
     Public form_datclipro As New CLIPRO
+
+    Sub New()
+
+        ' Esta llamada es exigida por el diseñador.
+        InitializeComponent()
+
+        ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
+
+    End Sub
 #Region "Métodos"
     Async Sub ConsultaReniec()
         Dim DatCliente As CLIPRO
@@ -18,6 +27,8 @@ Public Class FrmConsultaReniec
             txtNombre.Text = DatCliente.NOMBRE
             txtMaterno.Text = DatCliente.APEMAT
             txtpaterno.Text = DatCliente.RAZSOC
+
+
         End If
     End Sub
     Sub Graba()
@@ -68,6 +79,12 @@ Public Class FrmConsultaReniec
         End If
 
     End Sub
+    Sub Nuevo(ByVal Dni As String)
+        txtnumDni.Text = Dni
+
+        ConsultaReniec()
+
+    End Sub
 #End Region
 #Region "Eventos"
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
@@ -77,9 +94,7 @@ Public Class FrmConsultaReniec
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
         Graba()
     End Sub
-    Sub Nuevo(ByVal Dni As String)
-        txtnumDni.Text = Dni
-    End Sub
+
     Private Sub SaltoControl_KeyDown(sender As Object, e As KeyEventArgs) Handles txtTelefonos.KeyDown, txtpaterno.KeyDown, txtnumDni.KeyDown, txtNombre.KeyDown, txtMaterno.KeyDown, txtDirección.KeyDown, txtCorreo.KeyDown, txtCelular.KeyDown, btnGuardar.KeyDown, btnConsultar.KeyDown
         If e.KeyCode = Keys.Enter Then
             If TryCast(sender, TextBox).Name = txtnumDni.Name Then
@@ -111,6 +126,7 @@ Public Class wsReniec
         [Error] = 3
     End Enum
 
+
     Private state As Resul
     Private myCookie As CookieContainer
     Private mCliente As CLIPRO
@@ -140,7 +156,7 @@ Public Class wsReniec
         Return True
     End Function
     Public Async Function GetInfo(numDni As String) As Task(Of CLIPRO)
-        Dim uri As String = "http://www.hsperu.pe/Reniec/consultaReniec.php?dni=" & numDni
+        Dim uri As String = "http://www.amkdelivery.com/Reniec/consultaReniec.php?dni=" & numDni
         Dim Datos As String = ""
         Try
 
@@ -159,16 +175,11 @@ Public Class wsReniec
 
 
             Dim _resul As String() = Datos.Split("|")
-            Select Case _resul.Count
-
-                Case 5
-                    state = Resul.Ok
-                    Exit Select
-
-                Case Else
-                    state = Resul.NoResul
-                    Exit Select
-            End Select
+            If _resul.Count > 0 Then
+                state = Resul.Ok
+            Else
+                state = Resul.NoResul
+            End If
 
             If state = Resul.Ok Then
                 mCliente.NOMBRE = _resul(1)
@@ -183,55 +194,5 @@ Public Class wsReniec
             Throw ex
         End Try
     End Function
-    'Public Function GetInfo(numDni As String) As CLIPRO
 
-    '    Try
-    '        Dim myUrl As String = "http://aplicaciones007.jne.gob.pe/srop_publico/Consulta/Afiliado/GetNombresCiudadano"
-    '        Dim myWebRequest As HttpWebRequest = DirectCast(WebRequest.Create(myUrl), HttpWebRequest)
-    '        Dim Data As String = "DNI=" & numDni
-    '        Dim dataStream As Byte() = Encoding.UTF8.GetBytes(Data)
-
-    '        myWebRequest.UserAgent = "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:23.0) Gecko/20100101 Firefox/23.0"
-    '        myWebRequest.CookieContainer = myCookie
-    '        myWebRequest.Credentials = CredentialCache.DefaultCredentials
-    '        myWebRequest.Proxy = Nothing
-    '        myWebRequest.Method = "POST"
-    '        myWebRequest.ContentType = "application/x-www-form-urlencoded"
-    '        myWebRequest.ContentLength = dataStream.Length
-
-    '        Dim newStream As Stream = myWebRequest.GetRequestStream()
-    '        newStream.Write(dataStream, 0, dataStream.Length)
-    '        newStream.Close()
-
-    '        Dim myHttpWebResponse As HttpWebResponse = DirectCast(myWebRequest.GetResponse(), HttpWebResponse)
-    '        Dim myStream As Stream = myHttpWebResponse.GetResponseStream()
-    '        Dim myStreamReader As New StreamReader(myStream)
-
-
-    '        Dim Datos As String = HttpUtility.HtmlDecode(myStreamReader.ReadToEnd())
-    '        Dim _resul As String() = Datos.Split("|")
-
-    '        Select Case _resul.Count
-
-    '            Case 3
-    '                state = Resul.Ok
-    '                Exit Select
-
-    '            Case Else
-    '                state = Resul.NoResul
-    '                Exit Select
-    '        End Select
-
-    '        If state = Resul.Ok Then
-    '            mCliente.NOMBRE = _resul(2)
-    '            mCliente.RAZSOC = _resul(0)
-    '            mCliente.APEMAT = _resul(1)
-    '        End If
-    '        myHttpWebResponse.Close()
-    '        Return mCliente
-
-    '    Catch ex As Exception
-    '        Throw ex
-    '    End Try
-    'End Function
 End Class
