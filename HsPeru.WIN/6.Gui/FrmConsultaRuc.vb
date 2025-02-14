@@ -33,6 +33,7 @@ Public Class FrmConsultaRuc
             LblFechaBaja.Text = DatCliente.SUNAT_FECBAJA
             LblProfesion.Text = DatCliente.SUNAT_PROFESION
             LblTipo.Text = DatCliente.SUNAT_TIPO
+            LblFechaInscripcion.Text = DatCliente.SUNAT_FECINSCRIPCION
 
         End If
     End Sub
