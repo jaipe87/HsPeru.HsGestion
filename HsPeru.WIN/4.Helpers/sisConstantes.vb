@@ -16,5 +16,11 @@
     Public Const CANTID_DEFAULT As Double = 1
     Public Const NN As String = "###,##0.00"
     Public Const UBIGEO_LIMA As String = "150101"
+    Public Const DEP_LIMA As String = "15"
+    Public Const PRO_LIMA As String = "01"
+    Public Const DIS_LIMA As String = "01"
+    Public Const ACEPTADO_SUNAT As String = "0"
+
+
 
 End Module

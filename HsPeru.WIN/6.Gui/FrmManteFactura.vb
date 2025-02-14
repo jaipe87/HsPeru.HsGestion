@@ -4,6 +4,7 @@ Public Class FrmManteFactura
     Private TipoCPE As Integer
     Public form_datclipro As CLIPRO
     Public form_datArti As TABART
+    Public form_dattabfac As TABFAC
     Dim m_tipmon As Integer = 0
     Sub New()
 
@@ -181,6 +182,49 @@ Public Class FrmManteFactura
 
         End If
     End Sub
+    Function Graba() As Boolean
+        Dim oTabfac As New TABFAC
+
+        Totales()
+
+        If txtCodigo.Text.Trim.Length = 0 Then
+            MessageBox.Show("Seleccione un cliente", TITULO, MessageBoxButtons.OK, MessageBoxIcon.Information)
+            txtCodigo.Focus()
+            Return False
+        End If
+
+        If NothingToInteger(cboTabVen.SelectedValue) = 0 Then
+            MessageBox.Show("Seleccione un Vendedor", TITULO, MessageBoxButtons.OK, MessageBoxIcon.Information)
+            cboTabVen.Focus()
+            Return False
+        End If
+
+        If form_datclipro.TIPDOC <> TipDocClie.RUC And NothingToInteger(cboTabdoc.SelectedValue) = TipDocCPE.FAC Then
+            MessageBox.Show("No se puede facturar a clientes sin RUC", TITULO, MessageBoxButtons.OK, MessageBoxIcon.Information)
+            txtCodigo.Focus()
+            Return False
+        End If
+
+        If Not form_dattabfac Is Nothing Then
+            If form_dattabfac.CDR_SUNAT = ACEPTADO_SUNAT And form_dattabfac.STELECENVIADO = 1 Then
+                MessageBox.Show("No se modificar un documento enviado y aceptado por SUNAT !!", TITULO, MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Return False
+            End If
+
+        End If
+
+
+        If StringToDouble(lblTotal.Text) >= GMontoBoleta And NothingToInteger(cboTabdoc.SelectedValue) = TipDocCPE.BOL And StringToInteger(txtCodigo.Text) = CLIENTEVARIOS Then
+            MessageBox.Show("El DNI es obligatorio para boletas de venta, para importes iguales o mayores a S/ " & Format(GMontoBoleta, "##,###0.00"), TITULO, MessageBoxButtons.OK, MessageBoxIcon.Information)
+            txtCodigo.Focus()
+            Return False
+        End If
+
+
+
+
+
+    End Function
 #End Region
 
 #Region "Eventos"
@@ -210,13 +254,16 @@ Public Class FrmManteFactura
     End Sub
 
     Private Sub btnReniec_Click(sender As Object, e As EventArgs) Handles btnReniec.Click
-        form_datclipro = ConsultaReniec(txtCodigo.Text.Trim)
+        form_datclipro = ConsultaReniec(txtCodigo.Text.Trim, TipReg.CLI)
         If Not IsNothing(form_datclipro) Then
             txtCodigo.Text = form_datclipro.CODIGO.ToString
             txtRazsoc.Text = form_datclipro.TRAZSOC
             txtDireccion.Text = form_datclipro.DIRECC
             lblNroDoc.Text = GetAbrevDoc(form_datclipro.TIPDOC) & "-" & form_datclipro.NRODOC
             VerificaCombo(cboTabVen, form_datclipro.CODVEN)
+            oCombo.CargaSucursalesClientes(form_datclipro.CODIGO)
+            CargarComboBox(oCombo.CargaSucursalesClientes(form_datclipro.CODIGO), "CODSUC", "DIRECC", cboCliSucu)
+            VerificaCombo(cboCliSucu, 0)
         End If
     End Sub
 
@@ -232,6 +279,9 @@ Public Class FrmManteFactura
             txtDireccion.Text = form_datclipro.DIRECC
             lblNroDoc.Text = GetAbrevDoc(form_datclipro.TIPDOC) & "-" & form_datclipro.NRODOC
             VerificaCombo(cboTabVen, form_datclipro.CODVEN)
+            oCombo.CargaSucursalesClientes(form_datclipro.CODIGO)
+            CargarComboBox(oCombo.CargaSucursalesClientes(form_datclipro.CODIGO), "CODSUC", "DIRECC", cboCliSucu)
+            VerificaCombo(cboCliSucu, 0)
         End If
     End Sub
 
@@ -244,6 +294,9 @@ Public Class FrmManteFactura
             txtDireccion.Text = form_datclipro.DIRECC
             lblNroDoc.Text = GetAbrevDoc(form_datclipro.TIPDOC) & "-" & form_datclipro.NRODOC
             VerificaCombo(cboTabVen, form_datclipro.CODVEN)
+            oCombo.CargaSucursalesClientes(form_datclipro.CODIGO)
+            CargarComboBox(oCombo.CargaSucursalesClientes(form_datclipro.CODIGO), "CODSUC", "DIRECC", cboCliSucu)
+            VerificaCombo(cboCliSucu, 0)
         End If
     End Sub
 
@@ -268,6 +321,8 @@ Public Class FrmManteFactura
                 End If
             Case 2
             Case 3
+                Graba()
+
             Case 4
             Case 5
         End Select
@@ -424,8 +479,98 @@ Public Class FrmManteFactura
     End Sub
 
     Private Sub cboTabSerie_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboTabSerie.SelectedIndexChanged
-
+        Dim oTabfac As TABFAC
+        If txtNumdoc.Enabled Then
+            oTabfac = oCombo.Obtener_Numdoc(NothingToString(cboTabSerie.SelectedValue), NothingToInteger(cboTabdoc.SelectedValue))
+            If Not IsNothing(oTabfac) Then
+                txtNumdoc.Text = oTabfac.NUMDOC
+                lblSucursal.Text = oTabfac.DESSUC
+            End If
+        End If
     End Sub
+
+    Private Sub btnSunat_Click(sender As Object, e As EventArgs) Handles btnSunat.Click
+        form_datclipro = ConsultaRuc(txtCodigo.Text.Trim, TipReg.CLI)
+        If Not IsNothing(form_datclipro) Then
+            txtCodigo.Text = form_datclipro.CODIGO.ToString
+            txtRazsoc.Text = form_datclipro.TRAZSOC
+            txtDireccion.Text = form_datclipro.DIRECC
+            lblNroDoc.Text = GetAbrevDoc(form_datclipro.TIPDOC) & "-" & form_datclipro.NRODOC
+            VerificaCombo(cboTabVen, form_datclipro.CODVEN)
+            oCombo.CargaSucursalesClientes(form_datclipro.CODIGO)
+            CargarComboBox(oCombo.CargaSucursalesClientes(form_datclipro.CODIGO), "CODSUC", "DIRECC", cboCliSucu)
+            VerificaCombo(cboCliSucu, 0)
+        End If
+    End Sub
+
+    Private Sub cboCliSucu_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboCliSucu.SelectedIndexChanged
+        If cboCliSucu.Text.Trim.Length > 0 Then txtDireccion.Text = cboCliSucu.Text
+    End Sub
+
+    Private Sub dtpFecha_KeyDown(sender As Object, e As KeyEventArgs) Handles dtpFecha.KeyDown
+        If e.KeyCode = Keys.Enter Then
+
+            SendKeys.Send("{tab}")
+        End If
+    End Sub
+
+    Private Sub dtpVencimiento_KeyDown(sender As Object, e As KeyEventArgs) Handles dtpVencimiento.KeyDown
+        If e.KeyCode = Keys.Enter Then
+
+            SendKeys.Send("{tab}")
+        End If
+    End Sub
+
+    Private Sub txtNumGuia1_KeyDown(sender As Object, e As KeyEventArgs) Handles txtNumGuia1.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            txtNumGuia1.Text = txtNumGuia1.Text.PadLeft(4, Convert.ToChar("0"))
+            SendKeys.Send("{tab}")
+        End If
+    End Sub
+
+    Private Sub txtNumGuia2_KeyDown(sender As Object, e As KeyEventArgs) Handles txtNumGuia2.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            txtNumGuia2.Text = txtNumGuia2.Text.PadLeft(8, Convert.ToChar("0"))
+            SendKeys.Send("{tab}")
+        End If
+    End Sub
+
+    Private Sub cboForPago_KeyDown(sender As Object, e As KeyEventArgs) Handles cboForPago.KeyDown
+        If e.KeyCode = Keys.Enter Then
+
+            SendKeys.Send("{tab}")
+        End If
+    End Sub
+
+    Private Sub txtObs_KeyDown(sender As Object, e As KeyEventArgs) Handles txtObs.KeyDown
+        If e.KeyCode = Keys.Enter Then
+
+            SendKeys.Send("{tab}")
+        End If
+    End Sub
+
+    Private Sub cboTabMon_KeyDown(sender As Object, e As KeyEventArgs) Handles cboTabMon.KeyDown
+        If e.KeyCode = Keys.Enter Then
+
+            SendKeys.Send("{tab}")
+        End If
+    End Sub
+
+    Private Sub txtOC_KeyDown(sender As Object, e As KeyEventArgs) Handles txtOC.KeyDown
+        If e.KeyCode = Keys.Enter Then
+
+            SendKeys.Send("{tab}")
+        End If
+    End Sub
+
+    Private Sub cboTabVen_KeyDown(sender As Object, e As KeyEventArgs) Handles cboTabVen.KeyDown
+        If e.KeyCode = Keys.Enter Then
+
+            SendKeys.Send("{tab}")
+        End If
+    End Sub
+
+
 #End Region
 
 End Class

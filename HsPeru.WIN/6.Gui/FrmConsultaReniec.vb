@@ -1,4 +1,4 @@
-﻿
+﻿Option Strict On
 Imports System.Text
 Imports System.Net
 Imports System.IO
@@ -13,9 +13,25 @@ Public Class FrmConsultaReniec
         InitializeComponent()
 
         ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
-
+        Inicia()
     End Sub
 #Region "Métodos"
+
+    Sub Inicia()
+
+
+        CargarComboBox(oCombo.CargaDepartamento(), "CODDEP", "NOMDEP", cboDepartamento, SELECCIONAR)
+        VerificaCombo(cboDepartamento, DEP_LIMA)
+        CargaProvincia()
+        VerificaCombo(cboProvincia, PRO_LIMA)
+        CargaDistrito()
+        VerificaCombo(cboDistrito, DIS_LIMA)
+
+        CargarComboBox(oCombo.CargaTipRegCliente(), "COD", "DES", cboTipRegistro, SELECCIONAR)
+        VerificaCombo(cboTipRegistro, 0)
+
+
+    End Sub
     Async Sub ConsultaReniec()
         Dim DatCliente As CLIPRO
 
@@ -31,23 +47,55 @@ Public Class FrmConsultaReniec
 
         End If
     End Sub
+    Sub CargaProvincia()
+        cboProvincia.DataSource = Nothing
+        If cboDepartamento.SelectedValue IsNot Nothing Then CargarComboBox(oCombo.CargaProvincia(cboDepartamento.SelectedValue.ToString), "CODPRO", "NOMPRO", cboProvincia, SELECCIONAR)
+    End Sub
+    Sub CargaDistrito()
+        cboDistrito.DataSource = Nothing
+        If cboProvincia.SelectedValue IsNot Nothing Then CargarComboBox(oCombo.CargaDistrito(cboDepartamento.SelectedValue.ToString, cboProvincia.SelectedValue.ToString), "CODDIS", "NOMDIS", cboDistrito, SELECCIONAR)
+    End Sub
     Sub Graba()
         Dim oCliente As New DAL_CLIPRO
         Dim datCliente As New CLIPRO
         If txtnumDni.Text.Trim.Length = 0 Or txtnumDni.Text.Trim.Length < 8 Then
             MessageBox.Show("Ingrese un Nro. DNI correcto", TITULO, MessageBoxButtons.OK, MessageBoxIcon.Information)
+            txtnumDni.Focus()
             Return
         End If
         If txtpaterno.Text.Trim.Length = 0 Then
             MessageBox.Show("Ingrese el Apellido Paterno", TITULO, MessageBoxButtons.OK, MessageBoxIcon.Information)
+            txtpaterno.Focus()
             Return
         End If
         If txtMaterno.Text.Trim.Length = 0 Then
             MessageBox.Show("Ingrese el Apellido Materno", TITULO, MessageBoxButtons.OK, MessageBoxIcon.Information)
+            txtMaterno.Focus()
             Return
         End If
         If txtNombre.Text.Trim.Length = 0 Then
             MessageBox.Show("Ingrese los Nombres", TITULO, MessageBoxButtons.OK, MessageBoxIcon.Information)
+            txtNombre.Focus()
+            Return
+        End If
+        If cboDepartamento.SelectedValue Is Nothing Then
+            MessageBox.Show("Seleccione un departamento", TITULO, MessageBoxButtons.OK, MessageBoxIcon.Information)
+            cboDepartamento.Focus()
+            Return
+        End If
+        If cboProvincia.SelectedValue Is Nothing Then
+            MessageBox.Show("Seleccione una provincia", TITULO, MessageBoxButtons.OK, MessageBoxIcon.Information)
+            cboProvincia.Focus()
+            Return
+        End If
+        If cboDistrito.SelectedValue Is Nothing Then
+            MessageBox.Show("Seleccione una distrito", TITULO, MessageBoxButtons.OK, MessageBoxIcon.Information)
+            cboDistrito.Focus()
+            Return
+        End If
+        If cboTipRegistro.SelectedValue Is Nothing Then
+            MessageBox.Show("Seleccione un tipo de registro", TITULO, MessageBoxButtons.OK, MessageBoxIcon.Information)
+            cboTipRegistro.Focus()
             Return
         End If
         If txtCorreo.Text.Trim.Length > 0 Then
@@ -59,13 +107,17 @@ Public Class FrmConsultaReniec
 
         datCliente = oCliente.Insert_wsReniec(New CLIPRO With {
                                  .NRODOC = txtnumDni.Text.Trim,
+                                 .TIPREG = DirectCast(cboTipRegistro.SelectedValue, Integer),
                                  .RAZSOC = txtpaterno.Text.Trim,
                                  .APEMAT = txtMaterno.Text.Trim,
                                  .NOMBRE = txtNombre.Text.Trim,
                                  .DIRECC = txtDirección.Text.Trim,
                                  .TELEFO = txtTelefonos.Text.Trim,
                                  .CELULAR = txtCelular.Text.Trim,
-                                 .OTROS = txtCorreo.Text.Trim
+                                 .OTROS = txtCorreo.Text.Trim,
+                                 .CODDEP = cboDepartamento.SelectedValue.ToString(),
+                                 .CODPRO = cboProvincia.SelectedValue.ToString(),
+                                 .CODDIS = cboDistrito.SelectedValue.ToString()
                                  })
 
 
@@ -79,9 +131,9 @@ Public Class FrmConsultaReniec
         End If
 
     End Sub
-    Sub Nuevo(ByVal Dni As String)
+    Sub Nuevo(ByVal Dni As String, ByVal TipReg As Integer)
         txtnumDni.Text = Dni
-
+        cboTipRegistro.SelectedValue = TipReg
         ConsultaReniec()
 
     End Sub
@@ -115,6 +167,16 @@ Public Class FrmConsultaReniec
     Private Sub FrmConsultaReniec_Shown(sender As Object, e As EventArgs) Handles MyBase.Shown
         txtnumDni.Focus()
     End Sub
+
+    Private Sub cboDepartamento_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboDepartamento.SelectedIndexChanged
+        CargaProvincia()
+    End Sub
+
+    Private Sub cboProvincia_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboProvincia.SelectedIndexChanged
+        CargaDistrito()
+    End Sub
+
+
 #End Region
 
 End Class
@@ -174,7 +236,7 @@ Public Class wsReniec
             End Using
 
 
-            Dim _resul As String() = Datos.Split("|")
+            Dim _resul As String() = Datos.Split("|"c)
             If _resul.Count > 0 Then
                 state = Resul.Ok
             Else

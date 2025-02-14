@@ -3,6 +3,7 @@
         PRO = 75
         NP = 40
     End Enum
+
     Public Enum TipElec
         NOESELEC = 0
         ESELEC = 1
@@ -28,9 +29,6 @@
         PRO = 1
         CLI = 2
         AMB = 3
-        OBR = 4
-        EMP = 5
-        OTR = 6
     End Enum
     Public Enum TipPago
         CONTADO = 1

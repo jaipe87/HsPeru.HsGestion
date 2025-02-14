@@ -10,7 +10,7 @@ Public Class DAL_CIA
         Dim datcia As CIA
         Dim row As Dictionary(Of String, String)
 
-        Ssql = "SELECT CIA,DES,RUC,ST FROM tabcia where st=0"
+        Ssql = "SELECT CIA,DES,RUC,ST,DIRECCION,UBIGEO,CODIGO,CTADET,MONTOBOL FROM tabcia where st=0"
         If GCia > 0 Then
             ssql = ssql & " AND cia=" & objDato.CIA
         End If
@@ -25,6 +25,11 @@ Public Class DAL_CIA
                     datcia.DES = row("DES")
                     datcia.RUC = row("RUC")
                     datcia.ST = CType(row("ST"), Integer)
+                    datcia.DIRECCION = row("DIRECCION")
+                    datcia.UBIGEO = row("UBIGEO")
+                    datcia.CODIGO = CType(row("CODIGO"), Integer)
+                    datcia.CTADET = row("CTADET")
+                    datcia.MONTOBOLETA = CType(row("MONTOBOL"), Decimal)
                     listCia.Add(datcia)
                 End While
             End If

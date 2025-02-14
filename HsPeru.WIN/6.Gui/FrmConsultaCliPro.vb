@@ -160,7 +160,11 @@ Public Class FrmConsultaCliPro
     End Sub
 
     Private Sub btnSunat_Click(sender As Object, e As EventArgs) Handles btnSunat.Click
+        form_datclipro = ConsultaRuc(txtCriterio.Text.Trim)
+        If Not IsNothing(form_datclipro) Then
+            txtCriterio.Text = form_datclipro.NRODOC
 
+        End If
     End Sub
 
 
@@ -170,6 +174,8 @@ Public Class FrmConsultaCliPro
     Private Sub DgCliente_RowEnter(sender As Object, e As DataGridViewCellEventArgs) Handles DgCliente.RowEnter
         GetEntidad()
     End Sub
+
+
 
 
 

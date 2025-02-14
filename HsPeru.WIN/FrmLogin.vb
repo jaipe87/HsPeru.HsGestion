@@ -62,11 +62,21 @@ Public Class FrmLogin
             GCia = datcia.CIA
             GDesCia = datcia.DES
             GRuc = datcia.RUC
+            GMontoBoleta = datcia.MONTOBOLETA
+            GDireccion = datcia.DIRECCION
+            GUbigeo = datcia.UBIGEO
+            GCtaDet = datcia.CTADET
+            GCodigoCia = datcia.CODIGO
             SetSucursal()
         Else
             GCia = 0
             GDesCia = ""
             GRuc = ""
+            GMontoBoleta = 0.00
+            GDireccion = ""
+            GUbigeo = ""
+            GCtaDet = ""
+            GCodigoCia = 0
         End If
     End Sub
     Sub SetUsuario(ByVal Optional Inicia As Boolean = False)

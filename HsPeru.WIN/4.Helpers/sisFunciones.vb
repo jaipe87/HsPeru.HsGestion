@@ -669,14 +669,14 @@ Module sisFunciones
     ''' </summary>
     ''' <param name="Dni"></param>
     ''' <returns></returns>
-    Function ConsultaReniec(ByVal Dni As String) As CLIPRO
+    Function ConsultaReniec(ByVal Dni As String, ByVal Optional TipoReg As Integer = TipReg.CLI) As CLIPRO
         Dim datclipro As CLIPRO
         If Not Dni.Trim.Length = 8 Then
             MessageBox.Show("Ingrese un DNI válido", TITULO, MessageBoxButtons.OK, MessageBoxIcon.Information)
             Return Nothing
         End If
         Dim Frm As New FrmConsultaReniec
-        Frm.Nuevo(Dni.Trim)
+        Frm.Nuevo(Dni.Trim, TipoReg)
         Frm.ShowDialog()
 
         datclipro = Frm.form_datclipro
@@ -684,7 +684,26 @@ Module sisFunciones
         Frm.Dispose()
         Return datclipro
     End Function
+    ''' <summary>
+    ''' Consulta rápida para Consulta RUC
+    ''' </summary>
+    ''' <param name="Ruc"></param>
+    ''' <returns></returns>
+    Function ConsultaRuc(ByVal Ruc As String, ByVal Optional TipoReg As Integer = TipReg.CLI) As CLIPRO
+        Dim datclipro As CLIPRO
+        If Not Ruc.Trim.Length = 11 Then
+            MessageBox.Show("Ingrese un RUC válido", TITULO, MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Return Nothing
+        End If
+        Dim Frm As New FrmConsultaRuc
+        Frm.Nuevo(Ruc.Trim, TipoReg)
+        Frm.ShowDialog()
 
+        datclipro = Frm.form_datclipro
+        Frm.Close()
+        Frm.Dispose()
+        Return datclipro
+    End Function
     ''' <summary>
     ''' Búsqueda Rápida para Clientes
     ''' </summary>

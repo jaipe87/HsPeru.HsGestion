@@ -24,13 +24,6 @@ Partial Class FrmConsultaTranslado
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmConsultaTranslado))
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.numero = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.fecha = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.sucurenv = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.cod = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.descri = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.cant = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.sucurrec = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.ToolStripButton3 = New System.Windows.Forms.ToolStripButton()
@@ -49,6 +42,20 @@ Partial Class FrmConsultaTranslado
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.numero = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.fecha = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.sucurenv = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cod = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.descri = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cant = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.sucurrec = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         Me.ToolStrip1.SuspendLayout()
@@ -64,59 +71,18 @@ Partial Class FrmConsultaTranslado
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.numero, Me.fecha, Me.sucurenv, Me.cod, Me.descri, Me.cant, Me.sucurrec})
         Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DataGridView1.Location = New System.Drawing.Point(0, 86)
-        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(2)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowTemplate.Height = 24
         Me.DataGridView1.Size = New System.Drawing.Size(776, 309)
         Me.DataGridView1.TabIndex = 5
-        '
-        'numero
-        '
-        Me.numero.HeaderText = "Nro. Orden"
-        Me.numero.Name = "numero"
-        Me.numero.Width = 110
-        '
-        'fecha
-        '
-        Me.fecha.HeaderText = "Fecha"
-        Me.fecha.Name = "fecha"
-        Me.fecha.Width = 80
-        '
-        'sucurenv
-        '
-        Me.sucurenv.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.sucurenv.HeaderText = "Sucursal que envia"
-        Me.sucurenv.Name = "sucurenv"
-        '
-        'cod
-        '
-        Me.cod.HeaderText = "Cód. Art."
-        Me.cod.Name = "cod"
-        '
-        'descri
-        '
-        Me.descri.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.descri.HeaderText = "Descripción"
-        Me.descri.Name = "descri"
-        '
-        'cant
-        '
-        Me.cant.HeaderText = "Cantidad"
-        Me.cant.Name = "cant"
-        Me.cant.Width = 80
-        '
-        'sucurrec
-        '
-        Me.sucurrec.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.sucurrec.HeaderText = "Sucursal que Recibe"
-        Me.sucurrec.Name = "sucurrec"
         '
         'Panel2
         '
         Me.Panel2.Controls.Add(Me.ToolStrip1)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel2.Location = New System.Drawing.Point(0, 395)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(776, 39)
         Me.Panel2.TabIndex = 4
@@ -159,7 +125,7 @@ Partial Class FrmConsultaTranslado
         Me.Panel1.Controls.Add(Me.GroupBox1)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(776, 86)
         Me.Panel1.TabIndex = 3
@@ -179,9 +145,9 @@ Partial Class FrmConsultaTranslado
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GroupBox1.Location = New System.Drawing.Point(0, 0)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(2)
         Me.GroupBox1.Size = New System.Drawing.Size(776, 86)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
@@ -191,7 +157,7 @@ Partial Class FrmConsultaTranslado
         '
         Me.RadioButton3.AutoSize = True
         Me.RadioButton3.Location = New System.Drawing.Point(203, 60)
-        Me.RadioButton3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.RadioButton3.Margin = New System.Windows.Forms.Padding(2)
         Me.RadioButton3.Name = "RadioButton3"
         Me.RadioButton3.Size = New System.Drawing.Size(55, 17)
         Me.RadioButton3.TabIndex = 15
@@ -203,7 +169,7 @@ Partial Class FrmConsultaTranslado
         '
         Me.RadioButton2.AutoSize = True
         Me.RadioButton2.Location = New System.Drawing.Point(133, 60)
-        Me.RadioButton2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.RadioButton2.Margin = New System.Windows.Forms.Padding(2)
         Me.RadioButton2.Name = "RadioButton2"
         Me.RadioButton2.Size = New System.Drawing.Size(71, 17)
         Me.RadioButton2.TabIndex = 14
@@ -215,7 +181,7 @@ Partial Class FrmConsultaTranslado
         '
         Me.RadioButton1.AutoSize = True
         Me.RadioButton1.Location = New System.Drawing.Point(57, 60)
-        Me.RadioButton1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.RadioButton1.Margin = New System.Windows.Forms.Padding(2)
         Me.RadioButton1.Name = "RadioButton1"
         Me.RadioButton1.Size = New System.Drawing.Size(66, 17)
         Me.RadioButton1.TabIndex = 13
@@ -226,7 +192,7 @@ Partial Class FrmConsultaTranslado
         'Button1
         '
         Me.Button1.Location = New System.Drawing.Point(685, 28)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(2)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(73, 30)
         Me.Button1.TabIndex = 12
@@ -237,7 +203,7 @@ Partial Class FrmConsultaTranslado
         '
         Me.ComboBox2.FormattingEnabled = True
         Me.ComboBox2.Location = New System.Drawing.Point(519, 24)
-        Me.ComboBox2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ComboBox2.Margin = New System.Windows.Forms.Padding(2)
         Me.ComboBox2.Name = "ComboBox2"
         Me.ComboBox2.Size = New System.Drawing.Size(135, 21)
         Me.ComboBox2.TabIndex = 11
@@ -256,7 +222,7 @@ Partial Class FrmConsultaTranslado
         '
         Me.DateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.DateTimePicker2.Location = New System.Drawing.Point(154, 25)
-        Me.DateTimePicker2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.DateTimePicker2.Margin = New System.Windows.Forms.Padding(2)
         Me.DateTimePicker2.Name = "DateTimePicker2"
         Me.DateTimePicker2.Size = New System.Drawing.Size(94, 20)
         Me.DateTimePicker2.TabIndex = 9
@@ -265,7 +231,7 @@ Partial Class FrmConsultaTranslado
         '
         Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.DateTimePicker1.Location = New System.Drawing.Point(57, 25)
-        Me.DateTimePicker1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.DateTimePicker1.Margin = New System.Windows.Forms.Padding(2)
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(94, 20)
         Me.DateTimePicker1.TabIndex = 8
@@ -274,7 +240,7 @@ Partial Class FrmConsultaTranslado
         '
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Location = New System.Drawing.Point(315, 24)
-        Me.ComboBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ComboBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(135, 21)
         Me.ComboBox1.TabIndex = 7
@@ -299,6 +265,88 @@ Partial Class FrmConsultaTranslado
         Me.Label1.TabIndex = 5
         Me.Label1.Text = "Sucursal :"
         '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.HeaderText = "Nro. Orden"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        Me.DataGridViewTextBoxColumn1.Width = 110
+        '
+        'DataGridViewTextBoxColumn2
+        '
+        Me.DataGridViewTextBoxColumn2.HeaderText = "Fecha"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        Me.DataGridViewTextBoxColumn2.Width = 80
+        '
+        'DataGridViewTextBoxColumn3
+        '
+        Me.DataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.DataGridViewTextBoxColumn3.HeaderText = "Sucursal que envia"
+        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        '
+        'DataGridViewTextBoxColumn4
+        '
+        Me.DataGridViewTextBoxColumn4.HeaderText = "Cód. Art."
+        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
+        '
+        'DataGridViewTextBoxColumn5
+        '
+        Me.DataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.DataGridViewTextBoxColumn5.HeaderText = "Descripción"
+        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
+        '
+        'DataGridViewTextBoxColumn6
+        '
+        Me.DataGridViewTextBoxColumn6.HeaderText = "Cantidad"
+        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
+        Me.DataGridViewTextBoxColumn6.Width = 80
+        '
+        'DataGridViewTextBoxColumn7
+        '
+        Me.DataGridViewTextBoxColumn7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.DataGridViewTextBoxColumn7.HeaderText = "Sucursal que Recibe"
+        Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
+        '
+        'numero
+        '
+        Me.numero.HeaderText = "Nro. Orden"
+        Me.numero.Name = "numero"
+        Me.numero.Width = 110
+        '
+        'fecha
+        '
+        Me.fecha.HeaderText = "Fecha"
+        Me.fecha.Name = "fecha"
+        Me.fecha.Width = 80
+        '
+        'sucurenv
+        '
+        Me.sucurenv.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.sucurenv.HeaderText = "Sucursal que envia"
+        Me.sucurenv.Name = "sucurenv"
+        '
+        'cod
+        '
+        Me.cod.HeaderText = "Cód. Art."
+        Me.cod.Name = "cod"
+        '
+        'descri
+        '
+        Me.descri.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.descri.HeaderText = "Descripción"
+        Me.descri.Name = "descri"
+        '
+        'cant
+        '
+        Me.cant.HeaderText = "Cantidad"
+        Me.cant.Name = "cant"
+        Me.cant.Width = 80
+        '
+        'sucurrec
+        '
+        Me.sucurrec.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.sucurrec.HeaderText = "Sucursal que Recibe"
+        Me.sucurrec.Name = "sucurrec"
+        '
         'FrmConsultaTranslado
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -307,7 +355,7 @@ Partial Class FrmConsultaTranslado
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "FrmConsultaTranslado"
         Me.Text = "FrmConsultaTranslado"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -348,4 +396,11 @@ Partial Class FrmConsultaTranslado
     Friend WithEvents Button1 As Button
     Friend WithEvents ComboBox2 As ComboBox
     Friend WithEvents Label3 As Label
+    Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn7 As DataGridViewTextBoxColumn
 End Class

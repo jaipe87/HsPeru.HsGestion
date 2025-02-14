@@ -274,7 +274,12 @@ Public Class HsDataGridViewCellNow
         Return rowindex
     End Function
 
-
+    ''' <summary>
+    '''  Elimina una fila a la grilla usando el indice de la columna
+    ''' </summary>
+    ''' <param name="Indexcol">Indice la de la columna</param>
+    ''' <param name="EnumerarFila">correlativo de la fila</param>
+    ''' <returns></returns>
     Public Function HsDeleteRow(ByVal Indexcol As Integer, ByVal Optional EnumerarFila As Boolean = False) As Integer
         Dim TotalRow As Integer = Me.Rows.Count
         If TotalRow = 0 Then MensajeSimple("No hay Filas a eliminar") : Return 0
@@ -293,6 +298,12 @@ Public Class HsDataGridViewCellNow
         Return TotalRow
 
     End Function
+    ''' <summary>
+    ''' Elimina una fila a la grilla usando el nombre de la columna
+    ''' </summary>
+    ''' <param name="NameCol">nombre de la columna</param>
+    ''' <param name="EnumerarFila">correlativo de la fila</param>
+    ''' <returns></returns>
     Public Function HsDeleteRow(ByVal NameCol As String, ByVal Optional EnumerarFila As Boolean = False) As Integer
         Dim TotalRow As Integer = Me.Rows.Count
         If TotalRow < 0 Then MensajeSimple("No hay Filas a eliminar") : Return 0

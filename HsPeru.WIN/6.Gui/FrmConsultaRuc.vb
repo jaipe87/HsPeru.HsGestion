@@ -1,5 +1,5 @@
 ﻿
-
+Option Strict On
 Imports System.Text
 Imports System.Net
 Imports System.IO
@@ -13,15 +13,29 @@ Public Class FrmConsultaRuc
         InitializeComponent()
 
         ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
-
+        Inicia()
     End Sub
 #Region "Métodos"
+    Sub Inicia()
 
+
+        CargarComboBox(oCombo.CargaDepartamento(), "CODDEP", "NOMDEP", cboDepartamento, SELECCIONAR)
+        VerificaCombo(cboDepartamento, DEP_LIMA)
+        CargaProvincia()
+        VerificaCombo(cboProvincia, PRO_LIMA)
+        CargaDistrito()
+        VerificaCombo(cboDistrito, DIS_LIMA)
+
+        CargarComboBox(oCombo.CargaTipRegCliente(), "COD", "DES", cboTipRegistro, SELECCIONAR)
+        VerificaCombo(cboTipRegistro, 0)
+
+
+    End Sub
     Async Sub ConsultaRuc()
         Dim DatCliente As CLIPRO
 
-        Dim oReniec As New wsReniec
-        DatCliente = Await oReniec.GetInfo(txtnumRuc.Text.Trim)
+        Dim oRuc As New wsRuc
+        DatCliente = Await oRuc.GetInfo(txtnumRuc.Text.Trim)
 
 
         If Not IsNothing(DatCliente) Then
@@ -34,21 +48,113 @@ Public Class FrmConsultaRuc
             LblProfesion.Text = DatCliente.SUNAT_PROFESION
             LblTipo.Text = DatCliente.SUNAT_TIPO
             LblFechaInscripcion.Text = DatCliente.SUNAT_FECINSCRIPCION
-
+            VerificaCombo(cboDepartamento, DatCliente.CODDEP)
+            CargaProvincia()
+            VerificaCombo(cboProvincia, DatCliente.CODPRO)
+            CargaDistrito()
+            VerificaCombo(cboDistrito, DatCliente.CODDIS)
         End If
     End Sub
 
-
-    Sub Nuevo(ByVal Ruc As String)
+    Sub CargaProvincia()
+        cboProvincia.DataSource = Nothing
+        If cboDepartamento.SelectedValue IsNot Nothing Then CargarComboBox(oCombo.CargaProvincia(cboDepartamento.SelectedValue.ToString), "CODPRO", "NOMPRO", cboProvincia, SELECCIONAR)
+    End Sub
+    Sub CargaDistrito()
+        cboDistrito.DataSource = Nothing
+        If cboProvincia.SelectedValue IsNot Nothing Then CargarComboBox(oCombo.CargaDistrito(cboDepartamento.SelectedValue.ToString, cboProvincia.SelectedValue.ToString), "CODDIS", "NOMDIS", cboDistrito, SELECCIONAR)
+    End Sub
+    Sub Nuevo(ByVal Ruc As String, ByVal Tipreg As Integer)
         txtnumRuc.Text = Ruc
-
+        cboTipRegistro.SelectedValue = Tipreg
         ConsultaRuc()
+
+    End Sub
+    Sub Graba()
+        Dim oCliente As New DAL_CLIPRO
+        Dim datCliente As New CLIPRO
+        If txtnumRuc.Text.Trim.Length = 0 Or txtnumRuc.Text.Trim.Length < 11 Then
+            MessageBox.Show("Ingrese un Nro. RUC correcto", TITULO, MessageBoxButtons.OK, MessageBoxIcon.Information)
+            txtnumRuc.Focus()
+            Return
+        End If
+
+        If TxtRazsoc.Text.Trim.Length = 0 Then
+            MessageBox.Show("Ingrese la Razón Social correcta", TITULO, MessageBoxButtons.OK, MessageBoxIcon.Information)
+            TxtRazsoc.Focus()
+            Return
+        End If
+        If txtDirección.Text.Trim.Length = 0 Then
+            MessageBox.Show("Ingrese la Dirección correcta", TITULO, MessageBoxButtons.OK, MessageBoxIcon.Information)
+            txtDirección.Focus()
+
+            Return
+        End If
+        If cboDepartamento.SelectedValue Is Nothing Then
+            MessageBox.Show("Seleccione un departamento", TITULO, MessageBoxButtons.OK, MessageBoxIcon.Information)
+            cboDepartamento.Focus()
+            Return
+        End If
+        If cboProvincia.SelectedValue Is Nothing Then
+            MessageBox.Show("Seleccione una provincia", TITULO, MessageBoxButtons.OK, MessageBoxIcon.Information)
+            cboProvincia.Focus()
+            Return
+        End If
+        If cboDistrito.SelectedValue Is Nothing Then
+            MessageBox.Show("Seleccione una distrito", TITULO, MessageBoxButtons.OK, MessageBoxIcon.Information)
+            cboDistrito.Focus()
+            Return
+        End If
+        If cboTipRegistro.SelectedValue Is Nothing Then
+            MessageBox.Show("Seleccione un tipo de registro", TITULO, MessageBoxButtons.OK, MessageBoxIcon.Information)
+            cboTipRegistro.Focus()
+            Return
+        End If
+
+        If txtCorreo.Text.Trim.Length > 0 Then
+            If Not CMail(txtCorreo.Text.Trim) Then
+                MessageBox.Show("Ingrese un formato correcto de E-mail", TITULO, MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Return
+            End If
+        End If
+
+        datCliente = oCliente.Insert_wsRuc(New CLIPRO With {
+                                 .TIPREG = DirectCast(cboTipRegistro.SelectedValue, Integer),
+                                 .NRODOC = txtnumRuc.Text.Trim,
+                                 .RAZSOC = TxtRazsoc.Text.Trim,
+                                 .DIRECC = txtDirección.Text.Trim,
+                                 .RAZCOM = TxtRazonComercial.Text.Trim,
+                                 .CODDEP = cboDepartamento.SelectedValue.ToString(),
+                                 .CODPRO = cboProvincia.SelectedValue.ToString(),
+                                 .CODDIS = cboDistrito.SelectedValue.ToString(),
+                                 .TELEFO = txtTelefonos.Text.Trim,
+                                 .CELULAR = txtCelular.Text.Trim,
+                                 .OTROS = txtCorreo.Text.Trim
+                                 })
+
+
+        If Not IsNothing(datCliente) Then
+            form_datclipro = datCliente
+            MessageBox.Show("Se registró el cliente con código " & datCliente.CODIGO, TITULO, MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Hide()
+        Else
+            form_datclipro = Nothing
+            MessageBox.Show("No se registró el cliente", TITULO, MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End If
 
     End Sub
 #End Region
 
 
 #Region "Eventos"
+
+    Private Sub cboProvincia_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboProvincia.SelectedIndexChanged
+        CargaDistrito()
+    End Sub
+
+    Private Sub cboDepartamento_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboDepartamento.SelectedIndexChanged
+        CargaProvincia()
+    End Sub
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
         Close()
     End Sub
@@ -68,6 +174,14 @@ Public Class FrmConsultaRuc
 
     Private Sub FrmConsultaRuc_Shown(sender As Object, e As EventArgs) Handles MyBase.Shown
         txtnumRuc.Focus()
+    End Sub
+
+    Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
+        Graba()
+    End Sub
+
+    Private Sub btnConsultar_Click(sender As Object, e As EventArgs) Handles btnConsultar.Click
+        ConsultaRuc()
     End Sub
 
 #End Region
@@ -135,7 +249,7 @@ Public Class wsRuc
             End Using
 
 
-            Dim _resul As String() = Datos.Split("|")
+            Dim _resul As String() = Datos.Split("|"c)
 
             If _resul.Count > 0 Then
                 state = Resul.Ok

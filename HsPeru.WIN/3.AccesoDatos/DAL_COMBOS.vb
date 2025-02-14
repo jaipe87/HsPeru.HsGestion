@@ -733,7 +733,7 @@ Public Class DAL_COMBOS
                         .NOMDEP = Row("NOMDEP")
                         .NOMDIS = Row("NOMDIS")
                         .NOMPRO = Row("NOMPRO")
-                        .DIRECC = Row("DIRECC") & " - " & .NOMDIS & " - " & .NOMPRO & " - " & .NOMDEP
+                        .DIRECC = Row("DIRECC")
                         .RAZSOC = Row("RAZSOC")
                     End With
                     lstTabsuc.Add(datTabsuc)
@@ -745,7 +745,36 @@ Public Class DAL_COMBOS
         End Using
     End Function
 
-    Public Function Obtener_Numdoc(Numser As String, Tipdoc As Integer) As String
+    Public Function Obtener_Numdoc(Numser As String, Tipdoc As Integer) As TABFAC
+        Dim oTabfac As New TABFAC
+        Dim dr As OdbcDataReader
+        Dim Row As Dictionary(Of String, String)
+        Ssql = "call sp_numdoc('" & GCia & "','" & Numser & "','" & Tipdoc & "',@xnumdoc,@xcodsuc,@xdessuc); "
+        Using cmd As New OdbcCommand
+            cmd.Connection = Cn
+            cmd.CommandText = Ssql
+            cmd.ExecuteNonQuery()
+
+
+            Ssql = "SELECT  cast(@xnumdoc as char) numdoc, cast(@xcodsuc as char) codsuc, cast(@xdessuc as char) dessuc;"
+            cmd.CommandText = Ssql
+            dr = cmd.ExecuteReader()
+            If dr.HasRows Then
+                While dr.Read()
+                    Row = FetchAsoc(dr)
+                    With oTabfac
+                        .NUMDOC = Row("numdoc").ToString()
+                        .DESSUC = Row("dessuc").ToString()
+                        .CODSUC = Convert.ToInt32(Row("codsuc"))
+                    End With
+
+                End While
+                Return oTabfac
+            Else
+                Return Nothing
+            End If
+            dr.Close()
+        End Using
 
     End Function
 

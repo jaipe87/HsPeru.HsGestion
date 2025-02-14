@@ -13,6 +13,11 @@
     Public GSerCaj As Integer
     Public GDesCia As String
     Public GRuc As String
+    Public GMontoBoleta As Double
+    Public GDireccion As String
+    Public GUbigeo As String
+    Public GCtaDet As String
+    Public GCodigoCia As Integer
     ' sucursal
     Public GSucursal As String
     Public GDesSuc As String

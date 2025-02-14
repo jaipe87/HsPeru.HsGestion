@@ -23,6 +23,8 @@ Partial Class FrmConsultaRuc
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.cboTipRegistro = New System.Windows.Forms.ComboBox()
+        Me.Label10 = New System.Windows.Forms.Label()
         Me.TxtRazonComercial = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.LblProfesion = New System.Windows.Forms.Label()
@@ -66,6 +68,8 @@ Partial Class FrmConsultaRuc
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
+        Me.Panel2.Controls.Add(Me.cboTipRegistro)
+        Me.Panel2.Controls.Add(Me.Label10)
         Me.Panel2.Controls.Add(Me.TxtRazonComercial)
         Me.Panel2.Controls.Add(Me.Label7)
         Me.Panel2.Controls.Add(Me.LblProfesion)
@@ -105,6 +109,27 @@ Partial Class FrmConsultaRuc
         Me.Panel2.Size = New System.Drawing.Size(629, 369)
         Me.Panel2.TabIndex = 3
         '
+        'cboTipRegistro
+        '
+        Me.cboTipRegistro.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.cboTipRegistro.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.cboTipRegistro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboTipRegistro.FormattingEnabled = True
+        Me.cboTipRegistro.Location = New System.Drawing.Point(431, 262)
+        Me.cboTipRegistro.Name = "cboTipRegistro"
+        Me.cboTipRegistro.Size = New System.Drawing.Size(195, 21)
+        Me.cboTipRegistro.TabIndex = 9
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(428, 246)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(70, 13)
+        Me.Label10.TabIndex = 192
+        Me.Label10.Text = "Tip.Registro :"
+        Me.Label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
         'TxtRazonComercial
         '
         Me.TxtRazonComercial.BackColor = System.Drawing.Color.White
@@ -113,7 +138,7 @@ Partial Class FrmConsultaRuc
         Me.TxtRazonComercial.MaxLength = 11
         Me.TxtRazonComercial.Name = "TxtRazonComercial"
         Me.TxtRazonComercial.Size = New System.Drawing.Size(604, 20)
-        Me.TxtRazonComercial.TabIndex = 15
+        Me.TxtRazonComercial.TabIndex = 10
         '
         'Label7
         '
@@ -323,7 +348,7 @@ Partial Class FrmConsultaRuc
         Me.txtCorreo.Location = New System.Drawing.Point(12, 342)
         Me.txtCorreo.Name = "txtCorreo"
         Me.txtCorreo.Size = New System.Drawing.Size(609, 20)
-        Me.txtCorreo.TabIndex = 16
+        Me.txtCorreo.TabIndex = 11
         '
         'Label15
         '
@@ -343,7 +368,7 @@ Partial Class FrmConsultaRuc
         Me.txtCelular.MaxLength = 11
         Me.txtCelular.Name = "txtCelular"
         Me.txtCelular.Size = New System.Drawing.Size(199, 20)
-        Me.txtCelular.TabIndex = 14
+        Me.txtCelular.TabIndex = 8
         '
         'Label13
         '
@@ -363,7 +388,7 @@ Partial Class FrmConsultaRuc
         Me.txtTelefonos.MaxLength = 11
         Me.txtTelefonos.Name = "txtTelefonos"
         Me.txtTelefonos.Size = New System.Drawing.Size(202, 20)
-        Me.txtTelefonos.TabIndex = 13
+        Me.txtTelefonos.TabIndex = 7
         '
         'label25
         '
@@ -405,7 +430,7 @@ Partial Class FrmConsultaRuc
         'txtnumRuc
         '
         Me.txtnumRuc.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtnumRuc.Location = New System.Drawing.Point(16, 21)
+        Me.txtnumRuc.Location = New System.Drawing.Point(16, 16)
         Me.txtnumRuc.MaxLength = 8
         Me.txtnumRuc.Name = "txtnumRuc"
         Me.txtnumRuc.Size = New System.Drawing.Size(128, 20)
@@ -522,4 +547,6 @@ Partial Class FrmConsultaRuc
     Friend WithEvents Label8 As Label
     Private WithEvents TxtRazonComercial As TextBox
     Private WithEvents Label7 As Label
+    Friend WithEvents cboTipRegistro As ComboBox
+    Friend WithEvents Label10 As Label
 End Class

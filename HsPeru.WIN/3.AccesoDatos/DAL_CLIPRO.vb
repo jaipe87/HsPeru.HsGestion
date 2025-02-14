@@ -293,10 +293,62 @@ Public Class DAL_CLIPRO
                 objDato.TIPREG = CInt(TipReg.CLI)
                 objDato.CODGRU = 1
                 objDato.CODPAI = 1
-                objDato.CODDEP = "15"
-                objDato.CODPRO = "01"
-                objDato.CODDIS = "01"
-                objDato.CODCIU = "001"
+                objDato.CODVEN = 1
+
+                Ssql = "INSERT INTO CLIPRO(CIA, CODIGO, TIPDOC, NRODOC, CODGRU, RAZSOC, APEMAT, NOMBRE, DIRECC, CODPAI, CODDEP, CODPRO, CODDIS, CODCIU, CODVEN, TELEFO, CELULAR, TIPREG, FECINS, USRALT, FECALT)VALUES("
+                Ssql = Ssql & GCia & "," & objDato.CODIGO & "," & objDato.TIPDOC & ",'" & objDato.NRODOC & "'," & objDato.CODGRU & ",'" & objDato.RAZSOC & "','"
+                Ssql = Ssql & objDato.APEMAT & "','" & objDato.NOMBRE & "','" & objDato.DIRECC & "'," & objDato.CODPAI & ",'" & objDato.CODDEP & "','" & objDato.CODPRO & "','" & objDato.CODDIS & "','"
+                Ssql = Ssql & objDato.CODCIU & "'," & objDato.CODVEN & ",'" & objDato.TELEFO & "','" & objDato.CELULAR & "'," & objDato.TIPREG & ",NOW()," & GCodUsr & ",NOW()) ON DUPLICATE KEY UPDATE "
+                Ssql = Ssql & "TIPDOC=" & objDato.TIPDOC & ",NRODOC='" & objDato.NRODOC & "',CODGRU=" & objDato.CODGRU & ",RAZSOC='" & objDato.RAZSOC & "',APEMAT='" & objDato.APEMAT & "',NOMBRE='" & objDato.NOMBRE & "',"
+                Ssql = Ssql & "DIRECC='" & objDato.DIRECC & "',CODPAI=" & objDato.CODPAI & ",CODDEP='" & objDato.CODDEP & "',CODPRO='" & objDato.CODPRO & "',CODDIS='" & objDato.CODDIS & "',CODCIU='" & objDato.CODCIU & "',CODVEN=" & objDato.CODVEN & ",TELEFO='" & objDato.TELEFO & "',"
+                Ssql = Ssql & "CELULAR='" & objDato.CELULAR & "',TIPREG=" & objDato.TIPREG & ",FECMOD=NOW(),USRMOD=" & GCodUsr & ",SIT=" & objDato.SIT & ";"
+                cmd.CommandText = Ssql
+                cmd.ExecuteNonQuery()
+
+                If objDato.OTROS.Trim.Length > 0 Then
+                    Ssql = "REPLACE INTO cliprocorreo(cia,codigo,correo)VALUES(" & GCia & "," & objDato.CODIGO & ",'" & objDato.OTROS & "');"
+                    cmd.CommandText = Ssql
+                    cmd.ExecuteNonQuery()
+                End If
+
+                objDato.TRAZSOC = objDato.RAZSOC & " " & objDato.APEMAT & " " & objDato.NOMBRE
+                datCliente = objDato
+                cmd.CommandText = "COMMIT;" : cmd.ExecuteNonQuery()
+            Catch ex As Exception
+                datCliente = Nothing
+                cmd.CommandText = "ROLLBACK;" : cmd.ExecuteNonQuery()
+
+            End Try
+        End Using
+        Return datCliente
+
+    End Function
+    Public Function Insert_wsRuc(ByVal objDato As CLIPRO) As CLIPRO
+        Dim datCliente As New CLIPRO
+        Dim xCount As Integer = 0
+        Using cmd As New OdbcCommand
+            Try
+                cmd.Connection = Cn
+                cmd.CommandText = "START TRANSACTION;" : cmd.ExecuteNonQuery()
+
+                Ssql = "SELECT count(*) FROM CLIPRO WHERE cia=" & GCia & " AND nrodoc='" & objDato.NRODOC & "';"
+                cmd.CommandText = Ssql
+                xCount = Convert.ToInt32(cmd.ExecuteScalar)
+
+
+                If xCount = 0 Then
+                    Ssql = "SELECT  IFNULL(MAX(codigo),0) + 1  FROM CLIPRO WHERE cia=" & GCia & ";"
+                    cmd.CommandText = Ssql
+                    objDato.CODIGO = Convert.ToInt32(cmd.ExecuteScalar)
+                Else
+                    Ssql = "SELECT  CODIGO  FROM CLIPRO WHERE cia=" & GCia & " AND nrodoc='" & objDato.NRODOC & "';"
+                    cmd.CommandText = Ssql
+                    objDato.CODIGO = Convert.ToInt32(cmd.ExecuteScalar)
+                End If
+                objDato.TIPDOC = CInt(TipDocClie.RUC)
+
+                objDato.CODGRU = 1
+                objDato.CODPAI = 1
                 objDato.CODVEN = 1
 
                 Ssql = "INSERT INTO CLIPRO(CIA, CODIGO, TIPDOC, NRODOC, CODGRU, RAZSOC, APEMAT, NOMBRE, DIRECC, CODPAI, CODDEP, CODPRO, CODDIS, CODCIU, CODVEN, TELEFO, CELULAR, TIPREG, FECINS, USRALT, FECALT)VALUES("

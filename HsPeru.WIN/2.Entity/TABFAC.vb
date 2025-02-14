@@ -55,5 +55,7 @@
     Public Property COMP As Integer
     Public Property CODSUC_CLI As Integer
 
+    Public Property DESSUC As String
+
 
 End Class
