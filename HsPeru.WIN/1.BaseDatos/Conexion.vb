@@ -15,6 +15,8 @@ Module Conexion
     End Sub
 
     Public Sub CloseConexion()
+
+
         Cn.Close()
     End Sub
 
