@@ -25,12 +25,12 @@ Partial Class FrmConsultaCliPro
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmConsultaCliPro))
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.btnSunat = New System.Windows.Forms.Button()
         Me.btnReniec = New System.Windows.Forms.Button()
@@ -41,6 +41,13 @@ Partial Class FrmConsultaCliPro
         Me.txtCriterio = New System.Windows.Forms.TextBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.DgCliente = New System.Windows.Forms.DataGridView()
+        Me.colTipReg = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colcodigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colDesdoc = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colNroDoc = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colRazsoc = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.coDirecc = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colEstado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.btnModificar = New System.Windows.Forms.Button()
@@ -54,13 +61,6 @@ Partial Class FrmConsultaCliPro
         Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colTipReg = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colcodigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colDesdoc = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colNroDoc = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colRazsoc = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.coDirecc = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colEstado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.DgCliente, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -209,6 +209,68 @@ Partial Class FrmConsultaCliPro
         Me.DgCliente.Size = New System.Drawing.Size(822, 330)
         Me.DgCliente.TabIndex = 0
         '
+        'colTipReg
+        '
+        Me.colTipReg.DataPropertyName = "DESTIPREG"
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.colTipReg.DefaultCellStyle = DataGridViewCellStyle2
+        Me.colTipReg.HeaderText = "T/R"
+        Me.colTipReg.Name = "colTipReg"
+        Me.colTipReg.ReadOnly = True
+        Me.colTipReg.Width = 40
+        '
+        'colcodigo
+        '
+        Me.colcodigo.DataPropertyName = "CODIGO"
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        Me.colcodigo.DefaultCellStyle = DataGridViewCellStyle3
+        Me.colcodigo.HeaderText = "Código"
+        Me.colcodigo.Name = "colcodigo"
+        Me.colcodigo.ReadOnly = True
+        Me.colcodigo.Width = 50
+        '
+        'colDesdoc
+        '
+        Me.colDesdoc.DataPropertyName = "DESTIPDOC"
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.colDesdoc.DefaultCellStyle = DataGridViewCellStyle4
+        Me.colDesdoc.HeaderText = "T/D"
+        Me.colDesdoc.Name = "colDesdoc"
+        Me.colDesdoc.ReadOnly = True
+        Me.colDesdoc.Width = 40
+        '
+        'colNroDoc
+        '
+        Me.colNroDoc.DataPropertyName = "NRODOC"
+        Me.colNroDoc.HeaderText = "Nro.Doc"
+        Me.colNroDoc.Name = "colNroDoc"
+        Me.colNroDoc.ReadOnly = True
+        '
+        'colRazsoc
+        '
+        Me.colRazsoc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.colRazsoc.DataPropertyName = "TRAZSOC"
+        Me.colRazsoc.HeaderText = "Razón Social (Nombre)"
+        Me.colRazsoc.MinimumWidth = 200
+        Me.colRazsoc.Name = "colRazsoc"
+        Me.colRazsoc.ReadOnly = True
+        '
+        'coDirecc
+        '
+        Me.coDirecc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.coDirecc.DataPropertyName = "DIRECC"
+        Me.coDirecc.HeaderText = "Dirección"
+        Me.coDirecc.Name = "coDirecc"
+        Me.coDirecc.ReadOnly = True
+        '
+        'colEstado
+        '
+        Me.colEstado.DataPropertyName = "ESTADO"
+        Me.colEstado.HeaderText = "Estado"
+        Me.colEstado.Name = "colEstado"
+        Me.colEstado.ReadOnly = True
+        Me.colEstado.Width = 50
+        '
         'Panel3
         '
         Me.Panel3.Controls.Add(Me.btnSalir)
@@ -343,68 +405,6 @@ Partial Class FrmConsultaCliPro
         Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
         Me.DataGridViewTextBoxColumn7.ReadOnly = True
         Me.DataGridViewTextBoxColumn7.Width = 50
-        '
-        'colTipReg
-        '
-        Me.colTipReg.DataPropertyName = "DESTIPREG"
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.colTipReg.DefaultCellStyle = DataGridViewCellStyle2
-        Me.colTipReg.HeaderText = "T/R"
-        Me.colTipReg.Name = "colTipReg"
-        Me.colTipReg.ReadOnly = True
-        Me.colTipReg.Width = 40
-        '
-        'colcodigo
-        '
-        Me.colcodigo.DataPropertyName = "CODIGO"
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        Me.colcodigo.DefaultCellStyle = DataGridViewCellStyle3
-        Me.colcodigo.HeaderText = "Código"
-        Me.colcodigo.Name = "colcodigo"
-        Me.colcodigo.ReadOnly = True
-        Me.colcodigo.Width = 50
-        '
-        'colDesdoc
-        '
-        Me.colDesdoc.DataPropertyName = "DESTIPDOC"
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.colDesdoc.DefaultCellStyle = DataGridViewCellStyle4
-        Me.colDesdoc.HeaderText = "T/D"
-        Me.colDesdoc.Name = "colDesdoc"
-        Me.colDesdoc.ReadOnly = True
-        Me.colDesdoc.Width = 40
-        '
-        'colNroDoc
-        '
-        Me.colNroDoc.DataPropertyName = "NRODOC"
-        Me.colNroDoc.HeaderText = "Nro.Doc"
-        Me.colNroDoc.Name = "colNroDoc"
-        Me.colNroDoc.ReadOnly = True
-        '
-        'colRazsoc
-        '
-        Me.colRazsoc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.colRazsoc.DataPropertyName = "TRAZSOC"
-        Me.colRazsoc.HeaderText = "Razón Social (Nombre)"
-        Me.colRazsoc.MinimumWidth = 200
-        Me.colRazsoc.Name = "colRazsoc"
-        Me.colRazsoc.ReadOnly = True
-        '
-        'coDirecc
-        '
-        Me.coDirecc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.coDirecc.DataPropertyName = "DIRECC"
-        Me.coDirecc.HeaderText = "Dirección"
-        Me.coDirecc.Name = "coDirecc"
-        Me.coDirecc.ReadOnly = True
-        '
-        'colEstado
-        '
-        Me.colEstado.DataPropertyName = "ESTADO"
-        Me.colEstado.HeaderText = "Estado"
-        Me.colEstado.Name = "colEstado"
-        Me.colEstado.ReadOnly = True
-        Me.colEstado.Width = 50
         '
         'FrmConsultaCliPro
         '

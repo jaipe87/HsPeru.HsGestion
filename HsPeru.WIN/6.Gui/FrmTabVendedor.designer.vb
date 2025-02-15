@@ -86,7 +86,7 @@ Partial Class FrmTabVendedor
         Me.UltraTabPageControl1.Controls.Add(Me.Panel2)
         Me.UltraTabPageControl1.Location = New System.Drawing.Point(1, 20)
         Me.UltraTabPageControl1.Name = "UltraTabPageControl1"
-        Me.UltraTabPageControl1.Size = New System.Drawing.Size(602, 280)
+        Me.UltraTabPageControl1.Size = New System.Drawing.Size(598, 274)
         '
         'Panel5
         '
@@ -95,7 +95,7 @@ Partial Class FrmTabVendedor
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel5.Location = New System.Drawing.Point(0, 0)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(525, 280)
+        Me.Panel5.Size = New System.Drawing.Size(536, 274)
         Me.Panel5.TabIndex = 2
         '
         'Panel6
@@ -106,7 +106,7 @@ Partial Class FrmTabVendedor
         Me.Panel6.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel6.Location = New System.Drawing.Point(0, 0)
         Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(525, 41)
+        Me.Panel6.Size = New System.Drawing.Size(536, 35)
         Me.Panel6.TabIndex = 4
         '
         'Label7
@@ -164,7 +164,7 @@ Partial Class FrmTabVendedor
         DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.DgvVendedor.DefaultCellStyle = DataGridViewCellStyle5
         Me.DgvVendedor.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.DgvVendedor.Location = New System.Drawing.Point(0, 41)
+        Me.DgvVendedor.Location = New System.Drawing.Point(0, 35)
         Me.DgvVendedor.Name = "DgvVendedor"
         Me.DgvVendedor.ReadOnly = True
         DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
@@ -179,7 +179,7 @@ Partial Class FrmTabVendedor
         Me.DgvVendedor.RowHeadersWidth = 15
         Me.DgvVendedor.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
         Me.DgvVendedor.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DgvVendedor.Size = New System.Drawing.Size(525, 239)
+        Me.DgvVendedor.Size = New System.Drawing.Size(536, 239)
         Me.DgvVendedor.TabIndex = 0
         '
         'colcod
@@ -234,9 +234,9 @@ Partial Class FrmTabVendedor
         Me.Panel2.Controls.Add(Me.btnModificar)
         Me.Panel2.Controls.Add(Me.btnNuevo)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel2.Location = New System.Drawing.Point(525, 0)
+        Me.Panel2.Location = New System.Drawing.Point(536, 0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(77, 280)
+        Me.Panel2.Size = New System.Drawing.Size(62, 274)
         Me.Panel2.TabIndex = 1
         '
         'btnSalir
@@ -470,7 +470,7 @@ Partial Class FrmTabVendedor
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(604, 301)
+        Me.Panel1.Size = New System.Drawing.Size(600, 295)
         Me.Panel1.TabIndex = 0
         '
         'Panel3
@@ -479,7 +479,7 @@ Partial Class FrmTabVendedor
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel3.Location = New System.Drawing.Point(0, 0)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(604, 301)
+        Me.Panel3.Size = New System.Drawing.Size(600, 295)
         Me.Panel3.TabIndex = 2
         '
         'utbVendedor
@@ -491,7 +491,7 @@ Partial Class FrmTabVendedor
         Me.utbVendedor.Location = New System.Drawing.Point(0, 0)
         Me.utbVendedor.Name = "utbVendedor"
         Me.utbVendedor.SharedControlsPage = Me.UltraTabSharedControlsPage1
-        Me.utbVendedor.Size = New System.Drawing.Size(604, 301)
+        Me.utbVendedor.Size = New System.Drawing.Size(600, 295)
         Me.utbVendedor.Style = Infragistics.Win.UltraWinTabControl.UltraTabControlStyle.Excel
         Me.utbVendedor.TabIndex = 0
         UltraTab1.TabPage = Me.UltraTabPageControl1
@@ -504,14 +504,14 @@ Partial Class FrmTabVendedor
         '
         Me.UltraTabSharedControlsPage1.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabSharedControlsPage1.Name = "UltraTabSharedControlsPage1"
-        Me.UltraTabSharedControlsPage1.Size = New System.Drawing.Size(602, 280)
+        Me.UltraTabSharedControlsPage1.Size = New System.Drawing.Size(598, 274)
         '
         'FrmTabVendedor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
-        Me.ClientSize = New System.Drawing.Size(604, 301)
+        Me.ClientSize = New System.Drawing.Size(600, 295)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MaximizeBox = False

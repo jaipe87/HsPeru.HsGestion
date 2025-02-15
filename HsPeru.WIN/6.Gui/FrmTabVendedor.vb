@@ -79,6 +79,7 @@ Public Class FrmTabVendedor
         Graba()
     End Sub
 #End Region
+
 #Region "Métodos"
     Sub SeleccionarRow()
         Dim xCodven As Integer = 0

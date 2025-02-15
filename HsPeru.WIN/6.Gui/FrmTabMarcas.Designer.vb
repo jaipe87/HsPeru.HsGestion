@@ -61,10 +61,9 @@ Partial Class FrmTabMarcas
         '
         Me.UltraTabPageControl1.Controls.Add(Me.DataGridView1)
         Me.UltraTabPageControl1.Controls.Add(Me.Panel2)
-        Me.UltraTabPageControl1.Location = New System.Drawing.Point(1, 24)
-        Me.UltraTabPageControl1.Margin = New System.Windows.Forms.Padding(4)
+        Me.UltraTabPageControl1.Location = New System.Drawing.Point(1, 23)
         Me.UltraTabPageControl1.Name = "UltraTabPageControl1"
-        Me.UltraTabPageControl1.Size = New System.Drawing.Size(624, 286)
+        Me.UltraTabPageControl1.Size = New System.Drawing.Size(468, 235)
         '
         'DataGridView1
         '
@@ -83,10 +82,9 @@ Partial Class FrmTabMarcas
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3})
         Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DataGridView1.Location = New System.Drawing.Point(0, 0)
-        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(4)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowHeadersWidth = 10
-        Me.DataGridView1.Size = New System.Drawing.Size(513, 286)
+        Me.DataGridView1.Size = New System.Drawing.Size(385, 235)
         Me.DataGridView1.TabIndex = 2
         '
         'Column1
@@ -111,19 +109,17 @@ Partial Class FrmTabMarcas
         Me.Panel2.Controls.Add(Me.Button2)
         Me.Panel2.Controls.Add(Me.Button1)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel2.Location = New System.Drawing.Point(513, 0)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel2.Location = New System.Drawing.Point(385, 0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(111, 286)
+        Me.Panel2.Size = New System.Drawing.Size(83, 235)
         Me.Panel2.TabIndex = 1
         '
         'Button3
         '
         Me.Button3.Image = CType(resources.GetObject("Button3.Image"), System.Drawing.Image)
-        Me.Button3.Location = New System.Drawing.Point(10, 190)
-        Me.Button3.Margin = New System.Windows.Forms.Padding(4)
+        Me.Button3.Location = New System.Drawing.Point(8, 154)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(90, 77)
+        Me.Button3.Size = New System.Drawing.Size(68, 63)
         Me.Button3.TabIndex = 2
         Me.Button3.Text = "Salir"
         Me.Button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -133,10 +129,9 @@ Partial Class FrmTabMarcas
         'Button2
         '
         Me.Button2.Image = CType(resources.GetObject("Button2.Image"), System.Drawing.Image)
-        Me.Button2.Location = New System.Drawing.Point(10, 105)
-        Me.Button2.Margin = New System.Windows.Forms.Padding(4)
+        Me.Button2.Location = New System.Drawing.Point(8, 85)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(90, 77)
+        Me.Button2.Size = New System.Drawing.Size(68, 63)
         Me.Button2.TabIndex = 1
         Me.Button2.Text = "Modificar"
         Me.Button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -146,10 +141,9 @@ Partial Class FrmTabMarcas
         'Button1
         '
         Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
-        Me.Button1.Location = New System.Drawing.Point(10, 20)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(4)
+        Me.Button1.Location = New System.Drawing.Point(8, 16)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(90, 77)
+        Me.Button1.Size = New System.Drawing.Size(68, 63)
         Me.Button1.TabIndex = 0
         Me.Button1.Text = "Nuevo"
         Me.Button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -160,9 +154,8 @@ Partial Class FrmTabMarcas
         '
         Me.UltraTabPageControl2.Controls.Add(Me.Panel1)
         Me.UltraTabPageControl2.Location = New System.Drawing.Point(-10000, -10000)
-        Me.UltraTabPageControl2.Margin = New System.Windows.Forms.Padding(4)
         Me.UltraTabPageControl2.Name = "UltraTabPageControl2"
-        Me.UltraTabPageControl2.Size = New System.Drawing.Size(624, 286)
+        Me.UltraTabPageControl2.Size = New System.Drawing.Size(468, 235)
         '
         'Panel1
         '
@@ -177,19 +170,17 @@ Partial Class FrmTabMarcas
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(624, 286)
+        Me.Panel1.Size = New System.Drawing.Size(468, 235)
         Me.Panel1.TabIndex = 0
         '
         'RadioButton2
         '
         Me.RadioButton2.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.RadioButton2.AutoSize = True
-        Me.RadioButton2.Location = New System.Drawing.Point(350, 124)
-        Me.RadioButton2.Margin = New System.Windows.Forms.Padding(4)
+        Me.RadioButton2.Location = New System.Drawing.Point(262, 102)
         Me.RadioButton2.Name = "RadioButton2"
-        Me.RadioButton2.Size = New System.Drawing.Size(77, 21)
+        Me.RadioButton2.Size = New System.Drawing.Size(63, 17)
         Me.RadioButton2.TabIndex = 8
         Me.RadioButton2.TabStop = True
         Me.RadioButton2.Text = "Inactivo"
@@ -199,10 +190,9 @@ Partial Class FrmTabMarcas
         '
         Me.RadioButton1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.RadioButton1.AutoSize = True
-        Me.RadioButton1.Location = New System.Drawing.Point(219, 124)
-        Me.RadioButton1.Margin = New System.Windows.Forms.Padding(4)
+        Me.RadioButton1.Location = New System.Drawing.Point(164, 102)
         Me.RadioButton1.Name = "RadioButton1"
-        Me.RadioButton1.Size = New System.Drawing.Size(67, 21)
+        Me.RadioButton1.Size = New System.Drawing.Size(55, 17)
         Me.RadioButton1.TabIndex = 7
         Me.RadioButton1.TabStop = True
         Me.RadioButton1.Text = "Activo"
@@ -212,10 +202,9 @@ Partial Class FrmTabMarcas
         '
         Me.Label4.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(146, 127)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label4.Location = New System.Drawing.Point(110, 104)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(60, 17)
+        Me.Label4.Size = New System.Drawing.Size(46, 13)
         Me.Label4.TabIndex = 6
         Me.Label4.Text = "Estado :"
         '
@@ -223,10 +212,9 @@ Partial Class FrmTabMarcas
         '
         Me.Button5.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Button5.Image = CType(resources.GetObject("Button5.Image"), System.Drawing.Image)
-        Me.Button5.Location = New System.Drawing.Point(323, 187)
-        Me.Button5.Margin = New System.Windows.Forms.Padding(4)
+        Me.Button5.Location = New System.Drawing.Point(242, 153)
         Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(90, 77)
+        Me.Button5.Size = New System.Drawing.Size(68, 63)
         Me.Button5.TabIndex = 5
         Me.Button5.Text = "Salir"
         Me.Button5.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -237,10 +225,9 @@ Partial Class FrmTabMarcas
         '
         Me.Button4.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Button4.Image = CType(resources.GetObject("Button4.Image"), System.Drawing.Image)
-        Me.Button4.Location = New System.Drawing.Point(218, 187)
-        Me.Button4.Margin = New System.Windows.Forms.Padding(4)
+        Me.Button4.Location = New System.Drawing.Point(164, 153)
         Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(90, 77)
+        Me.Button4.Size = New System.Drawing.Size(68, 63)
         Me.Button4.TabIndex = 4
         Me.Button4.Text = "Guardar"
         Me.Button4.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -250,20 +237,18 @@ Partial Class FrmTabMarcas
         'TextBox1
         '
         Me.TextBox1.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.TextBox1.Location = New System.Drawing.Point(218, 82)
-        Me.TextBox1.Margin = New System.Windows.Forms.Padding(4)
+        Me.TextBox1.Location = New System.Drawing.Point(164, 68)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(291, 22)
+        Me.TextBox1.Size = New System.Drawing.Size(219, 20)
         Me.TextBox1.TabIndex = 3
         '
         'Label3
         '
         Me.Label3.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(115, 85)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label3.Location = New System.Drawing.Point(86, 70)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(90, 17)
+        Me.Label3.Size = New System.Drawing.Size(69, 13)
         Me.Label3.TabIndex = 2
         Me.Label3.Text = "Descripción :"
         '
@@ -272,11 +257,10 @@ Partial Class FrmTabMarcas
         Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label2.AutoSize = True
         Me.Label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Label2.Location = New System.Drawing.Point(219, 38)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label2.MinimumSize = New System.Drawing.Size(50, 22)
+        Me.Label2.Location = New System.Drawing.Point(164, 32)
+        Me.Label2.MinimumSize = New System.Drawing.Size(38, 18)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(50, 22)
+        Me.Label2.Size = New System.Drawing.Size(38, 18)
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "00"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -285,10 +269,9 @@ Partial Class FrmTabMarcas
         '
         Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(146, 38)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Location = New System.Drawing.Point(110, 32)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(64, 17)
+        Me.Label1.Size = New System.Drawing.Size(49, 13)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Código : "
         '
@@ -299,10 +282,9 @@ Partial Class FrmTabMarcas
         Me.UltraTabControl1.Controls.Add(Me.UltraTabPageControl2)
         Me.UltraTabControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.UltraTabControl1.Location = New System.Drawing.Point(0, 0)
-        Me.UltraTabControl1.Margin = New System.Windows.Forms.Padding(4)
         Me.UltraTabControl1.Name = "UltraTabControl1"
         Me.UltraTabControl1.SharedControlsPage = Me.UltraTabSharedControlsPage1
-        Me.UltraTabControl1.Size = New System.Drawing.Size(628, 313)
+        Me.UltraTabControl1.Size = New System.Drawing.Size(472, 261)
         Me.UltraTabControl1.TabIndex = 0
         UltraTab1.TabPage = Me.UltraTabPageControl1
         UltraTab1.Text = "Marcas"
@@ -313,19 +295,17 @@ Partial Class FrmTabMarcas
         'UltraTabSharedControlsPage1
         '
         Me.UltraTabSharedControlsPage1.Location = New System.Drawing.Point(-10000, -10000)
-        Me.UltraTabSharedControlsPage1.Margin = New System.Windows.Forms.Padding(4)
         Me.UltraTabSharedControlsPage1.Name = "UltraTabSharedControlsPage1"
-        Me.UltraTabSharedControlsPage1.Size = New System.Drawing.Size(624, 286)
+        Me.UltraTabSharedControlsPage1.Size = New System.Drawing.Size(468, 235)
         '
         'FrmTabMarcas
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(628, 313)
+        Me.ClientSize = New System.Drawing.Size(472, 261)
         Me.Controls.Add(Me.UltraTabControl1)
-        Me.Margin = New System.Windows.Forms.Padding(4)
-        Me.MaximumSize = New System.Drawing.Size(646, 360)
-        Me.MinimumSize = New System.Drawing.Size(646, 360)
+        Me.MaximumSize = New System.Drawing.Size(488, 300)
+        Me.MinimumSize = New System.Drawing.Size(488, 300)
         Me.Name = "FrmTabMarcas"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Mantenimiento de Marca"

@@ -22,9 +22,9 @@ Partial Class FrmManteOrdenSalida
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmManteOrdenSalida))
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.item = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -33,6 +33,8 @@ Partial Class FrmManteOrdenSalida
         Me.cant = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.stock = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.ComboBox4 = New System.Windows.Forms.ComboBox()
+        Me.Label12 = New System.Windows.Forms.Label()
         Me.Label19 = New System.Windows.Forms.Label()
         Me.ComboBox5 = New System.Windows.Forms.ComboBox()
         Me.Label16 = New System.Windows.Forms.Label()
@@ -77,8 +79,6 @@ Partial Class FrmManteOrdenSalida
         Me.ToolStripButton5 = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator5 = New System.Windows.Forms.ToolStripSeparator()
         Me.ToolStripButton6 = New System.Windows.Forms.ToolStripButton()
-        Me.ComboBox4 = New System.Windows.Forms.ComboBox()
-        Me.Label12 = New System.Windows.Forms.Label()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -90,38 +90,39 @@ Partial Class FrmManteOrdenSalida
         Me.DataGridView1.AllowUserToAddRows = False
         Me.DataGridView1.AllowUserToDeleteRows = False
         Me.DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle4.Padding = New System.Windows.Forms.Padding(5, 0, 5, 0)
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.Padding = New System.Windows.Forms.Padding(5, 0, 5, 0)
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.item, Me.cod, Me.descri, Me.cant, Me.stock})
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle2
         Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.DataGridView1.Location = New System.Drawing.Point(0, 231)
+        Me.DataGridView1.Location = New System.Drawing.Point(0, 188)
+        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.DataGridView1.Name = "DataGridView1"
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView1.RowHeadersDefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.DataGridView1.RowTemplate.Height = 24
-        Me.DataGridView1.Size = New System.Drawing.Size(1035, 273)
+        Me.DataGridView1.Size = New System.Drawing.Size(778, 228)
         Me.DataGridView1.TabIndex = 11
         '
         'item
@@ -186,18 +187,39 @@ Partial Class FrmManteOrdenSalida
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1035, 231)
+        Me.Panel1.Size = New System.Drawing.Size(778, 188)
         Me.Panel1.TabIndex = 10
+        '
+        'ComboBox4
+        '
+        Me.ComboBox4.FormattingEnabled = True
+        Me.ComboBox4.Location = New System.Drawing.Point(577, 133)
+        Me.ComboBox4.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ComboBox4.Name = "ComboBox4"
+        Me.ComboBox4.Size = New System.Drawing.Size(192, 21)
+        Me.ComboBox4.TabIndex = 38
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(510, 135)
+        Me.Label12.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(70, 13)
+        Me.Label12.TabIndex = 37
+        Me.Label12.Text = "Suc. Cliente :"
         '
         'Label19
         '
         Me.Label19.AutoSize = True
         Me.Label19.Font = New System.Drawing.Font("Arial Black", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label19.ForeColor = System.Drawing.Color.Red
-        Me.Label19.Location = New System.Drawing.Point(868, 4)
+        Me.Label19.Location = New System.Drawing.Point(651, 3)
+        Me.Label19.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(144, 28)
+        Me.Label19.Size = New System.Drawing.Size(112, 23)
         Me.Label19.TabIndex = 36
         Me.Label19.Text = "*ANULADA*"
         '
@@ -205,18 +227,20 @@ Partial Class FrmManteOrdenSalida
         '
         Me.ComboBox5.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.ComboBox5.FormattingEnabled = True
-        Me.ComboBox5.Location = New System.Drawing.Point(769, 101)
+        Me.ComboBox5.Location = New System.Drawing.Point(579, 82)
+        Me.ComboBox5.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.ComboBox5.Name = "ComboBox5"
-        Me.ComboBox5.Size = New System.Drawing.Size(255, 24)
+        Me.ComboBox5.Size = New System.Drawing.Size(192, 21)
         Me.ComboBox5.TabIndex = 27
         '
         'Label16
         '
         Me.Label16.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label16.AutoSize = True
-        Me.Label16.Location = New System.Drawing.Point(693, 104)
+        Me.Label16.Location = New System.Drawing.Point(522, 84)
+        Me.Label16.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(78, 17)
+        Me.Label16.Size = New System.Drawing.Size(59, 13)
         Me.Label16.TabIndex = 26
         Me.Label16.Text = "Vendedor :"
         '
@@ -224,18 +248,20 @@ Partial Class FrmManteOrdenSalida
         '
         Me.ComboBox3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.ComboBox3.FormattingEnabled = True
-        Me.ComboBox3.Location = New System.Drawing.Point(769, 68)
+        Me.ComboBox3.Location = New System.Drawing.Point(579, 55)
+        Me.ComboBox3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.ComboBox3.Name = "ComboBox3"
-        Me.ComboBox3.Size = New System.Drawing.Size(255, 24)
+        Me.ComboBox3.Size = New System.Drawing.Size(192, 21)
         Me.ComboBox3.TabIndex = 25
         '
         'Label14
         '
         Me.Label14.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(707, 73)
+        Me.Label14.Location = New System.Drawing.Point(532, 59)
+        Me.Label14.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(64, 17)
+        Me.Label14.Size = New System.Drawing.Size(49, 13)
         Me.Label14.TabIndex = 24
         Me.Label14.Text = "Destino :"
         '
@@ -243,35 +269,39 @@ Partial Class FrmManteOrdenSalida
         '
         Me.ComboBox2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(769, 35)
+        Me.ComboBox2.Location = New System.Drawing.Point(579, 28)
+        Me.ComboBox2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(255, 24)
+        Me.ComboBox2.Size = New System.Drawing.Size(192, 21)
         Me.ComboBox2.TabIndex = 23
         '
         'Label13
         '
         Me.Label13.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(661, 39)
+        Me.Label13.Location = New System.Drawing.Point(498, 32)
+        Me.Label13.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(110, 17)
+        Me.Label13.Size = New System.Drawing.Size(84, 13)
         Me.Label13.TabIndex = 22
         Me.Label13.Text = "Motivo Emisión :"
         '
         'DateTimePicker1
         '
         Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker1.Location = New System.Drawing.Point(529, 37)
+        Me.DateTimePicker1.Location = New System.Drawing.Point(397, 30)
+        Me.DateTimePicker1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(123, 22)
+        Me.DateTimePicker1.Size = New System.Drawing.Size(93, 20)
         Me.DateTimePicker1.TabIndex = 19
         '
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(452, 42)
+        Me.Label11.Location = New System.Drawing.Point(339, 34)
+        Me.Label11.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(55, 17)
+        Me.Label11.Size = New System.Drawing.Size(43, 13)
         Me.Label11.TabIndex = 18
         Me.Label11.Text = "Fecha :"
         '
@@ -279,72 +309,80 @@ Partial Class FrmManteOrdenSalida
         '
         Me.Label10.AutoSize = True
         Me.Label10.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Label10.Location = New System.Drawing.Point(203, 39)
-        Me.Label10.MinimumSize = New System.Drawing.Size(200, 22)
+        Me.Label10.Location = New System.Drawing.Point(152, 32)
+        Me.Label10.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label10.MinimumSize = New System.Drawing.Size(150, 18)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(200, 22)
+        Me.Label10.Size = New System.Drawing.Size(150, 18)
         Me.Label10.TabIndex = 17
         '
         'TextBox7
         '
         Me.TextBox7.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextBox7.Location = New System.Drawing.Point(126, 194)
+        Me.TextBox7.Location = New System.Drawing.Point(94, 158)
+        Me.TextBox7.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.TextBox7.Name = "TextBox7"
-        Me.TextBox7.Size = New System.Drawing.Size(898, 22)
+        Me.TextBox7.Size = New System.Drawing.Size(676, 20)
         Me.TextBox7.TabIndex = 16
         '
         'TextBox6
         '
         Me.TextBox6.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextBox6.Location = New System.Drawing.Point(126, 166)
+        Me.TextBox6.Location = New System.Drawing.Point(94, 135)
+        Me.TextBox6.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(526, 22)
+        Me.TextBox6.Size = New System.Drawing.Size(398, 20)
         Me.TextBox6.TabIndex = 15
         '
         'TextBox5
         '
         Me.TextBox5.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextBox5.Location = New System.Drawing.Point(126, 135)
+        Me.TextBox5.Location = New System.Drawing.Point(94, 110)
+        Me.TextBox5.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(526, 22)
+        Me.TextBox5.Size = New System.Drawing.Size(398, 20)
         Me.TextBox5.TabIndex = 14
         '
         'TextBox4
         '
         Me.TextBox4.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextBox4.Location = New System.Drawing.Point(126, 104)
+        Me.TextBox4.Location = New System.Drawing.Point(94, 84)
+        Me.TextBox4.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.TextBox4.Name = "TextBox4"
         Me.TextBox4.ReadOnly = True
-        Me.TextBox4.Size = New System.Drawing.Size(526, 22)
+        Me.TextBox4.Size = New System.Drawing.Size(398, 20)
         Me.TextBox4.TabIndex = 13
         '
         'TextBox3
         '
         Me.TextBox3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextBox3.Location = New System.Drawing.Point(126, 70)
+        Me.TextBox3.Location = New System.Drawing.Point(94, 57)
+        Me.TextBox3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.TextBox3.Name = "TextBox3"
         Me.TextBox3.ReadOnly = True
-        Me.TextBox3.Size = New System.Drawing.Size(525, 22)
+        Me.TextBox3.Size = New System.Drawing.Size(397, 20)
         Me.TextBox3.TabIndex = 12
         '
         'TextBox2
         '
-        Me.TextBox2.Location = New System.Drawing.Point(126, 39)
+        Me.TextBox2.Location = New System.Drawing.Point(94, 32)
+        Me.TextBox2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(73, 22)
+        Me.TextBox2.Size = New System.Drawing.Size(56, 20)
         Me.TextBox2.TabIndex = 11
         '
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(328, 11)
+        Me.Label9.Location = New System.Drawing.Point(246, 9)
+        Me.Label9.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(71, 17)
+        Me.Label9.Size = New System.Drawing.Size(54, 13)
         Me.Label9.TabIndex = 10
         Me.Label9.Text = "Sucursal :"
         '
@@ -352,87 +390,97 @@ Partial Class FrmManteOrdenSalida
         '
         Me.Label8.AutoSize = True
         Me.Label8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Label8.Location = New System.Drawing.Point(402, 10)
-        Me.Label8.MinimumSize = New System.Drawing.Size(250, 22)
+        Me.Label8.Location = New System.Drawing.Point(302, 8)
+        Me.Label8.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label8.MinimumSize = New System.Drawing.Size(188, 18)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(250, 22)
+        Me.Label8.Size = New System.Drawing.Size(188, 18)
         Me.Label8.TabIndex = 9
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(203, 10)
+        Me.TextBox1.Location = New System.Drawing.Point(152, 8)
+        Me.TextBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(105, 22)
+        Me.TextBox1.Size = New System.Drawing.Size(80, 20)
         Me.TextBox1.TabIndex = 8
         '
         'ComboBox1
         '
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(126, 8)
+        Me.ComboBox1.Location = New System.Drawing.Point(94, 6)
+        Me.ComboBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(73, 24)
+        Me.ComboBox1.Size = New System.Drawing.Size(56, 21)
         Me.ComboBox1.TabIndex = 7
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(24, 197)
+        Me.Label5.Location = New System.Drawing.Point(18, 160)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(96, 17)
+        Me.Label5.Size = New System.Drawing.Size(73, 13)
         Me.Label5.TabIndex = 6
         Me.Label5.Text = "Observación :"
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(36, 166)
+        Me.Label6.Location = New System.Drawing.Point(27, 135)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(84, 17)
+        Me.Label6.Size = New System.Drawing.Size(64, 13)
         Me.Label6.TabIndex = 5
         Me.Label6.Text = "P. Llegada :"
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(42, 135)
+        Me.Label7.Location = New System.Drawing.Point(32, 110)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(78, 17)
+        Me.Label7.Size = New System.Drawing.Size(59, 13)
         Me.Label7.TabIndex = 4
         Me.Label7.Text = "P. Partida :"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(45, 104)
+        Me.Label3.Location = New System.Drawing.Point(34, 84)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(75, 17)
+        Me.Label3.Size = New System.Drawing.Size(60, 13)
         Me.Label3.TabIndex = 3
         Me.Label3.Text = "Direccíón :"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(21, 73)
+        Me.Label4.Location = New System.Drawing.Point(16, 59)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(99, 17)
+        Me.Label4.Size = New System.Drawing.Size(76, 13)
         Me.Label4.TabIndex = 2
         Me.Label4.Text = "Razón Social :"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(60, 42)
+        Me.Label2.Location = New System.Drawing.Point(45, 34)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(60, 17)
+        Me.Label2.Size = New System.Drawing.Size(46, 13)
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "Codigo :"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(12, 11)
+        Me.Label1.Location = New System.Drawing.Point(9, 9)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(99, 17)
+        Me.Label1.Size = New System.Drawing.Size(74, 13)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Orden Salida :"
         '
@@ -444,9 +492,10 @@ Partial Class FrmManteOrdenSalida
         Me.Panel3.Controls.Add(Me.Label24)
         Me.Panel3.Controls.Add(Me.ToolStrip1)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel3.Location = New System.Drawing.Point(0, 504)
+        Me.Panel3.Location = New System.Drawing.Point(0, 416)
+        Me.Panel3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(1035, 78)
+        Me.Panel3.Size = New System.Drawing.Size(778, 63)
         Me.Panel3.TabIndex = 9
         '
         'Label31
@@ -454,9 +503,10 @@ Partial Class FrmManteOrdenSalida
         Me.Label31.AutoSize = True
         Me.Label31.Font = New System.Drawing.Font("Arial Black", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label31.ForeColor = System.Drawing.Color.Red
-        Me.Label31.Location = New System.Drawing.Point(450, 21)
+        Me.Label31.Location = New System.Drawing.Point(338, 17)
+        Me.Label31.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label31.Name = "Label31"
-        Me.Label31.Size = New System.Drawing.Size(177, 28)
+        Me.Label31.Size = New System.Drawing.Size(145, 23)
         Me.Label31.TabIndex = 12
         Me.Label31.Text = "Mes Bloqueado"
         '
@@ -465,9 +515,10 @@ Partial Class FrmManteOrdenSalida
         Me.Label20.AutoSize = True
         Me.Label20.BackColor = System.Drawing.Color.Black
         Me.Label20.ForeColor = System.Drawing.Color.White
-        Me.Label20.Location = New System.Drawing.Point(7, 61)
+        Me.Label20.Location = New System.Drawing.Point(5, 50)
+        Me.Label20.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(471, 17)
+        Me.Label20.Size = New System.Drawing.Size(351, 13)
         Me.Label20.TabIndex = 11
         Me.Label20.Text = "F2 Grabar   F4 Copia Doc.  F5 Anula  F7 Imprimir  F12 Elimina   ESC Salir "
         '
@@ -477,10 +528,11 @@ Partial Class FrmManteOrdenSalida
         Me.Label29.AutoSize = True
         Me.Label29.BackColor = System.Drawing.SystemColors.Control
         Me.Label29.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Label29.Location = New System.Drawing.Point(943, 25)
-        Me.Label29.MinimumSize = New System.Drawing.Size(80, 24)
+        Me.Label29.Location = New System.Drawing.Point(709, 20)
+        Me.Label29.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label29.MinimumSize = New System.Drawing.Size(60, 20)
         Me.Label29.Name = "Label29"
-        Me.Label29.Size = New System.Drawing.Size(80, 24)
+        Me.Label29.Size = New System.Drawing.Size(60, 20)
         Me.Label29.TabIndex = 10
         '
         'Label24
@@ -488,9 +540,10 @@ Partial Class FrmManteOrdenSalida
         Me.Label24.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label24.AutoSize = True
         Me.Label24.BackColor = System.Drawing.SystemColors.Control
-        Me.Label24.Location = New System.Drawing.Point(889, 30)
+        Me.Label24.Location = New System.Drawing.Point(669, 24)
+        Me.Label24.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label24.Name = "Label24"
-        Me.Label24.Size = New System.Drawing.Size(48, 17)
+        Me.Label24.Size = New System.Drawing.Size(37, 13)
         Me.Label24.TabIndex = 5
         Me.Label24.Text = "Total :"
         '
@@ -501,9 +554,9 @@ Partial Class FrmManteOrdenSalida
         Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.None
         Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButton1, Me.ToolStripSeparator1, Me.ToolStripButton2, Me.ToolStripSeparator2, Me.ToolStripButton3, Me.ToolStripSeparator3, Me.ToolStripButton4, Me.ToolStripSeparator4, Me.ToolStripButton5, Me.ToolStripSeparator5, Me.ToolStripButton6})
-        Me.ToolStrip1.Location = New System.Drawing.Point(8, 7)
+        Me.ToolStrip1.Location = New System.Drawing.Point(6, 6)
         Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(406, 47)
+        Me.ToolStrip1.Size = New System.Drawing.Size(252, 42)
         Me.ToolStrip1.TabIndex = 0
         Me.ToolStrip1.Text = "ToolStrip1"
         '
@@ -513,7 +566,7 @@ Partial Class FrmManteOrdenSalida
         Me.ToolStripButton1.ImageAlign = System.Drawing.ContentAlignment.TopCenter
         Me.ToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.ToolStripButton1.Name = "ToolStripButton1"
-        Me.ToolStripButton1.Size = New System.Drawing.Size(67, 44)
+        Me.ToolStripButton1.Size = New System.Drawing.Size(53, 39)
         Me.ToolStripButton1.Text = "Agregar"
         Me.ToolStripButton1.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.ToolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
@@ -521,99 +574,83 @@ Partial Class FrmManteOrdenSalida
         'ToolStripSeparator1
         '
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 47)
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 42)
         '
         'ToolStripButton2
         '
         Me.ToolStripButton2.Image = CType(resources.GetObject("ToolStripButton2.Image"), System.Drawing.Image)
         Me.ToolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.ToolStripButton2.Name = "ToolStripButton2"
-        Me.ToolStripButton2.Size = New System.Drawing.Size(52, 44)
+        Me.ToolStripButton2.Size = New System.Drawing.Size(41, 39)
         Me.ToolStripButton2.Text = "Series"
         Me.ToolStripButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
         'ToolStripSeparator2
         '
         Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(6, 47)
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(6, 42)
         '
         'ToolStripButton3
         '
         Me.ToolStripButton3.Image = CType(resources.GetObject("ToolStripButton3.Image"), System.Drawing.Image)
         Me.ToolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.ToolStripButton3.Name = "ToolStripButton3"
-        Me.ToolStripButton3.Size = New System.Drawing.Size(67, 44)
+        Me.ToolStripButton3.Size = New System.Drawing.Size(54, 39)
         Me.ToolStripButton3.Text = "Eliminar"
         Me.ToolStripButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
         'ToolStripSeparator3
         '
         Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
-        Me.ToolStripSeparator3.Size = New System.Drawing.Size(6, 47)
+        Me.ToolStripSeparator3.Size = New System.Drawing.Size(6, 42)
         '
         'ToolStripButton4
         '
         Me.ToolStripButton4.Image = CType(resources.GetObject("ToolStripButton4.Image"), System.Drawing.Image)
         Me.ToolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.ToolStripButton4.Name = "ToolStripButton4"
-        Me.ToolStripButton4.Size = New System.Drawing.Size(66, 44)
+        Me.ToolStripButton4.Size = New System.Drawing.Size(53, 39)
         Me.ToolStripButton4.Text = "Guardar"
         Me.ToolStripButton4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
         'ToolStripSeparator4
         '
         Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
-        Me.ToolStripSeparator4.Size = New System.Drawing.Size(6, 47)
+        Me.ToolStripSeparator4.Size = New System.Drawing.Size(6, 42)
         '
         'ToolStripButton5
         '
         Me.ToolStripButton5.Image = CType(resources.GetObject("ToolStripButton5.Image"), System.Drawing.Image)
         Me.ToolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.ToolStripButton5.Name = "ToolStripButton5"
-        Me.ToolStripButton5.Size = New System.Drawing.Size(70, 44)
+        Me.ToolStripButton5.Size = New System.Drawing.Size(57, 39)
         Me.ToolStripButton5.Text = "Imprimir"
         Me.ToolStripButton5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
         'ToolStripSeparator5
         '
         Me.ToolStripSeparator5.Name = "ToolStripSeparator5"
-        Me.ToolStripSeparator5.Size = New System.Drawing.Size(6, 47)
+        Me.ToolStripSeparator5.Size = New System.Drawing.Size(6, 42)
         '
         'ToolStripButton6
         '
         Me.ToolStripButton6.Image = CType(resources.GetObject("ToolStripButton6.Image"), System.Drawing.Image)
         Me.ToolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.ToolStripButton6.Name = "ToolStripButton6"
-        Me.ToolStripButton6.Size = New System.Drawing.Size(42, 44)
+        Me.ToolStripButton6.Size = New System.Drawing.Size(33, 39)
         Me.ToolStripButton6.Text = "Salir"
         Me.ToolStripButton6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
-        'ComboBox4
-        '
-        Me.ComboBox4.FormattingEnabled = True
-        Me.ComboBox4.Location = New System.Drawing.Point(769, 164)
-        Me.ComboBox4.Name = "ComboBox4"
-        Me.ComboBox4.Size = New System.Drawing.Size(255, 24)
-        Me.ComboBox4.TabIndex = 38
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(680, 166)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(91, 17)
-        Me.Label12.TabIndex = 37
-        Me.Label12.Text = "Suc. Cliente :"
-        '
         'FrmManteOrdenSalida
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1035, 582)
+        Me.ClientSize = New System.Drawing.Size(778, 479)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Panel3)
-        Me.MinimumSize = New System.Drawing.Size(1053, 629)
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.MinimumSize = New System.Drawing.Size(794, 518)
         Me.Name = "FrmManteOrdenSalida"
         Me.Text = "Mantenimiento Guias Orden de salida x Translado Entre EStablecimiento"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
