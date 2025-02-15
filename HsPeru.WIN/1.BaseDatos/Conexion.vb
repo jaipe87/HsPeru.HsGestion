@@ -11,9 +11,12 @@ Module Conexion
             Cn.Close()
         End If
         Cn.Open()
+
     End Sub
 
     Public Sub CloseConexion()
+
+
         Cn.Close()
     End Sub
 
