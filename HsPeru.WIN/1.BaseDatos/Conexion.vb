@@ -9,10 +9,9 @@ Module Conexion
         Cn = New OdbcConnection(connectionString)
         If Cn.State = System.Data.ConnectionState.Open Then
             Cn.Close()
-
-
         End If
         Cn.Open()
+
     End Sub
 
     Public Sub CloseConexion()
