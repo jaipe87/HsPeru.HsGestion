@@ -10,8 +10,6 @@ Public Class FrmTabVendedor
         Inicia()
     End Sub
 
-
-
 #Region "Eventos"
     Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
         Nuevo()
