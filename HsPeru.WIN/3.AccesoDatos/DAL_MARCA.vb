@@ -7,7 +7,8 @@ Public Class DAL_MARCA
         Dim dr As OdbcDataReader
         Dim datMarca As MARCA
         Dim row As Dictionary(Of String, String)
-        Ssql = "SELECT tabmar.CIA, tabmar.COD, tabmar.DES, tabmar.ST FROM tabmar;"
+        Ssql = "SELECT tabmar.CIA, tabmar.COD, tabmar.DES, tabmar.ST FROM tabmar "
+        Ssql = Ssql & " WHERE tabmar.CIA=? And tabmar.DES Like CONCAT('%',?,'%') AND tabmar.ST=?; "
         Using cmd As New OdbcCommand(Ssql, Cn)
             cmd.CommandType = CommandType.Text
             cmd.Parameters.Add("@cia", OdbcType.Int, 11).Value = GCia
@@ -50,7 +51,7 @@ Public Class DAL_MARCA
 
         End If
 
-        Ssql = "INSERT INTO tabmar (CIA, COD, DES, ST)VALUES("
+        Ssql = "INSERT INTO tabmar (CIA, COD, DES, ST) VALUES ("
         Ssql = Ssql & GCia & "," & Cod & ",'" & objDato.DES & "'," & objDato.ST & ") "
         Ssql = Ssql & " ON DUPLICATE KEY UPDATE DES='" & objDato.DES & "',ST=" & objDato.ST & ";"
 
