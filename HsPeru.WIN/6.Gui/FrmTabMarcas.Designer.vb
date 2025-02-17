@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class FrmTabMarcas
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,327 +20,361 @@ Partial Class FrmTabMarcas
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmTabMarcas))
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim UltraTab1 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim UltraTab2 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.UltraTabPageControl1 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.DgvMarca = New System.Windows.Forms.DataGridView()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnSalir = New System.Windows.Forms.Button()
+        Me.btnModificar = New System.Windows.Forms.Button()
+        Me.btnNuevo = New System.Windows.Forms.Button()
         Me.UltraTabPageControl2 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Button5 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.lblCodigo = New System.Windows.Forms.Label()
+        Me.btnCancelar = New System.Windows.Forms.Button()
+        Me.btnGuardar = New System.Windows.Forms.Button()
+        Me.txtDes = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.UltraTabControl1 = New Infragistics.Win.UltraWinTabControl.UltraTabControl()
+        Me.utbMarca = New Infragistics.Win.UltraWinTabControl.UltraTabControl()
         Me.UltraTabSharedControlsPage1 = New Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage()
+        Me.chkActivo = New System.Windows.Forms.RadioButton()
+        Me.chkInactivo = New System.Windows.Forms.RadioButton()
+        Me.colcod = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colDes = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colEstado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.UltraTabPageControl1.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel5.SuspendLayout()
+        CType(Me.DgvMarca, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         Me.UltraTabPageControl2.SuspendLayout()
-        Me.Panel1.SuspendLayout()
-        CType(Me.UltraTabControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.UltraTabControl1.SuspendLayout()
+        Me.Panel4.SuspendLayout()
+        CType(Me.utbMarca, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.utbMarca.SuspendLayout()
         Me.SuspendLayout()
         '
         'UltraTabPageControl1
         '
-        Me.UltraTabPageControl1.Controls.Add(Me.DataGridView1)
+        Me.UltraTabPageControl1.Controls.Add(Me.Panel5)
         Me.UltraTabPageControl1.Controls.Add(Me.Panel2)
-        Me.UltraTabPageControl1.Location = New System.Drawing.Point(1, 23)
+        Me.UltraTabPageControl1.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl1.Name = "UltraTabPageControl1"
-        Me.UltraTabPageControl1.Size = New System.Drawing.Size(468, 235)
+        Me.UltraTabPageControl1.Size = New System.Drawing.Size(470, 240)
         '
-        'DataGridView1
+        'Panel5
         '
-        Me.DataGridView1.AllowUserToAddRows = False
-        Me.DataGridView1.AllowUserToDeleteRows = False
-        Me.DataGridView1.AllowUserToOrderColumns = True
+        Me.Panel5.Controls.Add(Me.DgvMarca)
+        Me.Panel5.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel5.Location = New System.Drawing.Point(0, 0)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(388, 240)
+        Me.Panel5.TabIndex = 2
+        '
+        'DgvMarca
+        '
+        Me.DgvMarca.AllowUserToAddRows = False
+        Me.DgvMarca.AllowUserToDeleteRows = False
+        Me.DgvMarca.AllowUserToOrderColumns = True
+        Me.DgvMarca.BackgroundColor = System.Drawing.Color.WhiteSmoke
+        Me.DgvMarca.BorderStyle = System.Windows.Forms.BorderStyle.None
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
         DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3})
-        Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.DataGridView1.Location = New System.Drawing.Point(0, 0)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.RowHeadersWidth = 10
-        Me.DataGridView1.Size = New System.Drawing.Size(385, 235)
-        Me.DataGridView1.TabIndex = 2
-        '
-        'Column1
-        '
-        Me.Column1.HeaderText = "Código"
-        Me.Column1.Name = "Column1"
-        '
-        'Column2
-        '
-        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column2.HeaderText = "Descripción"
-        Me.Column2.Name = "Column2"
-        '
-        'Column3
-        '
-        Me.Column3.HeaderText = "Estado"
-        Me.Column3.Name = "Column3"
+        Me.DgvMarca.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        Me.DgvMarca.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DgvMarca.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colcod, Me.colDes, Me.colEstado})
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.GradientInactiveCaption
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DgvMarca.DefaultCellStyle = DataGridViewCellStyle4
+        Me.DgvMarca.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.DgvMarca.Location = New System.Drawing.Point(0, 0)
+        Me.DgvMarca.Name = "DgvMarca"
+        Me.DgvMarca.ReadOnly = True
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DgvMarca.RowHeadersDefaultCellStyle = DataGridViewCellStyle5
+        Me.DgvMarca.RowHeadersVisible = False
+        Me.DgvMarca.RowHeadersWidth = 15
+        Me.DgvMarca.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DgvMarca.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DgvMarca.Size = New System.Drawing.Size(388, 240)
+        Me.DgvMarca.TabIndex = 0
         '
         'Panel2
         '
-        Me.Panel2.Controls.Add(Me.Button3)
-        Me.Panel2.Controls.Add(Me.Button2)
-        Me.Panel2.Controls.Add(Me.Button1)
+        Me.Panel2.Controls.Add(Me.btnSalir)
+        Me.Panel2.Controls.Add(Me.btnModificar)
+        Me.Panel2.Controls.Add(Me.btnNuevo)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel2.Location = New System.Drawing.Point(385, 0)
+        Me.Panel2.Location = New System.Drawing.Point(388, 0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(83, 235)
+        Me.Panel2.Size = New System.Drawing.Size(82, 240)
         Me.Panel2.TabIndex = 1
         '
-        'Button3
+        'btnSalir
         '
-        Me.Button3.Image = CType(resources.GetObject("Button3.Image"), System.Drawing.Image)
-        Me.Button3.Location = New System.Drawing.Point(8, 154)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(68, 63)
-        Me.Button3.TabIndex = 2
-        Me.Button3.Text = "Salir"
-        Me.Button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.Button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.btnSalir.Image = Global.HsPeru.WIN.My.Resources.Resources.door_in
+        Me.btnSalir.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btnSalir.Location = New System.Drawing.Point(6, 118)
+        Me.btnSalir.Name = "btnSalir"
+        Me.btnSalir.Size = New System.Drawing.Size(68, 43)
+        Me.btnSalir.TabIndex = 2
+        Me.btnSalir.Text = "Salir"
+        Me.btnSalir.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnSalir.UseVisualStyleBackColor = True
         '
-        'Button2
+        'btnModificar
         '
-        Me.Button2.Image = CType(resources.GetObject("Button2.Image"), System.Drawing.Image)
-        Me.Button2.Location = New System.Drawing.Point(8, 85)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(68, 63)
-        Me.Button2.TabIndex = 1
-        Me.Button2.Text = "Modificar"
-        Me.Button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.Button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.btnModificar.Image = Global.HsPeru.WIN.My.Resources.Resources.page_edit
+        Me.btnModificar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btnModificar.Location = New System.Drawing.Point(6, 76)
+        Me.btnModificar.Name = "btnModificar"
+        Me.btnModificar.Size = New System.Drawing.Size(68, 43)
+        Me.btnModificar.TabIndex = 1
+        Me.btnModificar.Text = "Modificar"
+        Me.btnModificar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnModificar.UseVisualStyleBackColor = True
         '
-        'Button1
+        'btnNuevo
         '
-        Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
-        Me.Button1.Location = New System.Drawing.Point(8, 16)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(68, 63)
-        Me.Button1.TabIndex = 0
-        Me.Button1.Text = "Nuevo"
-        Me.Button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnNuevo.Image = Global.HsPeru.WIN.My.Resources.Resources.page_add
+        Me.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btnNuevo.Location = New System.Drawing.Point(6, 34)
+        Me.btnNuevo.Name = "btnNuevo"
+        Me.btnNuevo.Size = New System.Drawing.Size(68, 43)
+        Me.btnNuevo.TabIndex = 0
+        Me.btnNuevo.Text = "Nuevo"
+        Me.btnNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnNuevo.UseVisualStyleBackColor = True
         '
         'UltraTabPageControl2
         '
-        Me.UltraTabPageControl2.Controls.Add(Me.Panel1)
-        Me.UltraTabPageControl2.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl2.Controls.Add(Me.Panel4)
+        Me.UltraTabPageControl2.Location = New System.Drawing.Point(1, 20)
         Me.UltraTabPageControl2.Name = "UltraTabPageControl2"
-        Me.UltraTabPageControl2.Size = New System.Drawing.Size(468, 235)
+        Me.UltraTabPageControl2.Size = New System.Drawing.Size(470, 240)
         '
-        'Panel1
+        'Panel4
         '
-        Me.Panel1.Controls.Add(Me.RadioButton2)
-        Me.Panel1.Controls.Add(Me.RadioButton1)
-        Me.Panel1.Controls.Add(Me.Label4)
-        Me.Panel1.Controls.Add(Me.Button5)
-        Me.Panel1.Controls.Add(Me.Button4)
-        Me.Panel1.Controls.Add(Me.TextBox1)
-        Me.Panel1.Controls.Add(Me.Label3)
-        Me.Panel1.Controls.Add(Me.Label2)
-        Me.Panel1.Controls.Add(Me.Label1)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(468, 235)
-        Me.Panel1.TabIndex = 0
+        Me.Panel4.Controls.Add(Me.chkInactivo)
+        Me.Panel4.Controls.Add(Me.chkActivo)
+        Me.Panel4.Controls.Add(Me.lblCodigo)
+        Me.Panel4.Controls.Add(Me.btnCancelar)
+        Me.Panel4.Controls.Add(Me.btnGuardar)
+        Me.Panel4.Controls.Add(Me.txtDes)
+        Me.Panel4.Controls.Add(Me.Label2)
+        Me.Panel4.Controls.Add(Me.Label1)
+        Me.Panel4.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel4.Location = New System.Drawing.Point(0, 0)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(470, 240)
+        Me.Panel4.TabIndex = 12
         '
-        'RadioButton2
+        'lblCodigo
         '
-        Me.RadioButton2.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.RadioButton2.AutoSize = True
-        Me.RadioButton2.Location = New System.Drawing.Point(262, 102)
-        Me.RadioButton2.Name = "RadioButton2"
-        Me.RadioButton2.Size = New System.Drawing.Size(63, 17)
-        Me.RadioButton2.TabIndex = 8
-        Me.RadioButton2.TabStop = True
-        Me.RadioButton2.Text = "Inactivo"
-        Me.RadioButton2.UseVisualStyleBackColor = True
+        Me.lblCodigo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.lblCodigo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCodigo.Location = New System.Drawing.Point(73, 62)
+        Me.lblCodigo.Name = "lblCodigo"
+        Me.lblCodigo.Size = New System.Drawing.Size(57, 20)
+        Me.lblCodigo.TabIndex = 15
+        Me.lblCodigo.Text = "?"
+        Me.lblCodigo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'RadioButton1
+        'btnCancelar
         '
-        Me.RadioButton1.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.RadioButton1.AutoSize = True
-        Me.RadioButton1.Location = New System.Drawing.Point(164, 102)
-        Me.RadioButton1.Name = "RadioButton1"
-        Me.RadioButton1.Size = New System.Drawing.Size(55, 17)
-        Me.RadioButton1.TabIndex = 7
-        Me.RadioButton1.TabStop = True
-        Me.RadioButton1.Text = "Activo"
-        Me.RadioButton1.UseVisualStyleBackColor = True
+        Me.btnCancelar.Image = Global.HsPeru.WIN.My.Resources.Resources.door_in
+        Me.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btnCancelar.Location = New System.Drawing.Point(238, 176)
+        Me.btnCancelar.Name = "btnCancelar"
+        Me.btnCancelar.Size = New System.Drawing.Size(79, 43)
+        Me.btnCancelar.TabIndex = 14
+        Me.btnCancelar.Text = "Salir"
+        Me.btnCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnCancelar.UseVisualStyleBackColor = True
         '
-        'Label4
+        'btnGuardar
         '
-        Me.Label4.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(110, 104)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(46, 13)
-        Me.Label4.TabIndex = 6
-        Me.Label4.Text = "Estado :"
+        Me.btnGuardar.Image = Global.HsPeru.WIN.My.Resources.Resources.disk
+        Me.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btnGuardar.Location = New System.Drawing.Point(157, 176)
+        Me.btnGuardar.Name = "btnGuardar"
+        Me.btnGuardar.Size = New System.Drawing.Size(79, 43)
+        Me.btnGuardar.TabIndex = 5
+        Me.btnGuardar.Text = "Grabar"
+        Me.btnGuardar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnGuardar.UseVisualStyleBackColor = True
         '
-        'Button5
+        'txtDes
         '
-        Me.Button5.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Button5.Image = CType(resources.GetObject("Button5.Image"), System.Drawing.Image)
-        Me.Button5.Location = New System.Drawing.Point(242, 153)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(68, 63)
-        Me.Button5.TabIndex = 5
-        Me.Button5.Text = "Salir"
-        Me.Button5.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.Button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        Me.Button5.UseVisualStyleBackColor = True
-        '
-        'Button4
-        '
-        Me.Button4.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Button4.Image = CType(resources.GetObject("Button4.Image"), System.Drawing.Image)
-        Me.Button4.Location = New System.Drawing.Point(164, 153)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(68, 63)
-        Me.Button4.TabIndex = 4
-        Me.Button4.Text = "Guardar"
-        Me.Button4.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.Button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        Me.Button4.UseVisualStyleBackColor = True
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.TextBox1.Location = New System.Drawing.Point(164, 68)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(219, 20)
-        Me.TextBox1.TabIndex = 3
-        '
-        'Label3
-        '
-        Me.Label3.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(86, 70)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(69, 13)
-        Me.Label3.TabIndex = 2
-        Me.Label3.Text = "Descripción :"
+        Me.txtDes.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtDes.Location = New System.Drawing.Point(73, 107)
+        Me.txtDes.Name = "txtDes"
+        Me.txtDes.Size = New System.Drawing.Size(323, 20)
+        Me.txtDes.TabIndex = 0
         '
         'Label2
         '
-        Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label2.AutoSize = True
-        Me.Label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Label2.Location = New System.Drawing.Point(164, 32)
-        Me.Label2.MinimumSize = New System.Drawing.Size(38, 18)
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(70, 91)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(38, 18)
+        Me.Label2.Size = New System.Drawing.Size(74, 13)
         Me.Label2.TabIndex = 1
-        Me.Label2.Text = "00"
-        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.Label2.Text = "Descripción"
+        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'Label1
         '
-        Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(110, 32)
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(70, 47)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(49, 13)
+        Me.Label1.Size = New System.Drawing.Size(46, 13)
         Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Código : "
+        Me.Label1.Text = "Código"
+        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'UltraTabControl1
+        'utbMarca
         '
-        Me.UltraTabControl1.Controls.Add(Me.UltraTabSharedControlsPage1)
-        Me.UltraTabControl1.Controls.Add(Me.UltraTabPageControl1)
-        Me.UltraTabControl1.Controls.Add(Me.UltraTabPageControl2)
-        Me.UltraTabControl1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.UltraTabControl1.Location = New System.Drawing.Point(0, 0)
-        Me.UltraTabControl1.Name = "UltraTabControl1"
-        Me.UltraTabControl1.SharedControlsPage = Me.UltraTabSharedControlsPage1
-        Me.UltraTabControl1.Size = New System.Drawing.Size(472, 261)
-        Me.UltraTabControl1.TabIndex = 0
+        Me.utbMarca.Controls.Add(Me.UltraTabSharedControlsPage1)
+        Me.utbMarca.Controls.Add(Me.UltraTabPageControl1)
+        Me.utbMarca.Controls.Add(Me.UltraTabPageControl2)
+        Me.utbMarca.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.utbMarca.Location = New System.Drawing.Point(0, 0)
+        Me.utbMarca.Name = "utbMarca"
+        Me.utbMarca.SharedControlsPage = Me.UltraTabSharedControlsPage1
+        Me.utbMarca.Size = New System.Drawing.Size(472, 261)
+        Me.utbMarca.Style = Infragistics.Win.UltraWinTabControl.UltraTabControlStyle.Excel
+        Me.utbMarca.TabIndex = 1
         UltraTab1.TabPage = Me.UltraTabPageControl1
-        UltraTab1.Text = "Marcas"
+        UltraTab1.Text = "Registros"
         UltraTab2.TabPage = Me.UltraTabPageControl2
         UltraTab2.Text = "Detalle"
-        Me.UltraTabControl1.Tabs.AddRange(New Infragistics.Win.UltraWinTabControl.UltraTab() {UltraTab1, UltraTab2})
+        Me.utbMarca.Tabs.AddRange(New Infragistics.Win.UltraWinTabControl.UltraTab() {UltraTab1, UltraTab2})
         '
         'UltraTabSharedControlsPage1
         '
         Me.UltraTabSharedControlsPage1.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabSharedControlsPage1.Name = "UltraTabSharedControlsPage1"
-        Me.UltraTabSharedControlsPage1.Size = New System.Drawing.Size(468, 235)
+        Me.UltraTabSharedControlsPage1.Size = New System.Drawing.Size(470, 240)
+        '
+        'chkActivo
+        '
+        Me.chkActivo.AutoSize = True
+        Me.chkActivo.Location = New System.Drawing.Point(75, 142)
+        Me.chkActivo.Name = "chkActivo"
+        Me.chkActivo.Size = New System.Drawing.Size(55, 17)
+        Me.chkActivo.TabIndex = 19
+        Me.chkActivo.TabStop = True
+        Me.chkActivo.Text = "Activo"
+        Me.chkActivo.UseVisualStyleBackColor = True
+        '
+        'chkInactivo
+        '
+        Me.chkInactivo.AutoSize = True
+        Me.chkInactivo.Location = New System.Drawing.Point(145, 142)
+        Me.chkInactivo.Name = "chkInactivo"
+        Me.chkInactivo.Size = New System.Drawing.Size(63, 17)
+        Me.chkInactivo.TabIndex = 20
+        Me.chkInactivo.TabStop = True
+        Me.chkInactivo.Text = "Inactivo"
+        Me.chkInactivo.UseVisualStyleBackColor = True
+        '
+        'colcod
+        '
+        Me.colcod.DataPropertyName = "COD"
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.colcod.DefaultCellStyle = DataGridViewCellStyle2
+        Me.colcod.HeaderText = "Cód."
+        Me.colcod.Name = "colcod"
+        Me.colcod.ReadOnly = True
+        Me.colcod.Width = 45
+        '
+        'colDes
+        '
+        Me.colDes.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.colDes.DataPropertyName = "DES"
+        Me.colDes.HeaderText = "Descripción"
+        Me.colDes.Name = "colDes"
+        Me.colDes.ReadOnly = True
+        '
+        'colEstado
+        '
+        Me.colEstado.DataPropertyName = "ESTADO"
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.colEstado.DefaultCellStyle = DataGridViewCellStyle3
+        Me.colEstado.HeaderText = "Estado"
+        Me.colEstado.Name = "colEstado"
+        Me.colEstado.ReadOnly = True
+        Me.colEstado.Width = 80
         '
         'FrmTabMarcas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(472, 261)
-        Me.Controls.Add(Me.UltraTabControl1)
+        Me.Controls.Add(Me.utbMarca)
         Me.MaximumSize = New System.Drawing.Size(488, 300)
         Me.MinimumSize = New System.Drawing.Size(488, 300)
         Me.Name = "FrmTabMarcas"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Mantenimiento de Marca"
         Me.UltraTabPageControl1.ResumeLayout(False)
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel5.ResumeLayout(False)
+        CType(Me.DgvMarca, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.UltraTabPageControl2.ResumeLayout(False)
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
-        CType(Me.UltraTabControl1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.UltraTabControl1.ResumeLayout(False)
+        Me.Panel4.ResumeLayout(False)
+        Me.Panel4.PerformLayout()
+        CType(Me.utbMarca, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.utbMarca.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
 
-    Friend WithEvents UltraTabControl1 As Infragistics.Win.UltraWinTabControl.UltraTabControl
+    Friend WithEvents utbMarca As Infragistics.Win.UltraWinTabControl.UltraTabControl
     Friend WithEvents UltraTabSharedControlsPage1 As Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage
     Friend WithEvents UltraTabPageControl1 As Infragistics.Win.UltraWinTabControl.UltraTabPageControl
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents Panel5 As Panel
+    Friend WithEvents DgvMarca As DataGridView
     Friend WithEvents Panel2 As Panel
+    Friend WithEvents btnSalir As Button
+    Friend WithEvents btnModificar As Button
+    Friend WithEvents btnNuevo As Button
     Friend WithEvents UltraTabPageControl2 As Infragistics.Win.UltraWinTabControl.UltraTabPageControl
-    Friend WithEvents Button3 As Button
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Panel1 As Panel
-    Friend WithEvents RadioButton2 As RadioButton
-    Friend WithEvents RadioButton1 As RadioButton
-    Friend WithEvents Label4 As Label
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents Label3 As Label
+    Friend WithEvents Panel4 As Panel
+    Friend WithEvents lblCodigo As Label
+    Friend WithEvents btnCancelar As Button
+    Friend WithEvents btnGuardar As Button
+    Friend WithEvents txtDes As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents Column1 As DataGridViewTextBoxColumn
-    Friend WithEvents Column2 As DataGridViewTextBoxColumn
-    Friend WithEvents Column3 As DataGridViewTextBoxColumn
-    Friend WithEvents Button5 As Button
-    Friend WithEvents Button4 As Button
+    Friend WithEvents chkInactivo As RadioButton
+    Friend WithEvents chkActivo As RadioButton
+    Friend WithEvents colcod As DataGridViewTextBoxColumn
+    Friend WithEvents colDes As DataGridViewTextBoxColumn
+    Friend WithEvents colEstado As DataGridViewTextBoxColumn
 End Class

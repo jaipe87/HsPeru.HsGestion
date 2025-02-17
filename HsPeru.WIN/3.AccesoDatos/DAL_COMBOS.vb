@@ -641,7 +641,6 @@ Public Class DAL_COMBOS
                     datMarca.COD = Convert.ToInt32(Row("COD"))
                     datMarca.DES = Row("DES")
                     datMarca.ST = Convert.ToInt32(Row("ST"))
-                    datMarca.CODWEB = Convert.ToInt32(Row("CODWEB"))
                     lstMarca.Add(datMarca)
                 End While
                 Return lstMarca

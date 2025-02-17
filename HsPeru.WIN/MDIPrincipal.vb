@@ -107,4 +107,10 @@ Public Class MdiPrincipal
         FrmTabart.MdiParent = Me
         FrmTabart.Show()
     End Sub
+
+    Private Sub M105_Click(sender As Object, e As EventArgs) Handles M105.Click
+        Dim FrmTabMar As FrmTabMarcas = New FrmTabMarcas
+        FrmTabMar.MdiParent = Me
+        FrmTabMar.Show()
+    End Sub
 End Class

@@ -125,6 +125,7 @@
     <Compile Include="2.Entity\VENDEDOR.vb" />
     <Compile Include="3.AccesoDatos\DAL_CLIPRO.vb" />
     <Compile Include="3.AccesoDatos\DAL_COMBOS.vb" />
+    <Compile Include="3.AccesoDatos\DAL_MARCA.vb" />
     <Compile Include="3.AccesoDatos\DAL_TABART.vb" />
     <Compile Include="3.AccesoDatos\DAL_TABFAC.vb" />
     <Compile Include="3.AccesoDatos\DAL_TABSUC.vb" />

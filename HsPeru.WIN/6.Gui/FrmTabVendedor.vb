@@ -136,7 +136,6 @@ Public Class FrmTabVendedor
             utbVendedor.Tabs(1).Enabled = True
         End If
 
-
     End Sub
 
     Private Sub txtCriterio_KeyDown(sender As Object, e As KeyEventArgs) Handles txtCriterio.KeyDown

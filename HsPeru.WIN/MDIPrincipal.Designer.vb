@@ -201,7 +201,7 @@ Partial Class MdiPrincipal
         Me.ListaDePreciosToolStripMenuItem.Image = CType(resources.GetObject("ListaDePreciosToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ListaDePreciosToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.ListaDePreciosToolStripMenuItem.Name = "ListaDePreciosToolStripMenuItem"
-        Me.ListaDePreciosToolStripMenuItem.Size = New System.Drawing.Size(252, 22)
+        Me.ListaDePreciosToolStripMenuItem.Size = New System.Drawing.Size(253, 22)
         Me.ListaDePreciosToolStripMenuItem.Text = "Lista de Precios "
         '
         'RegistroDeVentasToolStripMenuItem
@@ -209,7 +209,7 @@ Partial Class MdiPrincipal
         Me.RegistroDeVentasToolStripMenuItem.Image = CType(resources.GetObject("RegistroDeVentasToolStripMenuItem.Image"), System.Drawing.Image)
         Me.RegistroDeVentasToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.RegistroDeVentasToolStripMenuItem.Name = "RegistroDeVentasToolStripMenuItem"
-        Me.RegistroDeVentasToolStripMenuItem.Size = New System.Drawing.Size(252, 22)
+        Me.RegistroDeVentasToolStripMenuItem.Size = New System.Drawing.Size(253, 22)
         Me.RegistroDeVentasToolStripMenuItem.Text = "Registro de Ventas"
         '
         'InformesDeVentasXVendedorToolStripMenuItem
@@ -217,7 +217,7 @@ Partial Class MdiPrincipal
         Me.InformesDeVentasXVendedorToolStripMenuItem.Image = CType(resources.GetObject("InformesDeVentasXVendedorToolStripMenuItem.Image"), System.Drawing.Image)
         Me.InformesDeVentasXVendedorToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.InformesDeVentasXVendedorToolStripMenuItem.Name = "InformesDeVentasXVendedorToolStripMenuItem"
-        Me.InformesDeVentasXVendedorToolStripMenuItem.Size = New System.Drawing.Size(252, 22)
+        Me.InformesDeVentasXVendedorToolStripMenuItem.Size = New System.Drawing.Size(253, 22)
         Me.InformesDeVentasXVendedorToolStripMenuItem.Text = "Informes de Ventas x Vendedor"
         '
         'DocPendienteXClienteToolStripMenuItem
@@ -225,7 +225,7 @@ Partial Class MdiPrincipal
         Me.DocPendienteXClienteToolStripMenuItem.Image = CType(resources.GetObject("DocPendienteXClienteToolStripMenuItem.Image"), System.Drawing.Image)
         Me.DocPendienteXClienteToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.DocPendienteXClienteToolStripMenuItem.Name = "DocPendienteXClienteToolStripMenuItem"
-        Me.DocPendienteXClienteToolStripMenuItem.Size = New System.Drawing.Size(252, 22)
+        Me.DocPendienteXClienteToolStripMenuItem.Size = New System.Drawing.Size(253, 22)
         Me.DocPendienteXClienteToolStripMenuItem.Text = "Doc, Pendiente x Cliente"
         '
         'VentasXProductoPrecioVsCostoToolStripMenuItem
@@ -233,7 +233,7 @@ Partial Class MdiPrincipal
         Me.VentasXProductoPrecioVsCostoToolStripMenuItem.Image = CType(resources.GetObject("VentasXProductoPrecioVsCostoToolStripMenuItem.Image"), System.Drawing.Image)
         Me.VentasXProductoPrecioVsCostoToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.VentasXProductoPrecioVsCostoToolStripMenuItem.Name = "VentasXProductoPrecioVsCostoToolStripMenuItem"
-        Me.VentasXProductoPrecioVsCostoToolStripMenuItem.Size = New System.Drawing.Size(252, 22)
+        Me.VentasXProductoPrecioVsCostoToolStripMenuItem.Size = New System.Drawing.Size(253, 22)
         Me.VentasXProductoPrecioVsCostoToolStripMenuItem.Text = "Ventas x Producto Precio vs Costo"
         '
         'VentasDeArticulosXVendedorToolStripMenuItem
@@ -241,7 +241,7 @@ Partial Class MdiPrincipal
         Me.VentasDeArticulosXVendedorToolStripMenuItem.Image = CType(resources.GetObject("VentasDeArticulosXVendedorToolStripMenuItem.Image"), System.Drawing.Image)
         Me.VentasDeArticulosXVendedorToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.VentasDeArticulosXVendedorToolStripMenuItem.Name = "VentasDeArticulosXVendedorToolStripMenuItem"
-        Me.VentasDeArticulosXVendedorToolStripMenuItem.Size = New System.Drawing.Size(252, 22)
+        Me.VentasDeArticulosXVendedorToolStripMenuItem.Size = New System.Drawing.Size(253, 22)
         Me.VentasDeArticulosXVendedorToolStripMenuItem.Text = "Ventas de Articulo x Vendedor"
         '
         'VentasXItemToolStripMenuItem
@@ -249,7 +249,7 @@ Partial Class MdiPrincipal
         Me.VentasXItemToolStripMenuItem.Image = CType(resources.GetObject("VentasXItemToolStripMenuItem.Image"), System.Drawing.Image)
         Me.VentasXItemToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.VentasXItemToolStripMenuItem.Name = "VentasXItemToolStripMenuItem"
-        Me.VentasXItemToolStripMenuItem.Size = New System.Drawing.Size(252, 22)
+        Me.VentasXItemToolStripMenuItem.Size = New System.Drawing.Size(253, 22)
         Me.VentasXItemToolStripMenuItem.Text = "Ventas x Item"
         '
         'RegistroDeCompraToolStripMenuItem
@@ -257,7 +257,7 @@ Partial Class MdiPrincipal
         Me.RegistroDeCompraToolStripMenuItem.Image = CType(resources.GetObject("RegistroDeCompraToolStripMenuItem.Image"), System.Drawing.Image)
         Me.RegistroDeCompraToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.RegistroDeCompraToolStripMenuItem.Name = "RegistroDeCompraToolStripMenuItem"
-        Me.RegistroDeCompraToolStripMenuItem.Size = New System.Drawing.Size(252, 22)
+        Me.RegistroDeCompraToolStripMenuItem.Size = New System.Drawing.Size(253, 22)
         Me.RegistroDeCompraToolStripMenuItem.Text = "Registro de Compra"
         '
         'PLEToolStripMenuItem
@@ -266,7 +266,7 @@ Partial Class MdiPrincipal
         Me.PLEToolStripMenuItem.Image = CType(resources.GetObject("PLEToolStripMenuItem.Image"), System.Drawing.Image)
         Me.PLEToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.PLEToolStripMenuItem.Name = "PLEToolStripMenuItem"
-        Me.PLEToolStripMenuItem.Size = New System.Drawing.Size(252, 22)
+        Me.PLEToolStripMenuItem.Size = New System.Drawing.Size(253, 22)
         Me.PLEToolStripMenuItem.Text = "PLE"
         '
         'CompraToolStripMenuItem
@@ -288,7 +288,7 @@ Partial Class MdiPrincipal
         Me.ReporteDeStockToolStripMenuItem.Image = CType(resources.GetObject("ReporteDeStockToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ReporteDeStockToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.ReporteDeStockToolStripMenuItem.Name = "ReporteDeStockToolStripMenuItem"
-        Me.ReporteDeStockToolStripMenuItem.Size = New System.Drawing.Size(252, 22)
+        Me.ReporteDeStockToolStripMenuItem.Size = New System.Drawing.Size(253, 22)
         Me.ReporteDeStockToolStripMenuItem.Text = "Reporte de Stock"
         '
         'M2
@@ -385,7 +385,7 @@ Partial Class MdiPrincipal
         Me.M1.Image = CType(resources.GetObject("M1.Image"), System.Drawing.Image)
         Me.M1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.M1.Name = "M1"
-        Me.M1.Size = New System.Drawing.Size(68, 20)
+        Me.M1.Size = New System.Drawing.Size(67, 20)
         Me.M1.Text = "Tablas"
         '
         'M101
