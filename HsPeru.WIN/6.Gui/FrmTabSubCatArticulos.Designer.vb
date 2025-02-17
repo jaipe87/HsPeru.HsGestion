@@ -64,10 +64,9 @@ Partial Class FrmTabSubCatArticulos
         'UltraTabPageControl1
         '
         Me.UltraTabPageControl1.Controls.Add(Me.Panel1)
-        Me.UltraTabPageControl1.Location = New System.Drawing.Point(1, 24)
-        Me.UltraTabPageControl1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.UltraTabPageControl1.Location = New System.Drawing.Point(1, 23)
         Me.UltraTabPageControl1.Name = "UltraTabPageControl1"
-        Me.UltraTabPageControl1.Size = New System.Drawing.Size(849, 330)
+        Me.UltraTabPageControl1.Size = New System.Drawing.Size(636, 264)
         '
         'Panel1
         '
@@ -75,9 +74,8 @@ Partial Class FrmTabSubCatArticulos
         Me.Panel1.Controls.Add(Me.UltraPanel1)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(849, 330)
+        Me.Panel1.Size = New System.Drawing.Size(636, 264)
         Me.Panel1.TabIndex = 0
         '
         'Panel2
@@ -86,19 +84,17 @@ Partial Class FrmTabSubCatArticulos
         Me.Panel2.Controls.Add(Me.Button1)
         Me.Panel2.Controls.Add(Me.Button2)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel2.Location = New System.Drawing.Point(741, 0)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel2.Location = New System.Drawing.Point(555, 0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(108, 330)
+        Me.Panel2.Size = New System.Drawing.Size(81, 264)
         Me.Panel2.TabIndex = 1
         '
         'Button3
         '
         Me.Button3.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Button3.Location = New System.Drawing.Point(4, 143)
-        Me.Button3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Button3.Location = New System.Drawing.Point(3, 116)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(100, 46)
+        Me.Button3.Size = New System.Drawing.Size(75, 37)
         Me.Button3.TabIndex = 2
         Me.Button3.Text = "Salir"
         Me.Button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -107,10 +103,9 @@ Partial Class FrmTabSubCatArticulos
         'Button1
         '
         Me.Button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Button1.Location = New System.Drawing.Point(4, 52)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Button1.Location = New System.Drawing.Point(3, 42)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(100, 46)
+        Me.Button1.Size = New System.Drawing.Size(75, 37)
         Me.Button1.TabIndex = 4
         Me.Button1.Text = "Nuevo"
         Me.Button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -119,10 +114,9 @@ Partial Class FrmTabSubCatArticulos
         'Button2
         '
         Me.Button2.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Button2.Location = New System.Drawing.Point(4, 97)
-        Me.Button2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Button2.Location = New System.Drawing.Point(3, 79)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(100, 46)
+        Me.Button2.Size = New System.Drawing.Size(75, 37)
         Me.Button2.TabIndex = 3
         Me.Button2.Text = "Modificar"
         Me.Button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -136,10 +130,9 @@ Partial Class FrmTabSubCatArticulos
         Me.UltraPanel1.ClientArea.Controls.Add(Me.DataGridView1)
         Me.UltraPanel1.ClientArea.Controls.Add(Me.Label1)
         Me.UltraPanel1.ClientArea.Controls.Add(Me.TextBox1)
-        Me.UltraPanel1.Location = New System.Drawing.Point(9, 10)
-        Me.UltraPanel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.UltraPanel1.Location = New System.Drawing.Point(7, 8)
         Me.UltraPanel1.Name = "UltraPanel1"
-        Me.UltraPanel1.Size = New System.Drawing.Size(731, 314)
+        Me.UltraPanel1.Size = New System.Drawing.Size(548, 255)
         Me.UltraPanel1.TabIndex = 0
         '
         'DataGridView1
@@ -150,12 +143,11 @@ Partial Class FrmTabSubCatArticulos
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3})
         Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.DataGridView1.Location = New System.Drawing.Point(0, 41)
-        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.DataGridView1.Location = New System.Drawing.Point(0, 33)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.RowHeadersWidth = 15
-        Me.DataGridView1.Size = New System.Drawing.Size(731, 273)
+        Me.DataGridView1.Size = New System.Drawing.Size(548, 222)
         Me.DataGridView1.TabIndex = 2
         '
         'Column1
@@ -182,28 +174,25 @@ Partial Class FrmTabSubCatArticulos
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(5, 11)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Location = New System.Drawing.Point(4, 9)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(52, 17)
+        Me.Label1.Size = New System.Drawing.Size(40, 13)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Buscar"
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(67, 7)
-        Me.TextBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TextBox1.Location = New System.Drawing.Point(50, 6)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(401, 22)
+        Me.TextBox1.Size = New System.Drawing.Size(302, 20)
         Me.TextBox1.TabIndex = 0
         '
         'UltraTabPageControl2
         '
         Me.UltraTabPageControl2.Controls.Add(Me.Panel3)
-        Me.UltraTabPageControl2.Location = New System.Drawing.Point(-13333, -12308)
-        Me.UltraTabPageControl2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.UltraTabPageControl2.Location = New System.Drawing.Point(-7500, -8125)
         Me.UltraTabPageControl2.Name = "UltraTabPageControl2"
-        Me.UltraTabPageControl2.Size = New System.Drawing.Size(849, 330)
+        Me.UltraTabPageControl2.Size = New System.Drawing.Size(636, 264)
         '
         'Panel3
         '
@@ -217,27 +206,24 @@ Partial Class FrmTabSubCatArticulos
         Me.Panel3.Controls.Add(Me.TextBox2)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel3.Location = New System.Drawing.Point(0, 0)
-        Me.Panel3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(849, 330)
+        Me.Panel3.Size = New System.Drawing.Size(636, 264)
         Me.Panel3.TabIndex = 0
         '
         'ComboBox1
         '
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(189, 132)
-        Me.ComboBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.ComboBox1.Location = New System.Drawing.Point(142, 107)
         Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(289, 24)
+        Me.ComboBox1.Size = New System.Drawing.Size(218, 21)
         Me.ComboBox1.TabIndex = 12
         '
         'Button4
         '
         Me.Button4.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Button4.Location = New System.Drawing.Point(317, 238)
-        Me.Button4.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Button4.Location = New System.Drawing.Point(238, 193)
         Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(100, 53)
+        Me.Button4.Size = New System.Drawing.Size(75, 43)
         Me.Button4.TabIndex = 11
         Me.Button4.Text = "Guardar"
         Me.Button4.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -246,10 +232,9 @@ Partial Class FrmTabSubCatArticulos
         'Button5
         '
         Me.Button5.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Button5.Location = New System.Drawing.Point(433, 238)
-        Me.Button5.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Button5.Location = New System.Drawing.Point(325, 193)
         Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(100, 53)
+        Me.Button5.Size = New System.Drawing.Size(75, 43)
         Me.Button5.TabIndex = 10
         Me.Button5.Text = "Salir"
         Me.Button5.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -258,47 +243,42 @@ Partial Class FrmTabSubCatArticulos
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(109, 135)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label4.Location = New System.Drawing.Point(82, 110)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(69, 17)
+        Me.Label4.Size = New System.Drawing.Size(54, 13)
         Me.Label4.TabIndex = 8
         Me.Label4.Text = "Categoría"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(80, 92)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label3.Location = New System.Drawing.Point(60, 75)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(99, 17)
+        Me.Label3.Size = New System.Drawing.Size(76, 13)
         Me.Label3.TabIndex = 7
         Me.Label3.Text = "Sub-Categoría"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(128, 50)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label2.Location = New System.Drawing.Point(96, 41)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(52, 17)
+        Me.Label2.Size = New System.Drawing.Size(40, 13)
         Me.Label2.TabIndex = 6
         Me.Label2.Text = "Código"
         '
         'TextBox3
         '
-        Me.TextBox3.Location = New System.Drawing.Point(189, 89)
-        Me.TextBox3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TextBox3.Location = New System.Drawing.Point(142, 72)
         Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(505, 22)
+        Me.TextBox3.Size = New System.Drawing.Size(380, 20)
         Me.TextBox3.TabIndex = 1
         '
         'TextBox2
         '
-        Me.TextBox2.Location = New System.Drawing.Point(189, 47)
-        Me.TextBox2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TextBox2.Location = New System.Drawing.Point(142, 38)
         Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(72, 22)
+        Me.TextBox2.Size = New System.Drawing.Size(55, 20)
         Me.TextBox2.TabIndex = 0
         '
         'UltraTabControl1
@@ -308,10 +288,9 @@ Partial Class FrmTabSubCatArticulos
         Me.UltraTabControl1.Controls.Add(Me.UltraTabPageControl2)
         Me.UltraTabControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.UltraTabControl1.Location = New System.Drawing.Point(0, 0)
-        Me.UltraTabControl1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.UltraTabControl1.Name = "UltraTabControl1"
         Me.UltraTabControl1.SharedControlsPage = Me.UltraTabSharedControlsPage1
-        Me.UltraTabControl1.Size = New System.Drawing.Size(853, 357)
+        Me.UltraTabControl1.Size = New System.Drawing.Size(640, 290)
         Me.UltraTabControl1.TabIndex = 1
         UltraTab1.TabPage = Me.UltraTabPageControl1
         UltraTab1.Text = "Categorías"
@@ -322,17 +301,15 @@ Partial Class FrmTabSubCatArticulos
         'UltraTabSharedControlsPage1
         '
         Me.UltraTabSharedControlsPage1.Location = New System.Drawing.Point(-10000, -10000)
-        Me.UltraTabSharedControlsPage1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.UltraTabSharedControlsPage1.Name = "UltraTabSharedControlsPage1"
-        Me.UltraTabSharedControlsPage1.Size = New System.Drawing.Size(849, 330)
+        Me.UltraTabSharedControlsPage1.Size = New System.Drawing.Size(636, 264)
         '
         'FrmTabSubCatArticulos
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(853, 357)
+        Me.ClientSize = New System.Drawing.Size(640, 290)
         Me.Controls.Add(Me.UltraTabControl1)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "FrmTabSubCatArticulos"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Sub-Categorías de Articulos"

@@ -113,4 +113,10 @@ Public Class MdiPrincipal
         FrmTabMar.MdiParent = Me
         FrmTabMar.Show()
     End Sub
+
+    Private Sub M106_Click(sender As Object, e As EventArgs) Handles M106.Click
+        Dim FrmTabCat As FrmTabCatArticulos = New FrmTabCatArticulos
+        FrmTabCat.MdiParent = Me
+        FrmTabCat.Show()
+    End Sub
 End Class

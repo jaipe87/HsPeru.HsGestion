@@ -101,7 +101,6 @@ Public Class FrmTabVendedor
         DgvVendedor.DataSource = lstVendedor
         utbVendedor.Tabs(0).Selected = True
         utbVendedor.Tabs(1).Enabled = False
-
     End Sub
     Sub Buscar()
         oVendedor = New DAL_VENDEDOR

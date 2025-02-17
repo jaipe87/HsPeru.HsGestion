@@ -284,6 +284,7 @@ Partial Class FrmTabVendedor
         '
         'Panel4
         '
+        Me.Panel4.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
         Me.Panel4.Controls.Add(Me.lblCodigo)
         Me.Panel4.Controls.Add(Me.btnCancelar)
         Me.Panel4.Controls.Add(Me.btnGuardar)
