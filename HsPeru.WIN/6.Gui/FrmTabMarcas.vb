@@ -30,7 +30,17 @@
     Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
         Close()
     End Sub
+    Private Sub chkActivo_CheckedChanged(sender As Object, e As EventArgs) Handles chkActivo.CheckedChanged
+        If chkActivo.Checked Then
+            chkInactivo.Checked = False
+        End If
+    End Sub
 
+    Private Sub chkInactivo_CheckedChanged(sender As Object, e As EventArgs) Handles chkInactivo.CheckedChanged
+        If chkInactivo.Checked Then
+            chkActivo.Checked = False
+        End If
+    End Sub
     Private Sub DgvMarca_SelectionChanged(sender As Object, e As EventArgs) Handles DgvMarca.SelectionChanged
         SeleccionarRow()
     End Sub
@@ -77,8 +87,8 @@
         If Not IsNothing(datMarca) Then
             lblCodigo.Text = datMarca.COD.ToString
             txtDes.Text = datMarca.DES
-            chkActivo.Checked = If(datMarca.ST = 1, True, False)
-            chkInactivo.Checked = If(datMarca.ST = 0, True, False)
+            chkActivo.Checked = (datMarca.ST = 0)
+            chkInactivo.Checked = (datMarca.ST = 1)
             utbMarca.Tabs(0).Enabled = False
             utbMarca.Tabs(1).Selected = True
             utbMarca.Tabs(1).Enabled = True
@@ -109,7 +119,7 @@
             .CIA = GCia
             .COD = CInt(Val(lblCodigo.Text))
             .DES = txtDes.Text.Trim
-            .ST = If(chkActivo.Checked, 1, 0) And If(chkInactivo.Checked, 0, 0)
+            .ST = If(chkActivo.Checked, 0, 1)
         End With
         datMarca = oMarca.Insert_Marca(parMarca)
 
