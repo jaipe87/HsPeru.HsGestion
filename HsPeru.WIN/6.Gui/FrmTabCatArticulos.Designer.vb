@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class FrmTabCatArticulos
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,21 +20,25 @@ Partial Class FrmTabCatArticulos
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim UltraTab1 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
-        Dim UltraTab2 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim UltraTab1 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
+        Dim UltraTab2 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Me.UltraTabPageControl1 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.txtCriterio = New System.Windows.Forms.TextBox()
         Me.DgvCatArt = New System.Windows.Forms.DataGridView()
+        Me.colcod = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colDes = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colStock = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colEstado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.btnEliminar = New System.Windows.Forms.Button()
         Me.btnSalir = New System.Windows.Forms.Button()
@@ -59,10 +63,6 @@ Partial Class FrmTabCatArticulos
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.utbCategoria = New Infragistics.Win.UltraWinTabControl.UltraTabControl()
         Me.UltraTabSharedControlsPage1 = New Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage()
-        Me.colcod = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colDes = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colStock = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colEstado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.UltraTabPageControl1.SuspendLayout()
         Me.Panel5.SuspendLayout()
         Me.Panel6.SuspendLayout()
@@ -80,7 +80,7 @@ Partial Class FrmTabCatArticulos
         '
         Me.UltraTabPageControl1.Controls.Add(Me.Panel5)
         Me.UltraTabPageControl1.Controls.Add(Me.Panel2)
-        Me.UltraTabPageControl1.Location = New System.Drawing.Point(1, 20)
+        Me.UltraTabPageControl1.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl1.Name = "UltraTabPageControl1"
         Me.UltraTabPageControl1.Size = New System.Drawing.Size(621, 268)
         '
@@ -166,6 +166,41 @@ Partial Class FrmTabCatArticulos
         Me.DgvCatArt.Size = New System.Drawing.Size(541, 233)
         Me.DgvCatArt.TabIndex = 0
         '
+        'colcod
+        '
+        Me.colcod.DataPropertyName = "COD"
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.colcod.DefaultCellStyle = DataGridViewCellStyle2
+        Me.colcod.HeaderText = "Cód."
+        Me.colcod.Name = "colcod"
+        Me.colcod.ReadOnly = True
+        Me.colcod.Width = 50
+        '
+        'colDes
+        '
+        Me.colDes.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.colDes.DataPropertyName = "DES"
+        Me.colDes.HeaderText = "Descripción"
+        Me.colDes.Name = "colDes"
+        Me.colDes.ReadOnly = True
+        '
+        'colStock
+        '
+        Me.colStock.DataPropertyName = "STOCK"
+        Me.colStock.HeaderText = "Stock"
+        Me.colStock.Name = "colStock"
+        Me.colStock.ReadOnly = True
+        '
+        'colEstado
+        '
+        Me.colEstado.DataPropertyName = "ESTADO"
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.colEstado.DefaultCellStyle = DataGridViewCellStyle3
+        Me.colEstado.HeaderText = "Estado"
+        Me.colEstado.Name = "colEstado"
+        Me.colEstado.ReadOnly = True
+        Me.colEstado.Width = 80
+        '
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.Transparent
@@ -230,7 +265,7 @@ Partial Class FrmTabCatArticulos
         'UltraTabPageControl2
         '
         Me.UltraTabPageControl2.Controls.Add(Me.Panel4)
-        Me.UltraTabPageControl2.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl2.Location = New System.Drawing.Point(1, 20)
         Me.UltraTabPageControl2.Name = "UltraTabPageControl2"
         Me.UltraTabPageControl2.Size = New System.Drawing.Size(621, 268)
         '
@@ -259,7 +294,7 @@ Partial Class FrmTabCatArticulos
         'chkNo
         '
         Me.chkNo.AutoSize = True
-        Me.chkNo.Location = New System.Drawing.Point(180, 123)
+        Me.chkNo.Location = New System.Drawing.Point(178, 122)
         Me.chkNo.Name = "chkNo"
         Me.chkNo.Size = New System.Drawing.Size(39, 17)
         Me.chkNo.TabIndex = 24
@@ -270,7 +305,7 @@ Partial Class FrmTabCatArticulos
         'chkSi
         '
         Me.chkSi.AutoSize = True
-        Me.chkSi.Location = New System.Drawing.Point(110, 123)
+        Me.chkSi.Location = New System.Drawing.Point(110, 122)
         Me.chkSi.Name = "chkSi"
         Me.chkSi.Size = New System.Drawing.Size(34, 17)
         Me.chkSi.TabIndex = 23
@@ -281,7 +316,7 @@ Partial Class FrmTabCatArticulos
         'chkInactivo
         '
         Me.chkInactivo.AutoSize = True
-        Me.chkInactivo.Location = New System.Drawing.Point(178, 159)
+        Me.chkInactivo.Location = New System.Drawing.Point(178, 158)
         Me.chkInactivo.Name = "chkInactivo"
         Me.chkInactivo.Size = New System.Drawing.Size(63, 17)
         Me.chkInactivo.TabIndex = 22
@@ -292,7 +327,7 @@ Partial Class FrmTabCatArticulos
         'chkActivo
         '
         Me.chkActivo.AutoSize = True
-        Me.chkActivo.Location = New System.Drawing.Point(108, 159)
+        Me.chkActivo.Location = New System.Drawing.Point(108, 158)
         Me.chkActivo.Name = "chkActivo"
         Me.chkActivo.Size = New System.Drawing.Size(55, 17)
         Me.chkActivo.TabIndex = 21
@@ -360,7 +395,7 @@ Partial Class FrmTabCatArticulos
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(105, 143)
+        Me.Label4.Location = New System.Drawing.Point(105, 142)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(54, 13)
         Me.Label4.TabIndex = 3
@@ -371,7 +406,7 @@ Partial Class FrmTabCatArticulos
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(105, 107)
+        Me.Label3.Location = New System.Drawing.Point(105, 106)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(99, 13)
         Me.Label3.TabIndex = 2
@@ -441,41 +476,6 @@ Partial Class FrmTabCatArticulos
         Me.UltraTabSharedControlsPage1.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabSharedControlsPage1.Name = "UltraTabSharedControlsPage1"
         Me.UltraTabSharedControlsPage1.Size = New System.Drawing.Size(621, 268)
-        '
-        'colcod
-        '
-        Me.colcod.DataPropertyName = "COD"
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.colcod.DefaultCellStyle = DataGridViewCellStyle2
-        Me.colcod.HeaderText = "Cód."
-        Me.colcod.Name = "colcod"
-        Me.colcod.ReadOnly = True
-        Me.colcod.Width = 50
-        '
-        'colDes
-        '
-        Me.colDes.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.colDes.DataPropertyName = "DES"
-        Me.colDes.HeaderText = "Descripción"
-        Me.colDes.Name = "colDes"
-        Me.colDes.ReadOnly = True
-        '
-        'colStock
-        '
-        Me.colStock.DataPropertyName = "STOCK"
-        Me.colStock.HeaderText = "Stock"
-        Me.colStock.Name = "colStock"
-        Me.colStock.ReadOnly = True
-        '
-        'colEstado
-        '
-        Me.colEstado.DataPropertyName = "ESTADO"
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.colEstado.DefaultCellStyle = DataGridViewCellStyle3
-        Me.colEstado.HeaderText = "Estado"
-        Me.colEstado.Name = "colEstado"
-        Me.colEstado.ReadOnly = True
-        Me.colEstado.Width = 80
         '
         'FrmTabCatArticulos
         '

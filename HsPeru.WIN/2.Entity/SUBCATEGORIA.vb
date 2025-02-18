@@ -5,4 +5,9 @@
     Public Property DESCRI As String
     Public Property ST As Integer
     Public Property CODWEB As Integer
+
+
+    '======================================
+    Public Property DESCAT As String
+    Public Property ESTADO As String
 End Class

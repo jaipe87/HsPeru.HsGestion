@@ -49,6 +49,18 @@
         Modificar()
     End Sub
 
+    Private Sub chkSi_CheckedChanged(sender As Object, e As EventArgs) Handles chkSi.CheckedChanged
+        If chkSi.Checked Then
+            chkNo.Checked = False
+        End If
+    End Sub
+
+    Private Sub chkNo_CheckedChanged(sender As Object, e As EventArgs) Handles chkNo.CheckedChanged
+        If chkNo.Checked Then
+            chkSi.Checked = False
+        End If
+    End Sub
+
     Private Sub chkActivo_CheckedChanged(sender As Object, e As EventArgs) Handles chkActivo.CheckedChanged
         If chkActivo.Checked Then
             chkInactivo.Checked = False
@@ -59,14 +71,6 @@
         If chkInactivo.Checked Then
             chkActivo.Checked = False
         End If
-    End Sub
-
-    Private Sub chkSi_CheckedChanged(sender As Object, e As EventArgs) Handles chkSi.CheckedChanged
-        If chkSi.Checked Then chkNo.Checked = False
-    End Sub
-
-    Private Sub chkNo_CheckedChanged(sender As Object, e As EventArgs) Handles chkNo.CheckedChanged
-        If chkNo.Checked Then chkSi.Checked = False
     End Sub
 
 #End Region
@@ -169,7 +173,6 @@
         txtCriterio.Focus()
         SeleccionarRow()
     End Sub
-
 
 #End Region
 End Class

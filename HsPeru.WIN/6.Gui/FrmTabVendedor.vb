@@ -160,8 +160,6 @@ Public Class FrmTabVendedor
         txtRepcontrasenia.Enabled = chkSup.Checked
     End Sub
 
-
-
     Sub Graba()
         If MessageBox.Show("¿Seguro de Grabar el Registro?", TITULO, MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Return
         If txtNombre.Text.Trim.Length = 0 Then MessageBox.Show("Ingrese el nombre del vendedor", TITULO, MessageBoxButtons.OK, MessageBoxIcon.Information) : Return
@@ -195,9 +193,6 @@ Public Class FrmTabVendedor
         End If
     End Sub
 
-
-
 #End Region
-
 
 End Class
