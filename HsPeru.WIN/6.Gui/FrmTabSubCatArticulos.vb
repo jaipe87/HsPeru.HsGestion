@@ -59,7 +59,8 @@
     Sub Inicia()
         oCategoria = New DAL_TABCATART
         oSubCategoria = New DAL_TABSUBCAT
-        CargarComboBox(oCategoria.Select_all_Categoria(New CATEGORIA With {.DES = "", .ST = 1}), "COD", "DES", cboCategoria, SELECCIONAR)
+        Dim listaCategorias As List(Of CATEGORIA) = oCategoria.Select_all_Categoria(New CATEGORIA)
+        CargarComboBox(listaCategorias, "COD", "DES", cboCategoria, "SELECCIONAR")
         lstSubCategoria = oSubCategoria.Select_all_SubCategoria(New SUBCATEGORIA)
         DgvSubCat.AutoGenerateColumns = False
         DgvSubCat.DataSource = lstSubCategoria
@@ -71,6 +72,7 @@
         utbSubCat.Tabs(0).Enabled = False
         utbSubCat.Tabs(1).Selected = True
         utbSubCat.Tabs(1).Enabled = True
+        lblCodigo.Text = "?"
         txtDes.Text = ""
         txtDes.Focus()
         cboCategoria.SelectedValue = 0
@@ -102,7 +104,7 @@
     Sub Graba()
         If MessageBox.Show("¿Seguro de Grabar el Registro?", TITULO, MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Return
         If txtDes.Text.Trim.Length = 0 Then MessageBox.Show("Ingrese el nombre de la subcategoria", TITULO, MessageBoxButtons.OK, MessageBoxIcon.Information) : Return
-        'If CType(cboCategoria.SelectedValue, Integer) = 0 Then MessageBox.Show("Seleccione una categoria para la subcategoria", TITULO, MessageBoxButtons.OK, MessageBoxIcon.Information) : Return
+        If CType(cboCategoria.SelectedValue, Integer) = 0 Then MessageBox.Show("Seleccione una categoria para la subcategoria", TITULO, MessageBoxButtons.OK, MessageBoxIcon.Information) : Return
 
         oSubCategoria = New DAL_TABSUBCAT
         datSubCategoria = New SUBCATEGORIA

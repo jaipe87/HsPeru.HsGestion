@@ -132,6 +132,7 @@
     <Compile Include="3.AccesoDatos\DAL_TABFAC.vb" />
     <Compile Include="3.AccesoDatos\DAL_TABSUBCAT.vb" />
     <Compile Include="3.AccesoDatos\DAL_TABSUC.vb" />
+    <Compile Include="3.AccesoDatos\DAL_TABUNIDMEDIDA.vb" />
     <Compile Include="3.AccesoDatos\DAL_TIPCAM.vb" />
     <Compile Include="3.AccesoDatos\DAL_CIA.vb" />
     <Compile Include="3.AccesoDatos\DAL_USUARIO.vb" />
@@ -397,6 +398,12 @@
     <Compile Include="6.Gui\FrmTabTransportistas.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="6.Gui\FrmTabUnidMedidas.Designer.vb">
+      <DependentUpon>FrmTabUnidMedidas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="6.Gui\FrmTabUnidMedidas.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="6.Gui\FrmTabUsuario.Designer.vb">
       <DependentUpon>FrmTabUsuario.vb</DependentUpon>
     </Compile>
@@ -558,6 +565,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="6.Gui\FrmTabTransportistas.resx">
       <DependentUpon>FrmTabTransportistas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="6.Gui\FrmTabUnidMedidas.resx">
+      <DependentUpon>FrmTabUnidMedidas.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="6.Gui\FrmTabUsuario.resx">
       <DependentUpon>FrmTabUsuario.vb</DependentUpon>

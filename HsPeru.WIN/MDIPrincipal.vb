@@ -125,4 +125,10 @@ Public Class MdiPrincipal
         FrmTabSubCat.MdiParent = Me
         FrmTabSubCat.Show()
     End Sub
+
+    Private Sub M108_Click(sender As Object, e As EventArgs) Handles M108.Click
+        Dim FrmTabUnidMed As FrmTabUnidMedidas = New FrmTabUnidMedidas
+        FrmTabUnidMed.MdiParent = Me
+        FrmTabUnidMed.Show()
+    End Sub
 End Class

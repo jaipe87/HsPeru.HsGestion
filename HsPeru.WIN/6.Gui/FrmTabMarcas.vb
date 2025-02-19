@@ -52,12 +52,12 @@
 
 #Region "Métodos"
     Sub SeleccionarRow()
-        Dim xCodmar As Integer = 0
+        Dim xCod As Integer = 0
         datMarca = New MARCA
-        xCodmar = NothingToInteger(DgvMarca.CurrentRow.Cells(colcod.Index).Value)
+        xCod = NothingToInteger(DgvMarca.CurrentRow.Cells(colcod.Index).Value)
 
-        If lstMarca.Where(Function(x) x.COD = xCodmar).Count > 0 Then
-            datMarca = lstMarca.Where(Function(x) x.COD = xCodmar).First
+        If lstMarca.Where(Function(x) x.COD = xCod).Count > 0 Then
+            datMarca = lstMarca.Where(Function(x) x.COD = xCod).First
         End If
 
 
