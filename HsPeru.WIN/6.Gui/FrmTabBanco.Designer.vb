@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class FrmTabBanco
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,426 +20,563 @@ Partial Class FrmTabBanco
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim UltraTab1 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim UltraTab2 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.UltraTabPageControl1 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
-        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.DgvBanco = New System.Windows.Forms.DataGridView()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.UltraPanel1 = New Infragistics.Win.Misc.UltraPanel()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.btnSalir = New System.Windows.Forms.Button()
+        Me.btnModificar = New System.Windows.Forms.Button()
+        Me.btnNuevo = New System.Windows.Forms.Button()
         Me.UltraTabPageControl2 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
-        Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.Button5 = New System.Windows.Forms.Button()
+        Me.rbdDolares = New System.Windows.Forms.RadioButton()
+        Me.rbdSoles = New System.Windows.Forms.RadioButton()
+        Me.txtFuncio = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.txtNroCta = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.lblCodigo = New System.Windows.Forms.Label()
+        Me.btnCancelar = New System.Windows.Forms.Button()
+        Me.btnGuardar = New System.Windows.Forms.Button()
+        Me.chkConBancaria = New System.Windows.Forms.CheckBox()
+        Me.txtDes = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.UltraTabControl1 = New Infragistics.Win.UltraWinTabControl.UltraTabControl()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.utbBanco = New Infragistics.Win.UltraWinTabControl.UltraTabControl()
         Me.UltraTabSharedControlsPage1 = New Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage()
+        Me.chkCobranzas = New System.Windows.Forms.CheckBox()
+        Me.chkPagProveedores = New System.Windows.Forms.CheckBox()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colcod = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colDes = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colDessuc = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colSupervisor = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colfuncio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colEstado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.UltraTabPageControl1.SuspendLayout()
-        Me.Panel1.SuspendLayout()
+        Me.Panel5.SuspendLayout()
+        CType(Me.DgvBanco, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
-        Me.UltraPanel1.ClientArea.SuspendLayout()
-        Me.UltraPanel1.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.UltraTabPageControl2.SuspendLayout()
-        Me.Panel3.SuspendLayout()
-        CType(Me.UltraTabControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.UltraTabControl1.SuspendLayout()
+        Me.Panel4.SuspendLayout()
+        CType(Me.utbBanco, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.utbBanco.SuspendLayout()
         Me.SuspendLayout()
         '
         'UltraTabPageControl1
         '
-        Me.UltraTabPageControl1.Controls.Add(Me.Panel1)
-        Me.UltraTabPageControl1.Location = New System.Drawing.Point(1, 23)
+        Me.UltraTabPageControl1.Controls.Add(Me.Panel5)
+        Me.UltraTabPageControl1.Controls.Add(Me.Panel2)
+        Me.UltraTabPageControl1.Location = New System.Drawing.Point(1, 20)
         Me.UltraTabPageControl1.Name = "UltraTabPageControl1"
-        Me.UltraTabPageControl1.Size = New System.Drawing.Size(802, 289)
+        Me.UltraTabPageControl1.Size = New System.Drawing.Size(804, 294)
         '
-        'Panel1
+        'Panel5
         '
-        Me.Panel1.Controls.Add(Me.Panel2)
-        Me.Panel1.Controls.Add(Me.UltraPanel1)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(802, 289)
-        Me.Panel1.TabIndex = 0
+        Me.Panel5.Controls.Add(Me.DgvBanco)
+        Me.Panel5.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel5.Location = New System.Drawing.Point(0, 0)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(730, 294)
+        Me.Panel5.TabIndex = 2
+        '
+        'DgvBanco
+        '
+        Me.DgvBanco.AllowUserToAddRows = False
+        Me.DgvBanco.AllowUserToDeleteRows = False
+        Me.DgvBanco.AllowUserToOrderColumns = True
+        Me.DgvBanco.BackgroundColor = System.Drawing.Color.WhiteSmoke
+        Me.DgvBanco.BorderStyle = System.Windows.Forms.BorderStyle.None
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DgvBanco.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        Me.DgvBanco.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DgvBanco.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colcod, Me.colDes, Me.colDessuc, Me.colSupervisor, Me.colfuncio, Me.colEstado})
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.GradientInactiveCaption
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DgvBanco.DefaultCellStyle = DataGridViewCellStyle5
+        Me.DgvBanco.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.DgvBanco.Location = New System.Drawing.Point(0, 3)
+        Me.DgvBanco.Name = "DgvBanco"
+        Me.DgvBanco.ReadOnly = True
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DgvBanco.RowHeadersDefaultCellStyle = DataGridViewCellStyle6
+        Me.DgvBanco.RowHeadersVisible = False
+        Me.DgvBanco.RowHeadersWidth = 15
+        Me.DgvBanco.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DgvBanco.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DgvBanco.Size = New System.Drawing.Size(730, 291)
+        Me.DgvBanco.TabIndex = 0
         '
         'Panel2
         '
-        Me.Panel2.Controls.Add(Me.Button3)
-        Me.Panel2.Controls.Add(Me.Button1)
-        Me.Panel2.Controls.Add(Me.Button2)
+        Me.Panel2.Controls.Add(Me.btnSalir)
+        Me.Panel2.Controls.Add(Me.btnModificar)
+        Me.Panel2.Controls.Add(Me.btnNuevo)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel2.Location = New System.Drawing.Point(721, 0)
+        Me.Panel2.Location = New System.Drawing.Point(730, 0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(81, 289)
+        Me.Panel2.Size = New System.Drawing.Size(74, 294)
         Me.Panel2.TabIndex = 1
         '
-        'Button3
+        'btnSalir
         '
-        Me.Button3.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Button3.Location = New System.Drawing.Point(3, 116)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(75, 37)
-        Me.Button3.TabIndex = 2
-        Me.Button3.Text = "Salir"
-        Me.Button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.btnSalir.Image = Global.HsPeru.WIN.My.Resources.Resources.door_in
+        Me.btnSalir.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btnSalir.Location = New System.Drawing.Point(6, 118)
+        Me.btnSalir.Name = "btnSalir"
+        Me.btnSalir.Size = New System.Drawing.Size(68, 43)
+        Me.btnSalir.TabIndex = 2
+        Me.btnSalir.Text = "Salir"
+        Me.btnSalir.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnSalir.UseVisualStyleBackColor = True
         '
-        'Button1
+        'btnModificar
         '
-        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Button1.Location = New System.Drawing.Point(3, 42)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 37)
-        Me.Button1.TabIndex = 4
-        Me.Button1.Text = "Nuevo"
-        Me.Button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnModificar.Image = Global.HsPeru.WIN.My.Resources.Resources.page_edit
+        Me.btnModificar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btnModificar.Location = New System.Drawing.Point(6, 76)
+        Me.btnModificar.Name = "btnModificar"
+        Me.btnModificar.Size = New System.Drawing.Size(68, 43)
+        Me.btnModificar.TabIndex = 1
+        Me.btnModificar.Text = "Modificar"
+        Me.btnModificar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnModificar.UseVisualStyleBackColor = True
         '
-        'Button2
+        'btnNuevo
         '
-        Me.Button2.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Button2.Location = New System.Drawing.Point(3, 79)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 37)
-        Me.Button2.TabIndex = 3
-        Me.Button2.Text = "Modificar"
-        Me.Button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.Button2.UseVisualStyleBackColor = True
-        '
-        'UltraPanel1
-        '
-        '
-        'UltraPanel1.ClientArea
-        '
-        Me.UltraPanel1.ClientArea.Controls.Add(Me.DataGridView1)
-        Me.UltraPanel1.ClientArea.Controls.Add(Me.Label1)
-        Me.UltraPanel1.ClientArea.Controls.Add(Me.TextBox1)
-        Me.UltraPanel1.Location = New System.Drawing.Point(7, 8)
-        Me.UltraPanel1.Name = "UltraPanel1"
-        Me.UltraPanel1.Size = New System.Drawing.Size(714, 281)
-        Me.UltraPanel1.TabIndex = 0
-        '
-        'DataGridView1
-        '
-        Me.DataGridView1.AllowUserToAddRows = False
-        Me.DataGridView1.AllowUserToDeleteRows = False
-        Me.DataGridView1.AllowUserToOrderColumns = True
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column4, Me.Column5, Me.Column6, Me.Column3})
-        Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.DataGridView1.Location = New System.Drawing.Point(0, 34)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.ReadOnly = True
-        Me.DataGridView1.RowHeadersWidth = 15
-        Me.DataGridView1.Size = New System.Drawing.Size(714, 247)
-        Me.DataGridView1.TabIndex = 2
-        '
-        'Column1
-        '
-        Me.Column1.HeaderText = "Código"
-        Me.Column1.Name = "Column1"
-        Me.Column1.ReadOnly = True
-        Me.Column1.Width = 45
-        '
-        'Column2
-        '
-        Me.Column2.HeaderText = "Descripción"
-        Me.Column2.Name = "Column2"
-        Me.Column2.ReadOnly = True
-        Me.Column2.Width = 180
-        '
-        'Column4
-        '
-        Me.Column4.HeaderText = "T/M"
-        Me.Column4.Name = "Column4"
-        Me.Column4.ReadOnly = True
-        Me.Column4.Width = 40
-        '
-        'Column5
-        '
-        Me.Column5.HeaderText = "Nro.Cuenta"
-        Me.Column5.Name = "Column5"
-        Me.Column5.ReadOnly = True
-        Me.Column5.Width = 180
-        '
-        'Column6
-        '
-        Me.Column6.HeaderText = "Funcionario"
-        Me.Column6.Name = "Column6"
-        Me.Column6.ReadOnly = True
-        Me.Column6.Width = 180
-        '
-        'Column3
-        '
-        Me.Column3.HeaderText = "Estado"
-        Me.Column3.Name = "Column3"
-        Me.Column3.ReadOnly = True
-        Me.Column3.Width = 70
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(4, 9)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(40, 13)
-        Me.Label1.TabIndex = 1
-        Me.Label1.Text = "Buscar"
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(50, 6)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(302, 20)
-        Me.TextBox1.TabIndex = 0
+        Me.btnNuevo.Image = Global.HsPeru.WIN.My.Resources.Resources.page_add
+        Me.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btnNuevo.Location = New System.Drawing.Point(6, 34)
+        Me.btnNuevo.Name = "btnNuevo"
+        Me.btnNuevo.Size = New System.Drawing.Size(68, 43)
+        Me.btnNuevo.TabIndex = 0
+        Me.btnNuevo.Text = "Nuevo"
+        Me.btnNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnNuevo.UseVisualStyleBackColor = True
         '
         'UltraTabPageControl2
         '
-        Me.UltraTabPageControl2.Controls.Add(Me.Panel3)
-        Me.UltraTabPageControl2.Location = New System.Drawing.Point(-7500, -8125)
+        Me.UltraTabPageControl2.Controls.Add(Me.Panel4)
+        Me.UltraTabPageControl2.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl2.Name = "UltraTabPageControl2"
-        Me.UltraTabPageControl2.Size = New System.Drawing.Size(802, 289)
+        Me.UltraTabPageControl2.Size = New System.Drawing.Size(804, 294)
         '
-        'Panel3
+        'Panel4
         '
-        Me.Panel3.Controls.Add(Me.Label6)
-        Me.Panel3.Controls.Add(Me.Label5)
-        Me.Panel3.Controls.Add(Me.TextBox5)
-        Me.Panel3.Controls.Add(Me.TextBox4)
-        Me.Panel3.Controls.Add(Me.RadioButton2)
-        Me.Panel3.Controls.Add(Me.RadioButton1)
-        Me.Panel3.Controls.Add(Me.TextBox3)
-        Me.Panel3.Controls.Add(Me.Button4)
-        Me.Panel3.Controls.Add(Me.Button5)
-        Me.Panel3.Controls.Add(Me.Label4)
-        Me.Panel3.Controls.Add(Me.Label3)
-        Me.Panel3.Controls.Add(Me.Label2)
-        Me.Panel3.Controls.Add(Me.TextBox2)
-        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel3.Location = New System.Drawing.Point(0, 0)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(802, 289)
-        Me.Panel3.TabIndex = 0
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(128, 122)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(62, 13)
-        Me.Label6.TabIndex = 18
-        Me.Label6.Text = "Funcionario"
+        Me.Panel4.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
+        Me.Panel4.Controls.Add(Me.chkPagProveedores)
+        Me.Panel4.Controls.Add(Me.chkCobranzas)
+        Me.Panel4.Controls.Add(Me.Label5)
+        Me.Panel4.Controls.Add(Me.rbdDolares)
+        Me.Panel4.Controls.Add(Me.rbdSoles)
+        Me.Panel4.Controls.Add(Me.txtFuncio)
+        Me.Panel4.Controls.Add(Me.Label4)
+        Me.Panel4.Controls.Add(Me.txtNroCta)
+        Me.Panel4.Controls.Add(Me.Label3)
+        Me.Panel4.Controls.Add(Me.lblCodigo)
+        Me.Panel4.Controls.Add(Me.btnCancelar)
+        Me.Panel4.Controls.Add(Me.btnGuardar)
+        Me.Panel4.Controls.Add(Me.chkConBancaria)
+        Me.Panel4.Controls.Add(Me.txtDes)
+        Me.Panel4.Controls.Add(Me.Label2)
+        Me.Panel4.Controls.Add(Me.Label1)
+        Me.Panel4.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel4.Location = New System.Drawing.Point(0, 0)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(804, 294)
+        Me.Panel4.TabIndex = 12
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(111, 96)
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(101, 182)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(79, 13)
-        Me.Label5.TabIndex = 17
-        Me.Label5.Text = "Nro. de Cuenta"
+        Me.Label5.Size = New System.Drawing.Size(81, 13)
+        Me.Label5.TabIndex = 22
+        Me.Label5.Text = "Tipo Moneda"
+        Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'TextBox5
+        'rbdDolares
         '
-        Me.TextBox5.Location = New System.Drawing.Point(196, 119)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(336, 20)
-        Me.TextBox5.TabIndex = 16
+        Me.rbdDolares.AutoSize = True
+        Me.rbdDolares.Location = New System.Drawing.Point(179, 198)
+        Me.rbdDolares.Name = "rbdDolares"
+        Me.rbdDolares.Size = New System.Drawing.Size(61, 17)
+        Me.rbdDolares.TabIndex = 21
+        Me.rbdDolares.TabStop = True
+        Me.rbdDolares.Text = "Dolares"
+        Me.rbdDolares.UseVisualStyleBackColor = True
         '
-        'TextBox4
+        'rbdSoles
         '
-        Me.TextBox4.Location = New System.Drawing.Point(196, 93)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(195, 20)
-        Me.TextBox4.TabIndex = 15
+        Me.rbdSoles.AutoSize = True
+        Me.rbdSoles.Location = New System.Drawing.Point(104, 198)
+        Me.rbdSoles.Name = "rbdSoles"
+        Me.rbdSoles.Size = New System.Drawing.Size(51, 17)
+        Me.rbdSoles.TabIndex = 20
+        Me.rbdSoles.TabStop = True
+        Me.rbdSoles.Text = "Soles"
+        Me.rbdSoles.UseVisualStyleBackColor = True
         '
-        'RadioButton2
+        'txtFuncio
         '
-        Me.RadioButton2.AutoSize = True
-        Me.RadioButton2.Location = New System.Drawing.Point(274, 152)
-        Me.RadioButton2.Name = "RadioButton2"
-        Me.RadioButton2.Size = New System.Drawing.Size(63, 17)
-        Me.RadioButton2.TabIndex = 14
-        Me.RadioButton2.TabStop = True
-        Me.RadioButton2.Text = "Inactivo"
-        Me.RadioButton2.UseVisualStyleBackColor = True
-        '
-        'RadioButton1
-        '
-        Me.RadioButton1.AutoSize = True
-        Me.RadioButton1.Location = New System.Drawing.Point(194, 152)
-        Me.RadioButton1.Name = "RadioButton1"
-        Me.RadioButton1.Size = New System.Drawing.Size(55, 17)
-        Me.RadioButton1.TabIndex = 13
-        Me.RadioButton1.TabStop = True
-        Me.RadioButton1.Text = "Activo"
-        Me.RadioButton1.UseVisualStyleBackColor = True
-        '
-        'TextBox3
-        '
-        Me.TextBox3.Location = New System.Drawing.Point(196, 67)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(336, 20)
-        Me.TextBox3.TabIndex = 12
-        '
-        'Button4
-        '
-        Me.Button4.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Button4.Location = New System.Drawing.Point(317, 212)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(75, 38)
-        Me.Button4.TabIndex = 11
-        Me.Button4.Text = "Guardar"
-        Me.Button4.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.Button4.UseVisualStyleBackColor = True
-        '
-        'Button5
-        '
-        Me.Button5.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Button5.Location = New System.Drawing.Point(404, 212)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(75, 38)
-        Me.Button5.TabIndex = 10
-        Me.Button5.Text = "Salir"
-        Me.Button5.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.Button5.UseVisualStyleBackColor = True
+        Me.txtFuncio.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtFuncio.Location = New System.Drawing.Point(104, 150)
+        Me.txtFuncio.Name = "txtFuncio"
+        Me.txtFuncio.Size = New System.Drawing.Size(396, 20)
+        Me.txtFuncio.TabIndex = 18
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(148, 154)
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(101, 134)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(40, 13)
-        Me.Label4.TabIndex = 8
-        Me.Label4.Text = "Estado"
+        Me.Label4.Size = New System.Drawing.Size(73, 13)
+        Me.Label4.TabIndex = 19
+        Me.Label4.Text = "Funcionario"
+        Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'txtNroCta
+        '
+        Me.txtNroCta.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtNroCta.Location = New System.Drawing.Point(104, 105)
+        Me.txtNroCta.Name = "txtNroCta"
+        Me.txtNroCta.Size = New System.Drawing.Size(396, 20)
+        Me.txtNroCta.TabIndex = 16
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(127, 70)
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(101, 89)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(63, 13)
-        Me.Label3.TabIndex = 7
-        Me.Label3.Text = "Descripción"
+        Me.Label3.Size = New System.Drawing.Size(75, 13)
+        Me.Label3.TabIndex = 17
+        Me.Label3.Text = "Nro. Cuenta"
+        Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'lblCodigo
+        '
+        Me.lblCodigo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.lblCodigo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCodigo.Location = New System.Drawing.Point(104, 24)
+        Me.lblCodigo.Name = "lblCodigo"
+        Me.lblCodigo.Size = New System.Drawing.Size(57, 20)
+        Me.lblCodigo.TabIndex = 15
+        Me.lblCodigo.Text = "?"
+        Me.lblCodigo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'btnCancelar
+        '
+        Me.btnCancelar.Image = Global.HsPeru.WIN.My.Resources.Resources.door_in
+        Me.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btnCancelar.Location = New System.Drawing.Point(294, 231)
+        Me.btnCancelar.Name = "btnCancelar"
+        Me.btnCancelar.Size = New System.Drawing.Size(79, 43)
+        Me.btnCancelar.TabIndex = 14
+        Me.btnCancelar.Text = "Salir"
+        Me.btnCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnCancelar.UseVisualStyleBackColor = True
+        '
+        'btnGuardar
+        '
+        Me.btnGuardar.Image = Global.HsPeru.WIN.My.Resources.Resources.disk
+        Me.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btnGuardar.Location = New System.Drawing.Point(213, 231)
+        Me.btnGuardar.Name = "btnGuardar"
+        Me.btnGuardar.Size = New System.Drawing.Size(79, 43)
+        Me.btnGuardar.TabIndex = 5
+        Me.btnGuardar.Text = "Grabar"
+        Me.btnGuardar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnGuardar.UseVisualStyleBackColor = True
+        '
+        'chkConBancaria
+        '
+        Me.chkConBancaria.AutoSize = True
+        Me.chkConBancaria.Font = New System.Drawing.Font("Arial Rounded MT Bold", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkConBancaria.ForeColor = System.Drawing.SystemColors.InfoText
+        Me.chkConBancaria.Location = New System.Drawing.Point(521, 24)
+        Me.chkConBancaria.Name = "chkConBancaria"
+        Me.chkConBancaria.Size = New System.Drawing.Size(243, 19)
+        Me.chkConBancaria.TabIndex = 12
+        Me.chkConBancaria.Text = "Mostrar en Conciliación Bancaria"
+        Me.chkConBancaria.UseVisualStyleBackColor = True
+        '
+        'txtDes
+        '
+        Me.txtDes.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtDes.Location = New System.Drawing.Point(104, 62)
+        Me.txtDes.Name = "txtDes"
+        Me.txtDes.Size = New System.Drawing.Size(396, 20)
+        Me.txtDes.TabIndex = 0
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(150, 43)
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(101, 46)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(40, 13)
-        Me.Label2.TabIndex = 6
-        Me.Label2.Text = "Código"
+        Me.Label2.Size = New System.Drawing.Size(74, 13)
+        Me.Label2.TabIndex = 1
+        Me.Label2.Text = "Descripción"
+        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'TextBox2
+        'Label1
         '
-        Me.TextBox2.Location = New System.Drawing.Point(196, 40)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(55, 20)
-        Me.TextBox2.TabIndex = 0
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(101, 9)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(46, 13)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "Código"
+        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'UltraTabControl1
+        'utbBanco
         '
-        Me.UltraTabControl1.Controls.Add(Me.UltraTabSharedControlsPage1)
-        Me.UltraTabControl1.Controls.Add(Me.UltraTabPageControl1)
-        Me.UltraTabControl1.Controls.Add(Me.UltraTabPageControl2)
-        Me.UltraTabControl1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.UltraTabControl1.Location = New System.Drawing.Point(0, 0)
-        Me.UltraTabControl1.Name = "UltraTabControl1"
-        Me.UltraTabControl1.SharedControlsPage = Me.UltraTabSharedControlsPage1
-        Me.UltraTabControl1.Size = New System.Drawing.Size(806, 315)
-        Me.UltraTabControl1.TabIndex = 3
+        Me.utbBanco.Controls.Add(Me.UltraTabSharedControlsPage1)
+        Me.utbBanco.Controls.Add(Me.UltraTabPageControl1)
+        Me.utbBanco.Controls.Add(Me.UltraTabPageControl2)
+        Me.utbBanco.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.utbBanco.Location = New System.Drawing.Point(0, 0)
+        Me.utbBanco.Name = "utbBanco"
+        Me.utbBanco.SharedControlsPage = Me.UltraTabSharedControlsPage1
+        Me.utbBanco.Size = New System.Drawing.Size(806, 315)
+        Me.utbBanco.Style = Infragistics.Win.UltraWinTabControl.UltraTabControlStyle.Excel
+        Me.utbBanco.TabIndex = 1
         UltraTab1.TabPage = Me.UltraTabPageControl1
-        UltraTab1.Text = "Categorías"
+        UltraTab1.Text = "Registros"
         UltraTab2.TabPage = Me.UltraTabPageControl2
         UltraTab2.Text = "Detalle"
-        Me.UltraTabControl1.Tabs.AddRange(New Infragistics.Win.UltraWinTabControl.UltraTab() {UltraTab1, UltraTab2})
+        Me.utbBanco.Tabs.AddRange(New Infragistics.Win.UltraWinTabControl.UltraTab() {UltraTab1, UltraTab2})
         '
         'UltraTabSharedControlsPage1
         '
-        Me.UltraTabSharedControlsPage1.Location = New System.Drawing.Point(-7500, -8125)
+        Me.UltraTabSharedControlsPage1.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabSharedControlsPage1.Name = "UltraTabSharedControlsPage1"
-        Me.UltraTabSharedControlsPage1.Size = New System.Drawing.Size(802, 289)
+        Me.UltraTabSharedControlsPage1.Size = New System.Drawing.Size(804, 294)
+        '
+        'chkCobranzas
+        '
+        Me.chkCobranzas.AutoSize = True
+        Me.chkCobranzas.Font = New System.Drawing.Font("Arial Rounded MT Bold", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkCobranzas.ForeColor = System.Drawing.SystemColors.InfoText
+        Me.chkCobranzas.Location = New System.Drawing.Point(521, 49)
+        Me.chkCobranzas.Name = "chkCobranzas"
+        Me.chkCobranzas.Size = New System.Drawing.Size(169, 19)
+        Me.chkCobranzas.TabIndex = 23
+        Me.chkCobranzas.Text = "Mostrar en Cobranzas"
+        Me.chkCobranzas.UseVisualStyleBackColor = True
+        '
+        'chkPagProveedores
+        '
+        Me.chkPagProveedores.AutoSize = True
+        Me.chkPagProveedores.Font = New System.Drawing.Font("Arial Rounded MT Bold", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkPagProveedores.ForeColor = System.Drawing.SystemColors.InfoText
+        Me.chkPagProveedores.Location = New System.Drawing.Point(521, 74)
+        Me.chkPagProveedores.Name = "chkPagProveedores"
+        Me.chkPagProveedores.Size = New System.Drawing.Size(225, 19)
+        Me.chkPagProveedores.TabIndex = 24
+        Me.chkPagProveedores.Text = "Mostrar en Pagos Proveedores"
+        Me.chkPagProveedores.UseVisualStyleBackColor = True
+        '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.DataPropertyName = "COD"
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.DataGridViewTextBoxColumn1.DefaultCellStyle = DataGridViewCellStyle7
+        Me.DataGridViewTextBoxColumn1.HeaderText = "Cód."
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        Me.DataGridViewTextBoxColumn1.Width = 45
+        '
+        'DataGridViewTextBoxColumn2
+        '
+        Me.DataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.DataGridViewTextBoxColumn2.DataPropertyName = "DES"
+        Me.DataGridViewTextBoxColumn2.HeaderText = "Descripción"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        '
+        'DataGridViewTextBoxColumn3
+        '
+        Me.DataGridViewTextBoxColumn3.DataPropertyName = "DESSUC"
+        Me.DataGridViewTextBoxColumn3.HeaderText = "T/M"
+        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        Me.DataGridViewTextBoxColumn3.Width = 50
+        '
+        'DataGridViewTextBoxColumn4
+        '
+        Me.DataGridViewTextBoxColumn4.DataPropertyName = "NROCTA"
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.DataGridViewTextBoxColumn4.DefaultCellStyle = DataGridViewCellStyle8
+        Me.DataGridViewTextBoxColumn4.HeaderText = "Nro. Cuenta"
+        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
+        Me.DataGridViewTextBoxColumn4.Width = 90
+        '
+        'DataGridViewTextBoxColumn5
+        '
+        Me.DataGridViewTextBoxColumn5.DataPropertyName = "FUNCIO"
+        Me.DataGridViewTextBoxColumn5.HeaderText = "Funcionario"
+        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
+        '
+        'DataGridViewTextBoxColumn6
+        '
+        Me.DataGridViewTextBoxColumn6.DataPropertyName = "ESTADO"
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.DataGridViewTextBoxColumn6.DefaultCellStyle = DataGridViewCellStyle9
+        Me.DataGridViewTextBoxColumn6.HeaderText = "Estado"
+        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
+        Me.DataGridViewTextBoxColumn6.Width = 50
+        '
+        'colcod
+        '
+        Me.colcod.DataPropertyName = "COD"
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.colcod.DefaultCellStyle = DataGridViewCellStyle2
+        Me.colcod.HeaderText = "Cód."
+        Me.colcod.Name = "colcod"
+        Me.colcod.ReadOnly = True
+        Me.colcod.Width = 45
+        '
+        'colDes
+        '
+        Me.colDes.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.colDes.DataPropertyName = "DES"
+        Me.colDes.HeaderText = "Descripción"
+        Me.colDes.Name = "colDes"
+        Me.colDes.ReadOnly = True
+        '
+        'colDessuc
+        '
+        Me.colDessuc.DataPropertyName = "ESTADO_TIPMON"
+        Me.colDessuc.HeaderText = "T/M"
+        Me.colDessuc.Name = "colDessuc"
+        Me.colDessuc.ReadOnly = True
+        Me.colDessuc.Width = 50
+        '
+        'colSupervisor
+        '
+        Me.colSupervisor.DataPropertyName = "NROCTA"
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.colSupervisor.DefaultCellStyle = DataGridViewCellStyle3
+        Me.colSupervisor.HeaderText = "Nro. Cuenta"
+        Me.colSupervisor.Name = "colSupervisor"
+        Me.colSupervisor.ReadOnly = True
+        Me.colSupervisor.Width = 140
+        '
+        'colfuncio
+        '
+        Me.colfuncio.DataPropertyName = "FUNCIO"
+        Me.colfuncio.HeaderText = "Funcionario"
+        Me.colfuncio.Name = "colfuncio"
+        Me.colfuncio.ReadOnly = True
+        '
+        'colEstado
+        '
+        Me.colEstado.DataPropertyName = "ESTADO"
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.colEstado.DefaultCellStyle = DataGridViewCellStyle4
+        Me.colEstado.HeaderText = "Estado"
+        Me.colEstado.Name = "colEstado"
+        Me.colEstado.ReadOnly = True
+        Me.colEstado.Width = 50
         '
         'FrmTabBanco
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(806, 315)
-        Me.Controls.Add(Me.UltraTabControl1)
+        Me.Controls.Add(Me.utbBanco)
         Me.Name = "FrmTabBanco"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Bancos"
         Me.UltraTabPageControl1.ResumeLayout(False)
-        Me.Panel1.ResumeLayout(False)
+        Me.Panel5.ResumeLayout(False)
+        CType(Me.DgvBanco, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
-        Me.UltraPanel1.ClientArea.ResumeLayout(False)
-        Me.UltraPanel1.ClientArea.PerformLayout()
-        Me.UltraPanel1.ResumeLayout(False)
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.UltraTabPageControl2.ResumeLayout(False)
-        Me.Panel3.ResumeLayout(False)
-        Me.Panel3.PerformLayout()
-        CType(Me.UltraTabControl1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.UltraTabControl1.ResumeLayout(False)
+        Me.Panel4.ResumeLayout(False)
+        Me.Panel4.PerformLayout()
+        CType(Me.utbBanco, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.utbBanco.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
 
-    Friend WithEvents UltraTabControl1 As Infragistics.Win.UltraWinTabControl.UltraTabControl
+    Friend WithEvents utbBanco As Infragistics.Win.UltraWinTabControl.UltraTabControl
     Friend WithEvents UltraTabSharedControlsPage1 As Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage
     Friend WithEvents UltraTabPageControl1 As Infragistics.Win.UltraWinTabControl.UltraTabPageControl
-    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Panel5 As Panel
+    Friend WithEvents DgvBanco As DataGridView
     Friend WithEvents Panel2 As Panel
-    Friend WithEvents Button3 As Button
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
-    Friend WithEvents UltraPanel1 As Infragistics.Win.Misc.UltraPanel
-    Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents Label1 As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents btnSalir As Button
+    Friend WithEvents btnModificar As Button
+    Friend WithEvents btnNuevo As Button
     Friend WithEvents UltraTabPageControl2 As Infragistics.Win.UltraWinTabControl.UltraTabPageControl
-    Friend WithEvents Panel3 As Panel
-    Friend WithEvents RadioButton2 As RadioButton
-    Friend WithEvents RadioButton1 As RadioButton
-    Friend WithEvents TextBox3 As TextBox
-    Friend WithEvents Button4 As Button
-    Friend WithEvents Button5 As Button
-    Friend WithEvents Label4 As Label
-    Friend WithEvents Label3 As Label
+    Friend WithEvents Panel4 As Panel
+    Friend WithEvents lblCodigo As Label
+    Friend WithEvents btnCancelar As Button
+    Friend WithEvents btnGuardar As Button
+    Friend WithEvents chkConBancaria As CheckBox
+    Friend WithEvents txtDes As TextBox
     Friend WithEvents Label2 As Label
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents Column1 As DataGridViewTextBoxColumn
-    Friend WithEvents Column2 As DataGridViewTextBoxColumn
-    Friend WithEvents Column4 As DataGridViewTextBoxColumn
-    Friend WithEvents Column5 As DataGridViewTextBoxColumn
-    Friend WithEvents Column6 As DataGridViewTextBoxColumn
-    Friend WithEvents Column3 As DataGridViewTextBoxColumn
-    Friend WithEvents Label6 As Label
+    Friend WithEvents Label1 As Label
+    Friend WithEvents txtFuncio As TextBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents txtNroCta As TextBox
+    Friend WithEvents Label3 As Label
     Friend WithEvents Label5 As Label
-    Friend WithEvents TextBox5 As TextBox
-    Friend WithEvents TextBox4 As TextBox
+    Friend WithEvents rbdDolares As RadioButton
+    Friend WithEvents rbdSoles As RadioButton
+    Friend WithEvents chkPagProveedores As CheckBox
+    Friend WithEvents chkCobranzas As CheckBox
+    Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
+    Friend WithEvents colcod As DataGridViewTextBoxColumn
+    Friend WithEvents colDes As DataGridViewTextBoxColumn
+    Friend WithEvents colDessuc As DataGridViewTextBoxColumn
+    Friend WithEvents colSupervisor As DataGridViewTextBoxColumn
+    Friend WithEvents colfuncio As DataGridViewTextBoxColumn
+    Friend WithEvents colEstado As DataGridViewTextBoxColumn
 End Class

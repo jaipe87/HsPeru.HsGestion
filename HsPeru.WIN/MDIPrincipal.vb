@@ -131,4 +131,10 @@ Public Class MdiPrincipal
         FrmTabUnidMed.MdiParent = Me
         FrmTabUnidMed.Show()
     End Sub
+
+    Private Sub M109_Click(sender As Object, e As EventArgs) Handles M109.Click
+        Dim FrmTabBco As FrmTabBanco = New FrmTabBanco
+        FrmTabBco.MdiParent = Me
+        FrmTabBco.Show()
+    End Sub
 End Class

@@ -110,6 +110,7 @@
     <Compile Include="2.Entity\TABART.vb" />
     <Compile Include="2.Entity\TABART_SUCURSAL.vb" />
     <Compile Include="2.Entity\TABART_UBICACION.vb" />
+    <Compile Include="2.Entity\TABBANCO.vb" />
     <Compile Include="2.Entity\TABCARGO.vb" />
     <Compile Include="2.Entity\TABFAC.vb" />
     <Compile Include="2.Entity\TABMON.vb" />
@@ -128,6 +129,7 @@
     <Compile Include="3.AccesoDatos\DAL_COMBOS.vb" />
     <Compile Include="3.AccesoDatos\DAL_MARCA.vb" />
     <Compile Include="3.AccesoDatos\DAL_TABART.vb" />
+    <Compile Include="3.AccesoDatos\DAL_TABBANCO.vb" />
     <Compile Include="3.AccesoDatos\DAL_TABCATART.vb" />
     <Compile Include="3.AccesoDatos\DAL_TABFAC.vb" />
     <Compile Include="3.AccesoDatos\DAL_TABSUBCAT.vb" />
