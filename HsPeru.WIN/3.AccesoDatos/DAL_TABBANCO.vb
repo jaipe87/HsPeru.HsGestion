@@ -40,4 +40,33 @@ Public Class DAL_TABBANCO
         End Using
         Return listBanco
     End Function
+
+    Public Function Insert_Banco(ByVal objDato As TABBANCO) As TABBANCO
+
+        Dim datBanco As New TABBANCO
+        Dim Cod As Integer = 0
+        If objDato.COD <> 0 Then
+            Cod = objDato.COD
+        Else
+            Ssql = "SELECT IFNULL(MAX(cod),0) + 1  FROM tabban WHERE cia= " & GCia & " ;"
+            Using cmd As New OdbcCommand(Ssql, Cn)
+                cmd.CommandType = CommandType.Text
+                Cod = CType(cmd.ExecuteScalar(), Integer)
+            End Using
+
+        End If
+
+
+        Ssql = "INSERT INTO tabban (CIA, COD, DES, TIPMON, NROCTA, FUNCIO, ST) VALUES ("
+        Ssql = Ssql & GCia & ", " & Cod & ", '" & objDato.DES & "', " & objDato.TIPMON & ", '" & objDato.NROCTA & "', '" & objDato.FUNCIO & "', " & objDato.ST & ") "
+        Ssql = Ssql & "ON DUPLICATE KEY UPDATE DES = '" & objDato.DES & "', TIPMON = " & objDato.TIPMON & ", NROCTA = '" & objDato.NROCTA & "', FUNCIO = '" & objDato.FUNCIO & "', ST = " & objDato.ST & ";"
+
+
+        Using cmd As New OdbcCommand(Ssql, Cn)
+            cmd.ExecuteNonQuery()
+            objDato.COD = Cod
+        End Using
+        datBanco = objDato
+        Return datBanco
+    End Function
 End Class
