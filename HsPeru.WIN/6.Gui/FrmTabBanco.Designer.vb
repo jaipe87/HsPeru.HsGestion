@@ -42,6 +42,8 @@ Partial Class FrmTabBanco
         Me.btnNuevo = New System.Windows.Forms.Button()
         Me.UltraTabPageControl2 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
         Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.chkPagProveedores = New System.Windows.Forms.CheckBox()
+        Me.chkCobranzas = New System.Windows.Forms.CheckBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.rbdDolares = New System.Windows.Forms.RadioButton()
         Me.rbdSoles = New System.Windows.Forms.RadioButton()
@@ -58,8 +60,6 @@ Partial Class FrmTabBanco
         Me.Label1 = New System.Windows.Forms.Label()
         Me.utbBanco = New Infragistics.Win.UltraWinTabControl.UltraTabControl()
         Me.UltraTabSharedControlsPage1 = New Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage()
-        Me.chkCobranzas = New System.Windows.Forms.CheckBox()
-        Me.chkPagProveedores = New System.Windows.Forms.CheckBox()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -221,6 +221,30 @@ Partial Class FrmTabBanco
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(804, 294)
         Me.Panel4.TabIndex = 12
+        '
+        'chkPagProveedores
+        '
+        Me.chkPagProveedores.AutoSize = True
+        Me.chkPagProveedores.Font = New System.Drawing.Font("Arial Rounded MT Bold", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkPagProveedores.ForeColor = System.Drawing.SystemColors.InfoText
+        Me.chkPagProveedores.Location = New System.Drawing.Point(521, 74)
+        Me.chkPagProveedores.Name = "chkPagProveedores"
+        Me.chkPagProveedores.Size = New System.Drawing.Size(225, 19)
+        Me.chkPagProveedores.TabIndex = 24
+        Me.chkPagProveedores.Text = "Mostrar en Pagos Proveedores"
+        Me.chkPagProveedores.UseVisualStyleBackColor = True
+        '
+        'chkCobranzas
+        '
+        Me.chkCobranzas.AutoSize = True
+        Me.chkCobranzas.Font = New System.Drawing.Font("Arial Rounded MT Bold", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkCobranzas.ForeColor = System.Drawing.SystemColors.InfoText
+        Me.chkCobranzas.Location = New System.Drawing.Point(521, 49)
+        Me.chkCobranzas.Name = "chkCobranzas"
+        Me.chkCobranzas.Size = New System.Drawing.Size(169, 19)
+        Me.chkCobranzas.TabIndex = 23
+        Me.chkCobranzas.Text = "Mostrar en Cobranzas"
+        Me.chkCobranzas.UseVisualStyleBackColor = True
         '
         'Label5
         '
@@ -394,30 +418,6 @@ Partial Class FrmTabBanco
         Me.UltraTabSharedControlsPage1.Name = "UltraTabSharedControlsPage1"
         Me.UltraTabSharedControlsPage1.Size = New System.Drawing.Size(804, 294)
         '
-        'chkCobranzas
-        '
-        Me.chkCobranzas.AutoSize = True
-        Me.chkCobranzas.Font = New System.Drawing.Font("Arial Rounded MT Bold", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chkCobranzas.ForeColor = System.Drawing.SystemColors.InfoText
-        Me.chkCobranzas.Location = New System.Drawing.Point(521, 49)
-        Me.chkCobranzas.Name = "chkCobranzas"
-        Me.chkCobranzas.Size = New System.Drawing.Size(169, 19)
-        Me.chkCobranzas.TabIndex = 23
-        Me.chkCobranzas.Text = "Mostrar en Cobranzas"
-        Me.chkCobranzas.UseVisualStyleBackColor = True
-        '
-        'chkPagProveedores
-        '
-        Me.chkPagProveedores.AutoSize = True
-        Me.chkPagProveedores.Font = New System.Drawing.Font("Arial Rounded MT Bold", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chkPagProveedores.ForeColor = System.Drawing.SystemColors.InfoText
-        Me.chkPagProveedores.Location = New System.Drawing.Point(521, 74)
-        Me.chkPagProveedores.Name = "chkPagProveedores"
-        Me.chkPagProveedores.Size = New System.Drawing.Size(225, 19)
-        Me.chkPagProveedores.TabIndex = 24
-        Me.chkPagProveedores.Text = "Mostrar en Pagos Proveedores"
-        Me.chkPagProveedores.UseVisualStyleBackColor = True
-        '
         'DataGridViewTextBoxColumn1
         '
         Me.DataGridViewTextBoxColumn1.DataPropertyName = "COD"
@@ -516,7 +516,7 @@ Partial Class FrmTabBanco
         Me.colEstado.HeaderText = "Estado"
         Me.colEstado.Name = "colEstado"
         Me.colEstado.ReadOnly = True
-        Me.colEstado.Width = 50
+        Me.colEstado.Width = 80
         '
         'FrmTabBanco
         '
