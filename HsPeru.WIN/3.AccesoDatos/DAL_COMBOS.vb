@@ -3,6 +3,23 @@ Imports System.Data.Odbc
 Imports System.Reflection
 Public Class DAL_COMBOS
     ''' <summary>
+    ''' OBTIENE LOS AÑOS DESDE EL AÑO 2000 HASTA EL ACTUAL
+    ''' </summary>
+    ''' <returns></returns>
+    Public Function CargaAnios() As List(Of String)
+        Dim lstAnios As New List(Of String)()
+        Dim anioActual As Integer = DateTime.Now.Year
+
+        For i As Integer = anioActual To 2015 Step -1
+            lstAnios.Add(i.ToString())
+        Next
+
+        Return lstAnios
+    End Function
+    '=======================================================
+
+
+    ''' <summary>
     ''' FILTRA LOS DOC PARA EL MANTENIMIENTO DE FACTURA/BOLETA DE VENTA /NOTA DE VENTA/NOTA PEDIDO
     ''' </summary>
     ''' <returns></returns>
@@ -449,20 +466,20 @@ Public Class DAL_COMBOS
             cmd.CommandType = CommandType.Text
             dr = cmd.ExecuteReader()
             If dr.HasRows Then
-            While dr.Read()
-                Row = FetchAsoc(dr)
-                datCiudad = New UBIGEO.CIUDAD()
-                datCiudad.CODDEP = Row("CODDEP")
-                datCiudad.CODPRO = Row("CODPRO")
-                datCiudad.CODDIS = Row("CODDIS")
-                datCiudad.CODCIU = Row("CODCIU")
-                datCiudad.NOMCIU = Row("NOMCIU")
-                lstCiudad.Add(datCiudad)
-            End While
-            Return lstCiudad
-        Else
-            Return Nothing
-        End If
+                While dr.Read()
+                    Row = FetchAsoc(dr)
+                    datCiudad = New UBIGEO.CIUDAD()
+                    datCiudad.CODDEP = Row("CODDEP")
+                    datCiudad.CODPRO = Row("CODPRO")
+                    datCiudad.CODDIS = Row("CODDIS")
+                    datCiudad.CODCIU = Row("CODCIU")
+                    datCiudad.NOMCIU = Row("NOMCIU")
+                    lstCiudad.Add(datCiudad)
+                End While
+                Return lstCiudad
+            Else
+                Return Nothing
+            End If
         End Using
     End Function
     ''' <summary>

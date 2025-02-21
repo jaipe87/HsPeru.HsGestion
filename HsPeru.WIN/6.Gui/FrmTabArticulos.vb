@@ -1087,5 +1087,6 @@ Public Class FrmTabArticulos
 
 
 
+
 #End Region
 End Class

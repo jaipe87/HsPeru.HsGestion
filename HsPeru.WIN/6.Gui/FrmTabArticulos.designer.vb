@@ -23,8 +23,20 @@ Partial Class FrmTabArticulos
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim UltraTab1 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim UltraTab2 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
@@ -34,22 +46,6 @@ Partial Class FrmTabArticulos
         Dim DataGridViewCellStyle18 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle20 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle30 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim UltraTab3 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
-        Dim UltraTab4 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
-        Dim UltraTab6 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
-        Dim UltraTab7 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle21 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle22 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle23 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
@@ -59,8 +55,20 @@ Partial Class FrmTabArticulos
         Dim DataGridViewCellStyle27 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle28 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle29 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim UltraTab3 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
+        Dim UltraTab4 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
+        Dim UltraTab6 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
+        Dim UltraTab7 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmTabArticulos))
         Me.UltraTabPageControl6 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
+        Me.DgUnidades = New HsPeru.WIN.HsDataGridViewCellNow(Me.components)
+        Me.colcoduni = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.coldesuni = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colpubli = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.coldistri = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colMin = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colEquiv = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colEsMini = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel7 = New System.Windows.Forms.Panel()
         Me.btnEliminar = New System.Windows.Forms.Button()
         Me.btnMod = New System.Windows.Forms.Button()
@@ -105,6 +113,12 @@ Partial Class FrmTabArticulos
         Me.Label6 = New System.Windows.Forms.Label()
         Me.cboTabSuc = New System.Windows.Forms.ComboBox()
         Me.UltraTabPageControl3 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
+        Me.DgSucursales = New HsPeru.WIN.HsDataGridViewCellNow(Me.components)
+        Me.colcodsucd = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.coldessucd = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colubicacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colStockmin = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colActivado = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.UltraTabPageControl1 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.DgArticulos = New System.Windows.Forms.DataGridView()
@@ -139,6 +153,17 @@ Partial Class FrmTabArticulos
         Me.lblReg = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.dgDetallePrecios = New System.Windows.Forms.DataGridView()
+        Me.colDessuc = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colDes_uni = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colprecio_publi = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colpublicod = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colprec_distri = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.coldistrid = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colprecio_min = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colpmind = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colEquivalente = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colSaldo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colEsMin = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.btnAddCopia = New System.Windows.Forms.Button()
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.btnModificar = New System.Windows.Forms.Button()
@@ -191,32 +216,8 @@ Partial Class FrmTabArticulos
         Me.UltraTabSharedControlsPage1 = New Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage()
         Me.UltraTabbedMdiManager1 = New Infragistics.Win.UltraWinTabbedMdi.UltraTabbedMdiManager(Me.components)
         Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.DgUnidades = New HsPeru.WIN.HsDataGridViewCellNow(Me.components)
-        Me.colcoduni = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.coldesuni = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colpubli = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.coldistri = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colMin = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colEquiv = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colEsMini = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DgSucursales = New HsPeru.WIN.HsDataGridViewCellNow(Me.components)
-        Me.colcodsucd = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.coldessucd = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colubicacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colStockmin = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colActivado = New System.Windows.Forms.DataGridViewCheckBoxColumn()
-        Me.colDessuc = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colDes_uni = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colprecio_publi = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colpublicod = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colprec_distri = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.coldistrid = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colprecio_min = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colpmind = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colEquivalente = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colSaldo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colEsMin = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.UltraTabPageControl6.SuspendLayout()
+        CType(Me.DgUnidades, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel7.SuspendLayout()
         Me.UltraTabPageControl7.SuspendLayout()
         Me.Panel10.SuspendLayout()
@@ -228,6 +229,7 @@ Partial Class FrmTabArticulos
         Me.tbDetalle.SuspendLayout()
         Me.Panel8.SuspendLayout()
         Me.UltraTabPageControl3.SuspendLayout()
+        CType(Me.DgSucursales, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.UltraTabPageControl1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.DgArticulos, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -247,8 +249,6 @@ Partial Class FrmTabArticulos
         CType(Me.tbArticulo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tbArticulo.SuspendLayout()
         CType(Me.UltraTabbedMdiManager1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DgUnidades, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DgSucursales, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'UltraTabPageControl6
@@ -258,6 +258,123 @@ Partial Class FrmTabArticulos
         Me.UltraTabPageControl6.Location = New System.Drawing.Point(2, 21)
         Me.UltraTabPageControl6.Name = "UltraTabPageControl6"
         Me.UltraTabPageControl6.Size = New System.Drawing.Size(588, 235)
+        '
+        'DgUnidades
+        '
+        Me.DgUnidades.AllowUserToAddRows = False
+        Me.DgUnidades.AllowUserToDeleteRows = False
+        Me.DgUnidades.BackgroundColor = System.Drawing.Color.WhiteSmoke
+        Me.DgUnidades.BorderStyle = System.Windows.Forms.BorderStyle.None
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.GradientInactiveCaption
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DgUnidades.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        Me.DgUnidades.ColumnHeadersHeight = 30
+        Me.DgUnidades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        Me.DgUnidades.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colcoduni, Me.coldesuni, Me.colpubli, Me.coldistri, Me.colMin, Me.colEquiv, Me.colEsMini})
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.GradientInactiveCaption
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DgUnidades.DefaultCellStyle = DataGridViewCellStyle8
+        Me.DgUnidades.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.DgUnidades.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
+        Me.DgUnidades.EnableHeadersVisualStyles = False
+        Me.DgUnidades.HsCharacterCasing = System.Windows.Forms.CharacterCasing.Normal
+        Me.DgUnidades.HsCol = 0
+        Me.DgUnidades.HsModoSaltoGrilla = HsPeru.WIN.HsDataGridViewCellNow.ModoGrilla.Vertical
+        Me.DgUnidades.HsRow = 0
+        Me.DgUnidades.HsSetEstilo = HsPeru.WIN.HsDataGridViewCellNow.Estilo.Light
+        Me.DgUnidades.Location = New System.Drawing.Point(0, 0)
+        Me.DgUnidades.MultiSelect = False
+        Me.DgUnidades.Name = "DgUnidades"
+        Me.DgUnidades.ReadOnly = True
+        Me.DgUnidades.RowHeadersVisible = False
+        Me.DgUnidades.RowHeadersWidth = 22
+        Me.DgUnidades.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
+        Me.DgUnidades.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DgUnidades.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DgUnidades.Size = New System.Drawing.Size(588, 195)
+        Me.DgUnidades.TabIndex = 76
+        '
+        'colcoduni
+        '
+        Me.colcoduni.DataPropertyName = "CODUNI"
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        Me.colcoduni.DefaultCellStyle = DataGridViewCellStyle2
+        Me.colcoduni.HeaderText = "Cod."
+        Me.colcoduni.Name = "colcoduni"
+        Me.colcoduni.ReadOnly = True
+        Me.colcoduni.Width = 50
+        '
+        'coldesuni
+        '
+        Me.coldesuni.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.coldesuni.DataPropertyName = "DESUNI"
+        Me.coldesuni.HeaderText = "UDM"
+        Me.coldesuni.Name = "coldesuni"
+        Me.coldesuni.ReadOnly = True
+        '
+        'colpubli
+        '
+        Me.colpubli.DataPropertyName = "PRECIO_PUBLI"
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle3.Format = "##,###0.00"
+        DataGridViewCellStyle3.NullValue = Nothing
+        Me.colpubli.DefaultCellStyle = DataGridViewCellStyle3
+        Me.colpubli.HeaderText = "Precio. Public"
+        Me.colpubli.Name = "colpubli"
+        Me.colpubli.ReadOnly = True
+        Me.colpubli.Width = 80
+        '
+        'coldistri
+        '
+        Me.coldistri.DataPropertyName = "PRECIO_DISTRI"
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle4.Format = "##,###0.00"
+        Me.coldistri.DefaultCellStyle = DataGridViewCellStyle4
+        Me.coldistri.HeaderText = "Precio. Distri"
+        Me.coldistri.Name = "coldistri"
+        Me.coldistri.ReadOnly = True
+        Me.coldistri.Width = 80
+        '
+        'colMin
+        '
+        Me.colMin.DataPropertyName = "PRECIO_MIN"
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle5.Format = "##,###0.00"
+        Me.colMin.DefaultCellStyle = DataGridViewCellStyle5
+        Me.colMin.HeaderText = "Precio. Min"
+        Me.colMin.Name = "colMin"
+        Me.colMin.ReadOnly = True
+        Me.colMin.Width = 80
+        '
+        'colEquiv
+        '
+        Me.colEquiv.DataPropertyName = "EQUIVA"
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        Me.colEquiv.DefaultCellStyle = DataGridViewCellStyle6
+        Me.colEquiv.HeaderText = "Equivale"
+        Me.colEquiv.Name = "colEquiv"
+        Me.colEquiv.ReadOnly = True
+        Me.colEquiv.Width = 80
+        '
+        'colEsMini
+        '
+        Me.colEsMini.DataPropertyName = "ESMIN"
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.colEsMini.DefaultCellStyle = DataGridViewCellStyle7
+        Me.colEsMini.HeaderText = "Min"
+        Me.colEsMini.Name = "colEsMini"
+        Me.colEsMini.ReadOnly = True
+        Me.colEsMini.Width = 40
         '
         'Panel7
         '
@@ -719,6 +836,85 @@ Partial Class FrmTabArticulos
         Me.UltraTabPageControl3.Name = "UltraTabPageControl3"
         Me.UltraTabPageControl3.Size = New System.Drawing.Size(592, 292)
         '
+        'DgSucursales
+        '
+        Me.DgSucursales.AllowUserToAddRows = False
+        Me.DgSucursales.AllowUserToDeleteRows = False
+        Me.DgSucursales.BackgroundColor = System.Drawing.Color.WhiteSmoke
+        Me.DgSucursales.BorderStyle = System.Windows.Forms.BorderStyle.None
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.GradientInactiveCaption
+        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DgSucursales.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle9
+        Me.DgSucursales.ColumnHeadersHeight = 30
+        Me.DgSucursales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        Me.DgSucursales.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colcodsucd, Me.coldessucd, Me.colubicacion, Me.colStockmin, Me.colActivado})
+        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle12.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.GradientInactiveCaption
+        DataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DgSucursales.DefaultCellStyle = DataGridViewCellStyle12
+        Me.DgSucursales.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.DgSucursales.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
+        Me.DgSucursales.EnableHeadersVisualStyles = False
+        Me.DgSucursales.HsCharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.DgSucursales.HsCol = 0
+        Me.DgSucursales.HsModoSaltoGrilla = HsPeru.WIN.HsDataGridViewCellNow.ModoGrilla.Horizontal
+        Me.DgSucursales.HsRow = 0
+        Me.DgSucursales.HsSetEstilo = HsPeru.WIN.HsDataGridViewCellNow.Estilo.Light
+        Me.DgSucursales.Location = New System.Drawing.Point(0, 0)
+        Me.DgSucursales.MultiSelect = False
+        Me.DgSucursales.Name = "DgSucursales"
+        Me.DgSucursales.RowHeadersVisible = False
+        Me.DgSucursales.RowHeadersWidth = 22
+        Me.DgSucursales.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
+        Me.DgSucursales.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DgSucursales.Size = New System.Drawing.Size(592, 292)
+        Me.DgSucursales.TabIndex = 0
+        '
+        'colcodsucd
+        '
+        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.colcodsucd.DefaultCellStyle = DataGridViewCellStyle10
+        Me.colcodsucd.HeaderText = "Cod."
+        Me.colcodsucd.Name = "colcodsucd"
+        Me.colcodsucd.ReadOnly = True
+        Me.colcodsucd.Width = 40
+        '
+        'coldessucd
+        '
+        Me.coldessucd.HeaderText = "Sucursal"
+        Me.coldessucd.Name = "coldessucd"
+        Me.coldessucd.ReadOnly = True
+        Me.coldessucd.Width = 150
+        '
+        'colubicacion
+        '
+        Me.colubicacion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.colubicacion.HeaderText = "Ubicación / Stand"
+        Me.colubicacion.Name = "colubicacion"
+        '
+        'colStockmin
+        '
+        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        Me.colStockmin.DefaultCellStyle = DataGridViewCellStyle11
+        Me.colStockmin.HeaderText = "Stock Mínimo"
+        Me.colStockmin.Name = "colStockmin"
+        '
+        'colActivado
+        '
+        Me.colActivado.HeaderText = ""
+        Me.colActivado.Name = "colActivado"
+        Me.colActivado.TrueValue = "1"
+        Me.colActivado.Width = 30
+        '
         'UltraTabPageControl1
         '
         Me.UltraTabPageControl1.Controls.Add(Me.Panel1)
@@ -1129,6 +1325,118 @@ Partial Class FrmTabArticulos
         Me.dgDetallePrecios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgDetallePrecios.Size = New System.Drawing.Size(625, 123)
         Me.dgDetallePrecios.TabIndex = 7
+        '
+        'colDessuc
+        '
+        Me.colDessuc.HeaderText = "Sucursal"
+        Me.colDessuc.Name = "colDessuc"
+        Me.colDessuc.ReadOnly = True
+        '
+        'colDes_uni
+        '
+        Me.colDes_uni.DataPropertyName = "DESUNI"
+        Me.colDes_uni.HeaderText = "UDM"
+        Me.colDes_uni.Name = "colDes_uni"
+        Me.colDes_uni.ReadOnly = True
+        '
+        'colprecio_publi
+        '
+        Me.colprecio_publi.DataPropertyName = "PRECIO_PUBLI"
+        DataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle21.BackColor = System.Drawing.Color.LightYellow
+        Me.colprecio_publi.DefaultCellStyle = DataGridViewCellStyle21
+        Me.colprecio_publi.HeaderText = "P.Publi S/"
+        Me.colprecio_publi.Name = "colprecio_publi"
+        Me.colprecio_publi.ReadOnly = True
+        Me.colprecio_publi.Width = 70
+        '
+        'colpublicod
+        '
+        DataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle22.BackColor = System.Drawing.Color.Honeydew
+        DataGridViewCellStyle22.Format = "0.00"
+        Me.colpublicod.DefaultCellStyle = DataGridViewCellStyle22
+        Me.colpublicod.HeaderText = "P.Publi US$"
+        Me.colpublicod.Name = "colpublicod"
+        Me.colpublicod.ReadOnly = True
+        Me.colpublicod.Width = 70
+        '
+        'colprec_distri
+        '
+        Me.colprec_distri.DataPropertyName = "PRECIO_DISTRI"
+        DataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle23.BackColor = System.Drawing.Color.LightYellow
+        Me.colprec_distri.DefaultCellStyle = DataGridViewCellStyle23
+        Me.colprec_distri.HeaderText = "P.Distri S/"
+        Me.colprec_distri.Name = "colprec_distri"
+        Me.colprec_distri.ReadOnly = True
+        Me.colprec_distri.Width = 70
+        '
+        'coldistrid
+        '
+        DataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle24.BackColor = System.Drawing.Color.Honeydew
+        DataGridViewCellStyle24.Format = "0.00"
+        Me.coldistrid.DefaultCellStyle = DataGridViewCellStyle24
+        Me.coldistrid.HeaderText = "P.Distri US$"
+        Me.coldistrid.Name = "coldistrid"
+        Me.coldistrid.ReadOnly = True
+        Me.coldistrid.Width = 70
+        '
+        'colprecio_min
+        '
+        Me.colprecio_min.DataPropertyName = "PRECIO_MIN"
+        DataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle25.BackColor = System.Drawing.Color.LightYellow
+        Me.colprecio_min.DefaultCellStyle = DataGridViewCellStyle25
+        Me.colprecio_min.HeaderText = "P.Míni S/"
+        Me.colprecio_min.Name = "colprecio_min"
+        Me.colprecio_min.ReadOnly = True
+        Me.colprecio_min.Width = 70
+        '
+        'colpmind
+        '
+        DataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle26.BackColor = System.Drawing.Color.Honeydew
+        DataGridViewCellStyle26.Format = "0.00"
+        Me.colpmind.DefaultCellStyle = DataGridViewCellStyle26
+        Me.colpmind.HeaderText = "P.Mini US$"
+        Me.colpmind.Name = "colpmind"
+        Me.colpmind.ReadOnly = True
+        Me.colpmind.Width = 70
+        '
+        'colEquivalente
+        '
+        Me.colEquivalente.DataPropertyName = "EQUIVA"
+        DataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        Me.colEquivalente.DefaultCellStyle = DataGridViewCellStyle27
+        Me.colEquivalente.HeaderText = "Equiv."
+        Me.colEquivalente.Name = "colEquivalente"
+        Me.colEquivalente.ReadOnly = True
+        Me.colEquivalente.Visible = False
+        Me.colEquivalente.Width = 70
+        '
+        'colSaldo
+        '
+        Me.colSaldo.DataPropertyName = "SALDO"
+        DataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        Me.colSaldo.DefaultCellStyle = DataGridViewCellStyle28
+        Me.colSaldo.HeaderText = "Saldo"
+        Me.colSaldo.Name = "colSaldo"
+        Me.colSaldo.ReadOnly = True
+        Me.colSaldo.Visible = False
+        Me.colSaldo.Width = 70
+        '
+        'colEsMin
+        '
+        Me.colEsMin.DataPropertyName = "ESMIN"
+        DataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.colEsMin.DefaultCellStyle = DataGridViewCellStyle29
+        Me.colEsMin.HeaderText = ""
+        Me.colEsMin.MinimumWidth = 2
+        Me.colEsMin.Name = "colEsMin"
+        Me.colEsMin.ReadOnly = True
+        Me.colEsMin.Width = 2
         '
         'btnAddCopia
         '
@@ -1700,310 +2008,6 @@ Partial Class FrmTabArticulos
         Me.DataGridViewImageColumn1.ReadOnly = True
         Me.DataGridViewImageColumn1.Width = 30
         '
-        'DgUnidades
-        '
-        Me.DgUnidades.AllowUserToAddRows = False
-        Me.DgUnidades.AllowUserToDeleteRows = False
-        Me.DgUnidades.BackgroundColor = System.Drawing.Color.WhiteSmoke
-        Me.DgUnidades.BorderStyle = System.Windows.Forms.BorderStyle.None
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.GradientInactiveCaption
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DgUnidades.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
-        Me.DgUnidades.ColumnHeadersHeight = 30
-        Me.DgUnidades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        Me.DgUnidades.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colcoduni, Me.coldesuni, Me.colpubli, Me.coldistri, Me.colMin, Me.colEquiv, Me.colEsMini})
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.GradientInactiveCaption
-        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DgUnidades.DefaultCellStyle = DataGridViewCellStyle8
-        Me.DgUnidades.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.DgUnidades.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
-        Me.DgUnidades.EnableHeadersVisualStyles = False
-        Me.DgUnidades.HsCharacterCasing = System.Windows.Forms.CharacterCasing.Normal
-        Me.DgUnidades.HsModoSaltoGrilla = HsPeru.WIN.HsDataGridViewCellNow.ModoGrilla.Vertical
-        Me.DgUnidades.HsSetEstilo = HsPeru.WIN.HsDataGridViewCellNow.Estilo.Light
-        Me.DgUnidades.Location = New System.Drawing.Point(0, 0)
-        Me.DgUnidades.MultiSelect = False
-        Me.DgUnidades.Name = "DgUnidades"
-        Me.DgUnidades.ReadOnly = True
-        Me.DgUnidades.RowHeadersVisible = False
-        Me.DgUnidades.RowHeadersWidth = 22
-        Me.DgUnidades.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
-        Me.DgUnidades.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DgUnidades.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DgUnidades.Size = New System.Drawing.Size(588, 195)
-        Me.DgUnidades.TabIndex = 76
-        '
-        'colcoduni
-        '
-        Me.colcoduni.DataPropertyName = "CODUNI"
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        Me.colcoduni.DefaultCellStyle = DataGridViewCellStyle2
-        Me.colcoduni.HeaderText = "Cod."
-        Me.colcoduni.Name = "colcoduni"
-        Me.colcoduni.ReadOnly = True
-        Me.colcoduni.Width = 50
-        '
-        'coldesuni
-        '
-        Me.coldesuni.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.coldesuni.DataPropertyName = "DESUNI"
-        Me.coldesuni.HeaderText = "UDM"
-        Me.coldesuni.Name = "coldesuni"
-        Me.coldesuni.ReadOnly = True
-        '
-        'colpubli
-        '
-        Me.colpubli.DataPropertyName = "PRECIO_PUBLI"
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle3.Format = "##,###0.00"
-        DataGridViewCellStyle3.NullValue = Nothing
-        Me.colpubli.DefaultCellStyle = DataGridViewCellStyle3
-        Me.colpubli.HeaderText = "Precio. Public"
-        Me.colpubli.Name = "colpubli"
-        Me.colpubli.ReadOnly = True
-        Me.colpubli.Width = 80
-        '
-        'coldistri
-        '
-        Me.coldistri.DataPropertyName = "PRECIO_DISTRI"
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle4.Format = "##,###0.00"
-        Me.coldistri.DefaultCellStyle = DataGridViewCellStyle4
-        Me.coldistri.HeaderText = "Precio. Distri"
-        Me.coldistri.Name = "coldistri"
-        Me.coldistri.ReadOnly = True
-        Me.coldistri.Width = 80
-        '
-        'colMin
-        '
-        Me.colMin.DataPropertyName = "PRECIO_MIN"
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle5.Format = "##,###0.00"
-        Me.colMin.DefaultCellStyle = DataGridViewCellStyle5
-        Me.colMin.HeaderText = "Precio. Min"
-        Me.colMin.Name = "colMin"
-        Me.colMin.ReadOnly = True
-        Me.colMin.Width = 80
-        '
-        'colEquiv
-        '
-        Me.colEquiv.DataPropertyName = "EQUIVA"
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        Me.colEquiv.DefaultCellStyle = DataGridViewCellStyle6
-        Me.colEquiv.HeaderText = "Equivale"
-        Me.colEquiv.Name = "colEquiv"
-        Me.colEquiv.ReadOnly = True
-        Me.colEquiv.Width = 80
-        '
-        'colEsMini
-        '
-        Me.colEsMini.DataPropertyName = "ESMIN"
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.colEsMini.DefaultCellStyle = DataGridViewCellStyle7
-        Me.colEsMini.HeaderText = "Min"
-        Me.colEsMini.Name = "colEsMini"
-        Me.colEsMini.ReadOnly = True
-        Me.colEsMini.Width = 40
-        '
-        'DgSucursales
-        '
-        Me.DgSucursales.AllowUserToAddRows = False
-        Me.DgSucursales.AllowUserToDeleteRows = False
-        Me.DgSucursales.BackgroundColor = System.Drawing.Color.WhiteSmoke
-        Me.DgSucursales.BorderStyle = System.Windows.Forms.BorderStyle.None
-        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.GradientInactiveCaption
-        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DgSucursales.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle9
-        Me.DgSucursales.ColumnHeadersHeight = 30
-        Me.DgSucursales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        Me.DgSucursales.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colcodsucd, Me.coldessucd, Me.colubicacion, Me.colStockmin, Me.colActivado})
-        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle12.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.GradientInactiveCaption
-        DataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DgSucursales.DefaultCellStyle = DataGridViewCellStyle12
-        Me.DgSucursales.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.DgSucursales.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
-        Me.DgSucursales.EnableHeadersVisualStyles = False
-        Me.DgSucursales.HsCharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.DgSucursales.HsModoSaltoGrilla = HsPeru.WIN.HsDataGridViewCellNow.ModoGrilla.Horizontal
-        Me.DgSucursales.HsSetEstilo = HsPeru.WIN.HsDataGridViewCellNow.Estilo.Light
-        Me.DgSucursales.Location = New System.Drawing.Point(0, 0)
-        Me.DgSucursales.MultiSelect = False
-        Me.DgSucursales.Name = "DgSucursales"
-        Me.DgSucursales.RowHeadersVisible = False
-        Me.DgSucursales.RowHeadersWidth = 22
-        Me.DgSucursales.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
-        Me.DgSucursales.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DgSucursales.Size = New System.Drawing.Size(592, 292)
-        Me.DgSucursales.TabIndex = 0
-        '
-        'colcodsucd
-        '
-        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.colcodsucd.DefaultCellStyle = DataGridViewCellStyle10
-        Me.colcodsucd.HeaderText = "Cod."
-        Me.colcodsucd.Name = "colcodsucd"
-        Me.colcodsucd.ReadOnly = True
-        Me.colcodsucd.Width = 40
-        '
-        'coldessucd
-        '
-        Me.coldessucd.HeaderText = "Sucursal"
-        Me.coldessucd.Name = "coldessucd"
-        Me.coldessucd.ReadOnly = True
-        Me.coldessucd.Width = 150
-        '
-        'colubicacion
-        '
-        Me.colubicacion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.colubicacion.HeaderText = "Ubicación / Stand"
-        Me.colubicacion.Name = "colubicacion"
-        '
-        'colStockmin
-        '
-        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        Me.colStockmin.DefaultCellStyle = DataGridViewCellStyle11
-        Me.colStockmin.HeaderText = "Stock Mínimo"
-        Me.colStockmin.Name = "colStockmin"
-        '
-        'colActivado
-        '
-        Me.colActivado.HeaderText = ""
-        Me.colActivado.Name = "colActivado"
-        Me.colActivado.TrueValue = "1"
-        Me.colActivado.Width = 30
-        '
-        'colDessuc
-        '
-        Me.colDessuc.HeaderText = "Sucursal"
-        Me.colDessuc.Name = "colDessuc"
-        Me.colDessuc.ReadOnly = True
-        '
-        'colDes_uni
-        '
-        Me.colDes_uni.DataPropertyName = "DESUNI"
-        Me.colDes_uni.HeaderText = "UDM"
-        Me.colDes_uni.Name = "colDes_uni"
-        Me.colDes_uni.ReadOnly = True
-        '
-        'colprecio_publi
-        '
-        Me.colprecio_publi.DataPropertyName = "PRECIO_PUBLI"
-        DataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle21.BackColor = System.Drawing.Color.LightYellow
-        Me.colprecio_publi.DefaultCellStyle = DataGridViewCellStyle21
-        Me.colprecio_publi.HeaderText = "P.Publi S/"
-        Me.colprecio_publi.Name = "colprecio_publi"
-        Me.colprecio_publi.ReadOnly = True
-        Me.colprecio_publi.Width = 70
-        '
-        'colpublicod
-        '
-        DataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle22.BackColor = System.Drawing.Color.Honeydew
-        DataGridViewCellStyle22.Format = "0.00"
-        Me.colpublicod.DefaultCellStyle = DataGridViewCellStyle22
-        Me.colpublicod.HeaderText = "P.Publi US$"
-        Me.colpublicod.Name = "colpublicod"
-        Me.colpublicod.ReadOnly = True
-        Me.colpublicod.Width = 70
-        '
-        'colprec_distri
-        '
-        Me.colprec_distri.DataPropertyName = "PRECIO_DISTRI"
-        DataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle23.BackColor = System.Drawing.Color.LightYellow
-        Me.colprec_distri.DefaultCellStyle = DataGridViewCellStyle23
-        Me.colprec_distri.HeaderText = "P.Distri S/"
-        Me.colprec_distri.Name = "colprec_distri"
-        Me.colprec_distri.ReadOnly = True
-        Me.colprec_distri.Width = 70
-        '
-        'coldistrid
-        '
-        DataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle24.BackColor = System.Drawing.Color.Honeydew
-        DataGridViewCellStyle24.Format = "0.00"
-        Me.coldistrid.DefaultCellStyle = DataGridViewCellStyle24
-        Me.coldistrid.HeaderText = "P.Distri US$"
-        Me.coldistrid.Name = "coldistrid"
-        Me.coldistrid.ReadOnly = True
-        Me.coldistrid.Width = 70
-        '
-        'colprecio_min
-        '
-        Me.colprecio_min.DataPropertyName = "PRECIO_MIN"
-        DataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle25.BackColor = System.Drawing.Color.LightYellow
-        Me.colprecio_min.DefaultCellStyle = DataGridViewCellStyle25
-        Me.colprecio_min.HeaderText = "P.Míni S/"
-        Me.colprecio_min.Name = "colprecio_min"
-        Me.colprecio_min.ReadOnly = True
-        Me.colprecio_min.Width = 70
-        '
-        'colpmind
-        '
-        DataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle26.BackColor = System.Drawing.Color.Honeydew
-        DataGridViewCellStyle26.Format = "0.00"
-        Me.colpmind.DefaultCellStyle = DataGridViewCellStyle26
-        Me.colpmind.HeaderText = "P.Mini US$"
-        Me.colpmind.Name = "colpmind"
-        Me.colpmind.ReadOnly = True
-        Me.colpmind.Width = 70
-        '
-        'colEquivalente
-        '
-        Me.colEquivalente.DataPropertyName = "EQUIVA"
-        DataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        Me.colEquivalente.DefaultCellStyle = DataGridViewCellStyle27
-        Me.colEquivalente.HeaderText = "Equiv."
-        Me.colEquivalente.Name = "colEquivalente"
-        Me.colEquivalente.ReadOnly = True
-        Me.colEquivalente.Visible = False
-        Me.colEquivalente.Width = 70
-        '
-        'colSaldo
-        '
-        Me.colSaldo.DataPropertyName = "SALDO"
-        DataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        Me.colSaldo.DefaultCellStyle = DataGridViewCellStyle28
-        Me.colSaldo.HeaderText = "Saldo"
-        Me.colSaldo.Name = "colSaldo"
-        Me.colSaldo.ReadOnly = True
-        Me.colSaldo.Visible = False
-        Me.colSaldo.Width = 70
-        '
-        'colEsMin
-        '
-        Me.colEsMin.DataPropertyName = "ESMIN"
-        DataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.colEsMin.DefaultCellStyle = DataGridViewCellStyle29
-        Me.colEsMin.HeaderText = ""
-        Me.colEsMin.MinimumWidth = 2
-        Me.colEsMin.Name = "colEsMin"
-        Me.colEsMin.ReadOnly = True
-        Me.colEsMin.Width = 2
-        '
         'FrmTabArticulos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -2019,6 +2023,7 @@ Partial Class FrmTabArticulos
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Consulta Artículos"
         Me.UltraTabPageControl6.ResumeLayout(False)
+        CType(Me.DgUnidades, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel7.ResumeLayout(False)
         Me.UltraTabPageControl7.ResumeLayout(False)
         Me.Panel10.ResumeLayout(False)
@@ -2034,6 +2039,7 @@ Partial Class FrmTabArticulos
         Me.Panel8.ResumeLayout(False)
         Me.Panel8.PerformLayout()
         Me.UltraTabPageControl3.ResumeLayout(False)
+        CType(Me.DgSucursales, System.ComponentModel.ISupportInitialize).EndInit()
         Me.UltraTabPageControl1.ResumeLayout(False)
         Me.Panel1.ResumeLayout(False)
         CType(Me.DgArticulos, System.ComponentModel.ISupportInitialize).EndInit()
@@ -2059,8 +2065,6 @@ Partial Class FrmTabArticulos
         CType(Me.tbArticulo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.tbArticulo.ResumeLayout(False)
         CType(Me.UltraTabbedMdiManager1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DgUnidades, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DgSucursales, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

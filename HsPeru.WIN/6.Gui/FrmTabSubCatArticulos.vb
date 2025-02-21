@@ -30,12 +30,15 @@
         utbSubCat.Tabs(0).Enabled = True
         utbSubCat.Tabs(1).Enabled = False
     End Sub
-
     Private Sub cboCategoria_KeyDown(sender As Object, e As KeyEventArgs) Handles cboCategoria.KeyDown
         If e.KeyCode = Keys.Enter AndAlso ActiveControl IsNot Nothing Then
             SelectNextControl(ActiveControl, True, True, True, True)
         End If
     End Sub
+
+    'Private Sub cboFiltroCat_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboFiltroCat.SelectedIndexChanged
+    '    Buscar()
+    'End Sub
     Private Sub DgvSubCat_SelectionChanged(sender As Object, e As EventArgs) Handles DgvSubCat.SelectionChanged
         SeleccionarRow()
     End Sub
@@ -46,6 +49,14 @@
 #End Region
 
 #Region "Métodos"
+
+    'Sub Buscar()
+    '    oSubCategoria = New DAL_TABSUBCAT
+    '    lstSubCategoria = oSubCategoria.Select_all_SubCategoria(New SUBCATEGORIA With {.CODGRU = CInt(cboFiltroCat.SelectedValue)})
+    '    DgvSubCat.AutoGenerateColumns = False
+    '    DgvSubCat.DataSource = lstSubCategoria
+    'End Sub
+
     Sub SeleccionarRow()
         Dim xCodven As Integer = 0
         datSubCategoria = New SUBCATEGORIA
@@ -60,7 +71,9 @@
         oCategoria = New DAL_TABCATART
         oSubCategoria = New DAL_TABSUBCAT
         Dim listaCategorias As List(Of CATEGORIA) = oCategoria.Select_all_Categoria(New CATEGORIA)
-        CargarComboBox(listaCategorias, "COD", "DES", cboCategoria, "SELECCIONAR")
+        CargarComboBox(listaCategorias, "COD", "DES", cboCategoria, SELECCIONAR)
+        CargarComboBox(listaCategorias, "COD", "DES", cboFiltroCat, TODAS) 'AGRGUE ESTO
+        cboFiltroCat.SelectedIndex = 0 ' Y ESTO
         lstSubCategoria = oSubCategoria.Select_all_SubCategoria(New SUBCATEGORIA)
         DgvSubCat.AutoGenerateColumns = False
         DgvSubCat.DataSource = lstSubCategoria
@@ -96,6 +109,7 @@
             Modificar()
         End If
     End Sub
+
 
     Private Sub FrmTabSubCatArticulos_Shown(sender As Object, e As EventArgs) Handles MyBase.Shown
         SeleccionarRow()

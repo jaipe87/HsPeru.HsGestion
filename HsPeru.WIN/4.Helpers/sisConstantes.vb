@@ -21,6 +21,8 @@
     Public Const DIS_LIMA As String = "01"
     Public Const ACEPTADO_SUNAT As String = "0"
 
-
+    '===========================================
+    Public Const ABIERTO As String = "<ABIERTO>"
+    Public Const CERRADO As String = "*CERRADO*"
 
 End Module

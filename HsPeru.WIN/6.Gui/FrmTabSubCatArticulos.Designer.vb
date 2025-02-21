@@ -25,19 +25,26 @@ Partial Class FrmTabSubCatArticulos
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim UltraTab1 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
-        Dim UltraTab2 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim UltraTab1 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
+        Dim UltraTab2 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.UltraTabPageControl1 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.DgvSubCat = New System.Windows.Forms.DataGridView()
+        Me.colcod = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colDes = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colCat = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colSt = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.btnModificar = New System.Windows.Forms.Button()
         Me.btnNuevo = New System.Windows.Forms.Button()
         Me.UltraTabPageControl2 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
         Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.cboCategoria = New System.Windows.Forms.ComboBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.lblCodigo = New System.Windows.Forms.Label()
         Me.btnCancelar = New System.Windows.Forms.Button()
@@ -47,10 +54,13 @@ Partial Class FrmTabSubCatArticulos
         Me.Label1 = New System.Windows.Forms.Label()
         Me.utbSubCat = New Infragistics.Win.UltraWinTabControl.UltraTabControl()
         Me.UltraTabSharedControlsPage1 = New Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage()
-        Me.colcod = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colDes = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colEstado = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.cboCategoria = New System.Windows.Forms.ComboBox()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.cboFiltroCat = New System.Windows.Forms.ComboBox()
         Me.UltraTabPageControl1.SuspendLayout()
         Me.Panel5.SuspendLayout()
         CType(Me.DgvSubCat, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -59,18 +69,20 @@ Partial Class FrmTabSubCatArticulos
         Me.Panel4.SuspendLayout()
         CType(Me.utbSubCat, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.utbSubCat.SuspendLayout()
+        Me.Panel6.SuspendLayout()
         Me.SuspendLayout()
         '
         'UltraTabPageControl1
         '
         Me.UltraTabPageControl1.Controls.Add(Me.Panel5)
         Me.UltraTabPageControl1.Controls.Add(Me.Panel2)
-        Me.UltraTabPageControl1.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl1.Location = New System.Drawing.Point(1, 20)
         Me.UltraTabPageControl1.Name = "UltraTabPageControl1"
         Me.UltraTabPageControl1.Size = New System.Drawing.Size(476, 269)
         '
         'Panel5
         '
+        Me.Panel5.Controls.Add(Me.Panel6)
         Me.Panel5.Controls.Add(Me.DgvSubCat)
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel5.Location = New System.Drawing.Point(0, 0)
@@ -94,7 +106,7 @@ Partial Class FrmTabSubCatArticulos
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.DgvSubCat.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DgvSubCat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DgvSubCat.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colcod, Me.colDes, Me.colEstado})
+        Me.DgvSubCat.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colcod, Me.colDes, Me.colCat, Me.colSt})
         DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window
         DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -104,7 +116,7 @@ Partial Class FrmTabSubCatArticulos
         DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.DgvSubCat.DefaultCellStyle = DataGridViewCellStyle4
         Me.DgvSubCat.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.DgvSubCat.Location = New System.Drawing.Point(0, 0)
+        Me.DgvSubCat.Location = New System.Drawing.Point(0, 35)
         Me.DgvSubCat.Name = "DgvSubCat"
         Me.DgvSubCat.ReadOnly = True
         DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
@@ -119,8 +131,44 @@ Partial Class FrmTabSubCatArticulos
         Me.DgvSubCat.RowHeadersWidth = 15
         Me.DgvSubCat.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
         Me.DgvSubCat.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DgvSubCat.Size = New System.Drawing.Size(389, 269)
+        Me.DgvSubCat.Size = New System.Drawing.Size(389, 234)
         Me.DgvSubCat.TabIndex = 0
+        '
+        'colcod
+        '
+        Me.colcod.DataPropertyName = "COD"
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.colcod.DefaultCellStyle = DataGridViewCellStyle2
+        Me.colcod.HeaderText = "Cód."
+        Me.colcod.Name = "colcod"
+        Me.colcod.ReadOnly = True
+        Me.colcod.Width = 45
+        '
+        'colDes
+        '
+        Me.colDes.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.colDes.DataPropertyName = "DESCRI"
+        Me.colDes.HeaderText = "Descripción"
+        Me.colDes.Name = "colDes"
+        Me.colDes.ReadOnly = True
+        '
+        'colCat
+        '
+        Me.colCat.DataPropertyName = "DESCAT"
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.colCat.DefaultCellStyle = DataGridViewCellStyle3
+        Me.colCat.HeaderText = "Categoria/Grupo"
+        Me.colCat.Name = "colCat"
+        Me.colCat.ReadOnly = True
+        Me.colCat.Width = 115
+        '
+        'colSt
+        '
+        Me.colSt.DataPropertyName = "ESTADO"
+        Me.colSt.HeaderText = "Estado"
+        Me.colSt.Name = "colSt"
+        Me.colSt.ReadOnly = True
+        Me.colSt.Width = 60
         '
         'Panel2
         '
@@ -172,7 +220,7 @@ Partial Class FrmTabSubCatArticulos
         'UltraTabPageControl2
         '
         Me.UltraTabPageControl2.Controls.Add(Me.Panel4)
-        Me.UltraTabPageControl2.Location = New System.Drawing.Point(1, 20)
+        Me.UltraTabPageControl2.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl2.Name = "UltraTabPageControl2"
         Me.UltraTabPageControl2.Size = New System.Drawing.Size(476, 269)
         '
@@ -191,6 +239,15 @@ Partial Class FrmTabSubCatArticulos
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(476, 269)
         Me.Panel4.TabIndex = 12
+        '
+        'cboCategoria
+        '
+        Me.cboCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboCategoria.FormattingEnabled = True
+        Me.cboCategoria.Location = New System.Drawing.Point(73, 166)
+        Me.cboCategoria.Name = "cboCategoria"
+        Me.cboCategoria.Size = New System.Drawing.Size(323, 21)
+        Me.cboCategoria.TabIndex = 19
         '
         'Label3
         '
@@ -292,42 +349,63 @@ Partial Class FrmTabSubCatArticulos
         Me.UltraTabSharedControlsPage1.Name = "UltraTabSharedControlsPage1"
         Me.UltraTabSharedControlsPage1.Size = New System.Drawing.Size(476, 269)
         '
-        'colcod
+        'DataGridViewTextBoxColumn1
         '
-        Me.colcod.DataPropertyName = "COD"
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.colcod.DefaultCellStyle = DataGridViewCellStyle2
-        Me.colcod.HeaderText = "Cód."
-        Me.colcod.Name = "colcod"
-        Me.colcod.ReadOnly = True
-        Me.colcod.Width = 45
+        Me.DataGridViewTextBoxColumn1.DataPropertyName = "COD"
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.DataGridViewTextBoxColumn1.DefaultCellStyle = DataGridViewCellStyle6
+        Me.DataGridViewTextBoxColumn1.HeaderText = "Cód."
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        Me.DataGridViewTextBoxColumn1.Width = 45
         '
-        'colDes
+        'DataGridViewTextBoxColumn2
         '
-        Me.colDes.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.colDes.DataPropertyName = "DESCRI"
-        Me.colDes.HeaderText = "Descripción"
-        Me.colDes.Name = "colDes"
-        Me.colDes.ReadOnly = True
+        Me.DataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.DataGridViewTextBoxColumn2.DataPropertyName = "DESCRI"
+        Me.DataGridViewTextBoxColumn2.HeaderText = "Descripción"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
         '
-        'colEstado
+        'DataGridViewTextBoxColumn3
         '
-        Me.colEstado.DataPropertyName = "ESTADO"
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.colEstado.DefaultCellStyle = DataGridViewCellStyle3
-        Me.colEstado.HeaderText = "Categoria/Grupo"
-        Me.colEstado.Name = "colEstado"
-        Me.colEstado.ReadOnly = True
-        Me.colEstado.Width = 140
+        Me.DataGridViewTextBoxColumn3.DataPropertyName = "DESCAT"
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.DataGridViewTextBoxColumn3.DefaultCellStyle = DataGridViewCellStyle7
+        Me.DataGridViewTextBoxColumn3.HeaderText = "Categoria/Grupo"
+        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        Me.DataGridViewTextBoxColumn3.Width = 140
         '
-        'cboCategoria
+        'DataGridViewTextBoxColumn4
         '
-        Me.cboCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cboCategoria.FormattingEnabled = True
-        Me.cboCategoria.Location = New System.Drawing.Point(73, 166)
-        Me.cboCategoria.Name = "cboCategoria"
-        Me.cboCategoria.Size = New System.Drawing.Size(323, 21)
-        Me.cboCategoria.TabIndex = 19
+        Me.DataGridViewTextBoxColumn4.DataPropertyName = "ESTADO"
+        Me.DataGridViewTextBoxColumn4.HeaderText = "Estado"
+        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
+        '
+        'Panel6
+        '
+        Me.Panel6.Controls.Add(Me.cboFiltroCat)
+        Me.Panel6.Controls.Add(Me.Label7)
+        Me.Panel6.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel6.Location = New System.Drawing.Point(0, 0)
+        Me.Panel6.Name = "Panel6"
+        Me.Panel6.Size = New System.Drawing.Size(389, 35)
+        Me.Panel6.TabIndex = 5
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(8, 11)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(58, 13)
+        Me.Label7.TabIndex = 6
+        Me.Label7.Text = "Categoria :"
+        '
+        'cboFiltroCat
+        '
+        Me.cboFiltroCat.FormattingEnabled = True
+        Me.cboFiltroCat.Location = New System.Drawing.Point(72, 8)
+        Me.cboFiltroCat.Name = "cboFiltroCat"
+        Me.cboFiltroCat.Size = New System.Drawing.Size(144, 21)
+        Me.cboFiltroCat.TabIndex = 7
         '
         'FrmTabSubCatArticulos
         '
@@ -347,6 +425,8 @@ Partial Class FrmTabSubCatArticulos
         Me.Panel4.PerformLayout()
         CType(Me.utbSubCat, System.ComponentModel.ISupportInitialize).EndInit()
         Me.utbSubCat.ResumeLayout(False)
+        Me.Panel6.ResumeLayout(False)
+        Me.Panel6.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -369,8 +449,16 @@ Partial Class FrmTabSubCatArticulos
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents Label3 As Label
+    Friend WithEvents cboCategoria As ComboBox
     Friend WithEvents colcod As DataGridViewTextBoxColumn
     Friend WithEvents colDes As DataGridViewTextBoxColumn
-    Friend WithEvents colEstado As DataGridViewTextBoxColumn
-    Friend WithEvents cboCategoria As ComboBox
+    Friend WithEvents colCat As DataGridViewTextBoxColumn
+    Friend WithEvents colSt As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
+    Friend WithEvents Panel6 As Panel
+    Friend WithEvents cboFiltroCat As ComboBox
+    Friend WithEvents Label7 As Label
 End Class

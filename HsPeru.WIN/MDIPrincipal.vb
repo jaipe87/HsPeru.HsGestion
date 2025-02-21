@@ -143,4 +143,10 @@ Public Class MdiPrincipal
         FrmTabPorcIgv.MdiParent = Me
         FrmTabPorcIgv.Show()
     End Sub
+
+    Private Sub M111_Click(sender As Object, e As EventArgs) Handles M111.Click
+        Dim FrmTabTipCam As FrmTabTipCambios = New FrmTabTipCambios
+        FrmTabTipCam.MdiParent = Me
+        FrmTabTipCam.Show()
+    End Sub
 End Class

@@ -15,4 +15,10 @@
     Public Property USRCIE2 As String
     Public Property FECCIE3 As Date
     Public Property USRCIE3 As String
+
+    '=====================================
+    Public Property ESTADO As String
+    Public Property ESTADO2 As String
+    Public Property ESTADO3 As String
+
 End Class
