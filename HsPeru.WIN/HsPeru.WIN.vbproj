@@ -106,6 +106,7 @@
     <Compile Include="2.Entity\DATRETORNO.vb" />
     <Compile Include="2.Entity\GRUPOCLIENTE.vb" />
     <Compile Include="2.Entity\MARCA.vb" />
+    <Compile Include="2.Entity\PORCIGV.vb" />
     <Compile Include="2.Entity\SUBCATEGORIA.vb" />
     <Compile Include="2.Entity\TABART.vb" />
     <Compile Include="2.Entity\TABART_SUCURSAL.vb" />
@@ -128,6 +129,7 @@
     <Compile Include="3.AccesoDatos\DAL_CLIPRO.vb" />
     <Compile Include="3.AccesoDatos\DAL_COMBOS.vb" />
     <Compile Include="3.AccesoDatos\DAL_MARCA.vb" />
+    <Compile Include="3.AccesoDatos\DAL_PORCIGV.vb" />
     <Compile Include="3.AccesoDatos\DAL_TABART.vb" />
     <Compile Include="3.AccesoDatos\DAL_TABBANCO.vb" />
     <Compile Include="3.AccesoDatos\DAL_TABCATART.vb" />
@@ -370,10 +372,10 @@
     <Compile Include="6.Gui\FrmTabMarcas.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="6.Gui\FrmTabPorcIVG.Designer.vb">
-      <DependentUpon>FrmTabPorcIVG.vb</DependentUpon>
+    <Compile Include="6.Gui\FrmTabPorcIgv.Designer.vb">
+      <DependentUpon>FrmTabPorcIgv.vb</DependentUpon>
     </Compile>
-    <Compile Include="6.Gui\FrmTabPorcIVG.vb">
+    <Compile Include="6.Gui\FrmTabPorcIgv.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="6.Gui\FrmTabSubCatArticulos.Designer.vb">
@@ -553,8 +555,8 @@
     <EmbeddedResource Include="6.Gui\FrmTabMarcas.resx">
       <DependentUpon>FrmTabMarcas.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="6.Gui\FrmTabPorcIVG.resx">
-      <DependentUpon>FrmTabPorcIVG.vb</DependentUpon>
+    <EmbeddedResource Include="6.Gui\FrmTabPorcIgv.resx">
+      <DependentUpon>FrmTabPorcIgv.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="6.Gui\FrmTabSubCatArticulos.resx">
       <DependentUpon>FrmTabSubCatArticulos.vb</DependentUpon>

@@ -137,4 +137,10 @@ Public Class MdiPrincipal
         FrmTabBco.MdiParent = Me
         FrmTabBco.Show()
     End Sub
+
+    Private Sub M110_Click(sender As Object, e As EventArgs) Handles M110.Click
+        Dim FrmTabPorcIgv As FrmTabPorcIgv = New FrmTabPorcIgv
+        FrmTabPorcIgv.MdiParent = Me
+        FrmTabPorcIgv.Show()
+    End Sub
 End Class

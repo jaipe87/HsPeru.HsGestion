@@ -251,7 +251,7 @@ Partial Class FrmTabTipCambios
         'UltraTabPageControl2
         '
         Me.UltraTabPageControl2.Controls.Add(Me.Panel2)
-        Me.UltraTabPageControl2.Location = New System.Drawing.Point(-7500, -8125)
+        Me.UltraTabPageControl2.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl2.Name = "UltraTabPageControl2"
         Me.UltraTabPageControl2.Size = New System.Drawing.Size(641, 296)
         '
