@@ -2,7 +2,6 @@
     Dim oPorc As DAL_PORCIGV
     Dim datPorc As PORCIGV, parPorc As PORCIGV
     Dim lstPorc As New List(Of PORCIGV)
-    Dim COD As Integer = lstPorc.Count + 1
     Sub New()
         ' This call is required by the designer.
         InitializeComponent()
@@ -31,25 +30,36 @@
         utbPorcIgv.Tabs(0).Enabled = True
         utbPorcIgv.Tabs(1).Enabled = False
     End Sub
+
+    Private Sub DgvPorcIgv_SelectionChanged(sender As Object, e As EventArgs) Handles DgvPorcIgv.SelectionChanged
+        SeleccionarRow()
+    End Sub
+
+    Private Sub DgvPorcIgv_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgvPorcIgv.CellDoubleClick
+        Modificar()
+    End Sub
 #End Region
 
 #Region "Métodos"
 
     Sub SeleccionarRow()
+        Dim xVigencia As Date
+        datPorc = New PORCIGV
 
-        'Dim xCod As Integer = 0
-        'datPorc = New PORCIGV
-        'xCod = NothingToInteger(DgvPorcIgv.CurrentRow.Cells(colcod.Index).Value)
+        ' Obtener la fecha de la fila seleccionada
+        xVigencia = Convert.ToDateTime(DgvPorcIgv.CurrentRow.Cells(colVig.Index).Value).Date
 
-        'If lstPorc.Where(Function(x) x.COD = xCod).Count > 0 Then
-        '    datPorc = lstPorc.Where(Function(x) x.COD = xCod).First
-        'End If
-
+        If lstPorc.Where(Function(x) x.VIGENCIA.Date = xVigencia).Count > 0 Then
+            datPorc = lstPorc.Where(Function(x) x.VIGENCIA.Date = xVigencia).First()
+        End If
 
     End Sub
+
+
     Sub Inicia()
         oPorc = New DAL_PORCIGV
         lstPorc = oPorc.Select_all_PorcIgv(New PORCIGV)
+
         DgvPorcIgv.AutoGenerateColumns = False
         DgvPorcIgv.DataSource = lstPorc
         utbPorcIgv.Tabs(0).Selected = True
@@ -60,7 +70,7 @@
         utbPorcIgv.Tabs(0).Enabled = False
         utbPorcIgv.Tabs(1).Selected = True
         utbPorcIgv.Tabs(1).Enabled = True
-        dtFecha.Text = Date.Now()
+        dtFecha.Value = Date.Today
         txtPorc.Text = ""
         txtPorc.Focus()
         rbdActivo.Checked = False
@@ -68,15 +78,13 @@
     End Sub
 
     Sub Modificar()
-
         If Not IsNothing(datPorc) Then
-            dtFecha.Text = datPorc.VIGENCIA
-            txtPorc.Text = datPorc.PORC
+            dtFecha.Value = datPorc.VIGENCIA.Date
+            txtPorc.Text = datPorc.PORC.ToString()
             utbPorcIgv.Tabs(0).Enabled = False
             utbPorcIgv.Tabs(1).Selected = True
             utbPorcIgv.Tabs(1).Enabled = True
         End If
-
     End Sub
 
     Private Sub DgvPorcIgv_KeyDown(sender As Object, e As KeyEventArgs) Handles DgvPorcIgv.KeyDown
@@ -90,6 +98,7 @@
         SeleccionarRow()
     End Sub
 
+
     Sub Graba()
         If MessageBox.Show("¿Seguro de Grabar el Registro?", TITULO, MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Return
         If txtPorc.Text.Trim.Length = 0 Then MessageBox.Show("Ingrese el porcentaje", TITULO, MessageBoxButtons.OK, MessageBoxIcon.Information) : Return
@@ -99,8 +108,8 @@
         parPorc = New PORCIGV
 
         With parPorc
-            .VIGENCIA = dtFecha.Text.Trim
-            .PORC = txtPorc.Text.Trim
+            .VIGENCIA = dtFecha.Value.ToString("yyyy-MM-dd")
+            .PORC = Convert.ToDouble(txtPorc.Text.Trim)
         End With
         datPorc = oPorc.Insert_PorcIgv(parPorc)
 
@@ -113,5 +122,30 @@
             MessageBox.Show("No se pudo completar el registro", TITULO, MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
     End Sub
+
+    'Sub Graba()
+    '    If MessageBox.Show("¿Seguro de Grabar el Registro?", TITULO, MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Return
+    '    If txtPorc.Text.Trim.Length = 0 Then MessageBox.Show("Ingrese el porcentaje", TITULO, MessageBoxButtons.OK, MessageBoxIcon.Information) : Return
+
+    '    oPorc = New DAL_PORCIGV
+    '    datPorc = New PORCIGV
+    '    parPorc = New PORCIGV
+
+    '    With parPorc
+    '        .VIGENCIA = dtFecha.Value.Date ' Asegura que solo guarde la fecha
+    '        .PORC = Convert.ToDouble(txtPorc.Text.Trim)
+    '    End With
+    '    datPorc = oPorc.Insert_PorcIgv(parPorc)
+
+    '    If Not IsNothing(datPorc) Then
+    '        MessageBox.Show("Registro exitoso con el porcentaje " & datPorc.PORC, TITULO, MessageBoxButtons.OK, MessageBoxIcon.Information)
+    '        utbPorcIgv.Tabs(0).Selected = True
+    '        utbPorcIgv.Tabs(0).Enabled = True
+    '        utbPorcIgv.Tabs(1).Enabled = False
+    '    Else
+    '        MessageBox.Show("No se pudo completar el registro", TITULO, MessageBoxButtons.OK, MessageBoxIcon.Information)
+    '    End If
+    'End Sub
+
 #End Region
 End Class

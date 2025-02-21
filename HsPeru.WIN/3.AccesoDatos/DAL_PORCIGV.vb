@@ -17,8 +17,8 @@ Public Class DAL_PORCIGV
                     datPorc = New PORCIGV()
                     row = FetchAsoc(dr)
                     With datPorc
-                        .VIGENCIA = row("VIGENCIA")
-                        .PORC = CType(row("PORC"), Integer)
+                        .VIGENCIA = CType(row("VIGENCIA"), Date).Date
+                        .PORC = CType(row("PORC"), Double)
                     End With
 
                     listPorc.Add(datPorc)
@@ -34,10 +34,10 @@ Public Class DAL_PORCIGV
 
         Dim datPorc As New PORCIGV
 
+        Ssql = "INSERT INTO tg_igv (VIGENCIA, PORC) VALUES ('"
+        Ssql = Ssql & objDato.VIGENCIA.ToString("yyyy-MM-dd") & "', " & objDato.PORC & ") "
+        Ssql = Ssql & "ON DUPLICATE KEY UPDATE PORC=" & objDato.PORC & ";"
 
-        Ssql = "INSERT INTO tg_igv (VIGENCIA, PORC) VALUES ("
-        Ssql = Ssql & objDato.VIGENCIA & ", '" & objDato.PORC & "') "
-        Ssql = Ssql & " ON DUPLICATE KEY UPDATE PORC=" & objDato.PORC & ";"
 
         Using cmd As New OdbcCommand(Ssql, Cn)
             cmd.ExecuteNonQuery()

@@ -28,6 +28,7 @@ Partial Class FrmTabPorcIgv
         Dim UltraTab1 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim UltraTab2 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.UltraTabPageControl1 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
         Me.Panel5 = New System.Windows.Forms.Panel()
@@ -38,6 +39,7 @@ Partial Class FrmTabPorcIgv
         Me.btnNuevo = New System.Windows.Forms.Button()
         Me.UltraTabPageControl2 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
         Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.dtFecha = New HsPeru.WIN.DateTimeEditingControl()
         Me.rbdInactivo = New System.Windows.Forms.RadioButton()
         Me.rbdActivo = New System.Windows.Forms.RadioButton()
         Me.btnCancelar = New System.Windows.Forms.Button()
@@ -50,8 +52,7 @@ Partial Class FrmTabPorcIgv
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dtFecha = New HsPeru.WIN.DateTimeEditingControl()
-        Me.colcod = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colid = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colVig = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colEstado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.UltraTabPageControl1.SuspendLayout()
@@ -97,7 +98,7 @@ Partial Class FrmTabPorcIgv
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.DgvPorcIgv.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DgvPorcIgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DgvPorcIgv.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colcod, Me.colVig, Me.colEstado})
+        Me.DgvPorcIgv.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colid, Me.colVig, Me.colEstado})
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window
         DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -194,6 +195,19 @@ Partial Class FrmTabPorcIgv
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(382, 240)
         Me.Panel4.TabIndex = 12
+        '
+        'dtFecha
+        '
+        Me.dtFecha.EditingControlDataGridView = Nothing
+        Me.dtFecha.EditingControlFormattedValue = "20/02/2025 16:03:23"
+        Me.dtFecha.EditingControlRowIndex = 0
+        Me.dtFecha.EditingControlValueChanged = False
+        Me.dtFecha.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.dtFecha.Location = New System.Drawing.Point(71, 53)
+        Me.dtFecha.Name = "dtFecha"
+        Me.dtFecha.Size = New System.Drawing.Size(235, 20)
+        Me.dtFecha.TabIndex = 21
+        Me.dtFecha.Value = New Date(2025, 2, 20, 16, 3, 23, 0)
         '
         'rbdInactivo
         '
@@ -297,6 +311,7 @@ Partial Class FrmTabPorcIgv
         '
         'DataGridViewTextBoxColumn1
         '
+        Me.DataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
         Me.DataGridViewTextBoxColumn1.DataPropertyName = "COD"
         Me.DataGridViewTextBoxColumn1.HeaderText = "Cod"
         Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
@@ -307,6 +322,8 @@ Partial Class FrmTabPorcIgv
         '
         Me.DataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
         Me.DataGridViewTextBoxColumn2.DataPropertyName = "VIGENCIA"
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.DataGridViewTextBoxColumn2.DefaultCellStyle = DataGridViewCellStyle5
         Me.DataGridViewTextBoxColumn2.HeaderText = "Vigencia"
         Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
         Me.DataGridViewTextBoxColumn2.ReadOnly = True
@@ -314,33 +331,19 @@ Partial Class FrmTabPorcIgv
         'DataGridViewTextBoxColumn3
         '
         Me.DataGridViewTextBoxColumn3.DataPropertyName = "ESTADO"
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.DataGridViewTextBoxColumn3.DefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.DataGridViewTextBoxColumn3.DefaultCellStyle = DataGridViewCellStyle6
         Me.DataGridViewTextBoxColumn3.HeaderText = "Estado"
         Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
         Me.DataGridViewTextBoxColumn3.ReadOnly = True
         Me.DataGridViewTextBoxColumn3.Width = 90
         '
-        'dtFecha
+        'colid
         '
-        Me.dtFecha.EditingControlDataGridView = Nothing
-        Me.dtFecha.EditingControlFormattedValue = "20/02/2025 16:03:23"
-        Me.dtFecha.EditingControlRowIndex = 0
-        Me.dtFecha.EditingControlValueChanged = False
-        Me.dtFecha.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.dtFecha.Location = New System.Drawing.Point(71, 53)
-        Me.dtFecha.Name = "dtFecha"
-        Me.dtFecha.Size = New System.Drawing.Size(235, 20)
-        Me.dtFecha.TabIndex = 21
-        Me.dtFecha.Value = New Date(2025, 2, 20, 16, 3, 23, 0)
-        '
-        'colcod
-        '
-        Me.colcod.DataPropertyName = "COD"
-        Me.colcod.HeaderText = "Cod"
-        Me.colcod.Name = "colcod"
-        Me.colcod.ReadOnly = True
-        Me.colcod.Visible = False
+        Me.colid.HeaderText = "COD"
+        Me.colid.Name = "colid"
+        Me.colid.ReadOnly = True
+        Me.colid.Visible = False
         '
         'colVig
         '
@@ -404,7 +407,8 @@ Partial Class FrmTabPorcIgv
     Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
-    Friend WithEvents colcod As DataGridViewTextBoxColumn
+    Friend WithEvents colCod As DataGridViewTextBoxColumn
+    Friend WithEvents colid As DataGridViewTextBoxColumn
     Friend WithEvents colVig As DataGridViewTextBoxColumn
     Friend WithEvents colEstado As DataGridViewTextBoxColumn
 End Class
