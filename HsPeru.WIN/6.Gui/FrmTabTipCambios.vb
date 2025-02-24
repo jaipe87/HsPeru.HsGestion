@@ -11,7 +11,7 @@
 
 #Region "Eventos"
     Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
-
+        Nuevo()
     End Sub
 
     Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
@@ -56,7 +56,6 @@
         DgvTipCam.DataSource = lstTipcam
     End Sub
 
-
     Sub Inicia()
         oTipcam = New DAL_TIPCAM
         cboAnio.DataSource = oCombo.CargaAnios()
@@ -68,6 +67,30 @@
         utbTipCam.Tabs(1).Enabled = False
     End Sub
 
+    Sub Nuevo()
+        utbTipCam.Tabs(0).Enabled = False
+        utbTipCam.Tabs(1).Selected = True
+        utbTipCam.Tabs(1).Enabled = True
+        cboAnio.SelectedItem = DateTime.Now.ToString()
+        txtCompra.Text = ""
+        txtVenta.Text = 3.5
+        txtParalelo.Text = 3.5
+        txtCompra.Focus()
+    End Sub
+    Sub Modificar()
+
+        If Not IsNothing(datTipcam) Then
+            txtCompra.Text = datTipcam.COMPRA
+            txtVenta.Text = datTipcam.VENTA
+            txtParalelo.Text = datTipcam.PARALE
+            'FALTAAAA
+
+            utbTipCam.Tabs(0).Enabled = False
+            utbTipCam.Tabs(1).Selected = True
+            utbTipCam.Tabs(1).Enabled = True
+        End If
+
+    End Sub
     'FALTA TODO LO DEMÁS
 
 #End Region
