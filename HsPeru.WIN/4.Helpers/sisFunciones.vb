@@ -253,7 +253,6 @@ Module sisFunciones
         End If
     End Function
 
-
     Public Function StringToDouble(ByVal valor As String) As Double
         Dim XDouble As Double = 0
 
@@ -605,12 +604,6 @@ Module sisFunciones
         Dim oFac As New DAL_TABFAC
         GPorIGV = oFac.Select_IGV(Fecha)
     End Sub
-
-
-
-
-
-
 
 
     ''' <summary>

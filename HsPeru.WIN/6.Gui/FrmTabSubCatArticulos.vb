@@ -36,9 +36,9 @@
         End If
     End Sub
 
-    'Private Sub cboFiltroCat_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboFiltroCat.SelectedIndexChanged
-    '    Buscar()
-    'End Sub
+    Private Sub cboFiltroCat_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboFiltroCat.SelectedIndexChanged
+        Buscar()
+    End Sub
     Private Sub DgvSubCat_SelectionChanged(sender As Object, e As EventArgs) Handles DgvSubCat.SelectionChanged
         SeleccionarRow()
     End Sub
@@ -50,12 +50,12 @@
 
 #Region "Métodos"
 
-    'Sub Buscar()
-    '    oSubCategoria = New DAL_TABSUBCAT
-    '    lstSubCategoria = oSubCategoria.Select_all_SubCategoria(New SUBCATEGORIA With {.CODGRU = CInt(cboFiltroCat.SelectedValue)})
-    '    DgvSubCat.AutoGenerateColumns = False
-    '    DgvSubCat.DataSource = lstSubCategoria
-    'End Sub
+    Sub Buscar()
+        oSubCategoria = New DAL_TABSUBCAT
+        lstSubCategoria = oSubCategoria.Select_all_SubCategoria(New SUBCATEGORIA With {.DESCAT = cboFiltroCat.Text})
+        DgvSubCat.AutoGenerateColumns = False
+        DgvSubCat.DataSource = lstSubCategoria
+    End Sub
 
     Sub SeleccionarRow()
         Dim xCodven As Integer = 0
@@ -72,8 +72,9 @@
         oSubCategoria = New DAL_TABSUBCAT
         Dim listaCategorias As List(Of CATEGORIA) = oCategoria.Select_all_Categoria(New CATEGORIA)
         CargarComboBox(listaCategorias, "COD", "DES", cboCategoria, SELECCIONAR)
-        CargarComboBox(listaCategorias, "COD", "DES", cboFiltroCat, TODAS) 'AGRGUE ESTO
-        cboFiltroCat.SelectedIndex = 0 ' Y ESTO
+        CargarComboBox(listaCategorias, "COD", "DES", cboFiltroCat, TODAS)
+        cboFiltroCat.SelectedIndex = 0
+
         lstSubCategoria = oSubCategoria.Select_all_SubCategoria(New SUBCATEGORIA)
         DgvSubCat.AutoGenerateColumns = False
         DgvSubCat.DataSource = lstSubCategoria

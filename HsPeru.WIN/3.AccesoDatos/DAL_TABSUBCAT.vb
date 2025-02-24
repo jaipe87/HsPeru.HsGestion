@@ -13,7 +13,7 @@ Public Class DAL_TABSUBCAT
         Using cmd As New OdbcCommand(Ssql, Cn)
             cmd.CommandType = CommandType.Text
             cmd.Parameters.Add("@cia", OdbcType.Int, 11).Value = GCia
-            cmd.Parameters.Add("@criterio", OdbcType.VarChar, 30).Value = objDato.DESCRI
+            cmd.Parameters.Add("@criterio", OdbcType.VarChar, 30).Value = objDato.DESCAT
             cmd.Parameters.Add("@st", OdbcType.Int, 11).Value = objDato.ST
             dr = cmd.ExecuteReader()
             If dr.HasRows Then
@@ -29,7 +29,6 @@ Public Class DAL_TABSUBCAT
                         .ST = CType(row("ST"), Integer)
                         .ESTADO = If(.ST = 0, ACTIVO, INACTIVO)
                     End With
-
                     listSubCategoria.Add(datSubCategoria)
                 End While
             End If
