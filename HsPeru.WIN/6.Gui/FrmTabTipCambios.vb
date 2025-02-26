@@ -23,19 +23,27 @@
     End Sub
 
     Private Sub btnBloqCobranzas_Click(sender As Object, e As EventArgs) Handles btnBloqCobranzas.Click
+        SeleccionarRow()
 
+        If datTipcam IsNot Nothing AndAlso datTipcam.COD > 0 Then
+            GuardaBloqCobranzas()
+        Else
+            MessageBox.Show("Seleccione una fila válida para bloquear cobranzas.", TITULO, MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        End If
     End Sub
 
     Private Sub btnBloqVentas_Click(sender As Object, e As EventArgs) Handles btnBloqVentas.Click
 
     End Sub
 
+
+
     Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
         Close()
     End Sub
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
-
+        Graba()
     End Sub
 
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
@@ -109,7 +117,70 @@
         End If
 
     End Sub
-    'FALTA TODO LO DEMÁS
+
+    Sub Graba()
+        If MessageBox.Show("¿Seguro de Grabar el Registro?", TITULO, MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Return
+        If txtCompra.Text.Trim.Length = 0 Then MessageBox.Show("Ingrese el nombre del vendedor", TITULO, MessageBoxButtons.OK, MessageBoxIcon.Information) : Return
+
+        oTipcam = New DAL_TIPCAM
+        datTipcam = New TIPCAM
+        parTipcam = New TIPCAM
+
+        With parTipcam
+            .CIA = GCia
+            '.COD = CInt(Val(lblCodigo.Text))
+            .FECHA = dtFecha.Value.ToString("yyyy-MM-dd")
+            .COMPRA = txtCompra.Text.Trim
+            .VENTA = txtVenta.Text.Trim
+            .PARALE = txtParalelo.Text.Trim
+        End With
+        datTipcam = oTipcam.Insert_TipCambio(parTipcam)
+
+        If Not IsNothing(datTipcam) Then
+            MessageBox.Show("Registro existoso del vendedor con código " & datTipcam.COD, TITULO, MessageBoxButtons.OK, MessageBoxIcon.Information)
+            utbTipCam.Tabs(0).Selected = True
+            utbTipCam.Tabs(0).Enabled = True
+            utbTipCam.Tabs(1).Enabled = False
+        Else
+            MessageBox.Show("No se pudo completar el registro", TITULO, MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End If
+    End Sub
+    'Sub GrabaBloqCobranza(st2Value As Integer)
+    '    If MessageBox.Show("¿Seguro de Grabar el Registro?", TITULO, MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Return
+
+    '    oTipcam = New DAL_TIPCAM
+    '    parTipcam = New TIPCAM
+
+    '    With parTipcam
+    '        .CIA = GCia
+    '        '.COD = codigo
+    '        .ST2 = st2Value
+    '    End With
+
+    '    oTipcam.Insert_BloqCobranzas_TipCambio(parTipcam)
+
+    '    If Not IsNothing(datTipcam) Then
+    '        MessageBox.Show("Registro actualizado exitosamente.", TITULO, MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+    '    Else
+    '        MessageBox.Show("No se pudo completar la actualización.", TITULO, MessageBoxButtons.OK, MessageBoxIcon.Information)
+    '    End If
+    'End Sub
+
+    Private Sub GuardaBloqCobranzas()
+        If DgvTipCam.CurrentRow Is Nothing Then Exit Sub
+
+        Dim nuevoEstado As Integer = 1 - NothingToInteger(DgvTipCam.CurrentRow.Cells("ST2").Value)
+
+        If MessageBox.Show(If(nuevoEstado = 1, "¿Desea bloquear cobranzas?", "¿Desea desbloquear cobranzas?"),
+                       "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Exit Sub
+
+        Dim objTipcam As New TIPCAM With {.CIA = GCia, .ST2 = nuevoEstado}
+
+        If New DAL_TIPCAM().Insert_BloqCobranzas_TipCambio(objTipcam) IsNot Nothing Then Buscar()
+    End Sub
+
+
     Private Sub DgvTipCam_KeyDown(sender As Object, e As KeyEventArgs) Handles DgvTipCam.KeyDown
         If e.KeyCode = Keys.Enter Then
             e.SuppressKeyPress = True
@@ -120,6 +191,7 @@
     Private Sub FrmTabTipCambios_Shown(sender As Object, e As EventArgs) Handles MyBase.Shown
         SeleccionarRow()
     End Sub
+
 #End Region
 
 End Class

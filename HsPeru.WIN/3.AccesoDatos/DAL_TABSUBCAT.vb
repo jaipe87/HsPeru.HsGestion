@@ -55,7 +55,7 @@ Public Class DAL_TABSUBCAT
 
         Ssql = "INSERT INTO tabsubcat (CIA, COD, DESCRI, CODGRU, ST) VALUES("
         Ssql = Ssql & GCia & "," & Cod & ",'" & objDato.DESCRI & "'," & objDato.CODGRU & "," & objDato.ST & ") "
-        Ssql = Ssql & " ON DUPLICATE KEY UPDATE descri='" & objDato.DESCRI & "',CODGRU=" & objDato.CODGRU & ",ST=" & objDato.ST & ";"
+        Ssql = Ssql & " ON DUPLICATE KEY UPDATE DESCRI='" & objDato.DESCRI & "',CODGRU=" & objDato.CODGRU & ",ST=" & objDato.ST & ";"
 
         Using cmd As New OdbcCommand(Ssql, Cn)
             cmd.ExecuteNonQuery()

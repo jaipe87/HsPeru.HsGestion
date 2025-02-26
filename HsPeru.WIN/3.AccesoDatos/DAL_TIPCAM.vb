@@ -32,6 +32,7 @@ Public Class DAL_TIPCAM
                         .ESTADO = If(.ST = 0, ABIERTO, CERRADO)
                         .ESTADO2 = If(.ST2 = 0, ABIERTO, CERRADO)
                         .ESTADO3 = If(.ST3 = 0, ABIERTO, CERRADO)
+                        .COD = CInt(CType(row("FECHA"), Date).ToString("yyyyMMdd"))
                     End With
 
                     listTipcam.Add(datTipcam)
@@ -44,6 +45,108 @@ Public Class DAL_TIPCAM
     End Function
 
 
+    'Public Function Insert_TipCambio(ByVal objDato As TIPCAM) As TIPCAM
+
+    '    Dim datTipCam As New TIPCAM
+    '    Dim Cod As Integer = 0
+    '    If objDato.COD <> 0 Then
+    '        Cod = objDato.COD
+    '    Else
+    '        Ssql = "SELECT IFNULL(MAX(COD),0) + 1  FROM tabcam WHERE CIA= " & GCia & " ;"
+    '        Using cmd As New OdbcCommand(Ssql, Cn)
+    '            cmd.CommandType = CommandType.Text
+    '            Cod = CType(cmd.ExecuteScalar(), Integer)
+    '        End Using
+
+    '    End If
+
+    '    Ssql = "INSERT INTO tabcam (CIA, FECHA, COMPRA, VENTA, PARALE, ST) VALUES ("
+    '    Ssql = Ssql & GCia & "," & "," & objDato.FECHA & "," & objDato.COMPRA & "," & objDato.VENTA & "," & objDato.PARALE & "," & objDato.ST & ") "
+    '    Ssql = Ssql & " ON DUPLICATE KEY UPDATE FECHA =" & objDato.FECHA & ", COMPRA =" & objDato.COMPRA & ", VENTA =" & objDato.VENTA & ", PARALE =" & objDato.PARALE & ",ST=" & objDato.ST & ";"
+
+    '    Using cmd As New OdbcCommand(Ssql, Cn)
+    '        cmd.ExecuteNonQuery()
+    '        objDato.COD = Cod
+    '    End Using
+    '    datTipCam = objDato
+    '    Return datTipCam
+    'End Function
+
+    Public Function Insert_TipCambio(ByVal objDato As TIPCAM) As TIPCAM
+
+        Dim datTipCam As New TIPCAM
+
+        ' Eliminamos la lógica de COD porque no existe en la tabla
+        Ssql = "INSERT INTO tabcam (CIA, FECHA, COMPRA, VENTA, PARALE, ST) VALUES ("
+        Ssql = Ssql & GCia & ", '" & objDato.FECHA.ToString("yyyy-MM-dd") & "', " & objDato.COMPRA & ", " & objDato.VENTA & ", " & objDato.PARALE & ", " & objDato.ST & ") "
+        Ssql = Ssql & "ON DUPLICATE KEY UPDATE FECHA = '" & objDato.FECHA.ToString("yyyy-MM-dd") & "', COMPRA = " & objDato.COMPRA & ", VENTA = " & objDato.VENTA & ", PARALE = " & objDato.PARALE & ", ST = " & objDato.ST & ";"
+
+        Using cmd As New OdbcCommand(Ssql, Cn)
+            cmd.CommandType = CommandType.Text
+            cmd.ExecuteNonQuery()
+        End Using
+
+        datTipCam = objDato
+        Return datTipCam
+
+    End Function
+
+    Public Function Insert_BloqTipCambio(ByVal objDato As TIPCAM) As TIPCAM
+
+        Dim datTipCam As New TIPCAM
+
+        ' Eliminamos la lógica de COD porque no existe en la tabla
+        Ssql = "INSERT INTO tabcam (CIA, ST, ST2, ST3) VALUES ("
+        Ssql = Ssql & GCia & ", '" & objDato.ST & "', " & objDato.ST2 & ", " & objDato.ST3 & ") "
+        Ssql = Ssql & "ON DUPLICATE KEY UPDATE ST = " & objDato.ST & ", ST2 = " & objDato.ST2 & ", ST3 = " & objDato.ST3 & ";"
+
+        Using cmd As New OdbcCommand(Ssql, Cn)
+            cmd.CommandType = CommandType.Text
+            cmd.ExecuteNonQuery()
+        End Using
+
+        datTipCam = objDato
+        Return datTipCam
+
+    End Function
+
+
+    'Public Function Insert_BloqCobranzas_TipCambio(ByVal objDato As TIPCAM) As TIPCAM
+    '    Dim datTipCam As New TIPCAM
+
+    '    Ssql = "INSERT INTO tabcam (CIA, ST2) VALUES ("
+    '    Ssql = Ssql & GCia & ", " & objDato.ST2 & ") "
+    '    Ssql = Ssql & "ON DUPLICATE KEY UPDATE ST2 = " & objDato.ST2 & ";"
+
+    '    Using cmd As New OdbcCommand(Ssql, Cn)
+    '        cmd.CommandType = CommandType.Text
+    '        cmd.ExecuteNonQuery()
+    '    End Using
+
+    '    datTipCam = objDato
+    '    Return datTipCam
+    'End Function
+
+    Public Function Insert_BloqCobranzas_TipCambio(ByVal objDato As TIPCAM) As TIPCAM
+        Dim datTipCam As New TIPCAM
+        Dim ciaValue As Integer = objDato.CIA ' Asegúrate de obtenerlo antes de llamar esta función
+
+        Ssql = "INSERT INTO tabcam (CIA, ST2) VALUES (" & ciaValue & ", " & objDato.ST2 & ") " &
+           "ON DUPLICATE KEY UPDATE ST2 = " & objDato.ST2 & ";"
+
+        Try
+            Using cmd As New OdbcCommand(Ssql, Cn)
+                cmd.CommandType = CommandType.Text
+                cmd.ExecuteNonQuery()
+            End Using
+        Catch ex As Exception
+            MessageBox.Show("Error en la consulta SQL: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return Nothing
+        End Try
+
+        datTipCam = objDato
+        Return datTipCam
+    End Function
 
 
 
@@ -71,7 +174,7 @@ Public Class DAL_TIPCAM
         Dim datTipCam As New TIPCAM
 
         Ssql = "SELECT  FECHA, COMPRA, VENTA, PARALE FROM tabcam order by fecha desc limit 1;"
-        Using cmd As New OdbcCommand(ssql, Cn)
+        Using cmd As New OdbcCommand(Ssql, Cn)
             cmd.CommandType = CommandType.Text
             dr = cmd.ExecuteReader()
             If dr.HasRows Then
@@ -99,7 +202,7 @@ Public Class DAL_TIPCAM
         Dim datTipCam As New TIPCAM
 
         Ssql = "SELECT  FECHA, COMPRA, VENTA, PARALE FROM tabcam WHERE fecha=?;"
-        Using cmd As New OdbcCommand(ssql, Cn)
+        Using cmd As New OdbcCommand(Ssql, Cn)
             cmd.CommandType = CommandType.Text
             cmd.Parameters.AddWithValue("@fecha", objDato.FECHA.ToString("yyyy-MM-dd"))
             dr = cmd.ExecuteReader()

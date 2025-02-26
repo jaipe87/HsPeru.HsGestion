@@ -21,14 +21,6 @@
     Public Property ESTADO2 As String
     Public Property ESTADO3 As String
 
-    Public Property COD As Long
-
-    Public Sub New()
-        Me.COD = GenerateUniqueCode()
-    End Sub
-
-    Private Function GenerateUniqueCode() As Long
-        Return Me.FECHA.Ticks
-    End Function
+    Public Property COD As Integer
 
 End Class

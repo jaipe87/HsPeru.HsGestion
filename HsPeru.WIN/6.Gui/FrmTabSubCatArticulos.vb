@@ -129,7 +129,7 @@
             .CIA = GCia
             .COD = CInt(Val(lblCodigo.Text))
             .DESCRI = txtDes.Text.Trim
-            .CODGRU = Convert.ToInt32(cboCategoria.SelectedValue)
+            .CODGRU = CInt(cboCategoria.SelectedValue)
         End With
         datSubCategoria = oSubCategoria.Insert_SubCategoria(parSubCategoria)
 
