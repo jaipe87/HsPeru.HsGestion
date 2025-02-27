@@ -149,4 +149,10 @@ Public Class MdiPrincipal
         FrmTabTipCam.MdiParent = Me
         FrmTabTipCam.Show()
     End Sub
+
+    Private Sub M112_Click(sender As Object, e As EventArgs) Handles M112.Click
+        Dim FrmTabTarjCredito As FrmTabTarjetas = New FrmTabTarjetas
+        FrmTabTarjCredito.MdiParent = Me
+        FrmTabTarjCredito.Show()
+    End Sub
 End Class

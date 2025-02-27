@@ -118,6 +118,7 @@
     <Compile Include="2.Entity\TABPAG_CPE.vb" />
     <Compile Include="2.Entity\TABSER.vb" />
     <Compile Include="2.Entity\TABSUC.vb" />
+    <Compile Include="2.Entity\TARJCREDITO.vb" />
     <Compile Include="2.Entity\TG_TABDOC.vb" />
     <Compile Include="2.Entity\TG_TIPDOC.vb" />
     <Compile Include="2.Entity\TG_TIPREG.vb" />
@@ -137,6 +138,7 @@
     <Compile Include="3.AccesoDatos\DAL_TABSUBCAT.vb" />
     <Compile Include="3.AccesoDatos\DAL_TABSUC.vb" />
     <Compile Include="3.AccesoDatos\DAL_TABUNIDMEDIDA.vb" />
+    <Compile Include="3.AccesoDatos\DAL_TARJCREDITO.vb" />
     <Compile Include="3.AccesoDatos\DAL_TIPCAM.vb" />
     <Compile Include="3.AccesoDatos\DAL_CIA.vb" />
     <Compile Include="3.AccesoDatos\DAL_USUARIO.vb" />

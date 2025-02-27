@@ -170,7 +170,7 @@
     Private Sub GuardaBloqCobranzas()
         If DgvTipCam.CurrentRow Is Nothing Then Exit Sub
 
-        Dim nuevoEstado As Integer = 1 - NothingToInteger(DgvTipCam.CurrentRow.Cells("ST2").Value)
+        Dim nuevoEstado As Integer = 1 - NothingToInteger(DgvTipCam.CurrentRow.Cells("colCobranza").Value)
 
         If MessageBox.Show(If(nuevoEstado = 1, "¿Desea bloquear cobranzas?", "¿Desea desbloquear cobranzas?"),
                        "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Exit Sub
