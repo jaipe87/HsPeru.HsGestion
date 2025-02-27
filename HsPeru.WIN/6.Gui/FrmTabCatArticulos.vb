@@ -49,29 +49,23 @@
         Modificar()
     End Sub
 
-    Private Sub chkSi_CheckedChanged(sender As Object, e As EventArgs) Handles chkSi.CheckedChanged
-        If chkSi.Checked Then
-            chkNo.Checked = False
-        End If
+    Private Sub rbdSi_CheckedChanged(sender As Object, e As EventArgs) Handles rbdSi.CheckedChanged
+        If rbdSi.Checked Then rbdNo.Checked = False
     End Sub
 
-    Private Sub chkNo_CheckedChanged(sender As Object, e As EventArgs) Handles chkNo.CheckedChanged
-        If chkNo.Checked Then
-            chkSi.Checked = False
-        End If
+    Private Sub rbdNo_CheckedChanged(sender As Object, e As EventArgs) Handles rbdNo.CheckedChanged
+        If rbdNo.Checked Then rbdSi.Checked = False
     End Sub
 
-    Private Sub chkActivo_CheckedChanged(sender As Object, e As EventArgs) Handles chkActivo.CheckedChanged
-        If chkActivo.Checked Then
-            chkInactivo.Checked = False
-        End If
+    Private Sub rbdActivo_CheckedChanged(sender As Object, e As EventArgs) Handles rbdActivo.CheckedChanged
+        If rbdActivo.Checked Then rbdInactivo.Checked = False
     End Sub
 
-    Private Sub chkInactivo_CheckedChanged(sender As Object, e As EventArgs) Handles chkInactivo.CheckedChanged
-        If chkInactivo.Checked Then
-            chkActivo.Checked = False
-        End If
+    Private Sub rbdInactivo_CheckedChanged(sender As Object, e As EventArgs) Handles rbdInactivo.CheckedChanged
+        If rbdInactivo.Checked Then rbdActivo.Checked = False
     End Sub
+
+
 
 #End Region
 
@@ -111,10 +105,10 @@
         txtCriterio.Text = ""
         txtDes.Text = ""
         txtDes.Focus()
-        chkSi.Checked = False
-        chkNo.Checked = False
-        chkActivo.Checked = False
-        chkInactivo.Checked = False
+        rbdSi.Checked = False
+        rbdNo.Checked = False
+        rbdActivo.Checked = False
+        rbdInactivo.Checked = False
     End Sub
 
     Sub Modificar()
@@ -122,10 +116,10 @@
         If Not IsNothing(datCategoria) Then
             lblCodigo.Text = datCategoria.COD.ToString
             txtDes.Text = datCategoria.DES
-            chkSi.Checked = (datCategoria.STOCK = "S")
-            chkNo.Checked = (datCategoria.STOCK = "N")
-            chkActivo.Checked = (datCategoria.ST = 0)
-            chkInactivo.Checked = (datCategoria.ST = 1)
+            rbdSi.Checked = (datCategoria.STOCK = "S")
+            rbdNo.Checked = (datCategoria.STOCK = "N")
+            rbdActivo.Checked = (datCategoria.ST = 0)
+            rbdInactivo.Checked = (datCategoria.ST = 1)
 
             utbCategoria.Tabs(0).Enabled = False
             utbCategoria.Tabs(1).Selected = True
@@ -146,8 +140,18 @@
             .CIA = GCia
             .COD = CInt(Val(lblCodigo.Text))
             .DES = txtDes.Text.Trim
-            .STOCK = If(chkSi.Checked, "S", "N")
-            .ST = If(chkActivo.Checked, 0, 1)
+            '.STOCK
+            If rbdSi.Checked Then
+                .STOCK = "S"
+            ElseIf rbdNo.Checked Then
+                .STOCK = "N"
+            End If
+            'ST
+            If rbdActivo.Checked Then
+                .ST = 0
+            ElseIf rbdInactivo.Checked Then
+                .ST = 1
+            End If
         End With
         datCategoria = oCategoria.Insert_Categoria(parCategoria)
 
@@ -168,6 +172,7 @@
             Modificar()
         End If
     End Sub
+
 
     Private Sub FrmTabCatArticulos_Shown(sender As Object, e As EventArgs) Handles MyBase.Shown
         txtCriterio.Focus()

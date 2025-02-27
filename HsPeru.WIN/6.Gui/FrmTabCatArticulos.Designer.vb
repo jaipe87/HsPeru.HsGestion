@@ -46,23 +46,25 @@ Partial Class FrmTabCatArticulos
         Me.btnNuevo = New System.Windows.Forms.Button()
         Me.UltraTabPageControl2 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
         Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.chkNo = New System.Windows.Forms.RadioButton()
-        Me.chkSi = New System.Windows.Forms.RadioButton()
-        Me.chkInactivo = New System.Windows.Forms.RadioButton()
-        Me.chkActivo = New System.Windows.Forms.RadioButton()
+        Me.gpStock = New System.Windows.Forms.GroupBox()
+        Me.rbdNo = New System.Windows.Forms.RadioButton()
+        Me.rbdSi = New System.Windows.Forms.RadioButton()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.rbdInactivo = New System.Windows.Forms.RadioButton()
+        Me.rbdActivo = New System.Windows.Forms.RadioButton()
         Me.lblCodigo = New System.Windows.Forms.Label()
         Me.btnCancelar = New System.Windows.Forms.Button()
         Me.btnGuardar = New System.Windows.Forms.Button()
         Me.chkContratos = New System.Windows.Forms.CheckBox()
         Me.txtDes = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.utbCategoria = New Infragistics.Win.UltraWinTabControl.UltraTabControl()
         Me.UltraTabSharedControlsPage1 = New Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage()
+        Me.gbSt = New System.Windows.Forms.GroupBox()
         Me.UltraTabPageControl1.SuspendLayout()
         Me.Panel5.SuspendLayout()
         Me.Panel6.SuspendLayout()
@@ -70,17 +72,19 @@ Partial Class FrmTabCatArticulos
         Me.Panel2.SuspendLayout()
         Me.UltraTabPageControl2.SuspendLayout()
         Me.Panel4.SuspendLayout()
+        Me.gpStock.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.Panel3.SuspendLayout()
         CType(Me.utbCategoria, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.utbCategoria.SuspendLayout()
+        Me.gbSt.SuspendLayout()
         Me.SuspendLayout()
         '
         'UltraTabPageControl1
         '
         Me.UltraTabPageControl1.Controls.Add(Me.Panel5)
         Me.UltraTabPageControl1.Controls.Add(Me.Panel2)
-        Me.UltraTabPageControl1.Location = New System.Drawing.Point(1, 20)
+        Me.UltraTabPageControl1.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl1.Name = "UltraTabPageControl1"
         Me.UltraTabPageControl1.Size = New System.Drawing.Size(621, 268)
         '
@@ -265,24 +269,20 @@ Partial Class FrmTabCatArticulos
         'UltraTabPageControl2
         '
         Me.UltraTabPageControl2.Controls.Add(Me.Panel4)
-        Me.UltraTabPageControl2.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl2.Location = New System.Drawing.Point(1, 20)
         Me.UltraTabPageControl2.Name = "UltraTabPageControl2"
         Me.UltraTabPageControl2.Size = New System.Drawing.Size(621, 268)
         '
         'Panel4
         '
         Me.Panel4.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
-        Me.Panel4.Controls.Add(Me.chkNo)
-        Me.Panel4.Controls.Add(Me.chkSi)
-        Me.Panel4.Controls.Add(Me.chkInactivo)
-        Me.Panel4.Controls.Add(Me.chkActivo)
+        Me.Panel4.Controls.Add(Me.gbSt)
+        Me.Panel4.Controls.Add(Me.gpStock)
         Me.Panel4.Controls.Add(Me.lblCodigo)
         Me.Panel4.Controls.Add(Me.btnCancelar)
         Me.Panel4.Controls.Add(Me.btnGuardar)
         Me.Panel4.Controls.Add(Me.chkContratos)
         Me.Panel4.Controls.Add(Me.txtDes)
-        Me.Panel4.Controls.Add(Me.Label4)
-        Me.Panel4.Controls.Add(Me.Label3)
         Me.Panel4.Controls.Add(Me.Label2)
         Me.Panel4.Controls.Add(Me.Label1)
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Fill
@@ -291,49 +291,71 @@ Partial Class FrmTabCatArticulos
         Me.Panel4.Size = New System.Drawing.Size(621, 268)
         Me.Panel4.TabIndex = 12
         '
-        'chkNo
+        'gpStock
         '
-        Me.chkNo.AutoSize = True
-        Me.chkNo.Location = New System.Drawing.Point(178, 122)
-        Me.chkNo.Name = "chkNo"
-        Me.chkNo.Size = New System.Drawing.Size(39, 17)
-        Me.chkNo.TabIndex = 24
-        Me.chkNo.TabStop = True
-        Me.chkNo.Text = "No"
-        Me.chkNo.UseVisualStyleBackColor = True
+        Me.gpStock.Controls.Add(Me.rbdNo)
+        Me.gpStock.Controls.Add(Me.rbdSi)
+        Me.gpStock.Controls.Add(Me.Label3)
+        Me.gpStock.Location = New System.Drawing.Point(108, 110)
+        Me.gpStock.Name = "gpStock"
+        Me.gpStock.Size = New System.Drawing.Size(151, 44)
+        Me.gpStock.TabIndex = 25
+        Me.gpStock.TabStop = False
         '
-        'chkSi
+        'rbdNo
         '
-        Me.chkSi.AutoSize = True
-        Me.chkSi.Location = New System.Drawing.Point(110, 122)
-        Me.chkSi.Name = "chkSi"
-        Me.chkSi.Size = New System.Drawing.Size(34, 17)
-        Me.chkSi.TabIndex = 23
-        Me.chkSi.TabStop = True
-        Me.chkSi.Text = "Si"
-        Me.chkSi.UseVisualStyleBackColor = True
+        Me.rbdNo.AutoSize = True
+        Me.rbdNo.Location = New System.Drawing.Point(85, 19)
+        Me.rbdNo.Name = "rbdNo"
+        Me.rbdNo.Size = New System.Drawing.Size(39, 17)
+        Me.rbdNo.TabIndex = 24
+        Me.rbdNo.TabStop = True
+        Me.rbdNo.Text = "No"
+        Me.rbdNo.UseVisualStyleBackColor = True
         '
-        'chkInactivo
+        'rbdSi
         '
-        Me.chkInactivo.AutoSize = True
-        Me.chkInactivo.Location = New System.Drawing.Point(178, 158)
-        Me.chkInactivo.Name = "chkInactivo"
-        Me.chkInactivo.Size = New System.Drawing.Size(63, 17)
-        Me.chkInactivo.TabIndex = 22
-        Me.chkInactivo.TabStop = True
-        Me.chkInactivo.Text = "Inactivo"
-        Me.chkInactivo.UseVisualStyleBackColor = True
+        Me.rbdSi.AutoSize = True
+        Me.rbdSi.Location = New System.Drawing.Point(17, 19)
+        Me.rbdSi.Name = "rbdSi"
+        Me.rbdSi.Size = New System.Drawing.Size(34, 17)
+        Me.rbdSi.TabIndex = 23
+        Me.rbdSi.TabStop = True
+        Me.rbdSi.Text = "Si"
+        Me.rbdSi.UseVisualStyleBackColor = True
         '
-        'chkActivo
+        'Label3
         '
-        Me.chkActivo.AutoSize = True
-        Me.chkActivo.Location = New System.Drawing.Point(108, 158)
-        Me.chkActivo.Name = "chkActivo"
-        Me.chkActivo.Size = New System.Drawing.Size(55, 17)
-        Me.chkActivo.TabIndex = 21
-        Me.chkActivo.TabStop = True
-        Me.chkActivo.Text = "Activo"
-        Me.chkActivo.UseVisualStyleBackColor = True
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(-3, 0)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(99, 13)
+        Me.Label3.TabIndex = 2
+        Me.Label3.Text = "Controla Stock :"
+        Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'rbdInactivo
+        '
+        Me.rbdInactivo.AutoSize = True
+        Me.rbdInactivo.Location = New System.Drawing.Point(85, 19)
+        Me.rbdInactivo.Name = "rbdInactivo"
+        Me.rbdInactivo.Size = New System.Drawing.Size(63, 17)
+        Me.rbdInactivo.TabIndex = 22
+        Me.rbdInactivo.TabStop = True
+        Me.rbdInactivo.Text = "Inactivo"
+        Me.rbdInactivo.UseVisualStyleBackColor = True
+        '
+        'rbdActivo
+        '
+        Me.rbdActivo.AutoSize = True
+        Me.rbdActivo.Location = New System.Drawing.Point(15, 19)
+        Me.rbdActivo.Name = "rbdActivo"
+        Me.rbdActivo.Size = New System.Drawing.Size(55, 17)
+        Me.rbdActivo.TabIndex = 21
+        Me.rbdActivo.TabStop = True
+        Me.rbdActivo.Text = "Activo"
+        Me.rbdActivo.UseVisualStyleBackColor = True
         '
         'lblCodigo
         '
@@ -351,7 +373,7 @@ Partial Class FrmTabCatArticulos
         '
         Me.btnCancelar.Image = Global.HsPeru.WIN.My.Resources.Resources.door_in
         Me.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnCancelar.Location = New System.Drawing.Point(298, 190)
+        Me.btnCancelar.Location = New System.Drawing.Point(309, 214)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(79, 43)
         Me.btnCancelar.TabIndex = 14
@@ -363,7 +385,7 @@ Partial Class FrmTabCatArticulos
         '
         Me.btnGuardar.Image = Global.HsPeru.WIN.My.Resources.Resources.disk
         Me.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnGuardar.Location = New System.Drawing.Point(217, 190)
+        Me.btnGuardar.Location = New System.Drawing.Point(228, 214)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(79, 43)
         Me.btnGuardar.TabIndex = 5
@@ -395,23 +417,12 @@ Partial Class FrmTabCatArticulos
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(105, 142)
+        Me.Label4.Location = New System.Drawing.Point(-3, 0)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(54, 13)
         Me.Label4.TabIndex = 3
         Me.Label4.Text = "Estado :"
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(105, 106)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(99, 13)
-        Me.Label3.TabIndex = 2
-        Me.Label3.Text = "Controla Stock :"
-        Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'Label2
         '
@@ -477,6 +488,17 @@ Partial Class FrmTabCatArticulos
         Me.UltraTabSharedControlsPage1.Name = "UltraTabSharedControlsPage1"
         Me.UltraTabSharedControlsPage1.Size = New System.Drawing.Size(621, 268)
         '
+        'gbSt
+        '
+        Me.gbSt.Controls.Add(Me.rbdInactivo)
+        Me.gbSt.Controls.Add(Me.rbdActivo)
+        Me.gbSt.Controls.Add(Me.Label4)
+        Me.gbSt.Location = New System.Drawing.Point(108, 160)
+        Me.gbSt.Name = "gbSt"
+        Me.gbSt.Size = New System.Drawing.Size(151, 51)
+        Me.gbSt.TabIndex = 26
+        Me.gbSt.TabStop = False
+        '
         'FrmTabCatArticulos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -496,10 +518,14 @@ Partial Class FrmTabCatArticulos
         Me.UltraTabPageControl2.ResumeLayout(False)
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
+        Me.gpStock.ResumeLayout(False)
+        Me.gpStock.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         Me.Panel3.ResumeLayout(False)
         CType(Me.utbCategoria, System.ComponentModel.ISupportInitialize).EndInit()
         Me.utbCategoria.ResumeLayout(False)
+        Me.gbSt.ResumeLayout(False)
+        Me.gbSt.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -521,10 +547,10 @@ Partial Class FrmTabCatArticulos
     Friend WithEvents btnNuevo As Button
     Friend WithEvents UltraTabPageControl2 As Infragistics.Win.UltraWinTabControl.UltraTabPageControl
     Friend WithEvents Panel4 As Panel
-    Friend WithEvents chkNo As RadioButton
-    Friend WithEvents chkSi As RadioButton
-    Friend WithEvents chkInactivo As RadioButton
-    Friend WithEvents chkActivo As RadioButton
+    Friend WithEvents rbdNo As RadioButton
+    Friend WithEvents rbdSi As RadioButton
+    Friend WithEvents rbdInactivo As RadioButton
+    Friend WithEvents rbdActivo As RadioButton
     Friend WithEvents lblCodigo As Label
     Friend WithEvents btnCancelar As Button
     Friend WithEvents btnGuardar As Button
@@ -538,4 +564,6 @@ Partial Class FrmTabCatArticulos
     Friend WithEvents colDes As DataGridViewTextBoxColumn
     Friend WithEvents colStock As DataGridViewTextBoxColumn
     Friend WithEvents colEstado As DataGridViewTextBoxColumn
+    Friend WithEvents gpStock As GroupBox
+    Friend WithEvents gbSt As GroupBox
 End Class
