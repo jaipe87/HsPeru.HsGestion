@@ -35,6 +35,9 @@
             SelectNextControl(ActiveControl, True, True, True, True)
         End If
     End Sub
+    Private Sub cboFiltroCat_Click(sender As Object, e As EventArgs) Handles cboFiltroCat.Click
+        cboFiltroCat.SelectAll()
+    End Sub
 
     Private Sub cboFiltroCat_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboFiltroCat.SelectedIndexChanged
         Buscar()
@@ -50,12 +53,24 @@
 
 #Region "Métodos"
 
+    'Sub Buscar()
+
+    '    oSubCategoria = New DAL_TABSUBCAT
+    '    lstSubCategoria = oSubCategoria.Select_all_SubCategoria(New SUBCATEGORIA With {.DESCAT = cboFiltroCat.Text})
+    '    DgvSubCat.AutoGenerateColumns = False
+    '    DgvSubCat.DataSource = lstSubCategoria
+    'End Sub
+
     Sub Buscar()
         oSubCategoria = New DAL_TABSUBCAT
-        lstSubCategoria = oSubCategoria.Select_all_SubCategoria(New SUBCATEGORIA With {.DESCAT = cboFiltroCat.Text})
+        lstSubCategoria = oSubCategoria.Select_all_SubCategoria(New SUBCATEGORIA With {
+            .DESCAT = If(cboFiltroCat.SelectedIndex = 0 OrElse cboFiltroCat.Text = "TODAS", "", cboFiltroCat.Text)
+        })
         DgvSubCat.AutoGenerateColumns = False
         DgvSubCat.DataSource = lstSubCategoria
     End Sub
+
+
 
     Sub SeleccionarRow()
         Dim xCodven As Integer = 0
@@ -104,6 +119,12 @@
 
     End Sub
 
+    Private Sub cboFiltroCat_KeyDown(sender As Object, e As KeyEventArgs) Handles cboFiltroCat.KeyDown
+        If e.KeyCode = Keys.Down Then
+            DgvSubCat.Focus()
+        End If
+    End Sub
+
     Private Sub DgvSubCat_KeyDown(sender As Object, e As KeyEventArgs) Handles DgvSubCat.KeyDown
         If e.KeyCode = Keys.Enter Then
             e.SuppressKeyPress = True
@@ -111,8 +132,8 @@
         End If
     End Sub
 
-
     Private Sub FrmTabSubCatArticulos_Shown(sender As Object, e As EventArgs) Handles MyBase.Shown
+        cboFiltroCat.Focus()
         SeleccionarRow()
     End Sub
 

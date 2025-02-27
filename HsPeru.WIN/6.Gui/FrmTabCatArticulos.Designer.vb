@@ -80,7 +80,7 @@ Partial Class FrmTabCatArticulos
         '
         Me.UltraTabPageControl1.Controls.Add(Me.Panel5)
         Me.UltraTabPageControl1.Controls.Add(Me.Panel2)
-        Me.UltraTabPageControl1.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl1.Location = New System.Drawing.Point(1, 20)
         Me.UltraTabPageControl1.Name = "UltraTabPageControl1"
         Me.UltraTabPageControl1.Size = New System.Drawing.Size(621, 268)
         '
@@ -265,7 +265,7 @@ Partial Class FrmTabCatArticulos
         'UltraTabPageControl2
         '
         Me.UltraTabPageControl2.Controls.Add(Me.Panel4)
-        Me.UltraTabPageControl2.Location = New System.Drawing.Point(1, 20)
+        Me.UltraTabPageControl2.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl2.Name = "UltraTabPageControl2"
         Me.UltraTabPageControl2.Size = New System.Drawing.Size(621, 268)
         '
