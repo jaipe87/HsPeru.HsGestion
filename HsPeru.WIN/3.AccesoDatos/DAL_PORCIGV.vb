@@ -19,6 +19,7 @@ Public Class DAL_PORCIGV
                     With datPorc
                         .VIGENCIA = CType(row("VIGENCIA"), Date).Date
                         .PORC = CType(row("PORC"), Double)
+                        .COD = CInt(CType(row("VIGENCIA"), Date).ToString("yyyyMMdd"))
                     End With
 
                     listPorc.Add(datPorc)
@@ -33,7 +34,17 @@ Public Class DAL_PORCIGV
     Public Function Insert_PorcIgv(ByVal objDato As PORCIGV) As PORCIGV
 
         Dim datPorc As New PORCIGV
+        Dim Cod As Integer = 0
+        If objDato.COD <> 0 Then
+            Cod = objDato.COD
+        Else
+            Ssql = "SELECT COUNT(*) + 1 FROM tg_igv ;"
+            Using cmd As New OdbcCommand(Ssql, Cn)
+                cmd.CommandType = CommandType.Text
+                Cod = CType(cmd.ExecuteScalar(), Integer)
+            End Using
 
+        End If
         Ssql = "INSERT INTO tg_igv (VIGENCIA, PORC) VALUES ('"
         Ssql = Ssql & objDato.VIGENCIA.ToString("yyyy-MM-dd") & "', " & objDato.PORC & ") "
         Ssql = Ssql & "ON DUPLICATE KEY UPDATE PORC=" & objDato.PORC & ";"

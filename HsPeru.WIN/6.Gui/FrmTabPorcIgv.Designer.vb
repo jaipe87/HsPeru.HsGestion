@@ -39,7 +39,6 @@ Partial Class FrmTabPorcIgv
         Me.btnNuevo = New System.Windows.Forms.Button()
         Me.UltraTabPageControl2 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
         Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.dtFecha = New HsPeru.WIN.DateTimeEditingControl()
         Me.rbdInactivo = New System.Windows.Forms.RadioButton()
         Me.rbdActivo = New System.Windows.Forms.RadioButton()
         Me.btnCancelar = New System.Windows.Forms.Button()
@@ -52,6 +51,7 @@ Partial Class FrmTabPorcIgv
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dtFecha = New HsPeru.WIN.DateTimeEditingControl()
         Me.colid = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colVig = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colEstado = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -196,19 +196,6 @@ Partial Class FrmTabPorcIgv
         Me.Panel4.Size = New System.Drawing.Size(382, 240)
         Me.Panel4.TabIndex = 12
         '
-        'dtFecha
-        '
-        Me.dtFecha.EditingControlDataGridView = Nothing
-        Me.dtFecha.EditingControlFormattedValue = "20/02/2025 16:03:23"
-        Me.dtFecha.EditingControlRowIndex = 0
-        Me.dtFecha.EditingControlValueChanged = False
-        Me.dtFecha.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.dtFecha.Location = New System.Drawing.Point(71, 53)
-        Me.dtFecha.Name = "dtFecha"
-        Me.dtFecha.Size = New System.Drawing.Size(235, 20)
-        Me.dtFecha.TabIndex = 21
-        Me.dtFecha.Value = New Date(2025, 2, 20, 16, 3, 23, 0)
-        '
         'rbdInactivo
         '
         Me.rbdInactivo.AutoSize = True
@@ -338,9 +325,23 @@ Partial Class FrmTabPorcIgv
         Me.DataGridViewTextBoxColumn3.ReadOnly = True
         Me.DataGridViewTextBoxColumn3.Width = 90
         '
+        'dtFecha
+        '
+        Me.dtFecha.EditingControlDataGridView = Nothing
+        Me.dtFecha.EditingControlFormattedValue = "20/02/2025 16:03:23"
+        Me.dtFecha.EditingControlRowIndex = 0
+        Me.dtFecha.EditingControlValueChanged = False
+        Me.dtFecha.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.dtFecha.Location = New System.Drawing.Point(71, 53)
+        Me.dtFecha.Name = "dtFecha"
+        Me.dtFecha.Size = New System.Drawing.Size(235, 20)
+        Me.dtFecha.TabIndex = 21
+        Me.dtFecha.Value = New Date(2025, 2, 20, 16, 3, 23, 0)
+        '
         'colid
         '
-        Me.colid.HeaderText = "COD"
+        Me.colid.DataPropertyName = "COD"
+        Me.colid.HeaderText = "Cod."
         Me.colid.Name = "colid"
         Me.colid.ReadOnly = True
         Me.colid.Visible = False

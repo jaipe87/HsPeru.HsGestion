@@ -26,28 +26,20 @@ Partial Class FrmTabTipCambios
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim UltraTab1 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim UltraTab2 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.UltraTabPageControl1 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.cboAnio = New System.Windows.Forms.ComboBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.DgvTipCam = New System.Windows.Forms.DataGridView()
-        Me.colcod = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colfecha = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colDes = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colDessuc = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colSupervisor = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colEstado = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colCobranza = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colVentas = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.btnBloqCobranzas = New System.Windows.Forms.Button()
         Me.btnBloqVentas = New System.Windows.Forms.Button()
@@ -77,6 +69,14 @@ Partial Class FrmTabTipCambios
         Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colcod = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colfecha = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colDes = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colDessuc = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colSupervisor = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colEstado = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colCobranza = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colVentas = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.UltraTabPageControl1.SuspendLayout()
         Me.Panel5.SuspendLayout()
         Me.Panel6.SuspendLayout()
@@ -177,76 +177,6 @@ Partial Class FrmTabTipCambios
         Me.DgvTipCam.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DgvTipCam.Size = New System.Drawing.Size(561, 266)
         Me.DgvTipCam.TabIndex = 0
-        '
-        'colcod
-        '
-        Me.colcod.DataPropertyName = "COD"
-        Me.colcod.HeaderText = "Cód."
-        Me.colcod.Name = "colcod"
-        Me.colcod.ReadOnly = True
-        Me.colcod.Width = 40
-        '
-        'colfecha
-        '
-        Me.colfecha.DataPropertyName = "FECHA"
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.colfecha.DefaultCellStyle = DataGridViewCellStyle2
-        Me.colfecha.HeaderText = "Fecha"
-        Me.colfecha.Name = "colfecha"
-        Me.colfecha.ReadOnly = True
-        Me.colfecha.Width = 80
-        '
-        'colDes
-        '
-        Me.colDes.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.colDes.DataPropertyName = "COMPRA"
-        Me.colDes.HeaderText = "Compra"
-        Me.colDes.Name = "colDes"
-        Me.colDes.ReadOnly = True
-        '
-        'colDessuc
-        '
-        Me.colDessuc.DataPropertyName = "VENTA"
-        Me.colDessuc.HeaderText = "Venta"
-        Me.colDessuc.Name = "colDessuc"
-        Me.colDessuc.ReadOnly = True
-        Me.colDessuc.Width = 60
-        '
-        'colSupervisor
-        '
-        Me.colSupervisor.DataPropertyName = "PARALE"
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.colSupervisor.DefaultCellStyle = DataGridViewCellStyle3
-        Me.colSupervisor.HeaderText = "Paralelo"
-        Me.colSupervisor.Name = "colSupervisor"
-        Me.colSupervisor.ReadOnly = True
-        Me.colSupervisor.Width = 60
-        '
-        'colEstado
-        '
-        Me.colEstado.DataPropertyName = "ESTADO"
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.colEstado.DefaultCellStyle = DataGridViewCellStyle4
-        Me.colEstado.HeaderText = "Bloq. Kardex"
-        Me.colEstado.Name = "colEstado"
-        Me.colEstado.ReadOnly = True
-        Me.colEstado.Width = 80
-        '
-        'colCobranza
-        '
-        Me.colCobranza.DataPropertyName = "ESTADO2"
-        Me.colCobranza.HeaderText = "Bloq. Cobranza"
-        Me.colCobranza.Name = "colCobranza"
-        Me.colCobranza.ReadOnly = True
-        Me.colCobranza.Width = 80
-        '
-        'colVentas
-        '
-        Me.colVentas.DataPropertyName = "ESTADO3"
-        Me.colVentas.HeaderText = "Bloq. Ventas"
-        Me.colVentas.Name = "colVentas"
-        Me.colVentas.ReadOnly = True
-        Me.colVentas.Width = 80
         '
         'Panel2
         '
@@ -554,6 +484,77 @@ Partial Class FrmTabTipCambios
         Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
         Me.DataGridViewTextBoxColumn7.ReadOnly = True
         Me.DataGridViewTextBoxColumn7.Width = 80
+        '
+        'colcod
+        '
+        Me.colcod.DataPropertyName = "COD"
+        Me.colcod.HeaderText = "Cód."
+        Me.colcod.Name = "colcod"
+        Me.colcod.ReadOnly = True
+        Me.colcod.Visible = False
+        Me.colcod.Width = 40
+        '
+        'colfecha
+        '
+        Me.colfecha.DataPropertyName = "FECHA"
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.colfecha.DefaultCellStyle = DataGridViewCellStyle2
+        Me.colfecha.HeaderText = "Fecha"
+        Me.colfecha.Name = "colfecha"
+        Me.colfecha.ReadOnly = True
+        Me.colfecha.Width = 80
+        '
+        'colDes
+        '
+        Me.colDes.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.colDes.DataPropertyName = "COMPRA"
+        Me.colDes.HeaderText = "Compra"
+        Me.colDes.Name = "colDes"
+        Me.colDes.ReadOnly = True
+        '
+        'colDessuc
+        '
+        Me.colDessuc.DataPropertyName = "VENTA"
+        Me.colDessuc.HeaderText = "Venta"
+        Me.colDessuc.Name = "colDessuc"
+        Me.colDessuc.ReadOnly = True
+        Me.colDessuc.Width = 60
+        '
+        'colSupervisor
+        '
+        Me.colSupervisor.DataPropertyName = "PARALE"
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.colSupervisor.DefaultCellStyle = DataGridViewCellStyle3
+        Me.colSupervisor.HeaderText = "Paralelo"
+        Me.colSupervisor.Name = "colSupervisor"
+        Me.colSupervisor.ReadOnly = True
+        Me.colSupervisor.Width = 60
+        '
+        'colEstado
+        '
+        Me.colEstado.DataPropertyName = "ESTADO"
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.colEstado.DefaultCellStyle = DataGridViewCellStyle4
+        Me.colEstado.HeaderText = "Bloq. Kardex"
+        Me.colEstado.Name = "colEstado"
+        Me.colEstado.ReadOnly = True
+        Me.colEstado.Width = 80
+        '
+        'colCobranza
+        '
+        Me.colCobranza.DataPropertyName = "ESTADO2"
+        Me.colCobranza.HeaderText = "Bloq. Cobranza"
+        Me.colCobranza.Name = "colCobranza"
+        Me.colCobranza.ReadOnly = True
+        Me.colCobranza.Width = 80
+        '
+        'colVentas
+        '
+        Me.colVentas.DataPropertyName = "ESTADO3"
+        Me.colVentas.HeaderText = "Bloq. Ventas"
+        Me.colVentas.Name = "colVentas"
+        Me.colVentas.ReadOnly = True
+        Me.colVentas.Width = 80
         '
         'FrmTabTipCambios
         '

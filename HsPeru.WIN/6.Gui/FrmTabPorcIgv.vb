@@ -43,14 +43,11 @@
 #Region "Métodos"
 
     Sub SeleccionarRow()
-        Dim xVigencia As Date
+        Dim xCod As Integer = 0
         datPorc = New PORCIGV
-
-        ' Obtener la fecha de la fila seleccionada
-        xVigencia = Convert.ToDateTime(DgvPorcIgv.CurrentRow.Cells(colVig.Index).Value).Date
-
-        If lstPorc.Where(Function(x) x.VIGENCIA.Date = xVigencia).Count > 0 Then
-            datPorc = lstPorc.Where(Function(x) x.VIGENCIA.Date = xVigencia).First()
+        xCod = NothingToInteger(DgvPorcIgv.CurrentRow.Cells(colid.Index).Value)
+        If lstPorc.Where(Function(x) x.COD = xCod).Count > 0 Then
+            datPorc = lstPorc.Where(Function(x) x.COD = xCod).First
         End If
 
     End Sub

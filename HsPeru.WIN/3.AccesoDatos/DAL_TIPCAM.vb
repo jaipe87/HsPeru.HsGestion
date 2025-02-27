@@ -75,8 +75,18 @@ Public Class DAL_TIPCAM
     Public Function Insert_TipCambio(ByVal objDato As TIPCAM) As TIPCAM
 
         Dim datTipCam As New TIPCAM
+        Dim Cod As Integer = 0
+        If objDato.COD <> 0 Then
+            Cod = objDato.COD
+        Else
+            Ssql = "SELECT COUNT(*) + 1 FROM tabcam WHERE cia = " & GCia & ";"
+            Using cmd As New OdbcCommand(Ssql, Cn)
+                cmd.CommandType = CommandType.Text
+                Cod = CType(cmd.ExecuteScalar(), Integer)
+            End Using
 
-        ' Eliminamos la lógica de COD porque no existe en la tabla
+        End If
+
         Ssql = "INSERT INTO tabcam (CIA, FECHA, COMPRA, VENTA, PARALE, ST) VALUES ("
         Ssql = Ssql & GCia & ", '" & objDato.FECHA.ToString("yyyy-MM-dd") & "', " & objDato.COMPRA & ", " & objDato.VENTA & ", " & objDato.PARALE & ", " & objDato.ST & ") "
         Ssql = Ssql & "ON DUPLICATE KEY UPDATE FECHA = '" & objDato.FECHA.ToString("yyyy-MM-dd") & "', COMPRA = " & objDato.COMPRA & ", VENTA = " & objDato.VENTA & ", PARALE = " & objDato.PARALE & ", ST = " & objDato.ST & ";"
@@ -95,7 +105,6 @@ Public Class DAL_TIPCAM
 
         Dim datTipCam As New TIPCAM
 
-        ' Eliminamos la lógica de COD porque no existe en la tabla
         Ssql = "INSERT INTO tabcam (CIA, ST, ST2, ST3) VALUES ("
         Ssql = Ssql & GCia & ", '" & objDato.ST & "', " & objDato.ST2 & ", " & objDato.ST3 & ") "
         Ssql = Ssql & "ON DUPLICATE KEY UPDATE ST = " & objDato.ST & ", ST2 = " & objDato.ST2 & ", ST3 = " & objDato.ST3 & ";"
