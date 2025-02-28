@@ -138,10 +138,20 @@ Public Class DAL_TIPCAM
 
     Public Function Insert_BloqCobranzas_TipCambio(ByVal objDato As TIPCAM) As TIPCAM
         Dim datTipCam As New TIPCAM
-        Dim ciaValue As Integer = objDato.CIA ' Asegúrate de obtenerlo antes de llamar esta función
+        Dim Cod As Integer = 0
+        If objDato.COD <> 0 Then
+            Cod = objDato.COD
+        Else
+            Ssql = "SELECT COUNT(*) + 1 FROM tabcam WHERE cia = " & GCia & ";"
+            Using cmd As New OdbcCommand(Ssql, Cn)
+                cmd.CommandType = CommandType.Text
+                Cod = CType(cmd.ExecuteScalar(), Integer)
+            End Using
 
-        Ssql = "INSERT INTO tabcam (CIA, ST2) VALUES (" & ciaValue & ", " & objDato.ST2 & ") " &
-           "ON DUPLICATE KEY UPDATE ST2 = " & objDato.ST2 & ";"
+        End If
+        'Ssql = "INSERT INTO tabcam (CIA, ST2) VALUES ( " & GCia & ", " & objDato.ST2 & " ) " &
+        '   "ON DUPLICATE KEY UPDATE ST2 = " & objDato.ST2 & ";"
+        Ssql = "UPDATE tabcam " & "SET ST2 = " & objDato.ST2 & " WHERE CIA = " & GCia & " AND FECHA = '" & objDato.FECHA & "';"
 
         Try
             Using cmd As New OdbcCommand(Ssql, Cn)

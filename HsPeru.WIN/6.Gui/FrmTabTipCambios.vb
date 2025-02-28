@@ -23,20 +23,36 @@
     End Sub
 
     Private Sub btnBloqCobranzas_Click(sender As Object, e As EventArgs) Handles btnBloqCobranzas.Click
-        SeleccionarRow()
+        Try
+            SeleccionarRow()
 
-        If datTipcam IsNot Nothing AndAlso datTipcam.COD > 0 Then
-            GuardaBloqCobranzas()
-        Else
-            MessageBox.Show("Seleccione una fila válida para bloquear cobranzas.", TITULO, MessageBoxButtons.OK, MessageBoxIcon.Warning)
-        End If
+            If MessageBox.Show("¿Seguro de bloquear cobranzas?", TITULO, MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Exit Sub
+
+            oTipcam = New DAL_TIPCAM
+            parTipcam = New TIPCAM
+
+            With parTipcam
+                .CIA = GCia
+                .ST2 = 1
+            End With
+
+            datTipcam = oTipcam.Insert_BloqCobranzas_TipCambio(parTipcam)
+
+            If datTipcam IsNot Nothing Then
+                MessageBox.Show("Registro exitoso con código " & datTipcam.ST2, TITULO, MessageBoxButtons.OK, MessageBoxIcon.Information)
+                btnBloqCobranzas.Enabled = False
+                Buscar()
+            Else
+                MessageBox.Show("No se pudo completar el registro", TITULO, MessageBoxButtons.OK, MessageBoxIcon.Information)
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error: " & ex.Message, TITULO, MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
 
     Private Sub btnBloqVentas_Click(sender As Object, e As EventArgs) Handles btnBloqVentas.Click
 
     End Sub
-
-
 
     Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
         Close()
@@ -103,6 +119,7 @@
         txtParalelo.Text = 3.5
         txtCompra.Focus()
     End Sub
+
     Sub Modificar()
 
         If Not IsNothing(datTipcam) Then
