@@ -19,39 +19,27 @@
     End Sub
 
     Private Sub btnBloqCompras_Click(sender As Object, e As EventArgs) Handles btnBloqCompras.Click
-
+        SeleccionarRow()
+        If datTipcam IsNot Nothing Then
+            datTipcam.ST = If(datTipcam.ST = 0, 1, 0)
+            ActualizarEstado("ST", datTipcam.ST)
+        End If
     End Sub
 
     Private Sub btnBloqCobranzas_Click(sender As Object, e As EventArgs) Handles btnBloqCobranzas.Click
-        Try
-            SeleccionarRow()
-
-            If MessageBox.Show("¿Seguro de bloquear cobranzas?", TITULO, MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Exit Sub
-
-            oTipcam = New DAL_TIPCAM
-            parTipcam = New TIPCAM
-
-            With parTipcam
-                .CIA = GCia
-                .ST2 = 1
-            End With
-
-            datTipcam = oTipcam.Insert_BloqCobranzas_TipCambio(parTipcam)
-
-            If datTipcam IsNot Nothing Then
-                MessageBox.Show("Registro exitoso con código " & datTipcam.ST2, TITULO, MessageBoxButtons.OK, MessageBoxIcon.Information)
-                btnBloqCobranzas.Enabled = False
-                Buscar()
-            Else
-                MessageBox.Show("No se pudo completar el registro", TITULO, MessageBoxButtons.OK, MessageBoxIcon.Information)
-            End If
-        Catch ex As Exception
-            MessageBox.Show("Error: " & ex.Message, TITULO, MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End Try
+        SeleccionarRow()
+        If datTipcam IsNot Nothing Then
+            datTipcam.ST2 = If(datTipcam.ST2 = 0, 1, 0)
+            ActualizarEstado("ST2", datTipcam.ST2)
+        End If
     End Sub
 
     Private Sub btnBloqVentas_Click(sender As Object, e As EventArgs) Handles btnBloqVentas.Click
-
+        SeleccionarRow()
+        If datTipcam IsNot Nothing Then
+            datTipcam.ST3 = If(datTipcam.ST3 = 0, 1, 0)
+            ActualizarEstado("ST3", datTipcam.ST3)
+        End If
     End Sub
 
     Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
@@ -162,6 +150,24 @@
             MessageBox.Show("No se pudo completar el registro", TITULO, MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
     End Sub
+
+    Sub ActualizarEstado(ByVal campo As String, ByVal nuevoEstado As Integer)
+        oTipcam = New DAL_TIPCAM
+        datTipcam = New TIPCAM
+        parTipcam = New TIPCAM
+        With parTipcam
+            .CIA = GCia
+        End With
+
+        datTipcam = oTipcam.Insert_TipCambio(parTipcam)
+        If Not IsNothing(datTipcam) Then
+            MessageBox.Show("Registro existoso del vendedor con ST " & datTipcam.ST, TITULO, MessageBoxButtons.OK, MessageBoxIcon.Information)
+        Else
+            MessageBox.Show("No se pudo completar el registro", TITULO, MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End If
+    End Sub
+
+
     'Sub GrabaBloqCobranza(st2Value As Integer)
     '    If MessageBox.Show("¿Seguro de Grabar el Registro?", TITULO, MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Return
 
