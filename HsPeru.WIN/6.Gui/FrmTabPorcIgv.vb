@@ -70,8 +70,6 @@
         dtFecha.Value = Date.Today
         txtPorc.Text = ""
         txtPorc.Focus()
-        rbdActivo.Checked = False
-        rbdInactivo.Checked = False
     End Sub
 
     Sub Modificar()
@@ -129,7 +127,7 @@
     '    parPorc = New PORCIGV
 
     '    With parPorc
-    '        .VIGENCIA = dtFecha.Value.Date ' Asegura que solo guarde la fecha
+    '        .VIGENCIA = dtFecha.Value.Date
     '        .PORC = Convert.ToDouble(txtPorc.Text.Trim)
     '    End With
     '    datPorc = oPorc.Insert_PorcIgv(parPorc)

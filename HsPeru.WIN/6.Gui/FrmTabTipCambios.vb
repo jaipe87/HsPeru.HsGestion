@@ -70,7 +70,6 @@
     Private Sub cboAnio_KeyPress(sender As Object, e As KeyPressEventArgs) Handles cboAnio.KeyPress
         e.Handled = True ' Bloquea cualquier entrada de teclado
     End Sub
-
 #End Region
 
 #Region "Métodos"
@@ -195,18 +194,18 @@
     '    End If
     'End Sub
 
-    Private Sub GuardaBloqCobranzas()
-        If DgvTipCam.CurrentRow Is Nothing Then Exit Sub
+    'Private Sub GuardaBloqCobranzas()
+    '    If DgvTipCam.CurrentRow Is Nothing Then Exit Sub
 
-        Dim nuevoEstado As Integer = 1 - NothingToInteger(DgvTipCam.CurrentRow.Cells("colCobranza").Value)
+    '    Dim nuevoEstado As Integer = 1 - NothingToInteger(DgvTipCam.CurrentRow.Cells("colCobranza").Value)
 
-        If MessageBox.Show(If(nuevoEstado = 1, "¿Desea bloquear cobranzas?", "¿Desea desbloquear cobranzas?"),
-                       "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Exit Sub
+    '    If MessageBox.Show(If(nuevoEstado = 1, "¿Desea bloquear cobranzas?", "¿Desea desbloquear cobranzas?"),
+    '                   "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Exit Sub
 
-        Dim objTipcam As New TIPCAM With {.CIA = GCia, .ST2 = nuevoEstado}
+    '    Dim objTipcam As New TIPCAM With {.CIA = GCia, .ST2 = nuevoEstado}
 
-        If New DAL_TIPCAM().Insert_BloqCobranzas_TipCambio(objTipcam) IsNot Nothing Then Buscar()
-    End Sub
+    '    If New DAL_TIPCAM().Insert_BloqCobranzas_TipCambio(objTipcam) IsNot Nothing Then Buscar()
+    'End Sub
 
 
     Private Sub DgvTipCam_KeyDown(sender As Object, e As KeyEventArgs) Handles DgvTipCam.KeyDown

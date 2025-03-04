@@ -49,7 +49,6 @@ Public Class DAL_PORCIGV
         Ssql = Ssql & objDato.VIGENCIA.ToString("yyyy-MM-dd") & "', " & objDato.PORC & ") "
         Ssql = Ssql & "ON DUPLICATE KEY UPDATE PORC=" & objDato.PORC & ";"
 
-
         Using cmd As New OdbcCommand(Ssql, Cn)
             cmd.ExecuteNonQuery()
         End Using
