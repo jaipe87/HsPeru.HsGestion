@@ -30,6 +30,15 @@
     Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
         Close()
     End Sub
+
+    Private Sub btnExcel_Click(sender As Object, e As EventArgs) Handles btnExcel.Click
+
+    End Sub
+
+    Private Sub btnPdf_Click(sender As Object, e As EventArgs) Handles btnPdf.Click
+
+    End Sub
+
     Private Sub chkActivo_CheckedChanged(sender As Object, e As EventArgs) Handles chkActivo.CheckedChanged
         If chkActivo.Checked Then
             chkInactivo.Checked = False
