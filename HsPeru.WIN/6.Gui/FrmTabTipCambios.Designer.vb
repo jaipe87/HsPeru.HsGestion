@@ -31,6 +31,8 @@ Partial Class FrmTabTipCambios
         Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
@@ -51,7 +53,6 @@ Partial Class FrmTabTipCambios
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.txtParalelo = New System.Windows.Forms.TextBox()
         Me.txtVenta = New System.Windows.Forms.TextBox()
-        Me.dtFecha = New HsPeru.WIN.DateTimeEditingControl()
         Me.btnCancelar = New System.Windows.Forms.Button()
         Me.btnGuardar = New System.Windows.Forms.Button()
         Me.txtCompra = New System.Windows.Forms.TextBox()
@@ -69,6 +70,7 @@ Partial Class FrmTabTipCambios
         Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colcod = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colfecha = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colDes = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -77,6 +79,7 @@ Partial Class FrmTabTipCambios
         Me.colEstado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colCobranza = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colVentas = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dtFecha = New HsPeru.WIN.DateTimeEditingControl()
         Me.UltraTabPageControl1.SuspendLayout()
         Me.Panel5.SuspendLayout()
         Me.Panel6.SuspendLayout()
@@ -306,19 +309,6 @@ Partial Class FrmTabTipCambios
         Me.txtVenta.Size = New System.Drawing.Size(160, 20)
         Me.txtVenta.TabIndex = 16
         '
-        'dtFecha
-        '
-        Me.dtFecha.EditingControlDataGridView = Nothing
-        Me.dtFecha.EditingControlFormattedValue = "21/02/2025 16:04:38"
-        Me.dtFecha.EditingControlRowIndex = 0
-        Me.dtFecha.EditingControlValueChanged = False
-        Me.dtFecha.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.dtFecha.Location = New System.Drawing.Point(220, 53)
-        Me.dtFecha.Name = "dtFecha"
-        Me.dtFecha.Size = New System.Drawing.Size(160, 20)
-        Me.dtFecha.TabIndex = 15
-        Me.dtFecha.Value = New Date(2025, 2, 21, 16, 4, 38, 0)
-        '
         'btnCancelar
         '
         Me.btnCancelar.Image = Global.HsPeru.WIN.My.Resources.Resources.door_in
@@ -431,29 +421,32 @@ Partial Class FrmTabTipCambios
         Me.DataGridViewTextBoxColumn1.HeaderText = "Fecha"
         Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
         Me.DataGridViewTextBoxColumn1.ReadOnly = True
+        Me.DataGridViewTextBoxColumn1.Visible = False
         Me.DataGridViewTextBoxColumn1.Width = 80
         '
         'DataGridViewTextBoxColumn2
         '
         Me.DataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
         Me.DataGridViewTextBoxColumn2.DataPropertyName = "COMPRA"
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.DataGridViewTextBoxColumn2.DefaultCellStyle = DataGridViewCellStyle8
         Me.DataGridViewTextBoxColumn2.HeaderText = "Compra"
         Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
         Me.DataGridViewTextBoxColumn2.ReadOnly = True
         '
         'DataGridViewTextBoxColumn3
         '
+        Me.DataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
         Me.DataGridViewTextBoxColumn3.DataPropertyName = "VENTA"
         Me.DataGridViewTextBoxColumn3.HeaderText = "Venta"
         Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
         Me.DataGridViewTextBoxColumn3.ReadOnly = True
-        Me.DataGridViewTextBoxColumn3.Width = 80
         '
         'DataGridViewTextBoxColumn4
         '
         Me.DataGridViewTextBoxColumn4.DataPropertyName = "PARALE"
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.DataGridViewTextBoxColumn4.DefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.DataGridViewTextBoxColumn4.DefaultCellStyle = DataGridViewCellStyle9
         Me.DataGridViewTextBoxColumn4.HeaderText = "Paralelo"
         Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
         Me.DataGridViewTextBoxColumn4.ReadOnly = True
@@ -462,8 +455,8 @@ Partial Class FrmTabTipCambios
         'DataGridViewTextBoxColumn5
         '
         Me.DataGridViewTextBoxColumn5.DataPropertyName = "ST"
-        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.DataGridViewTextBoxColumn5.DefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.DataGridViewTextBoxColumn5.DefaultCellStyle = DataGridViewCellStyle10
         Me.DataGridViewTextBoxColumn5.HeaderText = "Bloq. Kardex"
         Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
         Me.DataGridViewTextBoxColumn5.ReadOnly = True
@@ -472,6 +465,8 @@ Partial Class FrmTabTipCambios
         'DataGridViewTextBoxColumn6
         '
         Me.DataGridViewTextBoxColumn6.DataPropertyName = "ST2"
+        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.DataGridViewTextBoxColumn6.DefaultCellStyle = DataGridViewCellStyle11
         Me.DataGridViewTextBoxColumn6.HeaderText = "Bloq. Cobranza"
         Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
         Me.DataGridViewTextBoxColumn6.ReadOnly = True
@@ -484,6 +479,13 @@ Partial Class FrmTabTipCambios
         Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
         Me.DataGridViewTextBoxColumn7.ReadOnly = True
         Me.DataGridViewTextBoxColumn7.Width = 80
+        '
+        'DataGridViewTextBoxColumn8
+        '
+        Me.DataGridViewTextBoxColumn8.DataPropertyName = "ESTADO3"
+        Me.DataGridViewTextBoxColumn8.HeaderText = "Bloq. Ventas"
+        Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
+        Me.DataGridViewTextBoxColumn8.Width = 80
         '
         'colcod
         '
@@ -556,6 +558,19 @@ Partial Class FrmTabTipCambios
         Me.colVentas.ReadOnly = True
         Me.colVentas.Width = 80
         '
+        'dtFecha
+        '
+        Me.dtFecha.EditingControlDataGridView = Nothing
+        Me.dtFecha.EditingControlFormattedValue = "21/02/2025 16:04:38"
+        Me.dtFecha.EditingControlRowIndex = 0
+        Me.dtFecha.EditingControlValueChanged = False
+        Me.dtFecha.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.dtFecha.Location = New System.Drawing.Point(220, 53)
+        Me.dtFecha.Name = "dtFecha"
+        Me.dtFecha.Size = New System.Drawing.Size(160, 20)
+        Me.dtFecha.TabIndex = 15
+        Me.dtFecha.Value = New Date(2025, 2, 21, 16, 4, 38, 0)
+        '
         'FrmTabTipCambios
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -623,4 +638,5 @@ Partial Class FrmTabTipCambios
     Friend WithEvents colEstado As DataGridViewTextBoxColumn
     Friend WithEvents colCobranza As DataGridViewTextBoxColumn
     Friend WithEvents colVentas As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn8 As DataGridViewTextBoxColumn
 End Class

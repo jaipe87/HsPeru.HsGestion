@@ -67,6 +67,10 @@
         Modificar()
     End Sub
 
+    Private Sub cboAnio_KeyPress(sender As Object, e As KeyPressEventArgs) Handles cboAnio.KeyPress
+        e.Handled = True ' Bloquea cualquier entrada de teclado
+    End Sub
+
 #End Region
 
 #Region "Métodos"
@@ -153,20 +157,21 @@
 
     Sub ActualizarEstado(ByVal campo As String, ByVal nuevoEstado As Integer)
         oTipcam = New DAL_TIPCAM
-        datTipcam = New TIPCAM
         parTipcam = New TIPCAM
+
         With parTipcam
-            .CIA = GCia
+            .CIA = datTipcam.CIA
+            .FECHA = datTipcam.FECHA
         End With
 
-        datTipcam = oTipcam.Insert_TipCambio(parTipcam)
-        If Not IsNothing(datTipcam) Then
-            MessageBox.Show("Registro existoso del vendedor con ST " & datTipcam.ST, TITULO, MessageBoxButtons.OK, MessageBoxIcon.Information)
+        Dim actualizado As Boolean = oTipcam.Update_TipCambio(parTipcam, campo, nuevoEstado)
+
+        If actualizado Then
+            MessageBox.Show("Estado actualizado correctamente.", TITULO, MessageBoxButtons.OK, MessageBoxIcon.Information)
         Else
-            MessageBox.Show("No se pudo completar el registro", TITULO, MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MessageBox.Show("No se pudo actualizar el estado.", TITULO, MessageBoxButtons.OK, MessageBoxIcon.Warning)
         End If
     End Sub
-
 
     'Sub GrabaBloqCobranza(st2Value As Integer)
     '    If MessageBox.Show("¿Seguro de Grabar el Registro?", TITULO, MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Return
@@ -210,6 +215,7 @@
             Modificar()
         End If
     End Sub
+
 
     Private Sub FrmTabTipCambios_Shown(sender As Object, e As EventArgs) Handles MyBase.Shown
         SeleccionarRow()

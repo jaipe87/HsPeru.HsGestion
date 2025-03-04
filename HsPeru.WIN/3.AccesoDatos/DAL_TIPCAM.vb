@@ -100,24 +100,40 @@ Public Class DAL_TIPCAM
         Return datTipCam
 
     End Function
-
-    Public Function Insert_BloqTipCambio(ByVal objDato As TIPCAM) As TIPCAM
-
-        Dim datTipCam As New TIPCAM
-
-        Ssql = "INSERT INTO tabcam (CIA, ST, ST2, ST3) VALUES ("
-        Ssql = Ssql & GCia & ", '" & objDato.ST & "', " & objDato.ST2 & ", " & objDato.ST3 & ") "
-        Ssql = Ssql & "ON DUPLICATE KEY UPDATE ST = " & objDato.ST & ", ST2 = " & objDato.ST2 & ", ST3 = " & objDato.ST3 & ";"
+    Public Function Update_TipCambio(ByVal objDato As TIPCAM, ByVal campo As String, ByVal nuevoEstado As Integer) As Boolean
+        Dim resultado As Integer
+        Dim Ssql As String = "UPDATE tabcam SET " & campo & " = ? WHERE CIA = ? AND FECHA = ?"
 
         Using cmd As New OdbcCommand(Ssql, Cn)
-            cmd.CommandType = CommandType.Text
-            cmd.ExecuteNonQuery()
+            cmd.Parameters.Add("?", OdbcType.Int).Value = nuevoEstado
+            cmd.Parameters.Add("?", OdbcType.Int).Value = objDato.CIA
+            cmd.Parameters.Add("?", OdbcType.Date).Value = objDato.FECHA
+
+            resultado = cmd.ExecuteNonQuery()
         End Using
 
-        datTipCam = objDato
-        Return datTipCam
-
+        Return resultado > 0 ' Devuelve True si se actualizó al menos una fila
     End Function
+
+
+
+    'Public Function Insert_BloqTipCambio(ByVal objDato As TIPCAM) As TIPCAM
+
+    '    Dim datTipCam As New TIPCAM
+
+    '    Ssql = "INSERT INTO tabcam (CIA, ST, ST2, ST3) VALUES ("
+    '    Ssql = Ssql & GCia & ", '" & objDato.ST & "', " & objDato.ST2 & ", " & objDato.ST3 & ") "
+    '    Ssql = Ssql & "ON DUPLICATE KEY UPDATE ST = " & objDato.ST & ", ST2 = " & objDato.ST2 & ", ST3 = " & objDato.ST3 & ";"
+
+    '    Using cmd As New OdbcCommand(Ssql, Cn)
+    '        cmd.CommandType = CommandType.Text
+    '        cmd.ExecuteNonQuery()
+    '    End Using
+
+    '    datTipCam = objDato
+    '    Return datTipCam
+
+    'End Function
 
 
     'Public Function Insert_BloqCobranzas_TipCambio(ByVal objDato As TIPCAM) As TIPCAM
