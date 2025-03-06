@@ -32,7 +32,7 @@
     End Sub
 
     Private Sub btnExcel_Click(sender As Object, e As EventArgs) Handles btnExcel.Click
-
+        MessageBox.Show("Se obtuvo la data", DgvMarca);
     End Sub
 
     Private Sub btnPdf_Click(sender As Object, e As EventArgs) Handles btnPdf.Click
