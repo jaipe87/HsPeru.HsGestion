@@ -169,6 +169,7 @@
     <Compile Include="4.Helpers\Control\HsDataGridViewCellNow.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="4.Helpers\GeneraReporte.vb" />
     <Compile Include="4.Helpers\sisEnum.vb" />
     <Compile Include="6.Gui\FrmAdicPerCliPro.designer.vb">
       <DependentUpon>FrmAdicPerCliPro.vb</DependentUpon>
