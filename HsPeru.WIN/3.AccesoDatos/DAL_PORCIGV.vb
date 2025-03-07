@@ -47,7 +47,8 @@ Public Class DAL_PORCIGV
         End If
         Ssql = "INSERT INTO tg_igv (VIGENCIA, PORC) VALUES ('"
         Ssql = Ssql & objDato.VIGENCIA.ToString("yyyy-MM-dd") & "', " & objDato.PORC & ") "
-        Ssql = Ssql & "ON DUPLICATE KEY UPDATE PORC=" & objDato.PORC & ";"
+        Ssql = Ssql & "ON DUPLICATE KEY UPDATE VIGENCIA = '" & objDato.VIGENCIA.ToString("yyyy-MM-dd") & "', PORC=" & objDato.PORC & ";"
+
 
         Using cmd As New OdbcCommand(Ssql, Cn)
             cmd.ExecuteNonQuery()

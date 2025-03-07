@@ -36,7 +36,15 @@
     End Sub
 
     Private Sub btnPdf_Click(sender As Object, e As EventArgs) Handles btnPdf.Click
+        Dim reporte As New GeneraReporte()
+        Dim datos As DataTable = oMarca.Select_all_Marca()
+        Dim archivo As Byte() = reporte.ExportarPDF(datos)
 
+        Response.Clear()
+        Response.ContentType = "application/pdf"
+        Response.AddHeader("content-disposition", "attachment; filename=Reporte.pdf")
+        Response.BinaryWrite(archivo)
+        Response.End()
     End Sub
 
     Private Sub chkActivo_CheckedChanged(sender As Object, e As EventArgs) Handles chkActivo.CheckedChanged

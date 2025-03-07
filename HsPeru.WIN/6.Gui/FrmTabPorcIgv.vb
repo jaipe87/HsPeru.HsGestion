@@ -74,7 +74,7 @@
 
     Sub Modificar()
         If Not IsNothing(datPorc) Then
-            dtFecha.Value = datPorc.VIGENCIA.Date
+            dtFecha.Value = datPorc.VIGENCIA
             txtPorc.Text = datPorc.PORC.ToString()
             utbPorcIgv.Tabs(0).Enabled = False
             utbPorcIgv.Tabs(1).Selected = True
