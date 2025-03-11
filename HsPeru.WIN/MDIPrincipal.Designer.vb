@@ -393,7 +393,7 @@ Partial Class MdiPrincipal
         Me.M101.Image = CType(resources.GetObject("M101.Image"), System.Drawing.Image)
         Me.M101.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.M101.Name = "M101"
-        Me.M101.Size = New System.Drawing.Size(186, 26)
+        Me.M101.Size = New System.Drawing.Size(182, 22)
         Me.M101.Text = "Cliente/Proveedor"
         '
         'M102
@@ -402,7 +402,7 @@ Partial Class MdiPrincipal
         Me.M102.Image = CType(resources.GetObject("M102.Image"), System.Drawing.Image)
         Me.M102.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.M102.Name = "M102"
-        Me.M102.Size = New System.Drawing.Size(186, 26)
+        Me.M102.Size = New System.Drawing.Size(182, 22)
         Me.M102.Text = "Usuarios del Sistema"
         '
         'SM10201
@@ -424,7 +424,7 @@ Partial Class MdiPrincipal
         Me.M103.Image = CType(resources.GetObject("M103.Image"), System.Drawing.Image)
         Me.M103.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.M103.Name = "M103"
-        Me.M103.Size = New System.Drawing.Size(186, 26)
+        Me.M103.Size = New System.Drawing.Size(182, 22)
         Me.M103.Text = "Vendedores"
         '
         'M104
@@ -432,7 +432,7 @@ Partial Class MdiPrincipal
         Me.M104.Image = CType(resources.GetObject("M104.Image"), System.Drawing.Image)
         Me.M104.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.M104.Name = "M104"
-        Me.M104.Size = New System.Drawing.Size(186, 26)
+        Me.M104.Size = New System.Drawing.Size(182, 22)
         Me.M104.Text = "Articulos"
         '
         'M105
@@ -440,14 +440,14 @@ Partial Class MdiPrincipal
         Me.M105.Image = CType(resources.GetObject("M105.Image"), System.Drawing.Image)
         Me.M105.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.M105.Name = "M105"
-        Me.M105.Size = New System.Drawing.Size(186, 26)
+        Me.M105.Size = New System.Drawing.Size(182, 22)
         Me.M105.Text = "Marcas"
         '
         'M106
         '
         Me.M106.Image = CType(resources.GetObject("M106.Image"), System.Drawing.Image)
         Me.M106.Name = "M106"
-        Me.M106.Size = New System.Drawing.Size(186, 26)
+        Me.M106.Size = New System.Drawing.Size(182, 22)
         Me.M106.Text = "Categoria"
         '
         'M107
@@ -455,7 +455,7 @@ Partial Class MdiPrincipal
         Me.M107.Image = CType(resources.GetObject("M107.Image"), System.Drawing.Image)
         Me.M107.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.M107.Name = "M107"
-        Me.M107.Size = New System.Drawing.Size(186, 26)
+        Me.M107.Size = New System.Drawing.Size(182, 22)
         Me.M107.Text = "Subcategoria"
         '
         'M108
@@ -463,7 +463,7 @@ Partial Class MdiPrincipal
         Me.M108.Image = CType(resources.GetObject("M108.Image"), System.Drawing.Image)
         Me.M108.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.M108.Name = "M108"
-        Me.M108.Size = New System.Drawing.Size(186, 26)
+        Me.M108.Size = New System.Drawing.Size(182, 22)
         Me.M108.Text = "Unidades de medida"
         '
         'M109
@@ -471,7 +471,7 @@ Partial Class MdiPrincipal
         Me.M109.Image = CType(resources.GetObject("M109.Image"), System.Drawing.Image)
         Me.M109.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.M109.Name = "M109"
-        Me.M109.Size = New System.Drawing.Size(186, 26)
+        Me.M109.Size = New System.Drawing.Size(182, 22)
         Me.M109.Text = "Bancos"
         '
         'M110
@@ -479,7 +479,7 @@ Partial Class MdiPrincipal
         Me.M110.Image = CType(resources.GetObject("M110.Image"), System.Drawing.Image)
         Me.M110.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.M110.Name = "M110"
-        Me.M110.Size = New System.Drawing.Size(186, 26)
+        Me.M110.Size = New System.Drawing.Size(182, 22)
         Me.M110.Text = "Porcentaje de IGV"
         '
         'M111
@@ -487,7 +487,7 @@ Partial Class MdiPrincipal
         Me.M111.Image = CType(resources.GetObject("M111.Image"), System.Drawing.Image)
         Me.M111.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.M111.Name = "M111"
-        Me.M111.Size = New System.Drawing.Size(186, 26)
+        Me.M111.Size = New System.Drawing.Size(182, 22)
         Me.M111.Text = "Tipos de Cambio"
         '
         'M112
@@ -495,7 +495,7 @@ Partial Class MdiPrincipal
         Me.M112.Image = CType(resources.GetObject("M112.Image"), System.Drawing.Image)
         Me.M112.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.M112.Name = "M112"
-        Me.M112.Size = New System.Drawing.Size(186, 26)
+        Me.M112.Size = New System.Drawing.Size(182, 22)
         Me.M112.Text = "Tarjeta de credito"
         '
         'M113
@@ -503,7 +503,7 @@ Partial Class MdiPrincipal
         Me.M113.Image = CType(resources.GetObject("M113.Image"), System.Drawing.Image)
         Me.M113.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.M113.Name = "M113"
-        Me.M113.Size = New System.Drawing.Size(186, 26)
+        Me.M113.Size = New System.Drawing.Size(182, 22)
         Me.M113.Text = "Transportistas"
         '
         'ToolStrip1
@@ -682,7 +682,7 @@ Partial Class MdiPrincipal
         Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "MdiPrincipal"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = ":: Sistema Integrado de Gestión Comercial ::"
+        Me.Text = "HsGestion"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()

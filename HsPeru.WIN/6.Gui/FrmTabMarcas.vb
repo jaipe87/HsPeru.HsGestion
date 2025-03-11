@@ -1,4 +1,8 @@
-﻿Public Class FrmTabMarcas
+﻿Imports System.IO
+Imports iTextSharp.text
+Imports iTextSharp.text.pdf
+
+Public Class FrmTabMarcas
     Dim oMarca As DAL_MARCA
     Dim datMarca As MARCA, parMarca As MARCA
     Dim lstMarca As New List(Of MARCA)
@@ -35,16 +39,18 @@
 
     End Sub
 
-    Private Sub btnPdf_Click(sender As Object, e As EventArgs) Handles btnPdf.Click
-        Dim reporte As New GeneraReporte()
-        Dim datos As DataTable = oMarca.Select_all_Marca()
-        Dim archivo As Byte() = reporte.ExportarPDF(datos)
 
-        Response.Clear()
-        Response.ContentType = "application/pdf"
-        Response.AddHeader("content-disposition", "attachment; filename=Reporte.pdf")
-        Response.BinaryWrite(archivo)
-        Response.End()
+    Private Sub btnPdf_Click(sender As Object, e As EventArgs) Handles btnPdf.Click
+        oMarca = New DAL_MARCA
+        Dim listaMarcas As List(Of MARCA) = oMarca.Select_all_Marca(New MARCA)
+
+        ' Verificar si la lista tiene elementos
+        If listaMarcas Is Nothing OrElse listaMarcas.Count = 0 Then
+            MessageBox.Show("No hay datos para generar el PDF.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Exit Sub
+        End If
+
+        GenerarPDF(listaMarcas)
     End Sub
 
     Private Sub chkActivo_CheckedChanged(sender As Object, e As EventArgs) Handles chkActivo.CheckedChanged
@@ -150,5 +156,67 @@
         End If
     End Sub
 
+
+    Public Sub GenerarPDF(ByVal listaMarcas As List(Of MARCA))
+        Try
+            Dim ruta As String = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) & "\Marcas.pdf"
+
+            Dim doc As New Document(PageSize.A4, 10, 10, 10, 10)
+            Dim writer As PdfWriter = PdfWriter.GetInstance(doc, New FileStream(ruta, FileMode.Create))
+
+            doc.Open()
+
+            ' Agregar la fecha y hora actual
+            Dim fechaHora As New Paragraph("Fecha: " & DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"), FontFactory.GetFont(FontFactory.HELVETICA, 10))
+            fechaHora.Alignment = Element.ALIGN_RIGHT
+            doc.Add(fechaHora)
+
+            Dim empresa As New Paragraph("Hard System Perú S.A.C.", FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 14))
+            empresa.Alignment = Element.ALIGN_CENTER
+            doc.Add(empresa)
+            doc.Add(New Paragraph(" "))
+
+            ' Agregar título
+            Dim titulo As New Paragraph("Lista de Marcas", FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 16))
+            titulo.Alignment = Element.ALIGN_CENTER
+            doc.Add(titulo)
+            doc.Add(New Paragraph(" "))
+
+
+            doc.Add(New Paragraph(" "))
+
+            ' Crear la tabla con 4 columnas
+            Dim tabla As New PdfPTable(4)
+            tabla.WidthPercentage = 100 ' Ocupar el 100% del ancho de la página
+            tabla.SetWidths(New Single() {10, 10, 50, 20}) ' Ajustar tamaños de columnas
+
+            ' Agregar encabezados
+            Dim negrita As Font = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 10)
+            tabla.AddCell(New PdfPCell(New Phrase("CIA", negrita)) With {.BackgroundColor = BaseColor.LIGHT_GRAY, .HorizontalAlignment = Element.ALIGN_CENTER})
+            tabla.AddCell(New PdfPCell(New Phrase("COD", negrita)) With {.BackgroundColor = BaseColor.LIGHT_GRAY, .HorizontalAlignment = Element.ALIGN_CENTER})
+            tabla.AddCell(New PdfPCell(New Phrase("DES", negrita)) With {.BackgroundColor = BaseColor.LIGHT_GRAY, .HorizontalAlignment = Element.ALIGN_CENTER})
+            tabla.AddCell(New PdfPCell(New Phrase("ESTADO", negrita)) With {.BackgroundColor = BaseColor.LIGHT_GRAY, .HorizontalAlignment = Element.ALIGN_CENTER})
+
+            ' Llenar la tabla con datos
+            For Each datMarca In listaMarcas
+                tabla.AddCell(New PdfPCell(New Phrase(datMarca.CIA.ToString())) With {.HorizontalAlignment = Element.ALIGN_CENTER})
+                tabla.AddCell(New PdfPCell(New Phrase(datMarca.COD.ToString())) With {.HorizontalAlignment = Element.ALIGN_CENTER})
+                tabla.AddCell(New PdfPCell(New Phrase(If(datMarca.DES Is Nothing, "", datMarca.DES.ToString()))) With {.HorizontalAlignment = Element.ALIGN_LEFT})
+                tabla.AddCell(New PdfPCell(New Phrase(If(datMarca.ESTADO Is Nothing, "", datMarca.ESTADO.ToString()))) With {.HorizontalAlignment = Element.ALIGN_CENTER})
+
+            Next
+
+
+            doc.Add(tabla)
+            doc.Close()
+
+            MessageBox.Show("PDF generado con éxito en: " & ruta, "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+            ' Abrir el PDF automáticamente
+            Process.Start("explorer.exe", ruta)
+        Catch ex As Exception
+            MessageBox.Show("Error al generar PDF: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
 #End Region
 End Class

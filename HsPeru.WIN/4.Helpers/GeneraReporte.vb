@@ -1,6 +1,4 @@
-﻿
-Imports System.IO
-Imports ClosedXML.Excel
+﻿Imports System.IO
 Imports iTextSharp.text
 Imports iTextSharp.text.pdf
 'NO DEJA DESCARGAR LAS DEPENDENCIAS!!!!
@@ -20,41 +18,51 @@ Public Class GeneraReporte
     'End Function
 
     ' Exportar datos a PDF
-    Public Function ExportarPDF(data As DataTable) As Byte()
-        Dim doc As New Document(PageSize.A4)
-        Using ms As New MemoryStream()
-            Dim writer = PdfWriter.GetInstance(doc, ms)
-            doc.Open()
 
-            ' Agregar imagen (logo)
-            Dim logo As Image = Image.GetInstance("C:\ruta\logo.png")
-            logo.ScaleAbsolute(100, 50)
-            doc.Add(logo)
 
-            ' Título
-            Dim titulo As New Paragraph("Reporte de Datos") With {.Alignment = Element.ALIGN_CENTER}
-            doc.Add(titulo)
+    'Public Sub GenerarPDF(ByVal listaMarcas As List(Of MARCA))
+    '    Try
+    '        Dim ruta As String = "C:\Descargas\Marcas.pdf"
+    '        Dim doc As New Document(PageSize.A4, 10, 10, 10, 10)
+    '        Dim writer As PdfWriter = PdfWriter.GetInstance(doc, New FileStream(ruta, FileMode.Create))
 
-            ' Información de la empresa
-            doc.Add(New Paragraph("Empresa: Mi Empresa"))
-            doc.Add(New Paragraph("RUC: 123456789"))
-            doc.Add(New Paragraph("Fecha: " & DateTime.Now.ToString("dd/MM/yyyy")))
-            doc.Add(New Paragraph(" "))
+    '        doc.Open()
 
-            ' Crear tabla PDF
-            Dim table As New PdfPTable(data.Columns.Count)
-            For Each col As DataColumn In data.Columns
-                table.AddCell(New PdfPCell(New Phrase(col.ColumnName)))
-            Next
-            For Each row As DataRow In data.Rows
-                For Each item In row.ItemArray
-                    table.AddCell(New PdfPCell(New Phrase(item.ToString())))
-                Next
-            Next
-            doc.Add(table)
+    '        ' Agregar título
+    '        Dim titulo As New Paragraph("Lista de Marcas", FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 16))
+    '        titulo.Alignment = Element.ALIGN_CENTER
+    '        doc.Add(titulo)
+    '        doc.Add(New Paragraph(" "))
 
-            doc.Close()
-            Return ms.ToArray()
-        End Using
-    End Function
+    '        ' Crear la tabla con 4 columnas
+    '        Dim tabla As New PdfPTable(4)
+    '        tabla.WidthPercentage = 100 ' Ocupar el 100% del ancho de la página
+    '        tabla.SetWidths(New Single() {10, 10, 50, 20}) ' Ajustar tamaños de columnas
+
+    '        ' Agregar encabezados
+    '        Dim negrita As Font = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 10)
+    '        tabla.AddCell(New PdfPCell(New Phrase("CIA", negrita)) With {.BackgroundColor = BaseColor.LIGHT_GRAY, .HorizontalAlignment = Element.ALIGN_CENTER})
+    '        tabla.AddCell(New PdfPCell(New Phrase("COD", negrita)) With {.BackgroundColor = BaseColor.LIGHT_GRAY, .HorizontalAlignment = Element.ALIGN_CENTER})
+    '        tabla.AddCell(New PdfPCell(New Phrase("DES", negrita)) With {.BackgroundColor = BaseColor.LIGHT_GRAY, .HorizontalAlignment = Element.ALIGN_CENTER})
+    '        tabla.AddCell(New PdfPCell(New Phrase("ESTADO", negrita)) With {.BackgroundColor = BaseColor.LIGHT_GRAY, .HorizontalAlignment = Element.ALIGN_CENTER})
+
+    '        ' Llenar la tabla con datos
+    '        For Each marca As MARCA In listaMarcas
+    '            tabla.AddCell(New PdfPCell(New Phrase(marca.CIA.ToString())) With {.HorizontalAlignment = Element.ALIGN_CENTER})
+    '            tabla.AddCell(New PdfPCell(New Phrase(marca.COD.ToString())) With {.HorizontalAlignment = Element.ALIGN_CENTER})
+    '            tabla.AddCell(New PdfPCell(New Phrase(marca.DES)) With {.HorizontalAlignment = Element.ALIGN_LEFT})
+    '            tabla.AddCell(New PdfPCell(New Phrase(marca.ESTADO)) With {.HorizontalAlignment = Element.ALIGN_CENTER})
+    '        Next
+
+    '        doc.Add(tabla)
+    '        doc.Close()
+
+    '        MessageBox.Show("PDF generado con éxito en: " & ruta, "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+    '        ' Abrir el PDF automáticamente
+    '        Process.Start("explorer.exe", ruta)
+    '    Catch ex As Exception
+    '        MessageBox.Show("Error al generar PDF: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+    '    End Try
+    'End Sub
 End Class
