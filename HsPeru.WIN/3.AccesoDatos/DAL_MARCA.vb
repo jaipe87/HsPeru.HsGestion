@@ -10,7 +10,6 @@ Public Class DAL_MARCA
         Ssql = "SELECT tabmar.CIA, tabmar.COD, tabmar.DES, tabmar.ST FROM tabmar "
         Ssql = Ssql & " WHERE tabmar.CIA=? And tabmar.DES Like CONCAT('%',?,'%') AND tabmar.ST=?;"
 
-
         Using cmd As New OdbcCommand(Ssql, Cn)
             cmd.CommandType = CommandType.Text
             cmd.Parameters.Add("@cia", OdbcType.Int, 11).Value = GCia
