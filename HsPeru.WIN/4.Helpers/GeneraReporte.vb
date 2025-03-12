@@ -1,7 +1,8 @@
 ﻿Imports iTextSharp.text
 Imports iTextSharp.text.pdf
 Imports System.IO
-
+Imports NPOI.SS.UserModel
+Imports NPOI.XSSF.UserModel
 Public Class GeneraReporte
     Private Shared ReadOnly negrita As Font = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 10)
 
@@ -49,44 +50,55 @@ Public Class GeneraReporte
 
         Return tabla
     End Function
-    ' NO DEJA INSTALAR LA DEPENDENCIA DE CLOSEDXML
-    'Public Sub GenerarExcel(Of T)(ByVal listaDatos As List(Of T), ByVal ruta As String, ByVal nombreHoja As String, ByVal columnas As Dictionary(Of String, Func(Of T, String)))
-    '    Try
-    '        Using wb As New XLWorkbook()
-    '            Dim ws = wb.Worksheets.Add(nombreHoja)
 
-    '            ' Encabezados
-    '            Dim colIndex As Integer = 1
-    '            For Each col In columnas.Keys
-    '                ws.Cell(1, colIndex).Value = col
-    '                ws.Cell(1, colIndex).Style.Font.Bold = True
-    '                ws.Cell(1, colIndex).Style.Fill.BackgroundColor = XLColor.LightGray
-    '                colIndex += 1
-    '            Next
+    ' En uso libreria NPOI
+    Public Shared Sub GenerarExcel(Of T)(ByVal listaDatos As List(Of T), ByVal ruta As String, ByVal nombreHoja As String, ByVal columnas As Dictionary(Of String, Func(Of T, String)))
+        Try
+            ' Crear libro de Excel
+            Dim workbook As IWorkbook = New XSSFWorkbook() ' Formato .xlsx
+            Dim sheet As ISheet = workbook.CreateSheet(nombreHoja)
 
-    '            ' Datos
-    '            Dim rowIndex As Integer = 2
-    '            For Each item In listaDatos
-    '                colIndex = 1
-    '                For Each col In columnas.Values
-    '                    ws.Cell(rowIndex, colIndex).Value = col(item)
-    '                    colIndex += 1
-    '                Next
-    '                rowIndex += 1
-    '            Next
+            ' Encabezado
+            Dim headerRow As IRow = sheet.CreateRow(0)
+            Dim colIndex As Integer = 0
 
-    '            ' Tamaño de columnas
-    '            ws.Columns().AdjustToContents()
+            For Each col In columnas.Keys
+                Dim cell As ICell = headerRow.CreateCell(colIndex)
+                cell.SetCellValue(col) ' Nombre columna
+                colIndex += 1
+            Next
 
-    '            ' Guardar archivo
-    '            wb.SaveAs(ruta)
+            ' Agregar datos a las filas
+            Dim rowIndex As Integer = 1
+            For Each item In listaDatos
+                Dim row As IRow = sheet.CreateRow(rowIndex)
+                colIndex = 0
 
-    '            MessageBox.Show("Excel generado con éxito en: " & ruta, "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                For Each col In columnas.Values
+                    Dim cell As ICell = row.CreateCell(colIndex)
+                    cell.SetCellValue(col(item)) ' Asignar valores
+                    colIndex += 1
+                Next
 
-    '            Process.Start("explorer.exe", ruta)
-    '        End Using
-    '    Catch ex As Exception
-    '        MessageBox.Show("Error al generar Excel: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-    '    End Try
-    'End Sub
+                rowIndex += 1
+            Next
+
+            ' Ajustar ancho de columnas automáticamente
+            For i As Integer = 0 To columnas.Count - 1
+                sheet.AutoSizeColumn(i)
+            Next
+
+            ' Guarda el archivo en la ruta especificada
+            Using fs As New FileStream(ruta, FileMode.Create, FileAccess.Write)
+                workbook.Write(fs)
+            End Using
+
+            MessageBox.Show("Excel generado con éxito en: " & ruta, "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+            ' Abrir la ubicación del archivo
+            Process.Start("explorer.exe", "/select," & ruta)
+        Catch ex As Exception
+            MessageBox.Show("Error al generar Excel: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
 End Class

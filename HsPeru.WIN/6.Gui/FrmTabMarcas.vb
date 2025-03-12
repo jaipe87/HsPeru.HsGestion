@@ -36,12 +36,35 @@ Public Class FrmTabMarcas
     End Sub
 
     Private Sub btnExcel_Click(sender As Object, e As EventArgs) Handles btnExcel.Click
+        Try
+            Dim objDato As New MARCA()
+            objDato.DES = ""
+            objDato.ST = 1
+
+            Dim listaMarcas As List(Of MARCA) = Select_all_Marca(New MARCA)
+
+            Dim columnas As New Dictionary(Of String, Func(Of MARCA, String)) From {
+            {"CIA", Function(m) m.CIA.ToString()},
+            {"Código", Function(m) m.COD.ToString()},
+            {"Descripción", Function(m) m.DES},
+            {"Estado", Function(m) m.ESTADO}
+        }
+            Dim ruta As String = "C:\Excel\Marcas.xlsx"
+
+            GeneraReporte.GenerarExcel(listaMarcas, ruta, "Marcas", columnas)
+
+        Catch ex As Exception
+            MessageBox.Show("Error al exportar Excel: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+
+
+    Private Sub btnPdf_Click(sender As Object, e As EventArgs) Handles btnPdf.Click
         oMarca = New DAL_MARCA
         Dim listaMarcas As List(Of MARCA) = oMarca.Select_all_Marca(New MARCA)
 
-        ' Verificar si hay datos
         If listaMarcas Is Nothing OrElse listaMarcas.Count = 0 Then
-            MessageBox.Show("No hay datos para generar el Excel.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            MessageBox.Show("No hay datos para generar el PDF.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Exit Sub
         End If
 
@@ -53,32 +76,7 @@ Public Class FrmTabMarcas
         {"ESTADO", Function(m) If(m.ESTADO Is Nothing, "", m.ESTADO.ToString())}
     }
 
-        ' Llamar a la función para generar Excel
-        Dim ruta As String = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) & "\Marcas.xlsx"
-        GeneraReporte.GenerarExcel(listaMarcas, ruta, "Lista de Marcas", columnas)
-    End Sub
-
-
-
-    Private Sub btnPdf_Click(sender As Object, e As EventArgs) Handles btnPdf.Click
-        oMarca = New DAL_MARCA
-        Dim listaMarcas As List(Of MARCA) = oMarca.Select_all_Marca(New MARCA)
-
-        ' Verificar si hay datos
-        If listaMarcas Is Nothing OrElse listaMarcas.Count = 0 Then
-            MessageBox.Show("No hay datos para generar el PDF.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-            Exit Sub
-        End If
-
-        ' Definir columnas para la tabla
-        Dim columnas As New Dictionary(Of String, Func(Of MARCA, String)) From {
-        {"CIA", Function(m) m.CIA.ToString()},
-        {"COD", Function(m) m.COD.ToString()},
-        {"DES", Function(m) If(m.DES Is Nothing, "", m.DES.ToString())},
-        {"ESTADO", Function(m) If(m.ESTADO Is Nothing, "", m.ESTADO.ToString())}
-    }
-
-        ' Llamar a la función para generar el PDF
+        ' Llamar función
         Dim ruta As String = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) & "\Marcas.pdf"
         GeneraReporte.GenerarPDF(listaMarcas, ruta, "Lista de Marcas", columnas)
     End Sub

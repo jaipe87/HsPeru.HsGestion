@@ -9,7 +9,6 @@ Public Class DAL_MARCA
         Dim row As Dictionary(Of String, String)
         Ssql = "SELECT tabmar.CIA, tabmar.COD, tabmar.DES, tabmar.ST FROM tabmar "
         Ssql = Ssql & " WHERE tabmar.CIA=? And tabmar.DES Like CONCAT('%',?,'%') AND tabmar.ST=?;"
-
         Using cmd As New OdbcCommand(Ssql, Cn)
             cmd.CommandType = CommandType.Text
             cmd.Parameters.Add("@cia", OdbcType.Int, 11).Value = GCia
@@ -27,11 +26,9 @@ Public Class DAL_MARCA
                         .ST = CType(row("ST"), Integer)
                         .ESTADO = If(.ST = 0, ACTIVO, INACTIVO)
                     End With
-
                     listMarca.Add(datMarca)
                 End While
             End If
-
             dr.Close()
         End Using
         Return listMarca
@@ -63,5 +60,4 @@ Public Class DAL_MARCA
         datmarca = objDato
         Return datmarca
     End Function
-
 End Class
