@@ -37,11 +37,8 @@ Public Class FrmTabMarcas
 
     Private Sub btnExcel_Click(sender As Object, e As EventArgs) Handles btnExcel.Click
         Try
-            Dim objDato As New MARCA()
-            objDato.DES = ""
-            objDato.ST = 1
-
-            Dim listaMarcas As List(Of MARCA) = Select_all_Marca(New MARCA)
+            oMarca = New DAL_MARCA
+            Dim listaMarcas As List(Of MARCA) = oMarca.Select_all_Marca(New MARCA)
 
             Dim columnas As New Dictionary(Of String, Func(Of MARCA, String)) From {
             {"CIA", Function(m) m.CIA.ToString()},
@@ -49,15 +46,14 @@ Public Class FrmTabMarcas
             {"Descripción", Function(m) m.DES},
             {"Estado", Function(m) m.ESTADO}
         }
-            Dim ruta As String = "C:\Excel\Marcas.xlsx"
+            Dim ruta As String = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) & "\Marcas.xlsx"
 
             GeneraReporte.GenerarExcel(listaMarcas, ruta, "Marcas", columnas)
 
         Catch ex As Exception
-            MessageBox.Show("Error al exportar Excel: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Error al exportar Excel:" & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
-
 
     Private Sub btnPdf_Click(sender As Object, e As EventArgs) Handles btnPdf.Click
         oMarca = New DAL_MARCA
@@ -71,8 +67,8 @@ Public Class FrmTabMarcas
         ' Definir columnas
         Dim columnas As New Dictionary(Of String, Func(Of MARCA, String)) From {
         {"CIA", Function(m) m.CIA.ToString()},
-        {"COD", Function(m) m.COD.ToString()},
-        {"DES", Function(m) If(m.DES Is Nothing, "", m.DES.ToString())},
+        {"CODIGO", Function(m) m.COD.ToString()},
+        {"DESCRIPCIÓN", Function(m) If(m.DES Is Nothing, "", m.DES.ToString())},
         {"ESTADO", Function(m) If(m.ESTADO Is Nothing, "", m.ESTADO.ToString())}
     }
 
@@ -80,7 +76,6 @@ Public Class FrmTabMarcas
         Dim ruta As String = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) & "\Marcas.pdf"
         GeneraReporte.GenerarPDF(listaMarcas, ruta, "Lista de Marcas", columnas)
     End Sub
-
 
     Private Sub chkActivo_CheckedChanged(sender As Object, e As EventArgs) Handles chkActivo.CheckedChanged
         If chkActivo.Checked Then
@@ -107,12 +102,9 @@ Public Class FrmTabMarcas
         Dim xCod As Integer = 0
         datMarca = New MARCA
         xCod = NothingToInteger(DgvMarca.CurrentRow.Cells(colcod.Index).Value)
-
         If lstMarca.Where(Function(x) x.COD = xCod).Count > 0 Then
             datMarca = lstMarca.Where(Function(x) x.COD = xCod).First
         End If
-
-
     End Sub
     Sub Inicia()
         oMarca = New DAL_MARCA
@@ -161,7 +153,7 @@ Public Class FrmTabMarcas
 
     Sub Graba()
         If MessageBox.Show("¿Seguro de Grabar el Registro?", TITULO, MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Return
-        If txtDes.Text.Trim.Length = 0 Then MessageBox.Show("Ingrese el nombre del vendedor", TITULO, MessageBoxButtons.OK, MessageBoxIcon.Information) : Return
+        If txtDes.Text.Trim.Length = 0 Then MessageBox.Show("Ingrese el nombre de la marca", TITULO, MessageBoxButtons.OK, MessageBoxIcon.Information) : Return
 
         oMarca = New DAL_MARCA
         datMarca = New MARCA
@@ -176,7 +168,7 @@ Public Class FrmTabMarcas
         datMarca = oMarca.Insert_Marca(parMarca)
 
         If Not IsNothing(datMarca) Then
-            MessageBox.Show("Registro existoso del vendedor con código " & datMarca.COD, TITULO, MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MessageBox.Show("Registro existoso de la marca con código " & datMarca.COD, TITULO, MessageBoxButtons.OK, MessageBoxIcon.Information)
             utbMarca.Tabs(0).Selected = True
             utbMarca.Tabs(0).Enabled = True
             utbMarca.Tabs(1).Enabled = False

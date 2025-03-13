@@ -135,7 +135,7 @@ Public Class FrmTabTarjetas
         datTarjCredito = oTarjCredito.Insert_TarjCredito(parTarjCredito)
 
         If Not IsNothing(datTarjCredito) Then
-            MessageBox.Show("Registro existoso del vendedor con código " & datTarjCredito.COD, TITULO, MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MessageBox.Show("Registro existoso de la tarjeta de crédito con código " & datTarjCredito.COD, TITULO, MessageBoxButtons.OK, MessageBoxIcon.Information)
             utbTarjCredito.Tabs(0).Selected = True
             utbTarjCredito.Tabs(0).Enabled = True
             utbTarjCredito.Tabs(1).Enabled = False

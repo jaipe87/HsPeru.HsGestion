@@ -155,7 +155,7 @@
         datSubCategoria = oSubCategoria.Insert_SubCategoria(parSubCategoria)
 
         If Not IsNothing(datSubCategoria) Then
-            MessageBox.Show("Registro existoso del vendedor con código " & datSubCategoria.COD, TITULO, MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MessageBox.Show("Registro existoso de la subcategoria con código " & datSubCategoria.COD, TITULO, MessageBoxButtons.OK, MessageBoxIcon.Information)
             utbSubCat.Tabs(0).Selected = True
             utbSubCat.Tabs(0).Enabled = True
             utbSubCat.Tabs(1).Enabled = False

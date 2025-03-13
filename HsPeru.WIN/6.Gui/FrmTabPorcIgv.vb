@@ -109,7 +109,7 @@
         datPorc = oPorc.Insert_PorcIgv(parPorc)
 
         If Not IsNothing(datPorc) Then
-            MessageBox.Show("Registro existoso del vendedor con el porcentaje " & datPorc.PORC, TITULO, MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MessageBox.Show("Registro existoso del porcentaje " & datPorc.PORC, TITULO, MessageBoxButtons.OK, MessageBoxIcon.Information)
             utbPorcIgv.Tabs(0).Selected = True
             utbPorcIgv.Tabs(0).Enabled = True
             utbPorcIgv.Tabs(1).Enabled = False

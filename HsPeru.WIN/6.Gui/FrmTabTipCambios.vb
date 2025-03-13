@@ -128,7 +128,9 @@
 
     Sub Graba()
         If MessageBox.Show("¿Seguro de Grabar el Registro?", TITULO, MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Return
-        If txtCompra.Text.Trim.Length = 0 Then MessageBox.Show("Ingrese el nombre del vendedor", TITULO, MessageBoxButtons.OK, MessageBoxIcon.Information) : Return
+        If txtCompra.Text.Trim.Length = 0 Then MessageBox.Show("Ingrese compra", TITULO, MessageBoxButtons.OK, MessageBoxIcon.Information) : Return
+        If txtVenta.Text.Trim.Length = 0 Then MessageBox.Show("Ingrese venta", TITULO, MessageBoxButtons.OK, MessageBoxIcon.Information) : Return
+        If txtParalelo.Text.Trim.Length = 0 Then MessageBox.Show("Ingrese paralelo", TITULO, MessageBoxButtons.OK, MessageBoxIcon.Information) : Return
 
         oTipcam = New DAL_TIPCAM
         datTipcam = New TIPCAM
@@ -145,7 +147,7 @@
         datTipcam = oTipcam.Insert_TipCambio(parTipcam)
 
         If Not IsNothing(datTipcam) Then
-            MessageBox.Show("Registro existoso del vendedor con código " & datTipcam.COD, TITULO, MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MessageBox.Show("Registro existoso del tipo de cambios con código " & datTipcam.COD, TITULO, MessageBoxButtons.OK, MessageBoxIcon.Information)
             utbTipCam.Tabs(0).Selected = True
             utbTipCam.Tabs(0).Enabled = True
             utbTipCam.Tabs(1).Enabled = False

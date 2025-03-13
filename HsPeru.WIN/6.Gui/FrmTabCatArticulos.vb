@@ -156,7 +156,7 @@
         datCategoria = oCategoria.Insert_Categoria(parCategoria)
 
         If Not IsNothing(datCategoria) Then
-            MessageBox.Show("Registro existoso del vendedor con código " & datCategoria.COD, TITULO, MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MessageBox.Show("Registro existoso de la categoria con código " & datCategoria.COD, TITULO, MessageBoxButtons.OK, MessageBoxIcon.Information)
             utbCategoria.Tabs(0).Selected = True
             utbCategoria.Tabs(0).Enabled = True
             utbCategoria.Tabs(1).Enabled = False
@@ -172,7 +172,6 @@
             Modificar()
         End If
     End Sub
-
 
     Private Sub FrmTabCatArticulos_Shown(sender As Object, e As EventArgs) Handles MyBase.Shown
         txtCriterio.Focus()
