@@ -55,7 +55,7 @@
 
     Sub Inicia()
         oPorc = New DAL_PORCIGV
-        lstPorc = oPorc.Select_all_PorcIgv(New PORCIGV)
+        lstPorc = oPorc.Select_all_PorcIgv(New PORCIGV) '.OrderBy(Function(x) x.COD)
 
         DgvPorcIgv.AutoGenerateColumns = False
         DgvPorcIgv.DataSource = lstPorc
@@ -95,12 +95,44 @@
 
 
     Sub Graba()
+        Dim LstT As List(Of PORCIGV)  'INUMERABLE
+        Dim conteo As Integer
         If MessageBox.Show("¿Seguro de Grabar el Registro?", TITULO, MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Return
+
+        'If Not lstPorc Is Nothing Then
+        '    If lstPorc.Count > 0 Then
+        '        LstT = lstPorc.Where(Function(x) x.COD = dtFecha.Value.ToString("yyyyMMdd")).ToList
+        '        If lstPorc.Count = 1 Then
+
+
+        '        End If
+        '    End If
+        '    End If
+
+
+        'If Not lstPorc Is Nothing Then
+        '    If lstPorc.Count > 0 Then
+        '        conteo = lstPorc.Where(Function(x) x.COD = dtFecha.Value.ToString("yyyyMMdd")).ToList().Count
+
+        '    End If
+        'End If
+
+
+        'If Not lstPorc Is Nothing Then
+        '    If lstPorc.Count > 0 Then
+        '        If lstPorc.Where(Function(x) x.COD = dtFecha.Value.ToString("yyyyMMdd")).Count = 1 Then
+
+        '        End If
+
+        '    End If
+        'End If
+
         If txtPorc.Text.Trim.Length = 0 Then MessageBox.Show("Ingrese el porcentaje", TITULO, MessageBoxButtons.OK, MessageBoxIcon.Information) : Return
 
         oPorc = New DAL_PORCIGV
         datPorc = New PORCIGV
         parPorc = New PORCIGV
+
 
         With parPorc
             .VIGENCIA = dtFecha.Value.ToString("yyyy-MM-dd")
