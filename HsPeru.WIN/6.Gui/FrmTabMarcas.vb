@@ -35,6 +35,26 @@ Public Class FrmTabMarcas
         Close()
     End Sub
 
+    Private Sub chkActivo_CheckedChanged(sender As Object, e As EventArgs) Handles chkActivo.CheckedChanged
+        If chkActivo.Checked Then
+            chkInactivo.Checked = False
+        End If
+    End Sub
+
+    Private Sub chkInactivo_CheckedChanged(sender As Object, e As EventArgs) Handles chkInactivo.CheckedChanged
+        If chkInactivo.Checked Then
+            chkActivo.Checked = False
+        End If
+    End Sub
+
+    Private Sub DgvMarca_SelectionChanged(sender As Object, e As EventArgs) Handles DgvMarca.SelectionChanged
+        SeleccionarRow()
+    End Sub
+
+    Private Sub DgvMarca_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgvMarca.CellDoubleClick
+        Modificar()
+    End Sub
+
     Private Sub btnExcel_Click(sender As Object, e As EventArgs) Handles btnExcel.Click
         Try
             oMarca = New DAL_MARCA
@@ -64,7 +84,7 @@ Public Class FrmTabMarcas
             Exit Sub
         End If
 
-        ' Definir columnas
+        ' Columnas
         Dim columnas As New Dictionary(Of String, Func(Of MARCA, String)) From {
         {"CIA", Function(m) m.CIA.ToString()},
         {"CODIGO", Function(m) m.COD.ToString()},
@@ -72,28 +92,8 @@ Public Class FrmTabMarcas
         {"ESTADO", Function(m) If(m.ESTADO Is Nothing, "", m.ESTADO.ToString())}
     }
 
-        ' Llamar función
         Dim ruta As String = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) & "\Marcas.pdf"
-        GeneraReporte.GenerarPDF(listaMarcas, ruta, "Lista de Marcas", columnas)
-    End Sub
-
-    Private Sub chkActivo_CheckedChanged(sender As Object, e As EventArgs) Handles chkActivo.CheckedChanged
-        If chkActivo.Checked Then
-            chkInactivo.Checked = False
-        End If
-    End Sub
-
-    Private Sub chkInactivo_CheckedChanged(sender As Object, e As EventArgs) Handles chkInactivo.CheckedChanged
-        If chkInactivo.Checked Then
-            chkActivo.Checked = False
-        End If
-    End Sub
-    Private Sub DgvMarca_SelectionChanged(sender As Object, e As EventArgs) Handles DgvMarca.SelectionChanged
-        SeleccionarRow()
-    End Sub
-
-    Private Sub DgvMarca_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgvMarca.CellDoubleClick
-        Modificar()
+        GeneraReporte.GenerarPDF(listaMarcas, ruta, "Marcas", columnas)
     End Sub
 #End Region
 
@@ -176,7 +176,5 @@ Public Class FrmTabMarcas
             MessageBox.Show("No se pudo completar el registro", TITULO, MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
     End Sub
-
-
 #End Region
 End Class

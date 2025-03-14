@@ -25,23 +25,31 @@ Partial Class FrmTabBanco
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim UltraTab1 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim UltraTab2 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.UltraTabPageControl1 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.DgvBanco = New System.Windows.Forms.DataGridView()
+        Me.colcod = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colDes = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colDessuc = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colSupervisor = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colfuncio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colEstado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.btnModificar = New System.Windows.Forms.Button()
         Me.btnNuevo = New System.Windows.Forms.Button()
         Me.UltraTabPageControl2 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
         Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.chkPagProveedores = New System.Windows.Forms.CheckBox()
+        Me.chkCobranzas = New System.Windows.Forms.CheckBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.rbdDolares = New System.Windows.Forms.RadioButton()
         Me.rbdSoles = New System.Windows.Forms.RadioButton()
@@ -58,20 +66,14 @@ Partial Class FrmTabBanco
         Me.Label1 = New System.Windows.Forms.Label()
         Me.utbBanco = New Infragistics.Win.UltraWinTabControl.UltraTabControl()
         Me.UltraTabSharedControlsPage1 = New Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage()
-        Me.chkCobranzas = New System.Windows.Forms.CheckBox()
-        Me.chkPagProveedores = New System.Windows.Forms.CheckBox()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colcod = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colDes = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colDessuc = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colSupervisor = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colfuncio = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colEstado = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.btnPdf = New System.Windows.Forms.Button()
+        Me.btnExcel = New System.Windows.Forms.Button()
         Me.UltraTabPageControl1.SuspendLayout()
         Me.Panel5.SuspendLayout()
         CType(Me.DgvBanco, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -143,8 +145,63 @@ Partial Class FrmTabBanco
         Me.DgvBanco.Size = New System.Drawing.Size(730, 291)
         Me.DgvBanco.TabIndex = 0
         '
+        'colcod
+        '
+        Me.colcod.DataPropertyName = "COD"
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.colcod.DefaultCellStyle = DataGridViewCellStyle2
+        Me.colcod.HeaderText = "Cód."
+        Me.colcod.Name = "colcod"
+        Me.colcod.ReadOnly = True
+        Me.colcod.Width = 45
+        '
+        'colDes
+        '
+        Me.colDes.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.colDes.DataPropertyName = "DES"
+        Me.colDes.HeaderText = "Descripción"
+        Me.colDes.Name = "colDes"
+        Me.colDes.ReadOnly = True
+        '
+        'colDessuc
+        '
+        Me.colDessuc.DataPropertyName = "ESTADO_TIPMON"
+        Me.colDessuc.HeaderText = "T/M"
+        Me.colDessuc.Name = "colDessuc"
+        Me.colDessuc.ReadOnly = True
+        Me.colDessuc.Width = 50
+        '
+        'colSupervisor
+        '
+        Me.colSupervisor.DataPropertyName = "NROCTA"
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.colSupervisor.DefaultCellStyle = DataGridViewCellStyle3
+        Me.colSupervisor.HeaderText = "Nro. Cuenta"
+        Me.colSupervisor.Name = "colSupervisor"
+        Me.colSupervisor.ReadOnly = True
+        Me.colSupervisor.Width = 140
+        '
+        'colfuncio
+        '
+        Me.colfuncio.DataPropertyName = "FUNCIO"
+        Me.colfuncio.HeaderText = "Funcionario"
+        Me.colfuncio.Name = "colfuncio"
+        Me.colfuncio.ReadOnly = True
+        '
+        'colEstado
+        '
+        Me.colEstado.DataPropertyName = "ESTADO"
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.colEstado.DefaultCellStyle = DataGridViewCellStyle4
+        Me.colEstado.HeaderText = "Estado"
+        Me.colEstado.Name = "colEstado"
+        Me.colEstado.ReadOnly = True
+        Me.colEstado.Width = 50
+        '
         'Panel2
         '
+        Me.Panel2.Controls.Add(Me.btnPdf)
+        Me.Panel2.Controls.Add(Me.btnExcel)
         Me.Panel2.Controls.Add(Me.btnSalir)
         Me.Panel2.Controls.Add(Me.btnModificar)
         Me.Panel2.Controls.Add(Me.btnNuevo)
@@ -221,6 +278,30 @@ Partial Class FrmTabBanco
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(804, 294)
         Me.Panel4.TabIndex = 12
+        '
+        'chkPagProveedores
+        '
+        Me.chkPagProveedores.AutoSize = True
+        Me.chkPagProveedores.Font = New System.Drawing.Font("Arial Rounded MT Bold", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkPagProveedores.ForeColor = System.Drawing.SystemColors.InfoText
+        Me.chkPagProveedores.Location = New System.Drawing.Point(521, 74)
+        Me.chkPagProveedores.Name = "chkPagProveedores"
+        Me.chkPagProveedores.Size = New System.Drawing.Size(225, 19)
+        Me.chkPagProveedores.TabIndex = 24
+        Me.chkPagProveedores.Text = "Mostrar en Pagos Proveedores"
+        Me.chkPagProveedores.UseVisualStyleBackColor = True
+        '
+        'chkCobranzas
+        '
+        Me.chkCobranzas.AutoSize = True
+        Me.chkCobranzas.Font = New System.Drawing.Font("Arial Rounded MT Bold", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkCobranzas.ForeColor = System.Drawing.SystemColors.InfoText
+        Me.chkCobranzas.Location = New System.Drawing.Point(521, 49)
+        Me.chkCobranzas.Name = "chkCobranzas"
+        Me.chkCobranzas.Size = New System.Drawing.Size(169, 19)
+        Me.chkCobranzas.TabIndex = 23
+        Me.chkCobranzas.Text = "Mostrar en Cobranzas"
+        Me.chkCobranzas.UseVisualStyleBackColor = True
         '
         'Label5
         '
@@ -394,30 +475,6 @@ Partial Class FrmTabBanco
         Me.UltraTabSharedControlsPage1.Name = "UltraTabSharedControlsPage1"
         Me.UltraTabSharedControlsPage1.Size = New System.Drawing.Size(804, 294)
         '
-        'chkCobranzas
-        '
-        Me.chkCobranzas.AutoSize = True
-        Me.chkCobranzas.Font = New System.Drawing.Font("Arial Rounded MT Bold", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chkCobranzas.ForeColor = System.Drawing.SystemColors.InfoText
-        Me.chkCobranzas.Location = New System.Drawing.Point(521, 49)
-        Me.chkCobranzas.Name = "chkCobranzas"
-        Me.chkCobranzas.Size = New System.Drawing.Size(169, 19)
-        Me.chkCobranzas.TabIndex = 23
-        Me.chkCobranzas.Text = "Mostrar en Cobranzas"
-        Me.chkCobranzas.UseVisualStyleBackColor = True
-        '
-        'chkPagProveedores
-        '
-        Me.chkPagProveedores.AutoSize = True
-        Me.chkPagProveedores.Font = New System.Drawing.Font("Arial Rounded MT Bold", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chkPagProveedores.ForeColor = System.Drawing.SystemColors.InfoText
-        Me.chkPagProveedores.Location = New System.Drawing.Point(521, 74)
-        Me.chkPagProveedores.Name = "chkPagProveedores"
-        Me.chkPagProveedores.Size = New System.Drawing.Size(225, 19)
-        Me.chkPagProveedores.TabIndex = 24
-        Me.chkPagProveedores.Text = "Mostrar en Pagos Proveedores"
-        Me.chkPagProveedores.UseVisualStyleBackColor = True
-        '
         'DataGridViewTextBoxColumn1
         '
         Me.DataGridViewTextBoxColumn1.DataPropertyName = "COD"
@@ -465,58 +522,29 @@ Partial Class FrmTabBanco
         Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
         Me.DataGridViewTextBoxColumn6.Width = 50
         '
-        'colcod
+        'btnPdf
         '
-        Me.colcod.DataPropertyName = "COD"
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.colcod.DefaultCellStyle = DataGridViewCellStyle2
-        Me.colcod.HeaderText = "Cód."
-        Me.colcod.Name = "colcod"
-        Me.colcod.ReadOnly = True
-        Me.colcod.Width = 45
+        Me.btnPdf.Image = Global.HsPeru.WIN.My.Resources.Resources._new
+        Me.btnPdf.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btnPdf.Location = New System.Drawing.Point(4, 240)
+        Me.btnPdf.Name = "btnPdf"
+        Me.btnPdf.Size = New System.Drawing.Size(68, 43)
+        Me.btnPdf.TabIndex = 8
+        Me.btnPdf.Text = "Pdf"
+        Me.btnPdf.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnPdf.UseVisualStyleBackColor = True
         '
-        'colDes
+        'btnExcel
         '
-        Me.colDes.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.colDes.DataPropertyName = "DES"
-        Me.colDes.HeaderText = "Descripción"
-        Me.colDes.Name = "colDes"
-        Me.colDes.ReadOnly = True
-        '
-        'colDessuc
-        '
-        Me.colDessuc.DataPropertyName = "ESTADO_TIPMON"
-        Me.colDessuc.HeaderText = "T/M"
-        Me.colDessuc.Name = "colDessuc"
-        Me.colDessuc.ReadOnly = True
-        Me.colDessuc.Width = 50
-        '
-        'colSupervisor
-        '
-        Me.colSupervisor.DataPropertyName = "NROCTA"
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.colSupervisor.DefaultCellStyle = DataGridViewCellStyle3
-        Me.colSupervisor.HeaderText = "Nro. Cuenta"
-        Me.colSupervisor.Name = "colSupervisor"
-        Me.colSupervisor.ReadOnly = True
-        Me.colSupervisor.Width = 140
-        '
-        'colfuncio
-        '
-        Me.colfuncio.DataPropertyName = "FUNCIO"
-        Me.colfuncio.HeaderText = "Funcionario"
-        Me.colfuncio.Name = "colfuncio"
-        Me.colfuncio.ReadOnly = True
-        '
-        'colEstado
-        '
-        Me.colEstado.DataPropertyName = "ESTADO"
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.colEstado.DefaultCellStyle = DataGridViewCellStyle4
-        Me.colEstado.HeaderText = "Estado"
-        Me.colEstado.Name = "colEstado"
-        Me.colEstado.ReadOnly = True
-        Me.colEstado.Width = 50
+        Me.btnExcel.Image = Global.HsPeru.WIN.My.Resources.Resources.export_excel1
+        Me.btnExcel.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btnExcel.Location = New System.Drawing.Point(4, 197)
+        Me.btnExcel.Name = "btnExcel"
+        Me.btnExcel.Size = New System.Drawing.Size(68, 43)
+        Me.btnExcel.TabIndex = 7
+        Me.btnExcel.Text = "Excel"
+        Me.btnExcel.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnExcel.UseVisualStyleBackColor = True
         '
         'FrmTabBanco
         '
@@ -579,4 +607,6 @@ Partial Class FrmTabBanco
     Friend WithEvents colSupervisor As DataGridViewTextBoxColumn
     Friend WithEvents colfuncio As DataGridViewTextBoxColumn
     Friend WithEvents colEstado As DataGridViewTextBoxColumn
+    Friend WithEvents btnPdf As Button
+    Friend WithEvents btnExcel As Button
 End Class

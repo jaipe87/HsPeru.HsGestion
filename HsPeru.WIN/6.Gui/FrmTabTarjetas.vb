@@ -1,4 +1,7 @@
-﻿Option Strict On
+﻿Imports iTextSharp.text
+Imports iTextSharp.text.pdf
+Imports System.IO
+
 
 Public Class FrmTabTarjetas
     Dim oTarjCredito As DAL_TARJCREDITO
@@ -119,6 +122,42 @@ Public Class FrmTabTarjetas
         Buscar()
     End Sub
 
+    Private Sub btnExcel_Click(sender As Object, e As EventArgs) Handles btnExcel.Click
+        Try
+            oTarjCredito = New DAL_TARJCREDITO
+            Dim listaTarjCredito As List(Of TARJCREDITO) = oTarjCredito.Select_all_TarjCredito(New TARJCREDITO)
+
+            Dim columnas As New Dictionary(Of String, Func(Of TARJCREDITO, String)) From {
+            {"COD", Function(m) m.COD.ToString()},
+            {"Descripción", Function(m) m.DES}
+        }
+            Dim ruta As String = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) & "\TarjetasCredito.xlsx"
+
+            GeneraReporte.GenerarExcel(listaTarjCredito, ruta, "TarjetasCredito", columnas)
+
+        Catch ex As Exception
+            MessageBox.Show("Error al exportar Excel:" & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+
+    Private Sub btnPdf_Click(sender As Object, e As EventArgs) Handles btnPdf.Click
+        oTarjCredito = New DAL_TARJCREDITO
+        Dim listaTarjCredito As List(Of TARJCREDITO) = oTarjCredito.Select_all_TarjCredito(New TARJCREDITO)
+
+        If listaTarjCredito Is Nothing OrElse listaTarjCredito.Count = 0 Then
+            MessageBox.Show("No hay datos para generar el PDF.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Exit Sub
+        End If
+
+        ' Columnas
+        Dim columnas As New Dictionary(Of String, Func(Of TARJCREDITO, String)) From {
+        {"CODIGO", Function(m) m.COD.ToString()},
+        {"DESCRIPCIÓN", Function(m) If(m.DES Is Nothing, "", m.DES.ToString())}
+    }
+        Dim ruta As String = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) & "\TarjetasCrédito.pdf"
+        GeneraReporte.GenerarPDF(listaTarjCredito, ruta, "Lista de Tarjetas de Crédito", columnas)
+    End Sub
+
     Sub Graba()
         If MessageBox.Show("¿Seguro de Grabar el Registro?", TITULO, MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Return
         If txtDes.Text.Trim.Length = 0 Then MessageBox.Show("Ingrese el nombre de la tarjeta de crédito", TITULO, MessageBoxButtons.OK, MessageBoxIcon.Information) : Return
@@ -130,7 +169,6 @@ Public Class FrmTabTarjetas
         With parTarjCredito
             .COD = CInt(Val(lblCodigo.Text))
             .DES = txtDes.Text.Trim
-
         End With
         datTarjCredito = oTarjCredito.Insert_TarjCredito(parTarjCredito)
 

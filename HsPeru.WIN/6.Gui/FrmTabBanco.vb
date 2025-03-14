@@ -51,6 +51,48 @@ Public Class FrmTabBanco
     Private Sub DgvBanco_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgvBanco.CellDoubleClick
         Modificar()
     End Sub
+
+    Private Sub btnExcel_Click(sender As Object, e As EventArgs) Handles btnExcel.Click
+        Try
+            oBanco = New DAL_TABBANCO
+            Dim listaBanco As List(Of TABBANCO) = oBanco.Select_all_Banco(New TABBANCO)
+
+            Dim columnas As New Dictionary(Of String, Func(Of TABBANCO, String)) From {
+            {"COD", Function(m) m.COD.ToString()},
+            {"DESCRIPCIÓN", Function(m) m.DES},
+            {"NRO CUENTA", Function(m) m.NROCTA},
+            {"FUNCIO", Function(m) m.FUNCIO},
+            {"TIP. MONEDA", Function(m) m.TIPMON.ToString()}
+        }
+            Dim ruta As String = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) & "\Banco.xlsx"
+
+            GeneraReporte.GenerarExcel(listaBanco, ruta, "Banco", columnas)
+
+        Catch ex As Exception
+            MessageBox.Show("Error al exportar Excel:" & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+
+    Private Sub btnPdf_Click(sender As Object, e As EventArgs) Handles btnPdf.Click
+        oBanco = New DAL_TABBANCO
+        Dim listaBanco As List(Of TABBANCO) = oBanco.Select_all_Banco(New TABBANCO)
+
+        If listaBanco Is Nothing OrElse listaBanco.Count = 0 Then
+            MessageBox.Show("No hay datos para generar el PDF.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Exit Sub
+        End If
+
+        ' Columnas
+        Dim columnas As New Dictionary(Of String, Func(Of TABBANCO, String)) From {
+        {"CODIGO", Function(m) m.COD.ToString()},
+        {"DESCRIPCIÓN", Function(m) If(m.DES Is Nothing, "", m.DES.ToString())},
+        {"NRO CUENTA", Function(m) If(m.NROCTA Is Nothing, "", m.NROCTA.ToString())},
+        {"FUNCIO", Function(m) If(m.FUNCIO Is Nothing, "", m.FUNCIO.ToString())},
+        {"TIP. MONEDA", Function(m) m.ESTADO_TIPMON.ToString()}
+    }
+        Dim ruta As String = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) & "\Banco.pdf"
+        GeneraReporte.GenerarPDF(listaBanco, ruta, "Lista de Bancos", columnas)
+    End Sub
 #End Region
 
 #Region "Métodos"
@@ -63,7 +105,6 @@ Public Class FrmTabBanco
         If lstBanco.Where(Function(x) x.COD = xCod).Count > 0 Then
             datBanco = lstBanco.Where(Function(x) x.COD = xCod).First
         End If
-
 
     End Sub
     Sub Inicia()
@@ -87,6 +128,7 @@ Public Class FrmTabBanco
         rbdSoles.Checked = False
         rbdDolares.Checked = False
     End Sub
+
     Sub Modificar()
 
         If Not IsNothing(datBanco) Then
@@ -113,7 +155,6 @@ Public Class FrmTabBanco
     Private Sub FrmTabBanco_Shown(sender As Object, e As EventArgs) Handles MyBase.Shown
         SeleccionarRow()
     End Sub
-
 
     Sub Graba()
         If MessageBox.Show("¿Seguro de Grabar el Registro?", TITULO, MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Return

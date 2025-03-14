@@ -33,6 +33,9 @@ Partial Class FrmTabSubCatArticulos
         Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.UltraTabPageControl1 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
         Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.cboFiltroCat = New System.Windows.Forms.ComboBox()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.DgvSubCat = New System.Windows.Forms.DataGridView()
         Me.colcod = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colDes = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -58,18 +61,17 @@ Partial Class FrmTabSubCatArticulos
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Panel6 = New System.Windows.Forms.Panel()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.cboFiltroCat = New System.Windows.Forms.ComboBox()
+        Me.btnPdf = New System.Windows.Forms.Button()
+        Me.btnExcel = New System.Windows.Forms.Button()
         Me.UltraTabPageControl1.SuspendLayout()
         Me.Panel5.SuspendLayout()
+        Me.Panel6.SuspendLayout()
         CType(Me.DgvSubCat, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         Me.UltraTabPageControl2.SuspendLayout()
         Me.Panel4.SuspendLayout()
         CType(Me.utbSubCat, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.utbSubCat.SuspendLayout()
-        Me.Panel6.SuspendLayout()
         Me.SuspendLayout()
         '
         'UltraTabPageControl1
@@ -89,6 +91,33 @@ Partial Class FrmTabSubCatArticulos
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(389, 269)
         Me.Panel5.TabIndex = 2
+        '
+        'Panel6
+        '
+        Me.Panel6.Controls.Add(Me.cboFiltroCat)
+        Me.Panel6.Controls.Add(Me.Label7)
+        Me.Panel6.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel6.Location = New System.Drawing.Point(0, 0)
+        Me.Panel6.Name = "Panel6"
+        Me.Panel6.Size = New System.Drawing.Size(389, 35)
+        Me.Panel6.TabIndex = 5
+        '
+        'cboFiltroCat
+        '
+        Me.cboFiltroCat.FormattingEnabled = True
+        Me.cboFiltroCat.Location = New System.Drawing.Point(72, 8)
+        Me.cboFiltroCat.Name = "cboFiltroCat"
+        Me.cboFiltroCat.Size = New System.Drawing.Size(144, 21)
+        Me.cboFiltroCat.TabIndex = 7
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(8, 11)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(58, 13)
+        Me.Label7.TabIndex = 6
+        Me.Label7.Text = "Categoria :"
         '
         'DgvSubCat
         '
@@ -172,6 +201,8 @@ Partial Class FrmTabSubCatArticulos
         '
         'Panel2
         '
+        Me.Panel2.Controls.Add(Me.btnPdf)
+        Me.Panel2.Controls.Add(Me.btnExcel)
         Me.Panel2.Controls.Add(Me.btnSalir)
         Me.Panel2.Controls.Add(Me.btnModificar)
         Me.Panel2.Controls.Add(Me.btnNuevo)
@@ -380,32 +411,29 @@ Partial Class FrmTabSubCatArticulos
         Me.DataGridViewTextBoxColumn4.HeaderText = "Estado"
         Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
         '
-        'Panel6
+        'btnPdf
         '
-        Me.Panel6.Controls.Add(Me.cboFiltroCat)
-        Me.Panel6.Controls.Add(Me.Label7)
-        Me.Panel6.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel6.Location = New System.Drawing.Point(0, 0)
-        Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(389, 35)
-        Me.Panel6.TabIndex = 5
+        Me.btnPdf.Image = Global.HsPeru.WIN.My.Resources.Resources._new
+        Me.btnPdf.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btnPdf.Location = New System.Drawing.Point(11, 221)
+        Me.btnPdf.Name = "btnPdf"
+        Me.btnPdf.Size = New System.Drawing.Size(68, 43)
+        Me.btnPdf.TabIndex = 10
+        Me.btnPdf.Text = "Pdf"
+        Me.btnPdf.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnPdf.UseVisualStyleBackColor = True
         '
-        'Label7
+        'btnExcel
         '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(8, 11)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(58, 13)
-        Me.Label7.TabIndex = 6
-        Me.Label7.Text = "Categoria :"
-        '
-        'cboFiltroCat
-        '
-        Me.cboFiltroCat.FormattingEnabled = True
-        Me.cboFiltroCat.Location = New System.Drawing.Point(72, 8)
-        Me.cboFiltroCat.Name = "cboFiltroCat"
-        Me.cboFiltroCat.Size = New System.Drawing.Size(144, 21)
-        Me.cboFiltroCat.TabIndex = 7
+        Me.btnExcel.Image = Global.HsPeru.WIN.My.Resources.Resources.export_excel1
+        Me.btnExcel.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btnExcel.Location = New System.Drawing.Point(11, 178)
+        Me.btnExcel.Name = "btnExcel"
+        Me.btnExcel.Size = New System.Drawing.Size(68, 43)
+        Me.btnExcel.TabIndex = 9
+        Me.btnExcel.Text = "Excel"
+        Me.btnExcel.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnExcel.UseVisualStyleBackColor = True
         '
         'FrmTabSubCatArticulos
         '
@@ -418,6 +446,8 @@ Partial Class FrmTabSubCatArticulos
         Me.Text = "Sub-Categorías de Articulos"
         Me.UltraTabPageControl1.ResumeLayout(False)
         Me.Panel5.ResumeLayout(False)
+        Me.Panel6.ResumeLayout(False)
+        Me.Panel6.PerformLayout()
         CType(Me.DgvSubCat, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.UltraTabPageControl2.ResumeLayout(False)
@@ -425,8 +455,6 @@ Partial Class FrmTabSubCatArticulos
         Me.Panel4.PerformLayout()
         CType(Me.utbSubCat, System.ComponentModel.ISupportInitialize).EndInit()
         Me.utbSubCat.ResumeLayout(False)
-        Me.Panel6.ResumeLayout(False)
-        Me.Panel6.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -461,4 +489,6 @@ Partial Class FrmTabSubCatArticulos
     Friend WithEvents Panel6 As Panel
     Friend WithEvents cboFiltroCat As ComboBox
     Friend WithEvents Label7 As Label
+    Friend WithEvents btnPdf As Button
+    Friend WithEvents btnExcel As Button
 End Class

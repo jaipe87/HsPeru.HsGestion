@@ -49,6 +49,50 @@
     Private Sub DgvSubCat_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgvSubCat.CellDoubleClick
         Modificar()
     End Sub
+
+    Private Sub btnExcel_Click(sender As Object, e As EventArgs) Handles btnExcel.Click
+        Try
+            oSubCategoria = New DAL_TABSUBCAT
+            Dim listaSubCategoria As List(Of SUBCATEGORIA) = oSubCategoria.Select_all_SubCategoria(New SUBCATEGORIA With {
+            .DESCAT = If(cboFiltroCat.SelectedIndex = 0 OrElse cboFiltroCat.Text = "TODAS", "", cboFiltroCat.Text)
+        })
+
+            Dim columnas As New Dictionary(Of String, Func(Of SUBCATEGORIA, String)) From {
+            {"COD", Function(m) m.COD.ToString()},
+            {"DESCRIPCIÓN", Function(m) m.DESCRI},
+            {"CATEGORIA", Function(m) m.DESCAT},
+            {"ESTADO", Function(m) m.ESTADO}
+        }
+            Dim ruta As String = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) & "\SubCategorias.xlsx"
+
+            GeneraReporte.GenerarExcel(listaSubCategoria, ruta, "SubCategorias" & "(" & cboFiltroCat.Text & ")", columnas)
+
+        Catch ex As Exception
+            MessageBox.Show("Error al exportar Excel:" & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+
+    Private Sub btnPdf_Click(sender As Object, e As EventArgs) Handles btnPdf.Click
+        oSubCategoria = New DAL_TABSUBCAT
+        Dim listaSubCategoria As List(Of SUBCATEGORIA) = oSubCategoria.Select_all_SubCategoria(New SUBCATEGORIA With {
+            .DESCAT = If(cboFiltroCat.SelectedIndex = 0 OrElse cboFiltroCat.Text = "TODAS", "", cboFiltroCat.Text)
+        })
+
+        If listaSubCategoria Is Nothing OrElse listaSubCategoria.Count = 0 Then
+            MessageBox.Show("No hay datos para generar el PDF.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Exit Sub
+        End If
+
+        ' Columnas
+        Dim columnas As New Dictionary(Of String, Func(Of SUBCATEGORIA, String)) From {
+        {"CODIGO", Function(m) m.COD.ToString()},
+        {"DESCRIPCIÓN", Function(m) If(m.DESCRI Is Nothing, "", m.DESCRI.ToString())},
+        {"CATEGORIA", Function(m) If(m.DESCAT Is Nothing, "", m.DESCAT.ToString())},
+        {"ESTADO", Function(m) If(m.ESTADO Is Nothing, "", m.ESTADO.ToString())}
+    }
+        Dim ruta As String = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) & "\SubCategorias.pdf"
+        GeneraReporte.GenerarPDF(listaSubCategoria, ruta, "Lista de SubCategorias", columnas)
+    End Sub
 #End Region
 
 #Region "Métodos"
@@ -69,8 +113,6 @@
         DgvSubCat.AutoGenerateColumns = False
         DgvSubCat.DataSource = lstSubCategoria
     End Sub
-
-
 
     Sub SeleccionarRow()
         Dim xCodven As Integer = 0
@@ -106,6 +148,7 @@
         txtDes.Focus()
         cboCategoria.SelectedValue = 0
     End Sub
+
     Sub Modificar()
 
         If Not IsNothing(datSubCategoria) Then

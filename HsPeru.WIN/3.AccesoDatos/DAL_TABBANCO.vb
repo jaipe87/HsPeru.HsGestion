@@ -56,7 +56,6 @@ Public Class DAL_TABBANCO
 
         End If
 
-
         Ssql = "INSERT INTO tabban (CIA, COD, DES, TIPMON, NROCTA, FUNCIO, ST) VALUES ("
         Ssql = Ssql & GCia & ", " & Cod & ", '" & objDato.DES & "', " & objDato.TIPMON & ", '" & objDato.NROCTA & "', '" & objDato.FUNCIO & "', " & objDato.ST & ") "
         Ssql = Ssql & "ON DUPLICATE KEY UPDATE DES = '" & objDato.DES & "', TIPMON = " & objDato.TIPMON & ", NROCTA = '" & objDato.NROCTA & "', FUNCIO = '" & objDato.FUNCIO & "', ST = " & objDato.ST & ";"
