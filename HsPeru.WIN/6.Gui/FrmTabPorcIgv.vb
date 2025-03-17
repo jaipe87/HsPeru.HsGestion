@@ -93,7 +93,6 @@
         SeleccionarRow()
     End Sub
 
-
     Sub Graba()
         Dim LstT As List(Of PORCIGV)  'INUMERABLE
         Dim conteo As Integer
@@ -127,15 +126,17 @@
         '    End If
         'End If
 
+        If lstPorc?.Any(Function(x) x.COD = dtFecha.Value.ToString("yyyyMMdd")) Then MessageBox.Show("El código ya existe. No se puede registrar nuevamente.", TITULO, MessageBoxButtons.OK, MessageBoxIcon.Warning) : Return
+
+
         If txtPorc.Text.Trim.Length = 0 Then MessageBox.Show("Ingrese el porcentaje", TITULO, MessageBoxButtons.OK, MessageBoxIcon.Information) : Return
 
         oPorc = New DAL_PORCIGV
         datPorc = New PORCIGV
         parPorc = New PORCIGV
 
-
         With parPorc
-            .VIGENCIA = dtFecha.Value.ToString("yyyy-MM-dd")
+            .VIGENCIA = dtFecha.Value.ToString("yyyyMMdd")
             .PORC = Convert.ToDouble(txtPorc.Text.Trim)
         End With
         datPorc = oPorc.Insert_PorcIgv(parPorc)
