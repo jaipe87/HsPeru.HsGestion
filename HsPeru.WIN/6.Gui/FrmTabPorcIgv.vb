@@ -128,7 +128,6 @@
 
         If lstPorc?.Any(Function(x) x.COD = dtFecha.Value.ToString("yyyyMMdd")) Then MessageBox.Show("El código ya existe. No se puede registrar nuevamente.", TITULO, MessageBoxButtons.OK, MessageBoxIcon.Warning) : Return
 
-
         If txtPorc.Text.Trim.Length = 0 Then MessageBox.Show("Ingrese el porcentaje", TITULO, MessageBoxButtons.OK, MessageBoxIcon.Information) : Return
 
         oPorc = New DAL_PORCIGV

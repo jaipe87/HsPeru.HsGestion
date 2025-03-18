@@ -914,16 +914,11 @@ Public Class FrmTabArticulos
         Buscar()
     End Sub
 
-
-
-
-
     Private Sub txtCriterio_KeyDown(sender As Object, e As KeyEventArgs) Handles txtCriterio.KeyDown
         If e.KeyCode = Keys.Enter Then
             SendKeys.Send("{TAB}")
         End If
     End Sub
-
 
     Private Sub DgArticulos_CellEnter(sender As Object, e As DataGridViewCellEventArgs) Handles DgArticulos.CellEnter
         DetalleArticulo()
