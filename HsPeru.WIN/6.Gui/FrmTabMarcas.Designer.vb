@@ -36,6 +36,8 @@ Partial Class FrmTabMarcas
         Me.colDes = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colEstado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.btnPdf = New System.Windows.Forms.Button()
+        Me.btnExcel = New System.Windows.Forms.Button()
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.btnModificar = New System.Windows.Forms.Button()
         Me.btnNuevo = New System.Windows.Forms.Button()
@@ -51,8 +53,6 @@ Partial Class FrmTabMarcas
         Me.Label1 = New System.Windows.Forms.Label()
         Me.utbMarca = New Infragistics.Win.UltraWinTabControl.UltraTabControl()
         Me.UltraTabSharedControlsPage1 = New Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage()
-        Me.btnExcel = New System.Windows.Forms.Button()
-        Me.btnPdf = New System.Windows.Forms.Button()
         Me.UltraTabPageControl1.SuspendLayout()
         Me.Panel5.SuspendLayout()
         CType(Me.DgvMarca, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -165,11 +165,35 @@ Partial Class FrmTabMarcas
         Me.Panel2.Size = New System.Drawing.Size(82, 240)
         Me.Panel2.TabIndex = 1
         '
+        'btnPdf
+        '
+        Me.btnPdf.Image = Global.HsPeru.WIN.My.Resources.Resources._new
+        Me.btnPdf.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btnPdf.Location = New System.Drawing.Point(6, 131)
+        Me.btnPdf.Name = "btnPdf"
+        Me.btnPdf.Size = New System.Drawing.Size(68, 43)
+        Me.btnPdf.TabIndex = 4
+        Me.btnPdf.Text = "Pdf"
+        Me.btnPdf.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnPdf.UseVisualStyleBackColor = True
+        '
+        'btnExcel
+        '
+        Me.btnExcel.Image = Global.HsPeru.WIN.My.Resources.Resources.export_excel1
+        Me.btnExcel.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btnExcel.Location = New System.Drawing.Point(6, 89)
+        Me.btnExcel.Name = "btnExcel"
+        Me.btnExcel.Size = New System.Drawing.Size(68, 43)
+        Me.btnExcel.TabIndex = 3
+        Me.btnExcel.Text = "Excel"
+        Me.btnExcel.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnExcel.UseVisualStyleBackColor = True
+        '
         'btnSalir
         '
         Me.btnSalir.Image = Global.HsPeru.WIN.My.Resources.Resources.door_in
         Me.btnSalir.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnSalir.Location = New System.Drawing.Point(6, 89)
+        Me.btnSalir.Location = New System.Drawing.Point(6, 173)
         Me.btnSalir.Name = "btnSalir"
         Me.btnSalir.Size = New System.Drawing.Size(68, 43)
         Me.btnSalir.TabIndex = 2
@@ -334,30 +358,6 @@ Partial Class FrmTabMarcas
         Me.UltraTabSharedControlsPage1.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabSharedControlsPage1.Name = "UltraTabSharedControlsPage1"
         Me.UltraTabSharedControlsPage1.Size = New System.Drawing.Size(470, 240)
-        '
-        'btnExcel
-        '
-        Me.btnExcel.Image = Global.HsPeru.WIN.My.Resources.Resources.export_excel1
-        Me.btnExcel.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnExcel.Location = New System.Drawing.Point(6, 138)
-        Me.btnExcel.Name = "btnExcel"
-        Me.btnExcel.Size = New System.Drawing.Size(68, 43)
-        Me.btnExcel.TabIndex = 3
-        Me.btnExcel.Text = "Excel"
-        Me.btnExcel.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btnExcel.UseVisualStyleBackColor = True
-        '
-        'btnPdf
-        '
-        Me.btnPdf.Image = Global.HsPeru.WIN.My.Resources.Resources._new
-        Me.btnPdf.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnPdf.Location = New System.Drawing.Point(6, 187)
-        Me.btnPdf.Name = "btnPdf"
-        Me.btnPdf.Size = New System.Drawing.Size(68, 43)
-        Me.btnPdf.TabIndex = 4
-        Me.btnPdf.Text = "Pdf"
-        Me.btnPdf.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btnPdf.UseVisualStyleBackColor = True
         '
         'FrmTabMarcas
         '

@@ -25,9 +25,10 @@ Partial Class FrmTabTarjetas
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim UltraTab1 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim UltraTab2 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.UltraTabPageControl1 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.Panel6 = New System.Windows.Forms.Panel()
@@ -35,9 +36,9 @@ Partial Class FrmTabTarjetas
         Me.btnBuscar = New System.Windows.Forms.Button()
         Me.txtCriterio = New System.Windows.Forms.TextBox()
         Me.DgvTarjCredito = New System.Windows.Forms.DataGridView()
-        Me.colcod = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colDes = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.btnPdf = New System.Windows.Forms.Button()
+        Me.btnExcel = New System.Windows.Forms.Button()
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.btnModificar = New System.Windows.Forms.Button()
         Me.btnNuevo = New System.Windows.Forms.Button()
@@ -51,8 +52,10 @@ Partial Class FrmTabTarjetas
         Me.Label1 = New System.Windows.Forms.Label()
         Me.utbTarjCredito = New Infragistics.Win.UltraWinTabControl.UltraTabControl()
         Me.UltraTabSharedControlsPage1 = New Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage()
-        Me.btnPdf = New System.Windows.Forms.Button()
-        Me.btnExcel = New System.Windows.Forms.Button()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colcod = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colDes = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.UltraTabPageControl1.SuspendLayout()
         Me.Panel5.SuspendLayout()
         Me.Panel6.SuspendLayout()
@@ -166,24 +169,6 @@ Partial Class FrmTabTarjetas
         Me.DgvTarjCredito.Size = New System.Drawing.Size(559, 239)
         Me.DgvTarjCredito.TabIndex = 0
         '
-        'colcod
-        '
-        Me.colcod.DataPropertyName = "COD"
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.colcod.DefaultCellStyle = DataGridViewCellStyle2
-        Me.colcod.HeaderText = "Cód."
-        Me.colcod.Name = "colcod"
-        Me.colcod.ReadOnly = True
-        Me.colcod.Width = 60
-        '
-        'colDes
-        '
-        Me.colDes.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.colDes.DataPropertyName = "DES"
-        Me.colDes.HeaderText = "Descripción"
-        Me.colDes.Name = "colDes"
-        Me.colDes.ReadOnly = True
-        '
         'Panel2
         '
         Me.Panel2.Controls.Add(Me.btnPdf)
@@ -197,11 +182,35 @@ Partial Class FrmTabTarjetas
         Me.Panel2.Size = New System.Drawing.Size(80, 272)
         Me.Panel2.TabIndex = 1
         '
+        'btnPdf
+        '
+        Me.btnPdf.Image = Global.HsPeru.WIN.My.Resources.Resources._new
+        Me.btnPdf.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btnPdf.Location = New System.Drawing.Point(6, 160)
+        Me.btnPdf.Name = "btnPdf"
+        Me.btnPdf.Size = New System.Drawing.Size(68, 43)
+        Me.btnPdf.TabIndex = 6
+        Me.btnPdf.Text = "Pdf"
+        Me.btnPdf.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnPdf.UseVisualStyleBackColor = True
+        '
+        'btnExcel
+        '
+        Me.btnExcel.Image = Global.HsPeru.WIN.My.Resources.Resources.export_excel1
+        Me.btnExcel.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btnExcel.Location = New System.Drawing.Point(6, 118)
+        Me.btnExcel.Name = "btnExcel"
+        Me.btnExcel.Size = New System.Drawing.Size(68, 43)
+        Me.btnExcel.TabIndex = 5
+        Me.btnExcel.Text = "Excel"
+        Me.btnExcel.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnExcel.UseVisualStyleBackColor = True
+        '
         'btnSalir
         '
         Me.btnSalir.Image = Global.HsPeru.WIN.My.Resources.Resources.door_in
         Me.btnSalir.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnSalir.Location = New System.Drawing.Point(6, 118)
+        Me.btnSalir.Location = New System.Drawing.Point(6, 226)
         Me.btnSalir.Name = "btnSalir"
         Me.btnSalir.Size = New System.Drawing.Size(68, 43)
         Me.btnSalir.TabIndex = 2
@@ -344,29 +353,41 @@ Partial Class FrmTabTarjetas
         Me.UltraTabSharedControlsPage1.Name = "UltraTabSharedControlsPage1"
         Me.UltraTabSharedControlsPage1.Size = New System.Drawing.Size(639, 272)
         '
-        'btnPdf
+        'DataGridViewTextBoxColumn1
         '
-        Me.btnPdf.Image = Global.HsPeru.WIN.My.Resources.Resources._new
-        Me.btnPdf.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnPdf.Location = New System.Drawing.Point(6, 216)
-        Me.btnPdf.Name = "btnPdf"
-        Me.btnPdf.Size = New System.Drawing.Size(68, 43)
-        Me.btnPdf.TabIndex = 6
-        Me.btnPdf.Text = "Pdf"
-        Me.btnPdf.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btnPdf.UseVisualStyleBackColor = True
+        Me.DataGridViewTextBoxColumn1.DataPropertyName = "COD"
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.DataGridViewTextBoxColumn1.DefaultCellStyle = DataGridViewCellStyle5
+        Me.DataGridViewTextBoxColumn1.HeaderText = "Cód."
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        Me.DataGridViewTextBoxColumn1.ReadOnly = True
+        Me.DataGridViewTextBoxColumn1.Width = 60
         '
-        'btnExcel
+        'DataGridViewTextBoxColumn2
         '
-        Me.btnExcel.Image = Global.HsPeru.WIN.My.Resources.Resources.export_excel1
-        Me.btnExcel.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnExcel.Location = New System.Drawing.Point(6, 167)
-        Me.btnExcel.Name = "btnExcel"
-        Me.btnExcel.Size = New System.Drawing.Size(68, 43)
-        Me.btnExcel.TabIndex = 5
-        Me.btnExcel.Text = "Excel"
-        Me.btnExcel.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btnExcel.UseVisualStyleBackColor = True
+        Me.DataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.DataGridViewTextBoxColumn2.DataPropertyName = "DES"
+        Me.DataGridViewTextBoxColumn2.HeaderText = "Descripción"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        Me.DataGridViewTextBoxColumn2.ReadOnly = True
+        '
+        'colcod
+        '
+        Me.colcod.DataPropertyName = "COD"
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.colcod.DefaultCellStyle = DataGridViewCellStyle2
+        Me.colcod.HeaderText = "Cód."
+        Me.colcod.Name = "colcod"
+        Me.colcod.ReadOnly = True
+        Me.colcod.Width = 60
+        '
+        'colDes
+        '
+        Me.colDes.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.colDes.DataPropertyName = "DES"
+        Me.colDes.HeaderText = "Descripción"
+        Me.colDes.Name = "colDes"
+        Me.colDes.ReadOnly = True
         '
         'FrmTabTarjetas
         '
@@ -417,4 +438,6 @@ Partial Class FrmTabTarjetas
     Friend WithEvents colDes As DataGridViewTextBoxColumn
     Friend WithEvents btnPdf As Button
     Friend WithEvents btnExcel As Button
+    Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
 End Class

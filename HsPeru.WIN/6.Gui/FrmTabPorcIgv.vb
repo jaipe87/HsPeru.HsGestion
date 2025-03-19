@@ -52,7 +52,6 @@
 
     End Sub
 
-
     Sub Inicia()
         oPorc = New DAL_PORCIGV
         lstPorc = oPorc.Select_all_PorcIgv(New PORCIGV) '.OrderBy(Function(x) x.COD)

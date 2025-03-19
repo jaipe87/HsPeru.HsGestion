@@ -40,31 +40,32 @@ Partial Class FrmTabCatArticulos
         Me.colStock = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colEstado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.btnEliminar = New System.Windows.Forms.Button()
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.btnModificar = New System.Windows.Forms.Button()
         Me.btnNuevo = New System.Windows.Forms.Button()
         Me.UltraTabPageControl2 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
         Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.gbSt = New System.Windows.Forms.GroupBox()
+        Me.rbdInactivo = New System.Windows.Forms.RadioButton()
+        Me.rbdActivo = New System.Windows.Forms.RadioButton()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.gpStock = New System.Windows.Forms.GroupBox()
         Me.rbdNo = New System.Windows.Forms.RadioButton()
         Me.rbdSi = New System.Windows.Forms.RadioButton()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.rbdInactivo = New System.Windows.Forms.RadioButton()
-        Me.rbdActivo = New System.Windows.Forms.RadioButton()
         Me.lblCodigo = New System.Windows.Forms.Label()
         Me.btnCancelar = New System.Windows.Forms.Button()
         Me.btnGuardar = New System.Windows.Forms.Button()
         Me.chkContratos = New System.Windows.Forms.CheckBox()
         Me.txtDes = New System.Windows.Forms.TextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.utbCategoria = New Infragistics.Win.UltraWinTabControl.UltraTabControl()
         Me.UltraTabSharedControlsPage1 = New Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage()
-        Me.gbSt = New System.Windows.Forms.GroupBox()
+        Me.btnPdf = New System.Windows.Forms.Button()
+        Me.btnExcel = New System.Windows.Forms.Button()
         Me.UltraTabPageControl1.SuspendLayout()
         Me.Panel5.SuspendLayout()
         Me.Panel6.SuspendLayout()
@@ -72,19 +73,19 @@ Partial Class FrmTabCatArticulos
         Me.Panel2.SuspendLayout()
         Me.UltraTabPageControl2.SuspendLayout()
         Me.Panel4.SuspendLayout()
+        Me.gbSt.SuspendLayout()
         Me.gpStock.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.Panel3.SuspendLayout()
         CType(Me.utbCategoria, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.utbCategoria.SuspendLayout()
-        Me.gbSt.SuspendLayout()
         Me.SuspendLayout()
         '
         'UltraTabPageControl1
         '
         Me.UltraTabPageControl1.Controls.Add(Me.Panel5)
         Me.UltraTabPageControl1.Controls.Add(Me.Panel2)
-        Me.UltraTabPageControl1.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl1.Location = New System.Drawing.Point(1, 20)
         Me.UltraTabPageControl1.Name = "UltraTabPageControl1"
         Me.UltraTabPageControl1.Size = New System.Drawing.Size(621, 268)
         '
@@ -208,7 +209,8 @@ Partial Class FrmTabCatArticulos
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.Transparent
-        Me.Panel2.Controls.Add(Me.btnEliminar)
+        Me.Panel2.Controls.Add(Me.btnPdf)
+        Me.Panel2.Controls.Add(Me.btnExcel)
         Me.Panel2.Controls.Add(Me.btnSalir)
         Me.Panel2.Controls.Add(Me.btnModificar)
         Me.Panel2.Controls.Add(Me.btnNuevo)
@@ -218,23 +220,11 @@ Partial Class FrmTabCatArticulos
         Me.Panel2.Size = New System.Drawing.Size(80, 268)
         Me.Panel2.TabIndex = 1
         '
-        'btnEliminar
-        '
-        Me.btnEliminar.Image = Global.HsPeru.WIN.My.Resources.Resources.page_white_delete
-        Me.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnEliminar.Location = New System.Drawing.Point(6, 118)
-        Me.btnEliminar.Name = "btnEliminar"
-        Me.btnEliminar.Size = New System.Drawing.Size(68, 43)
-        Me.btnEliminar.TabIndex = 3
-        Me.btnEliminar.Text = "Eliminar"
-        Me.btnEliminar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btnEliminar.UseVisualStyleBackColor = True
-        '
         'btnSalir
         '
         Me.btnSalir.Image = Global.HsPeru.WIN.My.Resources.Resources.door_in
         Me.btnSalir.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnSalir.Location = New System.Drawing.Point(6, 160)
+        Me.btnSalir.Location = New System.Drawing.Point(6, 202)
         Me.btnSalir.Name = "btnSalir"
         Me.btnSalir.Size = New System.Drawing.Size(68, 43)
         Me.btnSalir.TabIndex = 2
@@ -269,7 +259,7 @@ Partial Class FrmTabCatArticulos
         'UltraTabPageControl2
         '
         Me.UltraTabPageControl2.Controls.Add(Me.Panel4)
-        Me.UltraTabPageControl2.Location = New System.Drawing.Point(1, 20)
+        Me.UltraTabPageControl2.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl2.Name = "UltraTabPageControl2"
         Me.UltraTabPageControl2.Size = New System.Drawing.Size(621, 268)
         '
@@ -290,6 +280,50 @@ Partial Class FrmTabCatArticulos
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(621, 268)
         Me.Panel4.TabIndex = 12
+        '
+        'gbSt
+        '
+        Me.gbSt.Controls.Add(Me.rbdInactivo)
+        Me.gbSt.Controls.Add(Me.rbdActivo)
+        Me.gbSt.Controls.Add(Me.Label4)
+        Me.gbSt.Location = New System.Drawing.Point(108, 160)
+        Me.gbSt.Name = "gbSt"
+        Me.gbSt.Size = New System.Drawing.Size(151, 51)
+        Me.gbSt.TabIndex = 26
+        Me.gbSt.TabStop = False
+        '
+        'rbdInactivo
+        '
+        Me.rbdInactivo.AutoSize = True
+        Me.rbdInactivo.Location = New System.Drawing.Point(85, 19)
+        Me.rbdInactivo.Name = "rbdInactivo"
+        Me.rbdInactivo.Size = New System.Drawing.Size(63, 17)
+        Me.rbdInactivo.TabIndex = 22
+        Me.rbdInactivo.TabStop = True
+        Me.rbdInactivo.Text = "Inactivo"
+        Me.rbdInactivo.UseVisualStyleBackColor = True
+        '
+        'rbdActivo
+        '
+        Me.rbdActivo.AutoSize = True
+        Me.rbdActivo.Location = New System.Drawing.Point(15, 19)
+        Me.rbdActivo.Name = "rbdActivo"
+        Me.rbdActivo.Size = New System.Drawing.Size(55, 17)
+        Me.rbdActivo.TabIndex = 21
+        Me.rbdActivo.TabStop = True
+        Me.rbdActivo.Text = "Activo"
+        Me.rbdActivo.UseVisualStyleBackColor = True
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(-3, 0)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(54, 13)
+        Me.Label4.TabIndex = 3
+        Me.Label4.Text = "Estado :"
+        Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'gpStock
         '
@@ -334,28 +368,6 @@ Partial Class FrmTabCatArticulos
         Me.Label3.TabIndex = 2
         Me.Label3.Text = "Controla Stock :"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
-        'rbdInactivo
-        '
-        Me.rbdInactivo.AutoSize = True
-        Me.rbdInactivo.Location = New System.Drawing.Point(85, 19)
-        Me.rbdInactivo.Name = "rbdInactivo"
-        Me.rbdInactivo.Size = New System.Drawing.Size(63, 17)
-        Me.rbdInactivo.TabIndex = 22
-        Me.rbdInactivo.TabStop = True
-        Me.rbdInactivo.Text = "Inactivo"
-        Me.rbdInactivo.UseVisualStyleBackColor = True
-        '
-        'rbdActivo
-        '
-        Me.rbdActivo.AutoSize = True
-        Me.rbdActivo.Location = New System.Drawing.Point(15, 19)
-        Me.rbdActivo.Name = "rbdActivo"
-        Me.rbdActivo.Size = New System.Drawing.Size(55, 17)
-        Me.rbdActivo.TabIndex = 21
-        Me.rbdActivo.TabStop = True
-        Me.rbdActivo.Text = "Activo"
-        Me.rbdActivo.UseVisualStyleBackColor = True
         '
         'lblCodigo
         '
@@ -412,17 +424,6 @@ Partial Class FrmTabCatArticulos
         Me.txtDes.Name = "txtDes"
         Me.txtDes.Size = New System.Drawing.Size(425, 20)
         Me.txtDes.TabIndex = 0
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(-3, 0)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(54, 13)
-        Me.Label4.TabIndex = 3
-        Me.Label4.Text = "Estado :"
-        Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'Label2
         '
@@ -488,16 +489,29 @@ Partial Class FrmTabCatArticulos
         Me.UltraTabSharedControlsPage1.Name = "UltraTabSharedControlsPage1"
         Me.UltraTabSharedControlsPage1.Size = New System.Drawing.Size(621, 268)
         '
-        'gbSt
+        'btnPdf
         '
-        Me.gbSt.Controls.Add(Me.rbdInactivo)
-        Me.gbSt.Controls.Add(Me.rbdActivo)
-        Me.gbSt.Controls.Add(Me.Label4)
-        Me.gbSt.Location = New System.Drawing.Point(108, 160)
-        Me.gbSt.Name = "gbSt"
-        Me.gbSt.Size = New System.Drawing.Size(151, 51)
-        Me.gbSt.TabIndex = 26
-        Me.gbSt.TabStop = False
+        Me.btnPdf.Image = Global.HsPeru.WIN.My.Resources.Resources._new
+        Me.btnPdf.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btnPdf.Location = New System.Drawing.Point(6, 160)
+        Me.btnPdf.Name = "btnPdf"
+        Me.btnPdf.Size = New System.Drawing.Size(68, 43)
+        Me.btnPdf.TabIndex = 8
+        Me.btnPdf.Text = "Pdf"
+        Me.btnPdf.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnPdf.UseVisualStyleBackColor = True
+        '
+        'btnExcel
+        '
+        Me.btnExcel.Image = Global.HsPeru.WIN.My.Resources.Resources.export_excel1
+        Me.btnExcel.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btnExcel.Location = New System.Drawing.Point(6, 118)
+        Me.btnExcel.Name = "btnExcel"
+        Me.btnExcel.Size = New System.Drawing.Size(68, 43)
+        Me.btnExcel.TabIndex = 7
+        Me.btnExcel.Text = "Excel"
+        Me.btnExcel.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnExcel.UseVisualStyleBackColor = True
         '
         'FrmTabCatArticulos
         '
@@ -518,14 +532,14 @@ Partial Class FrmTabCatArticulos
         Me.UltraTabPageControl2.ResumeLayout(False)
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
+        Me.gbSt.ResumeLayout(False)
+        Me.gbSt.PerformLayout()
         Me.gpStock.ResumeLayout(False)
         Me.gpStock.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         Me.Panel3.ResumeLayout(False)
         CType(Me.utbCategoria, System.ComponentModel.ISupportInitialize).EndInit()
         Me.utbCategoria.ResumeLayout(False)
-        Me.gbSt.ResumeLayout(False)
-        Me.gbSt.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -541,7 +555,6 @@ Partial Class FrmTabCatArticulos
     Friend WithEvents txtCriterio As TextBox
     Friend WithEvents DgvCatArt As DataGridView
     Friend WithEvents Panel2 As Panel
-    Friend WithEvents btnEliminar As Button
     Friend WithEvents btnSalir As Button
     Friend WithEvents btnModificar As Button
     Friend WithEvents btnNuevo As Button
@@ -566,4 +579,6 @@ Partial Class FrmTabCatArticulos
     Friend WithEvents colEstado As DataGridViewTextBoxColumn
     Friend WithEvents gpStock As GroupBox
     Friend WithEvents gbSt As GroupBox
+    Friend WithEvents btnPdf As Button
+    Friend WithEvents btnExcel As Button
 End Class

@@ -25,13 +25,16 @@ Partial Class FrmTabUnidMedidas
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim UltraTab1 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
-        Dim UltraTab2 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim UltraTab1 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
+        Dim UltraTab2 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Me.UltraTabPageControl1 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.DgvUnidMedida = New System.Windows.Forms.DataGridView()
+        Me.colcod = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colDes = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colEstado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.btnModificar = New System.Windows.Forms.Button()
@@ -48,9 +51,8 @@ Partial Class FrmTabUnidMedidas
         Me.Label1 = New System.Windows.Forms.Label()
         Me.utbUnidMedida = New Infragistics.Win.UltraWinTabControl.UltraTabControl()
         Me.UltraTabSharedControlsPage1 = New Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage()
-        Me.colcod = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colDes = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colEstado = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.btnPdf = New System.Windows.Forms.Button()
+        Me.btnExcel = New System.Windows.Forms.Button()
         Me.UltraTabPageControl1.SuspendLayout()
         Me.Panel5.SuspendLayout()
         CType(Me.DgvUnidMedida, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -122,8 +124,38 @@ Partial Class FrmTabUnidMedidas
         Me.DgvUnidMedida.Size = New System.Drawing.Size(389, 269)
         Me.DgvUnidMedida.TabIndex = 0
         '
+        'colcod
+        '
+        Me.colcod.DataPropertyName = "COD"
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.colcod.DefaultCellStyle = DataGridViewCellStyle2
+        Me.colcod.HeaderText = "Cód."
+        Me.colcod.Name = "colcod"
+        Me.colcod.ReadOnly = True
+        Me.colcod.Width = 45
+        '
+        'colDes
+        '
+        Me.colDes.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.colDes.DataPropertyName = "DESCRI"
+        Me.colDes.HeaderText = "Descripción"
+        Me.colDes.Name = "colDes"
+        Me.colDes.ReadOnly = True
+        '
+        'colEstado
+        '
+        Me.colEstado.DataPropertyName = "DESABR"
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.colEstado.DefaultCellStyle = DataGridViewCellStyle3
+        Me.colEstado.HeaderText = "Abrev."
+        Me.colEstado.Name = "colEstado"
+        Me.colEstado.ReadOnly = True
+        Me.colEstado.Width = 90
+        '
         'Panel2
         '
+        Me.Panel2.Controls.Add(Me.btnPdf)
+        Me.Panel2.Controls.Add(Me.btnExcel)
         Me.Panel2.Controls.Add(Me.btnSalir)
         Me.Panel2.Controls.Add(Me.btnModificar)
         Me.Panel2.Controls.Add(Me.btnNuevo)
@@ -137,7 +169,7 @@ Partial Class FrmTabUnidMedidas
         '
         Me.btnSalir.Image = Global.HsPeru.WIN.My.Resources.Resources.door_in
         Me.btnSalir.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnSalir.Location = New System.Drawing.Point(11, 87)
+        Me.btnSalir.Location = New System.Drawing.Point(11, 215)
         Me.btnSalir.Name = "btnSalir"
         Me.btnSalir.Size = New System.Drawing.Size(68, 43)
         Me.btnSalir.TabIndex = 2
@@ -300,33 +332,29 @@ Partial Class FrmTabUnidMedidas
         Me.UltraTabSharedControlsPage1.Name = "UltraTabSharedControlsPage1"
         Me.UltraTabSharedControlsPage1.Size = New System.Drawing.Size(476, 269)
         '
-        'colcod
+        'btnPdf
         '
-        Me.colcod.DataPropertyName = "COD"
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.colcod.DefaultCellStyle = DataGridViewCellStyle2
-        Me.colcod.HeaderText = "Cód."
-        Me.colcod.Name = "colcod"
-        Me.colcod.ReadOnly = True
-        Me.colcod.Width = 45
+        Me.btnPdf.Image = Global.HsPeru.WIN.My.Resources.Resources._new
+        Me.btnPdf.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btnPdf.Location = New System.Drawing.Point(11, 132)
+        Me.btnPdf.Name = "btnPdf"
+        Me.btnPdf.Size = New System.Drawing.Size(68, 43)
+        Me.btnPdf.TabIndex = 8
+        Me.btnPdf.Text = "Pdf"
+        Me.btnPdf.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnPdf.UseVisualStyleBackColor = True
         '
-        'colDes
+        'btnExcel
         '
-        Me.colDes.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.colDes.DataPropertyName = "DESCRI"
-        Me.colDes.HeaderText = "Descripción"
-        Me.colDes.Name = "colDes"
-        Me.colDes.ReadOnly = True
-        '
-        'colEstado
-        '
-        Me.colEstado.DataPropertyName = "DESABR"
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.colEstado.DefaultCellStyle = DataGridViewCellStyle3
-        Me.colEstado.HeaderText = "Abrev."
-        Me.colEstado.Name = "colEstado"
-        Me.colEstado.ReadOnly = True
-        Me.colEstado.Width = 90
+        Me.btnExcel.Image = Global.HsPeru.WIN.My.Resources.Resources.export_excel1
+        Me.btnExcel.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btnExcel.Location = New System.Drawing.Point(11, 88)
+        Me.btnExcel.Name = "btnExcel"
+        Me.btnExcel.Size = New System.Drawing.Size(68, 43)
+        Me.btnExcel.TabIndex = 7
+        Me.btnExcel.Text = "Excel"
+        Me.btnExcel.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnExcel.UseVisualStyleBackColor = True
         '
         'FrmTabUnidMedidas
         '
@@ -336,7 +364,7 @@ Partial Class FrmTabUnidMedidas
         Me.Controls.Add(Me.utbUnidMedida)
         Me.Name = "FrmTabUnidMedidas"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "FrmTabUnidMedidas"
+        Me.Text = "Unidades de Medidas"
         Me.UltraTabPageControl1.ResumeLayout(False)
         Me.Panel5.ResumeLayout(False)
         CType(Me.DgvUnidMedida, System.ComponentModel.ISupportInitialize).EndInit()
@@ -372,4 +400,6 @@ Partial Class FrmTabUnidMedidas
     Friend WithEvents colcod As DataGridViewTextBoxColumn
     Friend WithEvents colDes As DataGridViewTextBoxColumn
     Friend WithEvents colEstado As DataGridViewTextBoxColumn
+    Friend WithEvents btnPdf As Button
+    Friend WithEvents btnExcel As Button
 End Class

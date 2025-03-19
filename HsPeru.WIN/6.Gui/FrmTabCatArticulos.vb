@@ -18,7 +18,7 @@
         Modificar()
     End Sub
 
-    Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
+    Private Sub btnEliminar_Click(sender As Object, e As EventArgs)
 
     End Sub
 
@@ -65,6 +65,42 @@
         If rbdInactivo.Checked Then rbdActivo.Checked = False
     End Sub
 
+
+    Private Sub btnExcel_Click(sender As Object, e As EventArgs) Handles btnExcel.Click
+        Try
+            oCategoria = New DAL_TABCATART
+            Dim listaCategoria As List(Of CATEGORIA) = oCategoria.Select_all_Categoria(New CATEGORIA)
+
+            Dim columnas As New Dictionary(Of String, Func(Of CATEGORIA, String)) From {
+            {"COD", Function(m) m.COD.ToString()},
+            {"Descripción", Function(m) m.DES}
+        }
+            Dim ruta As String = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) & "\Categoria.xlsx"
+
+            GeneraReporte.GenerarExcel(listaCategoria, ruta, "Categoria", columnas)
+
+        Catch ex As Exception
+            MessageBox.Show("Error al exportar Excel:" & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+
+    Private Sub btnPdf_Click(sender As Object, e As EventArgs) Handles btnPdf.Click
+        oCategoria = New DAL_TABCATART
+        Dim listaCategoria As List(Of CATEGORIA) = oCategoria.Select_all_Categoria(New CATEGORIA)
+
+        If listaCategoria Is Nothing OrElse listaCategoria.Count = 0 Then
+            MessageBox.Show("No hay datos para generar el PDF.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Exit Sub
+        End If
+
+        ' Columnas
+        Dim columnas As New Dictionary(Of String, Func(Of CATEGORIA, String)) From {
+        {"CODIGO", Function(m) m.COD.ToString()},
+        {"DESCRIPCIÓN", Function(m) If(m.DES Is Nothing, "", m.DES.ToString())}
+    }
+        Dim ruta As String = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) & "\Categoria.pdf"
+        GeneraReporte.GenerarPDF(listaCategoria, ruta, "Lista de Categorias", columnas)
+    End Sub
 
 
 #End Region

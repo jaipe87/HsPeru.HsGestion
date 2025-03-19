@@ -43,6 +43,8 @@ Partial Class FrmTabBanco
         Me.colfuncio = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colEstado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.btnPdf = New System.Windows.Forms.Button()
+        Me.btnExcel = New System.Windows.Forms.Button()
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.btnModificar = New System.Windows.Forms.Button()
         Me.btnNuevo = New System.Windows.Forms.Button()
@@ -72,8 +74,6 @@ Partial Class FrmTabBanco
         Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.btnPdf = New System.Windows.Forms.Button()
-        Me.btnExcel = New System.Windows.Forms.Button()
         Me.UltraTabPageControl1.SuspendLayout()
         Me.Panel5.SuspendLayout()
         CType(Me.DgvBanco, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -211,11 +211,35 @@ Partial Class FrmTabBanco
         Me.Panel2.Size = New System.Drawing.Size(74, 294)
         Me.Panel2.TabIndex = 1
         '
+        'btnPdf
+        '
+        Me.btnPdf.Image = Global.HsPeru.WIN.My.Resources.Resources._new
+        Me.btnPdf.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btnPdf.Location = New System.Drawing.Point(7, 160)
+        Me.btnPdf.Name = "btnPdf"
+        Me.btnPdf.Size = New System.Drawing.Size(68, 43)
+        Me.btnPdf.TabIndex = 8
+        Me.btnPdf.Text = "Pdf"
+        Me.btnPdf.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnPdf.UseVisualStyleBackColor = True
+        '
+        'btnExcel
+        '
+        Me.btnExcel.Image = Global.HsPeru.WIN.My.Resources.Resources.export_excel1
+        Me.btnExcel.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btnExcel.Location = New System.Drawing.Point(7, 118)
+        Me.btnExcel.Name = "btnExcel"
+        Me.btnExcel.Size = New System.Drawing.Size(68, 43)
+        Me.btnExcel.TabIndex = 7
+        Me.btnExcel.Text = "Excel"
+        Me.btnExcel.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnExcel.UseVisualStyleBackColor = True
+        '
         'btnSalir
         '
         Me.btnSalir.Image = Global.HsPeru.WIN.My.Resources.Resources.door_in
         Me.btnSalir.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnSalir.Location = New System.Drawing.Point(6, 118)
+        Me.btnSalir.Location = New System.Drawing.Point(7, 240)
         Me.btnSalir.Name = "btnSalir"
         Me.btnSalir.Size = New System.Drawing.Size(68, 43)
         Me.btnSalir.TabIndex = 2
@@ -521,30 +545,6 @@ Partial Class FrmTabBanco
         Me.DataGridViewTextBoxColumn6.HeaderText = "Estado"
         Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
         Me.DataGridViewTextBoxColumn6.Width = 50
-        '
-        'btnPdf
-        '
-        Me.btnPdf.Image = Global.HsPeru.WIN.My.Resources.Resources._new
-        Me.btnPdf.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnPdf.Location = New System.Drawing.Point(4, 240)
-        Me.btnPdf.Name = "btnPdf"
-        Me.btnPdf.Size = New System.Drawing.Size(68, 43)
-        Me.btnPdf.TabIndex = 8
-        Me.btnPdf.Text = "Pdf"
-        Me.btnPdf.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btnPdf.UseVisualStyleBackColor = True
-        '
-        'btnExcel
-        '
-        Me.btnExcel.Image = Global.HsPeru.WIN.My.Resources.Resources.export_excel1
-        Me.btnExcel.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnExcel.Location = New System.Drawing.Point(4, 197)
-        Me.btnExcel.Name = "btnExcel"
-        Me.btnExcel.Size = New System.Drawing.Size(68, 43)
-        Me.btnExcel.TabIndex = 7
-        Me.btnExcel.Text = "Excel"
-        Me.btnExcel.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btnExcel.UseVisualStyleBackColor = True
         '
         'FrmTabBanco
         '

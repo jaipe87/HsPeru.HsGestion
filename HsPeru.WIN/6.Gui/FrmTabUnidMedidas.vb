@@ -39,9 +39,29 @@
     End Sub
     Private Sub txtAbrev_TextChanged(sender As Object, e As EventArgs) Handles txtAbrev.TextChanged
         If txtAbrev.Text.Length > 3 Then
-            txtAbrev.Text = txtAbrev.Text.Substring(0, 3) ' Recorta el texto a 3 caracteres
-            txtAbrev.SelectionStart = txtAbrev.Text.Length ' Mantiene el cursor al final
+            txtAbrev.Text = txtAbrev.Text.Substring(0, 3)
+            txtAbrev.SelectionStart = txtAbrev.Text.Length
         End If
+    End Sub
+
+
+    Private Sub btnPdf_Click(sender As Object, e As EventArgs) Handles btnPdf.Click
+        oUnidMedida = New DAL_TABUNIDMEDIDA
+        Dim listaUnidMedida As List(Of UNIDAD) = oUnidMedida.Select_all_UnidMedida(New UNIDAD)
+
+        If listaUnidMedida Is Nothing OrElse listaUnidMedida.Count = 0 Then
+            MessageBox.Show("No hay datos para generar el PDF.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Exit Sub
+        End If
+
+        ' Columnas
+        Dim columnas As New Dictionary(Of String, Func(Of UNIDAD, String)) From {
+        {"CODIGO", Function(m) m.COD.ToString()},
+        {"DESCRIPCIÓN", Function(m) If(m.DESCRI Is Nothing, "", m.DESCRI.ToString())},
+        {"ABREVIACIÓN", Function(m) If(m.DESABR Is Nothing, "", m.DESABR.ToString())}
+    }
+        Dim ruta As String = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) & "\UnidadMedida.pdf"
+        GeneraReporte.GenerarPDF(listaUnidMedida, ruta, "Lista de Unidades de Medida", columnas)
     End Sub
 
 #End Region
@@ -99,6 +119,7 @@
     Private Sub FrmTabUnidMedidas_Shown(sender As Object, e As EventArgs) Handles MyBase.Shown
         SeleccionarRow()
     End Sub
+
 
     Sub Graba()
         If MessageBox.Show("¿Seguro de Grabar el Registro?", TITULO, MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Return

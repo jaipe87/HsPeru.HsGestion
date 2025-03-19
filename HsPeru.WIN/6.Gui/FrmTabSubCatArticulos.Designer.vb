@@ -42,6 +42,8 @@ Partial Class FrmTabSubCatArticulos
         Me.colCat = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colSt = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.btnPdf = New System.Windows.Forms.Button()
+        Me.btnExcel = New System.Windows.Forms.Button()
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.btnModificar = New System.Windows.Forms.Button()
         Me.btnNuevo = New System.Windows.Forms.Button()
@@ -61,8 +63,6 @@ Partial Class FrmTabSubCatArticulos
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.btnPdf = New System.Windows.Forms.Button()
-        Me.btnExcel = New System.Windows.Forms.Button()
         Me.UltraTabPageControl1.SuspendLayout()
         Me.Panel5.SuspendLayout()
         Me.Panel6.SuspendLayout()
@@ -212,11 +212,35 @@ Partial Class FrmTabSubCatArticulos
         Me.Panel2.Size = New System.Drawing.Size(87, 269)
         Me.Panel2.TabIndex = 1
         '
+        'btnPdf
+        '
+        Me.btnPdf.Image = Global.HsPeru.WIN.My.Resources.Resources._new
+        Me.btnPdf.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btnPdf.Location = New System.Drawing.Point(11, 129)
+        Me.btnPdf.Name = "btnPdf"
+        Me.btnPdf.Size = New System.Drawing.Size(68, 43)
+        Me.btnPdf.TabIndex = 10
+        Me.btnPdf.Text = "Pdf"
+        Me.btnPdf.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnPdf.UseVisualStyleBackColor = True
+        '
+        'btnExcel
+        '
+        Me.btnExcel.Image = Global.HsPeru.WIN.My.Resources.Resources.export_excel1
+        Me.btnExcel.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btnExcel.Location = New System.Drawing.Point(11, 87)
+        Me.btnExcel.Name = "btnExcel"
+        Me.btnExcel.Size = New System.Drawing.Size(68, 43)
+        Me.btnExcel.TabIndex = 9
+        Me.btnExcel.Text = "Excel"
+        Me.btnExcel.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnExcel.UseVisualStyleBackColor = True
+        '
         'btnSalir
         '
         Me.btnSalir.Image = Global.HsPeru.WIN.My.Resources.Resources.door_in
         Me.btnSalir.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnSalir.Location = New System.Drawing.Point(11, 87)
+        Me.btnSalir.Location = New System.Drawing.Point(11, 215)
         Me.btnSalir.Name = "btnSalir"
         Me.btnSalir.Size = New System.Drawing.Size(68, 43)
         Me.btnSalir.TabIndex = 2
@@ -410,30 +434,6 @@ Partial Class FrmTabSubCatArticulos
         Me.DataGridViewTextBoxColumn4.DataPropertyName = "ESTADO"
         Me.DataGridViewTextBoxColumn4.HeaderText = "Estado"
         Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
-        '
-        'btnPdf
-        '
-        Me.btnPdf.Image = Global.HsPeru.WIN.My.Resources.Resources._new
-        Me.btnPdf.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnPdf.Location = New System.Drawing.Point(11, 221)
-        Me.btnPdf.Name = "btnPdf"
-        Me.btnPdf.Size = New System.Drawing.Size(68, 43)
-        Me.btnPdf.TabIndex = 10
-        Me.btnPdf.Text = "Pdf"
-        Me.btnPdf.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btnPdf.UseVisualStyleBackColor = True
-        '
-        'btnExcel
-        '
-        Me.btnExcel.Image = Global.HsPeru.WIN.My.Resources.Resources.export_excel1
-        Me.btnExcel.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnExcel.Location = New System.Drawing.Point(11, 178)
-        Me.btnExcel.Name = "btnExcel"
-        Me.btnExcel.Size = New System.Drawing.Size(68, 43)
-        Me.btnExcel.TabIndex = 9
-        Me.btnExcel.Text = "Excel"
-        Me.btnExcel.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btnExcel.UseVisualStyleBackColor = True
         '
         'FrmTabSubCatArticulos
         '
