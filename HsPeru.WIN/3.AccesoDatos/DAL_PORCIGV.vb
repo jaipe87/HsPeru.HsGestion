@@ -21,7 +21,6 @@ Public Class DAL_PORCIGV
                         .PORC = CType(row("PORC"), Double)
                         .COD = CInt(CType(row("VIGENCIA"), Date).ToString("yyyyMMdd"))
                     End With
-
                     listPorc.Add(datPorc)
                 End While
             End If
@@ -43,12 +42,11 @@ Public Class DAL_PORCIGV
                 cmd.CommandType = CommandType.Text
                 Cod = CType(cmd.ExecuteScalar(), Integer)
             End Using
-
         End If
-        Ssql = "INSERT INTO tg_igv (VIGENCIA, PORC) VALUES ('"
-        Ssql = Ssql & objDato.VIGENCIA.ToString("yyyyMMdd") & "', " & objDato.PORC & ") "
-        Ssql = Ssql & "ON DUPLICATE KEY UPDATE VIGENCIA = '" & objDato.VIGENCIA.ToString("yyyyMMdd") & "', PORC=" & objDato.PORC & ";"
 
+        Ssql = "INSERT INTO tg_igv (VIGENCIA, PORC) VALUES ("
+        Ssql &= "'" & objDato.VIGENCIA.ToString("yyyy-MM-dd") & "', " & objDato.PORC & ") "
+        Ssql &= "ON DUPLICATE KEY UPDATE PORC=" & objDato.PORC & ";"
 
         Using cmd As New OdbcCommand(Ssql, Cn)
             cmd.ExecuteNonQuery()

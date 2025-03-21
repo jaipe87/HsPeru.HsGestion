@@ -66,6 +66,48 @@ Public Class GeneraReporte
         Return nuevaRuta
     End Function
 
+    'CON LOGO
+    'Private Shared Sub AgregarEncabezado(doc As Document, empresa As String, titulo As String)
+    '    Try
+    '        Dim rutaLogo As String = "C:\VBNET\HsPeru.HsGestion\HsPeru.WIN\Resources\logo.png"
+
+    '        Dim logo As Image = Image.GetInstance(rutaLogo)
+    '        logo.ScaleToFit(100, 50) ' 
+    '        logo.Alignment = Image.ALIGN_LEFT
+
+    '        Dim tablaEncabezado As New PdfPTable(2)
+    '        tablaEncabezado.WidthPercentage = 100
+    '        tablaEncabezado.SetWidths(New Single() {1, 3})
+
+    '        Dim celdaLogo As New PdfPCell(logo) With {
+    '        .Border = Rectangle.NO_BORDER,
+    '        .PaddingBottom = 10
+    '    }
+
+    '        doc.Add(New Paragraph($"Fecha: {DateTime.Now:dd/MM/yyyy}  Hora: {DateTime.Now:HH:mm:ss}",
+    '                      FontFactory.GetFont(FontFactory.HELVETICA, 10)) With {.Alignment = Element.ALIGN_RIGHT})
+
+    '        doc.Add(New Paragraph(" "))
+    '        doc.Add(New Paragraph(titulo, FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 16)) With {.Alignment = Element.ALIGN_CENTER})
+    '        doc.Add(New Paragraph(" "))
+
+    '        tablaEncabezado.AddCell(celdaLogo)
+
+    '        Dim infoEmpresa As New PdfPCell(New Phrase(empresa & vbCrLf & "RUC: " & GRuc, FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 10))) With {
+    '            .Border = Rectangle.NO_BORDER,
+    '            .VerticalAlignment = Element.ALIGN_MIDDLE
+    '        }
+    '        tablaEncabezado.AddCell(infoEmpresa)
+
+    '        doc.Add(tablaEncabezado)
+
+    '        doc.Add(New Paragraph(" "))
+
+    '    Catch ex As Exception
+    '        MessageBox.Show("Error al agregar el logo: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+    '    End Try
+    'End Sub
+
     Private Shared Sub AgregarEncabezado(doc As Document, empresa As String, titulo As String)
         ' Fecha y hora
         doc.Add(New Paragraph($"Fecha: {DateTime.Now:dd/MM/yyyy}  Hora: {DateTime.Now:HH:mm:ss}",
@@ -116,7 +158,6 @@ Public Class GeneraReporte
         styleBorde.BorderBottom = BorderStyle.Thin
         styleBorde.BorderLeft = BorderStyle.Thin
         styleBorde.BorderRight = BorderStyle.Thin
-
         Return styleBorde
     End Function
 
