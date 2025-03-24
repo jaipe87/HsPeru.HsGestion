@@ -71,28 +71,25 @@ Public Class GeneraReporte
         Try
             Dim rutaLogo As String = "C:\VBNET\HsPeru.HsGestion\HsPeru.WIN\Resources\logo.png"
 
-            ' Cargar y ajustar el logo
+            ' Logo
             Dim logo As Image = Image.GetInstance(rutaLogo)
             logo.ScaleToFit(80, 80)
             logo.Alignment = Image.ALIGN_LEFT
 
-            ' Crear tabla principal con 1 columna
             Dim tablaEncabezado As New PdfPTable(1)
             tablaEncabezado.WidthPercentage = 100
 
-            ' Crear tabla interna con 3 columnas (Logo | Título | Fecha)
+            ' (Logo | Título | Fecha)
             Dim tablaInterna As New PdfPTable(3)
             tablaInterna.WidthPercentage = 100
-            tablaInterna.SetWidths(New Single() {1, 2, 1}) ' Distribución: 25% - 50% - 25%
+            tablaInterna.SetWidths(New Single() {1, 2, 1})
 
-            ' Celda del logo alineado a la izquierda
             Dim celdaLogo As New PdfPCell(logo) With {
             .Border = Rectangle.NO_BORDER,
             .HorizontalAlignment = Element.ALIGN_LEFT
         }
             tablaInterna.AddCell(celdaLogo)
 
-            ' Celda del título alineado al centro
             Dim celdaTitulo As New PdfPCell(New Phrase(titulo, FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 14))) With {
             .Border = Rectangle.NO_BORDER,
             .HorizontalAlignment = Element.ALIGN_CENTER,
@@ -100,7 +97,6 @@ Public Class GeneraReporte
         }
             tablaInterna.AddCell(celdaTitulo)
 
-            ' Celda de la fecha alineada a la derecha
             Dim celdaFecha As New PdfPCell(New Phrase($"{DateTime.Now:dd/MM/yyyy HH:mm}",
                                     FontFactory.GetFont(FontFactory.HELVETICA, 10))) With {
             .Border = Rectangle.NO_BORDER,
@@ -109,13 +105,11 @@ Public Class GeneraReporte
         }
             tablaInterna.AddCell(celdaFecha)
 
-            ' Agregar la tabla interna en una celda de la tabla principal
             Dim celdaEncabezado As New PdfPCell(tablaInterna) With {
             .Border = Rectangle.NO_BORDER
         }
             tablaEncabezado.AddCell(celdaEncabezado)
 
-            ' Celda de la información de la empresa centrada debajo del logo, título y fecha
             Dim infoEmpresa As New PdfPCell(New Phrase(vbCrLf & empresa & vbCrLf & vbCrLf & "RUC:             " & GRuc,
                                     FontFactory.GetFont(FontFactory.HELVETICA, 10))) With {
             .Border = Rectangle.NO_BORDER,
@@ -123,11 +117,7 @@ Public Class GeneraReporte
             .VerticalAlignment = Element.ALIGN_MIDDLE
         }
             tablaEncabezado.AddCell(infoEmpresa)
-
-            ' Agregar la tabla al documento
             doc.Add(tablaEncabezado)
-
-            ' Espaciado
             doc.Add(New Paragraph(" "))
 
         Catch ex As Exception
