@@ -13,10 +13,10 @@ Public Class GeneraReporte
 
         Try
             Dim rutaFinal As String = ObtenerRutaPDF(ruta)
-            Using doc As New Document(PageSize.A4, 10, 10, 10, 10)
+            Using doc As New Document(PageSize.A4, 20, 20, 20, 20)
                 PdfWriter.GetInstance(doc, New FileStream(rutaFinal, FileMode.Create))
                 doc.Open()
-                AgregarEncabezado(doc, "EMPRESA: Hard System Perú S.A.C.  " & "RUC:" & GRuc, titulo)
+                AgregarEncabezado(doc, "EMPRESA:   Hard System Perú S.A.C.", titulo)
                 doc.Add(CrearTabla(lista, columnas))
                 doc.Close()
             End Using
@@ -67,60 +67,93 @@ Public Class GeneraReporte
     End Function
 
     'CON LOGO
+    Private Shared Sub AgregarEncabezado(doc As Document, empresa As String, titulo As String)
+        Try
+            Dim rutaLogo As String = "C:\VBNET\HsPeru.HsGestion\HsPeru.WIN\Resources\logo.png"
+
+            ' Cargar y ajustar el logo
+            Dim logo As Image = Image.GetInstance(rutaLogo)
+            logo.ScaleToFit(80, 80)
+            logo.Alignment = Image.ALIGN_LEFT
+
+            ' Crear tabla principal con 1 columna
+            Dim tablaEncabezado As New PdfPTable(1)
+            tablaEncabezado.WidthPercentage = 100
+
+            ' Crear tabla interna con 3 columnas (Logo | Título | Fecha)
+            Dim tablaInterna As New PdfPTable(3)
+            tablaInterna.WidthPercentage = 100
+            tablaInterna.SetWidths(New Single() {1, 2, 1}) ' Distribución: 25% - 50% - 25%
+
+            ' Celda del logo alineado a la izquierda
+            Dim celdaLogo As New PdfPCell(logo) With {
+            .Border = Rectangle.NO_BORDER,
+            .HorizontalAlignment = Element.ALIGN_LEFT
+        }
+            tablaInterna.AddCell(celdaLogo)
+
+            ' Celda del título alineado al centro
+            Dim celdaTitulo As New PdfPCell(New Phrase(titulo, FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 14))) With {
+            .Border = Rectangle.NO_BORDER,
+            .HorizontalAlignment = Element.ALIGN_CENTER,
+            .VerticalAlignment = Element.ALIGN_MIDDLE
+        }
+            tablaInterna.AddCell(celdaTitulo)
+
+            ' Celda de la fecha alineada a la derecha
+            Dim celdaFecha As New PdfPCell(New Phrase($"{DateTime.Now:dd/MM/yyyy HH:mm}",
+                                    FontFactory.GetFont(FontFactory.HELVETICA, 10))) With {
+            .Border = Rectangle.NO_BORDER,
+            .HorizontalAlignment = Element.ALIGN_RIGHT,
+            .VerticalAlignment = Element.ALIGN_TOP
+        }
+            tablaInterna.AddCell(celdaFecha)
+
+            ' Agregar la tabla interna en una celda de la tabla principal
+            Dim celdaEncabezado As New PdfPCell(tablaInterna) With {
+            .Border = Rectangle.NO_BORDER
+        }
+            tablaEncabezado.AddCell(celdaEncabezado)
+
+            ' Celda de la información de la empresa centrada debajo del logo, título y fecha
+            Dim infoEmpresa As New PdfPCell(New Phrase(vbCrLf & empresa & vbCrLf & vbCrLf & "RUC:             " & GRuc,
+                                    FontFactory.GetFont(FontFactory.HELVETICA, 10))) With {
+            .Border = Rectangle.NO_BORDER,
+            .HorizontalAlignment = Element.ALIGN_LEFT,
+            .VerticalAlignment = Element.ALIGN_MIDDLE
+        }
+            tablaEncabezado.AddCell(infoEmpresa)
+
+            ' Agregar la tabla al documento
+            doc.Add(tablaEncabezado)
+
+            ' Espaciado
+            doc.Add(New Paragraph(" "))
+
+        Catch ex As Exception
+            MessageBox.Show("Error al agregar el encabezado: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+
+
+
+
+
+
+    'SIN LOGO
     'Private Shared Sub AgregarEncabezado(doc As Document, empresa As String, titulo As String)
-    '    Try
-    '        Dim rutaLogo As String = "C:\VBNET\HsPeru.HsGestion\HsPeru.WIN\Resources\logo.png"
-
-    '        Dim logo As Image = Image.GetInstance(rutaLogo)
-    '        logo.ScaleToFit(100, 50) ' 
-    '        logo.Alignment = Image.ALIGN_LEFT
-
-    '        Dim tablaEncabezado As New PdfPTable(2)
-    '        tablaEncabezado.WidthPercentage = 100
-    '        tablaEncabezado.SetWidths(New Single() {1, 3})
-
-    '        Dim celdaLogo As New PdfPCell(logo) With {
-    '        .Border = Rectangle.NO_BORDER,
-    '        .PaddingBottom = 10
-    '    }
-
-    '        doc.Add(New Paragraph($"Fecha: {DateTime.Now:dd/MM/yyyy}  Hora: {DateTime.Now:HH:mm:ss}",
+    '    ' Fecha y hora
+    '    doc.Add(New Paragraph($"Fecha: {DateTime.Now:dd/MM/yyyy}  Hora: {DateTime.Now:HH:mm:ss}",
     '                      FontFactory.GetFont(FontFactory.HELVETICA, 10)) With {.Alignment = Element.ALIGN_RIGHT})
 
-    '        doc.Add(New Paragraph(" "))
-    '        doc.Add(New Paragraph(titulo, FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 16)) With {.Alignment = Element.ALIGN_CENTER})
-    '        doc.Add(New Paragraph(" "))
+    '    doc.Add(New Paragraph(" "))
+    '    doc.Add(New Paragraph(titulo, FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 16)) With {.Alignment = Element.ALIGN_CENTER})
+    '    doc.Add(New Paragraph(" "))
 
-    '        tablaEncabezado.AddCell(celdaLogo)
-
-    '        Dim infoEmpresa As New PdfPCell(New Phrase(empresa & vbCrLf & "RUC: " & GRuc, FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 10))) With {
-    '            .Border = Rectangle.NO_BORDER,
-    '            .VerticalAlignment = Element.ALIGN_MIDDLE
-    '        }
-    '        tablaEncabezado.AddCell(infoEmpresa)
-
-    '        doc.Add(tablaEncabezado)
-
-    '        doc.Add(New Paragraph(" "))
-
-    '    Catch ex As Exception
-    '        MessageBox.Show("Error al agregar el logo: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-    '    End Try
+    '    doc.Add(New Paragraph("EMPRESA: Hard System Perú S.A.C.") With {.Alignment = Element.ALIGN_LEFT})
+    '    doc.Add(New Paragraph("RUC: " & GRuc) With {.Alignment = Element.ALIGN_LEFT})
+    '    doc.Add(New Paragraph(" ")) ' Espacio
     'End Sub
-
-    Private Shared Sub AgregarEncabezado(doc As Document, empresa As String, titulo As String)
-        ' Fecha y hora
-        doc.Add(New Paragraph($"Fecha: {DateTime.Now:dd/MM/yyyy}  Hora: {DateTime.Now:HH:mm:ss}",
-                          FontFactory.GetFont(FontFactory.HELVETICA, 10)) With {.Alignment = Element.ALIGN_RIGHT})
-
-        doc.Add(New Paragraph(" "))
-        doc.Add(New Paragraph(titulo, FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 16)) With {.Alignment = Element.ALIGN_CENTER})
-        doc.Add(New Paragraph(" "))
-
-        doc.Add(New Paragraph("EMPRESA: Hard System Perú S.A.C.") With {.Alignment = Element.ALIGN_LEFT})
-        doc.Add(New Paragraph("RUC: " & GRuc) With {.Alignment = Element.ALIGN_LEFT})
-        doc.Add(New Paragraph(" ")) ' Espacio
-    End Sub
 
     Private Shared Function CrearTabla(Of T)(lista As List(Of T), columnas As Dictionary(Of String, Func(Of T, String))) As PdfPTable
         Dim tabla As New PdfPTable(columnas.Count) With {.WidthPercentage = 100}
