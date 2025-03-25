@@ -91,7 +91,7 @@ Public Class FrmTabBanco
         {"TIP. MONEDA", Function(m) m.ESTADO_TIPMON.ToString()}
     }
         Dim ruta As String = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) & "\Banco.pdf"
-        GeneraReporte.GenerarPDF(listaBanco, ruta, "Lista de Bancos", columnas)
+        GeneraReporte.GenerarPDF(listaBanco, ruta, "Bancos", columnas)
     End Sub
 #End Region
 
