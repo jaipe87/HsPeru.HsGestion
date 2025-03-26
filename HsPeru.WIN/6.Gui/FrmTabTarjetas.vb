@@ -133,7 +133,7 @@ Public Class FrmTabTarjetas
         }
             Dim ruta As String = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) & "\TarjetasCredito.xlsx"
 
-            GeneraReporte.GenerarExcel(listaTarjCredito, ruta, "TarjetasCredito", columnas)
+            GeneraReporte.GenerarExcel(listaTarjCredito, ruta, "Tarjetas de Credito", columnas)
 
         Catch ex As Exception
             MessageBox.Show("Error al exportar Excel:" & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -155,7 +155,7 @@ Public Class FrmTabTarjetas
         {"DESCRIPCIÓN", Function(m) If(m.DES Is Nothing, "", m.DES.ToString())}
     }
         Dim ruta As String = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) & "\TarjetasCrédito.pdf"
-        GeneraReporte.GenerarPDF(listaTarjCredito, ruta, "Lista de Tarjetas de Crédito", columnas)
+        GeneraReporte.GenerarPDF(listaTarjCredito, ruta, "Tarjetas de Crédito", columnas)
     End Sub
 
     Sub Graba()

@@ -61,7 +61,7 @@
         {"ABREVIACIÓN", Function(m) If(m.DESABR Is Nothing, "", m.DESABR.ToString())}
     }
         Dim ruta As String = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) & "\UnidadMedida.pdf"
-        GeneraReporte.GenerarPDF(listaUnidMedida, ruta, "Lista de Unidades de Medida", columnas)
+        GeneraReporte.GenerarPDF(listaUnidMedida, ruta, "Unidades de Medida", columnas)
     End Sub
 
 #End Region

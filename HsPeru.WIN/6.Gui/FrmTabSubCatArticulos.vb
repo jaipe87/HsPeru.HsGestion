@@ -91,7 +91,7 @@
         {"ESTADO", Function(m) If(m.ESTADO Is Nothing, "", m.ESTADO.ToString())}
     }
         Dim ruta As String = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) & "\SubCategorias.pdf"
-        GeneraReporte.GenerarPDF(listaSubCategoria, ruta, "Lista de SubCategorias", columnas)
+        GeneraReporte.GenerarPDF(listaSubCategoria, ruta, "SubCategorias", columnas)
     End Sub
 #End Region
 

@@ -90,7 +90,7 @@ Public Class GeneraReporte
         }
             tablaInterna.AddCell(celdaLogo)
 
-            Dim celdaTitulo As New PdfPCell(New Phrase(titulo, FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 14))) With {
+            Dim celdaTitulo As New PdfPCell(New Phrase(titulo, FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 16))) With {
             .Border = Rectangle.NO_BORDER,
             .HorizontalAlignment = Element.ALIGN_CENTER,
             .VerticalAlignment = Element.ALIGN_MIDDLE
@@ -98,7 +98,7 @@ Public Class GeneraReporte
             tablaInterna.AddCell(celdaTitulo)
 
             Dim celdaFecha As New PdfPCell(New Phrase($"{DateTime.Now:dd/MM/yyyy HH:mm}",
-                                    FontFactory.GetFont(FontFactory.HELVETICA, 10))) With {
+                                    FontFactory.GetFont(FontFactory.HELVETICA, 12))) With {
             .Border = Rectangle.NO_BORDER,
             .HorizontalAlignment = Element.ALIGN_RIGHT,
             .VerticalAlignment = Element.ALIGN_TOP
@@ -111,7 +111,7 @@ Public Class GeneraReporte
             tablaEncabezado.AddCell(celdaEncabezado)
 
             Dim infoEmpresa As New PdfPCell(New Phrase(vbCrLf & empresa & vbCrLf & vbCrLf & "RUC:             " & GRuc,
-                                    FontFactory.GetFont(FontFactory.HELVETICA, 10))) With {
+                                    FontFactory.GetFont(FontFactory.HELVETICA, 12))) With {
             .Border = Rectangle.NO_BORDER,
             .HorizontalAlignment = Element.ALIGN_LEFT,
             .VerticalAlignment = Element.ALIGN_MIDDLE
@@ -124,11 +124,6 @@ Public Class GeneraReporte
             MessageBox.Show("Error al agregar el encabezado: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
-
-
-
-
-
 
     'SIN LOGO
     'Private Shared Sub AgregarEncabezado(doc As Document, empresa As String, titulo As String)

@@ -155,6 +155,48 @@ Public Class FrmTabVendedor
         SeleccionarRow()
     End Sub
 
+    Private Sub btnExcel_Click(sender As Object, e As EventArgs) Handles btnExcel.Click
+        Try
+            oVendedor = New DAL_VENDEDOR
+            Dim listaVendedor As List(Of VENDEDOR) = oVendedor.Select_all_Vendedor(New VENDEDOR)
+
+            Dim columnas As New Dictionary(Of String, Func(Of VENDEDOR, String)) From {
+            {"COD", Function(m) m.COD.ToString()},
+            {"DESCRIPC", Function(m) m.DES},
+            {"SUCURSAL", Function(m) m.DESSUC},
+            {"SUPERVISOR", Function(m) m.SUPERVISOR},
+            {"ESTADO", Function(m) m.ESTADO}
+        }
+            Dim ruta As String = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) & "\Vendedores.xlsx"
+
+            GeneraReporte.GenerarExcel(listaVendedor, ruta, "Vendedores", columnas)
+
+        Catch ex As Exception
+            MessageBox.Show("Error al exportar Excel:" & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+
+    Private Sub btnPdf_Click(sender As Object, e As EventArgs) Handles btnPdf.Click
+        oVendedor = New DAL_VENDEDOR
+        Dim listaVendedor As List(Of VENDEDOR) = oVendedor.Select_all_Vendedor(New VENDEDOR)
+
+        If listaVendedor Is Nothing OrElse listaVendedor.Count = 0 Then
+            MessageBox.Show("No hay datos para generar el PDF.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Exit Sub
+        End If
+
+        ' Columnas
+        Dim columnas As New Dictionary(Of String, Func(Of VENDEDOR, String)) From {
+        {"CODIGO", Function(m) m.COD.ToString()},
+        {"DESCRIPCIÓN", Function(m) If(m.DES Is Nothing, "", m.DES.ToString())},
+        {"SUCURSAL", Function(m) If(m.DESSUC Is Nothing, "", m.DESSUC.ToString())},
+        {"SUPERVISOR", Function(m) If(m.SUPERVISOR Is Nothing, "", m.SUPERVISOR.ToString())},
+        {"ESTADO", Function(m) If(m.ESTADO Is Nothing, "", m.ESTADO.ToString())}
+    }
+        Dim ruta As String = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) & "\Vendedores.pdf"
+        GeneraReporte.GenerarPDF(listaVendedor, ruta, "Vendedores", columnas)
+    End Sub
+
     Private Sub chkSup_CheckedChanged(sender As Object, e As EventArgs) Handles chkSup.CheckedChanged
         txtcontrasena.Enabled = chkSup.Checked
         txtRepcontrasenia.Enabled = chkSup.Checked

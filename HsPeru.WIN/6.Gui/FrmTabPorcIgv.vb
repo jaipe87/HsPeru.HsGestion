@@ -51,7 +51,7 @@
         }
             Dim ruta As String = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) & "\PorcentajeIGV.xlsx"
 
-            GeneraReporte.GenerarExcel(listaPorc, ruta, "PorcentajeIGV", columnas)
+            GeneraReporte.GenerarExcel(listaPorc, ruta, "Porcentajes IGV", columnas)
 
         Catch ex As Exception
             MessageBox.Show("Error al exportar Excel:" & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -73,7 +73,7 @@
         {"PORCENTAJE", Function(m) m.PORC.ToString()}
     }
         Dim ruta As String = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) & "\PorcentajeIGV.pdf"
-        GeneraReporte.GenerarPDF(listaPorc, ruta, "Lista de Porcentaje IGV", columnas)
+        GeneraReporte.GenerarPDF(listaPorc, ruta, "Porcentajes IGV", columnas)
     End Sub
 
 #End Region

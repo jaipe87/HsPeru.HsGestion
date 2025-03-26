@@ -99,7 +99,7 @@
         {"DESCRIPCIÓN", Function(m) If(m.DES Is Nothing, "", m.DES.ToString())}
     }
         Dim ruta As String = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) & "\Categoria.pdf"
-        GeneraReporte.GenerarPDF(listaCategoria, ruta, "Lista de Categorias", columnas)
+        GeneraReporte.GenerarPDF(listaCategoria, ruta, "Categorias", columnas)
     End Sub
 
 
