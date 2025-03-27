@@ -80,6 +80,8 @@ Partial Class FrmTabTipCambios
         Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.btnPdf = New System.Windows.Forms.Button()
+        Me.btnExcel = New System.Windows.Forms.Button()
         Me.UltraTabPageControl1.SuspendLayout()
         Me.Panel5.SuspendLayout()
         Me.Panel6.SuspendLayout()
@@ -98,7 +100,7 @@ Partial Class FrmTabTipCambios
         Me.UltraTabPageControl1.Controls.Add(Me.Panel2)
         Me.UltraTabPageControl1.Location = New System.Drawing.Point(1, 20)
         Me.UltraTabPageControl1.Name = "UltraTabPageControl1"
-        Me.UltraTabPageControl1.Size = New System.Drawing.Size(643, 301)
+        Me.UltraTabPageControl1.Size = New System.Drawing.Size(643, 343)
         '
         'Panel5
         '
@@ -107,7 +109,7 @@ Partial Class FrmTabTipCambios
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel5.Location = New System.Drawing.Point(0, 0)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(561, 301)
+        Me.Panel5.Size = New System.Drawing.Size(561, 343)
         Me.Panel5.TabIndex = 2
         '
         'Panel6
@@ -178,7 +180,7 @@ Partial Class FrmTabTipCambios
         Me.DgvTipCam.RowHeadersWidth = 15
         Me.DgvTipCam.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
         Me.DgvTipCam.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DgvTipCam.Size = New System.Drawing.Size(561, 266)
+        Me.DgvTipCam.Size = New System.Drawing.Size(561, 308)
         Me.DgvTipCam.TabIndex = 0
         '
         'colcod
@@ -254,6 +256,8 @@ Partial Class FrmTabTipCambios
         '
         'Panel2
         '
+        Me.Panel2.Controls.Add(Me.btnPdf)
+        Me.Panel2.Controls.Add(Me.btnExcel)
         Me.Panel2.Controls.Add(Me.btnBloqCobranzas)
         Me.Panel2.Controls.Add(Me.btnBloqVentas)
         Me.Panel2.Controls.Add(Me.btnBloqCompras)
@@ -263,7 +267,7 @@ Partial Class FrmTabTipCambios
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Right
         Me.Panel2.Location = New System.Drawing.Point(561, 0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(82, 301)
+        Me.Panel2.Size = New System.Drawing.Size(82, 343)
         Me.Panel2.TabIndex = 1
         '
         'btnBloqCobranzas
@@ -271,7 +275,7 @@ Partial Class FrmTabTipCambios
         Me.btnBloqCobranzas.BackColor = System.Drawing.Color.PowderBlue
         Me.btnBloqCobranzas.Image = Global.HsPeru.WIN.My.Resources.Resources.bullet_blue
         Me.btnBloqCobranzas.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnBloqCobranzas.Location = New System.Drawing.Point(6, 161)
+        Me.btnBloqCobranzas.Location = New System.Drawing.Point(6, 128)
         Me.btnBloqCobranzas.Name = "btnBloqCobranzas"
         Me.btnBloqCobranzas.Size = New System.Drawing.Size(68, 43)
         Me.btnBloqCobranzas.TabIndex = 5
@@ -284,7 +288,7 @@ Partial Class FrmTabTipCambios
         Me.btnBloqVentas.BackColor = System.Drawing.Color.MediumTurquoise
         Me.btnBloqVentas.Image = Global.HsPeru.WIN.My.Resources.Resources.bullet_orange
         Me.btnBloqVentas.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnBloqVentas.Location = New System.Drawing.Point(6, 203)
+        Me.btnBloqVentas.Location = New System.Drawing.Point(6, 170)
         Me.btnBloqVentas.Name = "btnBloqVentas"
         Me.btnBloqVentas.Size = New System.Drawing.Size(68, 43)
         Me.btnBloqVentas.TabIndex = 4
@@ -297,7 +301,7 @@ Partial Class FrmTabTipCambios
         Me.btnBloqCompras.BackColor = System.Drawing.Color.WhiteSmoke
         Me.btnBloqCompras.Image = Global.HsPeru.WIN.My.Resources.Resources.bullet_green
         Me.btnBloqCompras.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnBloqCompras.Location = New System.Drawing.Point(6, 119)
+        Me.btnBloqCompras.Location = New System.Drawing.Point(6, 86)
         Me.btnBloqCompras.Name = "btnBloqCompras"
         Me.btnBloqCompras.Size = New System.Drawing.Size(68, 43)
         Me.btnBloqCompras.TabIndex = 3
@@ -309,7 +313,7 @@ Partial Class FrmTabTipCambios
         '
         Me.btnSalir.Image = Global.HsPeru.WIN.My.Resources.Resources.door_in
         Me.btnSalir.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnSalir.Location = New System.Drawing.Point(6, 245)
+        Me.btnSalir.Location = New System.Drawing.Point(6, 296)
         Me.btnSalir.Name = "btnSalir"
         Me.btnSalir.Size = New System.Drawing.Size(68, 43)
         Me.btnSalir.TabIndex = 2
@@ -321,7 +325,7 @@ Partial Class FrmTabTipCambios
         '
         Me.btnModificar.Image = Global.HsPeru.WIN.My.Resources.Resources.page_edit
         Me.btnModificar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnModificar.Location = New System.Drawing.Point(6, 77)
+        Me.btnModificar.Location = New System.Drawing.Point(6, 44)
         Me.btnModificar.Name = "btnModificar"
         Me.btnModificar.Size = New System.Drawing.Size(68, 43)
         Me.btnModificar.TabIndex = 1
@@ -333,7 +337,7 @@ Partial Class FrmTabTipCambios
         '
         Me.btnNuevo.Image = Global.HsPeru.WIN.My.Resources.Resources.page_add
         Me.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnNuevo.Location = New System.Drawing.Point(6, 35)
+        Me.btnNuevo.Location = New System.Drawing.Point(6, 2)
         Me.btnNuevo.Name = "btnNuevo"
         Me.btnNuevo.Size = New System.Drawing.Size(68, 43)
         Me.btnNuevo.TabIndex = 0
@@ -485,7 +489,7 @@ Partial Class FrmTabTipCambios
         Me.utbTipCam.Location = New System.Drawing.Point(0, 0)
         Me.utbTipCam.Name = "utbTipCam"
         Me.utbTipCam.SharedControlsPage = Me.UltraTabSharedControlsPage1
-        Me.utbTipCam.Size = New System.Drawing.Size(645, 322)
+        Me.utbTipCam.Size = New System.Drawing.Size(645, 364)
         Me.utbTipCam.Style = Infragistics.Win.UltraWinTabControl.UltraTabControlStyle.Excel
         Me.utbTipCam.TabIndex = 1
         UltraTab1.TabPage = Me.UltraTabPageControl1
@@ -498,7 +502,7 @@ Partial Class FrmTabTipCambios
         '
         Me.UltraTabSharedControlsPage1.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabSharedControlsPage1.Name = "UltraTabSharedControlsPage1"
-        Me.UltraTabSharedControlsPage1.Size = New System.Drawing.Size(643, 301)
+        Me.UltraTabSharedControlsPage1.Size = New System.Drawing.Size(643, 343)
         '
         'DataGridViewTextBoxColumn1
         '
@@ -574,11 +578,35 @@ Partial Class FrmTabTipCambios
         Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
         Me.DataGridViewTextBoxColumn8.Width = 80
         '
+        'btnPdf
+        '
+        Me.btnPdf.Image = Global.HsPeru.WIN.My.Resources.Resources._new
+        Me.btnPdf.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btnPdf.Location = New System.Drawing.Point(6, 254)
+        Me.btnPdf.Name = "btnPdf"
+        Me.btnPdf.Size = New System.Drawing.Size(68, 43)
+        Me.btnPdf.TabIndex = 10
+        Me.btnPdf.Text = "Pdf"
+        Me.btnPdf.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnPdf.UseVisualStyleBackColor = True
+        '
+        'btnExcel
+        '
+        Me.btnExcel.Image = Global.HsPeru.WIN.My.Resources.Resources.export_excel1
+        Me.btnExcel.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btnExcel.Location = New System.Drawing.Point(6, 212)
+        Me.btnExcel.Name = "btnExcel"
+        Me.btnExcel.Size = New System.Drawing.Size(68, 43)
+        Me.btnExcel.TabIndex = 9
+        Me.btnExcel.Text = "Excel"
+        Me.btnExcel.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnExcel.UseVisualStyleBackColor = True
+        '
         'FrmTabTipCambios
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(645, 322)
+        Me.ClientSize = New System.Drawing.Size(645, 364)
         Me.Controls.Add(Me.utbTipCam)
         Me.Name = "FrmTabTipCambios"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -642,4 +670,6 @@ Partial Class FrmTabTipCambios
     Friend WithEvents colCobranza As DataGridViewTextBoxColumn
     Friend WithEvents colVentas As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn8 As DataGridViewTextBoxColumn
+    Friend WithEvents btnPdf As Button
+    Friend WithEvents btnExcel As Button
 End Class

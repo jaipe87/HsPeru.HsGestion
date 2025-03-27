@@ -217,6 +217,30 @@
         End If
     End Sub
 
+    Private Sub btnExcel_Click(sender As Object, e As EventArgs) Handles btnExcel.Click
+        Try
+            oTipcam = New DAL_TIPCAM
+            Dim listaTipcam As List(Of TIPCAM) = oTipcam.Select_all_Tipcam(New TIPCAM)
+
+            Dim columnas As New Dictionary(Of String, Func(Of TIPCAM, String)) From {
+            {"COD", Function(m) m.COD.ToString()},
+            {"FECHA", Function(m) m.FECHA},
+            {"COMPRA", Function(m) m.COMPRA},
+            {"VENTA", Function(m) m.VENTA},
+            {"PARALE", Function(m) m.PARALE}
+        }
+            Dim ruta As String = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) & "\TiposCambio.xlsx"
+
+            GeneraReporte.GenerarExcel(listaTipcam, ruta, "Tipos de Cambio", columnas)
+
+        Catch ex As Exception
+            MessageBox.Show("Error al exportar Excel:" & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+
+    Private Sub btnPdf_Click(sender As Object, e As EventArgs) Handles btnPdf.Click
+
+    End Sub
 
     Private Sub FrmTabTipCambios_Shown(sender As Object, e As EventArgs) Handles MyBase.Shown
         SeleccionarRow()
