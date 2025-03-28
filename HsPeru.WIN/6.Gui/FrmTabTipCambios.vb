@@ -216,7 +216,7 @@
             Modificar()
         End If
     End Sub
-
+    B
     Private Sub btnExcel_Click(sender As Object, e As EventArgs) Handles btnExcel.Click
         Try
             oTipcam = New DAL_TIPCAM
@@ -239,7 +239,24 @@
     End Sub
 
     Private Sub btnPdf_Click(sender As Object, e As EventArgs) Handles btnPdf.Click
+        oTipcam = New DAL_TIPCAM
+        Dim listaTipcam As List(Of TIPCAM) = oTipcam.Select_all_Tipcam(New TIPCAM)
 
+        If listaTipcam Is Nothing OrElse listaTipcam.Count = 0 Then
+            MessageBox.Show("No hay datos para generar el PDF.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Exit Sub
+        End If
+
+        ' Columnas
+        Dim columnas As New Dictionary(Of String, Func(Of TIPCAM, String)) From {
+        {"CODIGO", Function(m) m.COD.ToString()},
+        {"FECHA", Function(m) m.FECHA.ToString()},
+        {"COMPRA", Function(m) m.COMPRA.ToString()},
+        {"VENTA", Function(m) m.VENTA.ToString()},
+        {"PARALE", Function(m) m.PARALE.ToString()}
+    }
+        Dim ruta As String = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) & "\TiposCambio.pdf"
+        GeneraReporte.GenerarPDF(listaTipcam, ruta, "TiposCambio", columnas)
     End Sub
 
     Private Sub FrmTabTipCambios_Shown(sender As Object, e As EventArgs) Handles MyBase.Shown
