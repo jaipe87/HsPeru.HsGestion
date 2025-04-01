@@ -256,7 +256,7 @@
         {"PARALE", Function(m) m.PARALE.ToString()}
     }
         Dim ruta As String = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) & "\TiposCambio.pdf"
-        GeneraReporte.GenerarPDF(listaTipcam, ruta, "TiposCambio", columnas)
+        GeneraReporte.GenerarPDF(listaTipcam, ruta, "Tipos de Cambio", columnas)
     End Sub
 
     Private Sub FrmTabTipCambios_Shown(sender As Object, e As EventArgs) Handles MyBase.Shown
