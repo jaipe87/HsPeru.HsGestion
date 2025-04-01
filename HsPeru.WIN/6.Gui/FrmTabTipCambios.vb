@@ -216,7 +216,7 @@
             Modificar()
         End If
     End Sub
-    B
+
     Private Sub btnExcel_Click(sender As Object, e As EventArgs) Handles btnExcel.Click
         Try
             oTipcam = New DAL_TIPCAM
